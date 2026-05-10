@@ -1,0 +1,11 @@
+name = "raidsheets-session-api"
+main = "src/index.js"
+compatibility_date = "2026-05-04"
+
+[[durable_objects.bindings]]
+name = "SESSION_DO"
+class_name = "SessionDurableObject"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["SessionDurableObject"]
