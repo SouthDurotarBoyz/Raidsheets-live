@@ -841,7 +841,9 @@ window.RaidConfig = { raidId: 'gruuls-lair' };
     const session = currentSession();
 
     if (session && session.isSessionBacked && session.publicCode) {
-      return new URL('/raid/' + encodeURIComponent(session.publicCode), location.origin).href;
+      return sessionClient && sessionClient.publicRaidUrl
+        ? sessionClient.publicRaidUrl(session.publicCode)
+        : 'https://www.raidsheets.com/raid.html?code=' + encodeURIComponent(session.publicCode);
     }
 
     return raidsheetUrl();
@@ -902,7 +904,7 @@ window.RaidConfig = { raidId: 'gruuls-lair' };
       setButtonContent(
         exportButton,
         isSessionBacked ? 'assets/shared/icons/share-link.svg' : 'assets/shared/icons/create-raidsheet.svg',
-        isSessionBacked ? (publicCode ? 'raid/' + publicCode : 'Copy Raider View Link') : 'Create Raidsheet'
+        isSessionBacked ? (publicCode ? 'raid.html?code=' + publicCode : 'Copy Raider View Link') : 'Create Raidsheet'
       );
       exportButton.title = isSessionBacked ? 'Copy the raider view link.' : '';
     }

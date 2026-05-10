@@ -387,6 +387,40 @@
     }
   }
 
+  function publicRaidUrl(publicCode){
+    var code = String(publicCode || '').toUpperCase();
+    if (!isValidPublicCode(code)) return '';
+    return 'https://www.raidsheets.com/raid.html?code=' + encodeURIComponent(code);
+  }
+
+  function normalizePublicRaidUrl(url){
+    if (typeof url !== 'string' || !url) return url;
+
+    try {
+      var parsed = new global.URL(url, global.location && global.location.href ? global.location.href : 'https://www.raidsheets.com/');
+      var match = parsed.pathname.match(/^\/raid\/([ABCDEFGHJKLMNPQRSTUVWXYZ23456789]{5})\/?$/i);
+      if (!match) return url;
+
+      return publicRaidUrl(match[1]);
+    } catch (err) {
+      return url.replace(/\/raid\/([ABCDEFGHJKLMNPQRSTUVWXYZ23456789]{5})(?:\/)?(?:[?#].*)?$/i, function(_match, code){
+        return publicRaidUrl(code);
+      });
+    }
+  }
+
+  function normalizePublicSessionUrls(data){
+    if (!data || typeof data !== 'object') return data;
+
+    ['viewUrl', 'publicUrl', 'shareUrl'].forEach(function(key){
+      if (typeof data[key] === 'string') {
+        data[key] = normalizePublicRaidUrl(data[key]);
+      }
+    });
+
+    return data;
+  }
+
   function appendPublicCodeToEditUrl(editUrl, publicCode){
     if (!isValidPublicCode(publicCode)) return editUrl;
 
@@ -490,6 +524,7 @@
       }
 
       return saveRosterToSession(sessionId, editToken, roster).then(function(){
+        normalizePublicSessionUrls(data);
         if (data.publicCode && data.editUrl) {
           data.editUrl = appendPublicCodeToEditUrl(data.editUrl, String(data.publicCode).toUpperCase());
         }
@@ -558,6 +593,8 @@
     saveRosterToSession: saveRosterToSession,
     debouncedSaveSessionRoster: debouncedSaveSessionRoster,
     createSessionFromRoster: createSessionFromRoster,
+    publicRaidUrl: publicRaidUrl,
+    normalizePublicRaidUrl: normalizePublicRaidUrl,
     getPublicCode: getPublicCode,
     isValidPublicCode: isValidPublicCode,
     loadSessionPayload: loadSessionPayload,
