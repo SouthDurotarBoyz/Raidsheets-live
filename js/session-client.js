@@ -2,7 +2,7 @@
   'use strict';
 
   var storage = global.RaidRosterStorage;
-  var API_BASE = 'https://raidsheets-session-api.southdurotarboyz.workers.dev';
+  var API_BASE = 'https://api.raidsheets.com';
   var SOFT_RESERVE_KEY = 'soft-reserve-url';
   var SESSION_SAVE_DEBOUNCE_MS = 4000;
   var PUBLIC_CODE_PATTERN = /^[ABCDEFGHJKLMNPQRSTUVWXYZ23456789]{5}$/;
