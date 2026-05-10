@@ -1,0 +1,205 @@
+<div class="sheet">
+  <div class="boss-header">
+    <div class="boss-zone">Tempest Keep</div>
+    <h1 class="boss-name">Void Reaver</h1>
+  </div>
+
+  <div class="setup-block">
+    <div class="setup-grid setup-grid-5">
+      <div class="setup-col">
+        <div class="setup-heading setup-col-label">Tanks</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Main tank → <span class="assignment-target" data-target-bind="tk-core-main-tank"></span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span><span class="line-text">Off tank → <span class="assignment-target" data-target-bind="tk-core-off-tank"></span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span><span class="line-text">Off tank 2 → <span class="assignment-target" data-target-bind="tk-core-off-tank-2"></span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-heading setup-col-label">Healers</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="tk-core-mt-healers" data-default="Main tank healers">Main tank healers</span> → <span class="assignment-target" data-target-bind="tk-core-main-tank"></span> <span class="role-label">(MAIN TANK)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="tk-core-ot-healers" data-default="Off tank healers">Off tank healers</span> → <span class="assignment-target" data-target-bind="tk-core-off-tank"></span> <span class="role-label">(OFF TANK)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healing icon"></span><span class="line-text">Raid healers → <span class="role unassigned" data-bind-group="tk-core-raid-healers" data-default="Raid healers">Raid healers</span></span></div>
+      </div>
+      <div class="setup-col setup-col-misdirect-wide">
+        <div class="setup-heading setup-col-label">Misdirects</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="tk-core-mt-misdirect" data-default="Hunter">Hunter</span> → Main tank → <span class="assignment-target" data-target-bind="tk-core-main-tank"></span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="tk-core-ot-misdirect" data-default="Hunter">Hunter</span> → Off tank → <span class="assignment-target" data-target-bind="tk-core-off-tank"></span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-heading setup-col-label">Utility</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt="Curse icon"></span><span class="line-text">Elements → <span class="role unassigned" data-bind="tk-core-curse-of-elements" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholystrength.jpg" alt="Curse icon"></span><span class="line-text">Recklessness → <span class="role unassigned" data-bind="tk-core-curse-of-recklessness" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_curseoftounges.jpg" alt="Curse icon"></span><span class="line-text">Tongues → <span class="role unassigned" data-bind="tk-core-curse-of-tongues" data-default="Warlock">Warlock</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-heading setup-col-label">Kicks / Utility</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_kick.jpg" alt="Kick icon"></span><span class="line-text">Interrupt/utility backup → <span class="role unassigned" data-bind-group="tk-void-reaver-kicks" data-default="Kicker">Kicker</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_gem_pearl_02.jpg" alt="Orb soaker icon"></span><span class="line-text">Orb soakers → <span class="role unassigned" data-bind-group="tk-void-reaver-orb-soakers" data-default="Orb soakers">Orb soakers</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-layout">
+    <div class="sheet-content">
+      <div class="header-row">
+        <div class="role-pill role-tank">Tanks</div>
+        <div class="role-pill role-healer">Healers</div>
+        <div class="role-pill role-dps">DPS</div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Phase 1 · Pull / tank threat setup</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech critical">
+              <img class="icon" src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_defensivestance.jpg" alt="Tank stance icon">
+              <div class="mech-body">
+                <div class="mech-name">Compete for top threat</div>
+                <div class="mech-desc">Main tank sets Void Reaver in position while both off tanks build hard threat immediately. Knock Away can reduce the active tank's threat, so every tank must stay near the top and be ready for the boss to swap targets cleanly.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech">
+              <img class="icon" src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Greater Heal icon">
+              <div class="mech-body">
+                <div class="mech-name">Heal all threat tanks</div>
+                <div class="mech-desc">Keep assignments on the main tank and off tank targets from the pull. Expect tank damage to shift after Knock Away and do not tunnel one player while another tank climbs into the active threat position.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical">
+              <img class="icon" src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon">
+              <div class="mech-body">
+                <div class="mech-name">Let misdirects land</div>
+                <div class="mech-desc">Hunters use assigned misdirects to stabilize opening threat. DPS should hold burst until tanks are established so Void Reaver does not turn into the raid after an early Knock Away.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Phase 2 · Arcane Orb / raid spread</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech">
+              <img class="icon" src="https://wow.zamimg.com/images/wow/icons/large/spell_arcane_blast.jpg" alt="Arcane Orb icon">
+              <div class="mech-body">
+                <div class="mech-name">Hold the boss steady</div>
+                <div class="mech-desc">Keep Void Reaver stable for melee while ranged and healers spread for Arcane Orb. Only adjust facing or position if threat movement forces it; avoid dragging the boss through the raid.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical">
+              <img class="icon" src="https://wow.zamimg.com/images/wow/icons/large/spell_arcane_blink.jpg" alt="Movement icon">
+              <div class="mech-body">
+                <div class="mech-name">Spread and move from impact</div>
+                <div class="mech-desc">Healers stay spread with ranged, watch incoming Arcane Orb impact zones, and move away before the explosion lands. Do not stack tightly while reaching your tank or raid-healing assignments.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical">
+              <img class="icon" src="https://wow.zamimg.com/images/wow/icons/large/spell_arcane_blast.jpg" alt="Arcane Orb icon">
+              <div class="mech-body">
+                <div class="mech-name">Ranged spread, melee stay in</div>
+                <div class="mech-desc">Ranged DPS maintain spacing and move out of Arcane Orb impact zones without crossing through other groups. Melee stay on the boss unless orb movement, boss facing, or threat requires a controlled adjustment.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Phase 3 · Pounding / raid healing</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech critical">
+              <img class="icon" src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_shieldwall.jpg" alt="Shield Wall icon">
+              <div class="mech-body">
+                <div class="mech-name">Survive transitions</div>
+                <div class="mech-desc">Maintain mitigation and threat through boss swings, Knock Away threat drops, and Pounding windows. If you become the active tank, settle the boss quickly so melee and healers can recover.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical">
+              <img class="icon" src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Prayer of Healing icon">
+              <div class="mech-body">
+                <div class="mech-name">Pre-load raid healing</div>
+                <div class="mech-desc">Pounding deals heavy raid-wide AoE damage near Void Reaver. Prepare raid heals before it starts, keep tanks covered during the damage, and recover melee without abandoning spread players hit by Arcane Orb.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech">
+              <img class="icon" src="https://wow.zamimg.com/images/wow/icons/large/ability_rogue_sprint.jpg" alt="Sprint icon">
+              <div class="mech-body">
+                <div class="mech-name">Do not panic during Pounding</div>
+                <div class="mech-desc">Melee use personals, healthstones, and steady positioning to survive Pounding instead of scattering through the raid. Ranged keep casting from spread positions while avoiding any incoming orb zones.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Phase 4 · Enrage / clean finish</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech critical">
+              <img class="icon" src="https://wow.zamimg.com/images/wow/icons/large/inv_shield_05.jpg" alt="Shield icon">
+              <div class="mech-body">
+                <div class="mech-name">Keep threat stable</div>
+                <div class="mech-desc">The finish is a clean execution check: keep competing for threat, call dangerous swaps, and prevent Void Reaver from turning into the raid as Knock Away continues to pressure the tank table.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech">
+              <img class="icon" src="https://wow.zamimg.com/images/wow/icons/large/inv_potion_134.jpg" alt="Mana potion icon">
+              <div class="mech-body">
+                <div class="mech-name">Spend mana efficiently</div>
+                <div class="mech-desc">Use cooldowns and mana tools before the raid falls behind. Prioritize tanks, Pounding recovery, and Arcane Orb mistakes so healing errors do not snowball near the kill.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical">
+              <img class="icon" src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_battleshout.jpg" alt="Battle Shout icon">
+              <div class="mech-body">
+                <div class="mech-name">Burn without stealing threat</div>
+                <div class="mech-desc">Void Reaver is simple if the raid avoids orb deaths and respects tank threat. Use cooldowns to finish the boss before healing and threat mistakes stack up, but watch threat during every burn window.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="image-sidebar">
+      <div class="image-card">
+        <div class="image-card-label">Void Reaver spread positioning</div>
+        <div class="image-card-caption">Placeholder for the ranged/healer spread image. Show tank position, melee stack, ranged spread ring, healer spread, and safe Arcane Orb movement.</div>
+      </div>
+      <div class="image-card">
+        <div class="image-card-label">Arcane Orb movement</div>
+        <div class="image-card-caption">Placeholder for Arcane Orb movement reference. Show how targeted players move away from the impact area without crossing through other ranged groups.</div>
+      </div>
+      <div class="reminder-card">
+        <div class="reminder-card-label">Void Reaver wipe causes</div>
+        <ul class="reminder-list">
+          <li>Tanks lose threat after Knock Away and Void Reaver turns into the raid.</li>
+          <li>Ranged stack too tightly and Arcane Orb hits multiple players.</li>
+          <li>Players do not move from Arcane Orb impact zones.</li>
+          <li>Healers fall behind during Pounding.</li>
+          <li>DPS pulls threat early before tanks stabilize.</li>
+          <li>Raid burns mana inefficiently and runs out before the kill.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sheet-footer">Void Reaver · Tempest Keep · raid sheet foundation</div>
+</div>

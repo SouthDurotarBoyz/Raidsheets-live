@@ -1,0 +1,31 @@
+{
+  "id": "gruuls-lair",
+  "name": "Gruul's Lair",
+  "displayName": "Gruul and Magtheridon",
+  "firstBossId": "maulgar",
+  "rosterPage": "roster.html",
+  "guidePage": "maulgar.html",
+  "bosses": [
+    {
+      "id": "maulgar",
+      "name": "High King Maulgar",
+      "shortName": "High King Maulgar",
+      "icon": "assets/shared/markers/boss-icons/maulgar.webp",
+      "page": "maulgar.html"
+    },
+    {
+      "id": "gruul",
+      "name": "Gruul the Dragonkiller",
+      "shortName": "Gruul",
+      "icon": "assets/shared/markers/boss-icons/gruul.webp",
+      "page": "gruul.html"
+    },
+    {
+      "id": "magtheridon",
+      "name": "Magtheridon",
+      "shortName": "Magtheridon",
+      "icon": "assets/shared/markers/boss-icons/magtheridon.svg",
+      "page": "magtheridon.html"
+    }
+  ]
+}

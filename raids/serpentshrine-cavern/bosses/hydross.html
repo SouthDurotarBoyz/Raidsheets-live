@@ -1,0 +1,80 @@
+<div class="sheet">
+  <div class="boss-header">
+    <div class="boss-zone">Serpentshrine Cavern</div>
+    <h1 class="boss-name">Hydross the Unstable</h1>
+  </div>
+
+  <div class="setup-block">
+    <div class="setup-grid">
+      <div class="setup-col setup-col-tanks">
+        <div class="setup-col-label">Tanks</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostarmor02.jpg" alt="Frost resist icon"></span><span class="line-text">Frost tank → <span data-bind="ssc-hydross-frost-resist-tank" data-default="Frost tank" class="role unassigned">Frost tank</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_resistnature.jpg" alt="Nature resist icon"></span><span class="line-text">Nature tank → <span data-bind="ssc-hydross-nature-resist-tank" data-default="Nature tank" class="role unassigned">Nature tank</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span><span class="line-text">Add tank → <span data-bind="ssc-core-off-tank-2" data-default="Add tank" class="role unassigned">Add tank</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Healers</div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-mt-healers" data-default="Frost tank healers">Frost tank healers</span> → <span class="assignment-target" data-target-bind="ssc-hydross-frost-resist-tank">Frost tank</span> <span class="role-label">(Frost Tank)</span></span></div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-ot-healers" data-default="Nature tank healers">Nature tank healers</span> → <span class="assignment-target" data-target-bind="ssc-hydross-nature-resist-tank">Nature tank</span> <span class="role-label">(Nature Tank)</span></span></div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-ot-2-healers" data-default="Add tank healers">Add tank healers</span> → <span class="assignment-target" data-target-bind="ssc-core-off-tank-2">Add tank</span> <span class="role-label">(Add Tank)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healing icon"></span><span class="line-text">Raid → <span class="role unassigned" data-bind-group="ssc-core-raid-healers" data-default="Raid healers">Raid healers</span></span></div>
+      </div>
+      <div class="setup-col setup-col-misdirect-wide">
+        <div class="setup-col-label">Misdirects</div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-mt-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostarmor02.jpg" alt="Frost resist icon"></span> Frost tank → <span class="assignment-target" data-target-bind="ssc-hydross-frost-resist-tank">Frost tank</span></span></div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-ot-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_resistnature.jpg" alt="Nature resist icon"></span> Nature tank → <span class="assignment-target" data-target-bind="ssc-hydross-nature-resist-tank">Nature tank</span></span></div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-ot-2-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span> Add tank → <span class="assignment-target" data-target-bind="ssc-core-off-tank-2">Add tank</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Utility</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt="Curse icon"></span><span class="line-text">Elements → <span class="role unassigned" data-bind="ssc-core-curse-of-elements" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholystrength.jpg" alt="Curse icon"></span><span class="line-text">Recklessness → <span class="role unassigned" data-bind="ssc-core-curse-of-recklessness" data-default="Warlock">Warlock</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-layout">
+    <div class="sheet-content">
+      <div class="header-row"><div class="role-pill role-tank">Tanks</div><div class="role-pill role-healer">Healers</div><div class="role-pill role-dps">DPS</div></div>
+
+      <div class="phase-block"><div class="phase-bar">Phase 1 · Frost form</div><div class="col-grid">
+        <div class="col col-tank"><div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_summonwaterelemental.jpg" alt="Opening pickup"></div><div class="mech-body"><div class="mech-name">Opening pickup</div><div class="mech-desc">Frost tank picks up Hydross. Add tank picks up any adds.</div></div></div><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostbolt02.jpg" alt="Mark of Hydross"></div><div class="mech-body"><div class="mech-name">Mark of Hydross</div><div class="mech-desc">Stacking frost damage taken. 10% → 25% → 50% → 100% → 250% → 500%. One stack every 15s.</div></div></div></div>
+        <div class="col col-healer"><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostbolt02.jpg" alt="Mark of Hydross"></div><div class="mech-body"><div class="mech-name">Mark of Hydross</div><div class="mech-desc">Stacking frost damage taken. 10% → 25% → 50% → 100% → 250% → 500%. One stack every 15s.</div></div></div><div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_stun.jpg" alt="Water Tomb"></div><div class="mech-body"><div class="mech-name">Water Tomb · chains 8y</div><div class="mech-desc">Random target stunned, frost damage chains within 8y. Raid healers cover tomb targets and heal 9s frost DoT after stun breaks.</div></div></div></div>
+        <div class="col col-dps"><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostbolt02.jpg" alt="Mark of Hydross"></div><div class="mech-body"><div class="mech-name">Mark of Hydross</div><div class="mech-desc">Stacking frost damage taken. 10% → 25% → 50% → 100% → 250% → 500%. One stack every 15s.</div></div></div><div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_stun.jpg" alt="Water Tomb"></div><div class="mech-body"><div class="mech-name">Water Tomb · chains 8y</div><div class="mech-desc">Stay spread 8+ yards from raid at all times.</div></div></div><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_cleave.jpg" alt="Adds first"></div><div class="mech-body"><div class="mech-name">Adds first, always</div><div class="mech-desc">Adds are top priority.</div></div></div></div>
+      </div></div>
+
+      <div class="phase-block"><div class="phase-bar">Transition · Frost to nature</div><div class="col-grid">
+        <div class="col col-tank"><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_shieldwall.jpg" alt="Tank swap"></div><div class="mech-body"><div class="mech-name">Tank swap at the line</div><div class="mech-desc">Frost tank walks Hydross to the imaginary line. Nature tank taunts him across.</div></div></div></div>
+        <div class="col col-healer"><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_powerwordshield.jpg" alt="Damage spike"></div><div class="mech-body"><div class="mech-name">Phase Transition Healing</div><div class="mech-desc">The transition causes a lot of raid movement. Threat drop plus adds spawning can cause chaos fast. Focused healing during transition phase is crucial but huge HPS output when tanks do not have threat can wipe the raid. Play smart here.</div></div></div></div>
+        <div class="col col-dps"><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Threat reset"></div><div class="mech-body"><div class="mech-name">Threat resets stop DPS</div><div class="mech-desc">Hard stop and swap to adds once OT has agro. Hunter misdirects onto the Nature tank. Once adds die and tanks are in positions with threat you are safe to DPS Hydross.</div></div></div></div>
+      </div></div>
+
+      <div class="phase-block"><div class="phase-bar">Phase 2 · Poison form</div><div class="col-grid">
+        <div class="col col-tank"><div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_resistnature.jpg" alt="Tank roles flipped"></div><div class="mech-body"><div class="mech-name">Tank roles flipped</div><div class="mech-desc">Nature tank picks up Hydross. Add tank picks up Spawn of Hydross adds.</div></div></div><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_elementalshields.jpg" alt="Mark of Corruption"></div><div class="mech-body"><div class="mech-name">Mark of Corruption</div><div class="mech-desc">Stacking nature damage taken. 10% → 25% → 50% → 100% → 250% → 500%. One stack every 15s.</div></div></div></div>
+        <div class="col col-healer"><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_elementalshields.jpg" alt="Mark of Corruption"></div><div class="mech-body"><div class="mech-name">Mark of Corruption</div><div class="mech-desc">Stacking nature damage taken. 10% → 25% → 50% → 100% → 250% → 500%. One stack every 15s.</div></div></div><div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_corrosivebreath.jpg" alt="Vile Sludge"></div><div class="mech-body"><div class="mech-name">Vile Sludge does not chain</div><div class="mech-desc">Random target. Nature DoT, target takes 50% less healing. Not nearly as bad as Water Tomb.</div></div></div></div>
+        <div class="col col-dps"><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_elementalshields.jpg" alt="Mark of Corruption"></div><div class="mech-body"><div class="mech-name">Mark of Corruption</div><div class="mech-desc">Stacking nature damage taken. 10% → 25% → 50% → 100% → 250% → 500%. One stack every 15s.</div></div></div><div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_corrosivebreath.jpg" alt="Vile Sludge"></div><div class="mech-body"><div class="mech-name">Vile Sludge does NOT chain</div><div class="mech-desc">Random target. Nature dot, target takes a 50% damage debuff. No spread needed for Vile Sludge.</div></div></div><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_cleave.jpg" alt="Adds first"></div><div class="mech-body"><div class="mech-name">Adds first, always</div><div class="mech-desc">Adds are top priority.</div></div></div></div>
+      </div></div>
+
+      <div class="phase-block"><div class="phase-bar">Transition · Poison to frost</div><div class="col-grid">
+        <div class="col col-tank"><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_shieldwall.jpg" alt="Swap reversed"></div><div class="mech-body"><div class="mech-name">Swap reversed</div><div class="mech-desc">Nature tank brings Hydross back across the line. Frost tank taunts. Roles return to opening assignments.</div></div></div></div>
+        <div class="col col-healer"><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_powerwordshield.jpg" alt="Phase Transition Healing"></div><div class="mech-body"><div class="mech-name">Phase Transition Healing</div><div class="mech-desc">The transition causes a lot of raid movement. Threat drop plus adds spawning can cause chaos fast. Focused healing during transition phase is crucial but huge HPS output when tanks do not have threat can wipe the raid. Play smart here.</div></div></div></div>
+        <div class="col col-dps"><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Threat resets stop DPS"></div><div class="mech-body"><div class="mech-name">Threat resets stop DPS</div><div class="mech-desc">Hard stop and swap to adds once OT has agro. Hunter misdirects onto the Frost tank. Once adds die and tanks are in positions with threat you are safe to DPS Hydross.</div></div></div></div>
+      </div></div>
+    </div>
+
+    <div class="image-sidebar">
+      <div class="image-card">
+        <div class="image-card-label">Frost form positioning</div>
+        <img class="positioning-img" src="assets/ssc/bosses/hydross/hydross-frost-positioning.webp" alt="Hydross frost form positioning">
+        <div class="image-card-caption">Frost tank holds Hydross between the pillars. Add tank grabs Spawn of Hydross as they appear. Raid spreads behind boss, 8 yards apart.</div>
+      </div>
+      <div class="image-card">
+        <div class="image-card-label">Poison form positioning</div>
+        <img class="positioning-img" src="assets/ssc/bosses/hydross/hydross-poison-positioning.webp" alt="Hydross poison form positioning">
+        <div class="image-card-caption">Nature tank holds boss past the line. Add tank picks up Spawn of Hydross. Vile Sludge does not chain.</div>
+      </div>
+      <div class="reminder-card"><div class="reminder-card-label">Wipe Causes</div><ul class="reminder-list"><li>DPS rips threat on transition. Dot's from the previous phase can pull enough agro to rip, especially Doom.</li><li>Massive HPS pulls threat on the adds or Hydross during transition.</li><li>Push Mark of Hydross past five stacks and the tank gets one-shot.</li><li>Cluster within 8 yards in Frost form and Water Tomb chain wipes the raid.</li><li>Adds are not controlled and kill raiders.</li></ul></div>
+    </div>
+  </div>
+  <div class="sheet-footer">Hydross the Unstable · Serpentshrine Cavern · raid sheet</div>
+</div>

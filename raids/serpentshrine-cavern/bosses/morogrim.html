@@ -1,0 +1,95 @@
+<div class="sheet">
+  <div class="boss-header">
+    <div class="boss-zone">Serpentshrine Cavern</div>
+    <h1 class="boss-name">Morogrim Tidewalker</h1>
+  </div>
+
+  <div class="setup-block">
+    <div class="setup-grid setup-grid-5">
+      <div class="setup-col setup-col-tanks">
+        <div class="setup-col-label">Tanks</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Morogrim tank → <span class="role unassigned" data-bind="ssc-core-main-tank" data-default="Morogrim tank">Morogrim tank</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span><span class="line-text">North paladin → <span class="role unassigned" data-bind="ssc-morogrim-north-paladin" data-default="North paladin">North paladin</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span><span class="line-text">South paladin → <span class="role unassigned" data-bind="ssc-morogrim-south-paladin" data-default="South paladin">South paladin</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-heading setup-col-label">Healers</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostnova.jpg" alt="Watery Grave icon"></span><span class="line-text">Watery Grave healer(s) → <span class="role unassigned" data-bind-group="ssc-morogrim-watery-grave-healers" data-default="Watery Grave healers">Watery Grave healers</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></span><span class="line-text">Morogrim tank healers → <span class="role unassigned" data-bind-group="ssc-core-mt-healers" data-default="Morogrim tank healers">Morogrim tank healers</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></span><span class="line-text">North paladin healers → <span class="role unassigned" data-bind-group="ssc-core-ot-healers" data-default="North paladin healers">North paladin healers</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></span><span class="line-text">South paladin healers → <span class="role unassigned" data-bind-group="ssc-core-ot-2-healers" data-default="South paladin healers">South paladin healers</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healing icon"></span><span class="line-text">Raid healers → <span class="role unassigned" data-bind-group="ssc-core-raid-healers" data-default="Raid healers">Raid healers</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-heading setup-col-label">Misdirects</div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-mt-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Morogrim tank → <span class="assignment-target" data-target-bind="ssc-core-main-tank"></span></span></div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-ot-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span> North trap → <span class="assignment-target" data-target-bind="ssc-morogrim-north-paladin"></span></span></div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-ot-2-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span> South trap → <span class="assignment-target" data-target-bind="ssc-morogrim-south-paladin"></span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-heading setup-col-label">Utility</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt="Curse icon"></span><span class="line-text">Elements → <span class="role unassigned" data-bind="ssc-core-curse-of-elements" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholystrength.jpg" alt="Curse icon"></span><span class="line-text">Recklessness → <span class="role unassigned" data-bind="ssc-core-curse-of-recklessness" data-default="Warlock">Warlock</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-layout">
+    <div class="sheet-content">
+      <div class="header-row"><div class="role-pill role-tank">Tanks</div><div class="role-pill role-healer">Healers</div><div class="role-pill role-dps">DPS</div></div>
+
+      <div class="phase-block"><div class="phase-bar">Phase 1 · 100% to 25% · Earthquake every ~40s spawns 12 murlocs</div><div class="col-grid">
+        <div class="col col-tank">
+          <div class="mech critical"><div class="icon"><img src="assets/shared/markers/skull.svg" alt="Skull"></div><div class="mech-body"><div class="mech-name">Morogrim faced away from raid</div><div class="mech-desc">Hold Morogrim at the south east pillar by the door, facing him away from the raid so Tidal Wave hits no one.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostbolt02.jpg" alt="Tidal Wave icon"></div><div class="mech-body"><div class="mech-name">Tidal Wave a front cone</div><div class="mech-desc">4–5k frost damage plus 400% attack speed slow for 15s in a frontal cone. Main tank should be the only one hit.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_earthquake.jpg" alt="Earthquake icon"></div><div class="mech-body"><div class="mech-name">Earthquake spawns 12 murlocs</div><div class="mech-desc">Heavy raid AoE damage. Six murlocs come from each entrance; paladins at north and south doorways gather their packs and frost traps slow them.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_divineshield.jpg" alt="Divine Shield icon"></div><div class="mech-body"><div class="mech-name">Paladin divine shield save</div><div class="mech-desc">If a paladin gets Watery Grave during murlocs, Divine Shield drops aggro but saves them. The other paladin or raid AoE covers while they re-establish.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_stone_04.jpg" alt="Healthstone icon"></div><div class="mech-body"><div class="mech-name">Watery Healthstones</div><div class="mech-desc">Use a Healthstone if low after Watery Grave so fall damage does not become fatal.</div></div></div>
+        </div>
+        <div class="col col-healer">
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostnova.jpg" alt="Watery Grave icon"></div><div class="mech-body"><div class="mech-name">Watery Grave · 4 random players</div><div class="mech-desc">Targets are teleported to one of 4 grave spots, stunned 6s, and take roughly 6k frost plus fall damage. Watery Grave healer stands nearby, in range of all 4 spots.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_stone_04.jpg" alt="Healthstone icon"></div><div class="mech-body"><div class="mech-name">Watery Healthstones</div><div class="mech-desc">Use a Healthstone if low after Watery Grave so fall damage does not become fatal.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healing icon"></div><div class="mech-body"><div class="mech-name">After Earthquake watch threat</div><div class="mech-desc">Murlocs will kill healers if massive raid healing rips threat before paladin tanks can corral all 12 murlocs.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></div><div class="mech-body"><div class="mech-name">Extra Healers</div><div class="mech-desc">This is a fight where 6 healing is acceptable. This is SSC's heaviest healing fight, and more healers distribute threat after Earthquake.</div></div></div>
+        </div>
+        <div class="col col-dps">
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_cleave.jpg" alt="AoE icon"></div><div class="mech-body"><div class="mech-name">After earthquake wait for paladins</div><div class="mech-desc">Do not AoE murlocs until both paladins have aggro on their packs. Early AoE rips murlocs and wipes raids.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_chainsofice.jpg" alt="Frost Trap icon"></div><div class="mech-body"><div class="mech-name">Hunters Frost Traps before each Earthquake</div><div class="mech-desc">North hunter drops trap at north door. South hunter drops trap at south door. Traps slow murlocs and give paladins gathering time.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_monsterhead_06.jpg" alt="Murloc icon"></div><div class="mech-body"><div class="mech-name">Murlocs first then boss</div><div class="mech-desc">Switch to murlocs as the paladins establish threat. Boss DPS resumes only after all 12 are dead, murlocs hit hard if left alive.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostbolt02.jpg" alt="Tidal Wave icon"></div><div class="mech-body"><div class="mech-name">Stay out of front cone</div><div class="mech-desc">Only the Morogrim tank should be in front. Tidal Wave plus 400% attack speed slow eats melee that strafe wrong.</div></div></div>
+        </div>
+      </div></div>
+
+      <div class="phase-block"><div class="phase-bar">Phase 2 · 25% to 0% · Tank Moves to Back Corner</div><div class="col-grid">
+        <div class="col col-tank">
+          <div class="mech critical"><div class="icon"><img src="assets/shared/markers/skull.svg" alt="Skull"></div><div class="mech-body"><div class="mech-name">Move boss to southeast corner</div><div class="mech-desc">At 25%, Morogrim tank drags Morogrim to the southeast corner near the entrance. Raid follows. No more Earthquake, Watery Grave, Murlocs from here.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_devotionaura.jpg" alt="Paladin icon"></div><div class="mech-body"><div class="mech-name">Paladins free for boss DPS</div><div class="mech-desc">No more murloc waves. North paladin and South paladin can DPS. Tidal Wave still applies on Morogrim tank.</div></div></div>
+        </div>
+        <div class="col col-healer">
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostnova.jpg" alt="Watery Grave icon"></div><div class="mech-body"><div class="mech-name">Watery Grave healers raid heal</div><div class="mech-desc">No more Watery Grave casts. Watery Grave healer(s) rejoin raid healing in the back corner.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_wisp.jpg" alt="Globule icon"></div><div class="mech-body"><div class="mech-name">If targeted by Globule: kite</div><div class="mech-desc">Whole raid stacks in the back right near the entrance. Globules spawn from waterfalls below; distance gives time for them to despawn before reaching anyone. If one does reach you run away.</div></div></div>
+        </div>
+        <div class="col col-dps">
+          <div class="mech critical"><div class="icon"><img src="assets/shared/markers/star.svg" alt="Star"></div><div class="mech-body"><div class="mech-name">Stack on upper platform</div><div class="mech-desc">Whole raid stacks in the back right near the entrance. Globules spawn from waterfalls below; distance gives time for them to despawn before reaching anyone. If one does reach you run away. They explode for 4–6k frost AoE on contact.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_wisp.jpg" alt="Globule icon"></div><div class="mech-body"><div class="mech-name">If targeted by Globule: kite</div><div class="mech-desc">Four globules spawn from waterfalls below, fixate random players, and approach slowly. They explode for 4–6k frost AoE on contact, run away from raid and let distance despawn them after roughly 30s.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_bloodlust.jpg" alt="Bloodlust icon"></div><div class="mech-body"><div class="mech-name">Bloodlust window</div><div class="mech-desc">25% to 0% is the burn. No murloc interruptions. Pop everything and finish him.</div></div></div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="image-sidebar">
+      <div class="image-card">
+        <div class="image-card-label">Phase 1 · positioning</div>
+        <img class="positioning-img" src="assets/ssc/bosses/morogrim/morogrim-phase-1-positioning.webp" alt="Morogrim phase 1 positioning">
+        <div class="image-card-caption">Morogrim tank holds Morogrim east. Paladin off-tanks at north and south doorways with Frost Traps down. Watery Grave healer stands in range of all four grave spots. Murlocs spawn from doorways, get trapped, and paladins gather.</div>
+      </div>
+      <div class="image-card">
+        <div class="image-card-label">Phase 2 · upper platform</div>
+        <img class="positioning-img" src="assets/ssc/bosses/morogrim/morogrim-phase-2-upper-platform.webp" alt="Morogrim phase 2 upper platform positioning">
+        <div class="image-card-caption">At 25%, Morogrim tank drags Morogrim to the back right near the entrance. Raid stacks behind the boss. Globules spawn from waterfalls below and travel slowly but distance gives them time to despawn. If one does reach you run away. They explode for 4–6k frost AoE on contact.</div>
+      </div>
+      <div class="reminder-card"><div class="reminder-card-label">Morogrim wipe causes · don't</div><ul class="reminder-list"><li>Heal raid before murlocs are tanked — healers pull aggro and die.</li><li>AoE before paladins lock threat — same death, raid-wide.</li><li>Stand in front of Morogrim — Tidal Wave cone reduces attack speed by 400%.</li><li>Forget Frost Trap before Earthquake — murlocs reach raid before paladin gathers.</li><li>Let Water Globule reach the raid — AoE 4–6k frost on everyone close.</li><li>Forget Healthstone after Watery Grave — fall damage finishes you.</li></ul></div>
+    </div>
+  </div>
+  <div class="sheet-footer">Morogrim Tidewalker · Serpentshrine Cavern · raid sheet</div>
+</div>

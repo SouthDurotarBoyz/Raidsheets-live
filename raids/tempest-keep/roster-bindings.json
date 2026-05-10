@@ -1,0 +1,148 @@
+{
+  "groupDefs": {
+    "tk-core-mt-healers": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "MT healer"
+    },
+    "tk-core-ot-healers": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "OT healer"
+    },
+    "tk-core-ot-2-healers": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "OT 2 healer"
+    },
+    "tk-core-ot-3-healers": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "OT 3 healer"
+    },
+    "tk-core-raid-healers": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Raid healer"
+    },
+    "tk-core-mt-misdirect": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "MD"
+    },
+    "tk-core-ot-misdirect": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "MD"
+    },
+    "tk-core-ot-2-misdirect": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "MD"
+    },
+    "tk-core-ot-3-misdirect": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "MD"
+    },
+    "tk-core-kicks": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Kicker"
+    },
+    "tk-core-banish": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Banish"
+    },
+    "tk-alar-add-healers": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Add healer"
+    },
+    "tk-void-reaver-orb-soakers": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Orb soaker"
+    },
+    "tk-void-reaver-kicks": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Kicker"
+    },
+    "tk-solarian-wrath-spread-callers": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Wrath caller"
+    },
+    "tk-solarian-add-tanks": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Add tank"
+    },
+    "tk-solarian-priest-kicks": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Priest kick"
+    },
+    "tk-kaelthas-weapon-tanks": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Weapon tank"
+    },
+    "tk-kaelthas-mind-control-cc": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Mind control CC"
+    }
+  },
+  "singleDefaults": {
+    "tk-core-main-tank": "Main tank",
+    "tk-core-off-tank": "Off tank",
+    "tk-core-off-tank-2": "Off tank 2",
+    "tk-core-off-tank-3": "Off tank 3",
+    "tk-core-curse-of-elements": "Elements",
+    "tk-core-curse-of-recklessness": "Recklessness",
+    "tk-core-curse-of-tongues": "Tongues",
+    "tk-core-decurse": "Decurser",
+    "tk-core-magic-dispel": "Dispel",
+    "tk-alar-platform-1-tank": "Platform 1 tank",
+    "tk-alar-platform-2-tank": "Platform 2 tank",
+    "tk-alar-add-tank": "Add tank",
+    "tk-kaelthas-thaladred-tank": "Thaladred tank",
+    "tk-kaelthas-sanguinar-tank": "Sanguinar tank",
+    "tk-kaelthas-capernian-tank": "Capernian tank",
+    "tk-kaelthas-telonicus-tank": "Telonicus tank",
+    "tk-kaelthas-phoenix-tank": "Phoenix tank",
+    "tk-kaelthas-legendary-staff": "Legendary staff",
+    "tk-kaelthas-legendary-dagger": "Legendary dagger",
+    "tk-kaelthas-legendary-bow": "Legendary bow",
+    "tk-kaelthas-legendary-shield": "Legendary shield"
+  },
+  "singleAliases": {},
+  "groupAliases": {},
+  "groupTargetAliases": {},
+  "groupLabels": {
+    "tk-core-mt-healers": "MT healers",
+    "tk-core-ot-healers": "OT healers",
+    "tk-core-ot-2-healers": "OT 2 healers",
+    "tk-core-ot-3-healers": "OT 3 healers",
+    "tk-core-raid-healers": "Raid healers",
+    "tk-core-mt-misdirect": "MT misdirect",
+    "tk-core-ot-misdirect": "OT misdirect",
+    "tk-core-ot-2-misdirect": "OT 2 misdirect",
+    "tk-core-ot-3-misdirect": "OT 3 misdirect",
+    "tk-core-kicks": "Kicker",
+    "tk-core-banish": "Banish",
+    "tk-alar-add-healers": "Add healer",
+    "tk-void-reaver-orb-soakers": "Orb soaker",
+    "tk-void-reaver-kicks": "Kicker",
+    "tk-solarian-wrath-spread-callers": "Wrath caller",
+    "tk-solarian-add-tanks": "Add tank",
+    "tk-solarian-priest-kicks": "Priest kick",
+    "tk-kaelthas-weapon-tanks": "Weapon tank",
+    "tk-kaelthas-mind-control-cc": "Mind control CC"
+  },
+  "indexAliases": {},
+  "derivedBindings": {}
+}

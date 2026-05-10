@@ -1,0 +1,360 @@
+<div class="sheet">
+<div class="boss-header">
+<div class="boss-zone">Gruul's Lair</div>
+<h1 class="boss-name">High King Maulgar</h1>
+</div>
+<div class="setup-block">
+<div class="setup-grid setup-grid-5">
+<div class="setup-col setup-col-tanks">
+<div class="setup-col-label">Tanks</div>
+<div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Maulgar Tank → <span class="assignment-target" data-target-bind="maulgar-tank"></span></span></div>
+<div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/moon.svg" alt="Moon"></span><span class="line-text">Blindeye Tank → <span class="assignment-target" data-target-bind="blindeye-tank"></span></span></div>
+<div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span><span class="line-text">Olm Tank → <span class="assignment-target" data-target-bind="olm-tank"></span></span></div>
+<div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span><span class="line-text">Krosh Tank → <span class="assignment-target" data-target-bind="mage-tank"></span></span></div>
+<div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/diamond.svg" alt="Diamond"></span><span class="line-text">Kiggler Tank → <span class="assignment-target" data-target-bind="kiggler-tank"></span></span></div>
+</div>
+<div class="setup-col">
+<div class="setup-col-label">Healers</div>
+<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind="maulgar-healer" data-default="Healer">Healer</span> &rarr; <span class="assignment-target" data-target-bind="maulgar-tank"></span> <span class="role-label">(Maulgar Tank)</span></span></div>
+<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind="blindeye-healer" data-default="Healer">Healer</span> &rarr; <span class="assignment-target" data-target-bind="blindeye-tank"></span> <span class="role-label">(Blindeye Tank)</span></span></div>
+<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind="olm-healer" data-default="Healer">Healer</span> &rarr; <span class="assignment-target" data-target-bind="olm-tank"></span> <span class="role-label">(Olm Tank)</span></span></div>
+<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind="mage-tank-healer" data-default="Healer">Healer</span> &rarr; <span class="assignment-target" data-target-bind="mage-tank"></span> <span class="role-label">(Krosh Tank)</span></span></div>
+<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind="kiggler-healer" data-default="Healer">Healer</span> &rarr; <span class="assignment-target" data-target-bind="kiggler-tank"></span> <span class="role-label">(Kiggler Tank)</span></span></div>
+<div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt=""></span><span class="line-text">Raid → <span class="role unassigned" data-bind-group="raid-healers" data-default="Raid healers">Raid healers</span></span></div>
+</div>
+<div class="setup-col">
+<div class="setup-col-label">Misdirects</div>
+<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="md-maulgar" data-default="Hunter">Hunter</span> &rarr; <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Maulgar &rarr; <span class="assignment-target" data-target-bind="maulgar-tank"></span></span></div>
+<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="md-blindeye" data-default="Hunter">Hunter</span> &rarr; <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/moon.svg" alt="Moon"></span> Blindeye &rarr; <span class="assignment-target" data-target-bind="blindeye-tank"></span></span></div>
+<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="md-ot" data-default="Hunter">Hunter</span> &rarr; <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span> Olm &rarr; <span class="assignment-target" data-target-bind="olm-tank"></span></span></div>
+<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="md-kiggler" data-default="Hunter">Hunter</span> &rarr; <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/diamond.svg" alt="Diamond"></span> Kiggler &rarr; <span class="assignment-target" data-target-bind="kiggler-tank"></span></span></div>
+</div>
+<div class="setup-col">
+<div class="setup-col-label">Utility</div>
+<div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt=""></span><span class="line-text">Elements → <span class="role unassigned" data-bind="curse-elements" data-default="Warlock">Warlock</span></span></div>
+<div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholystrength.jpg" alt=""></span><span class="line-text">Recklessness → <span class="role unassigned" data-bind="curse-reck" data-default="Warlock">Warlock</span></span></div>
+<div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_curseoftounges.jpg" alt=""></span><span class="line-text">Tongues → <span class="role unassigned" data-bind="curse-tongues" data-default="Warlock">Warlock</span></span></div>
+<div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_enslavedemon.jpg" alt=""></span><span class="line-text">Enslave → <span class="role unassigned" data-bind="enslave-warlock" data-default="Warlock">Warlock</span></span></div>
+</div>
+<div class="setup-col">
+<div class="setup-col-label">Blindeye kicks</div>
+<div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_kick.jpg" alt=""></span><span class="line-text">Kick 1 → <span class="role unassigned" data-bind="blindeye-kick-1" data-default="Kicker 1">Kicker 1</span></span></div>
+<div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_kick.jpg" alt=""></span><span class="line-text">Kick 2 → <span class="role unassigned" data-bind="blindeye-kick-2" data-default="Kicker 2">Kicker 2</span></span></div>
+<div class="setup-line maulgar-kick-note-line">
+<span class="line-text maulgar-kick-note">Stagger kicks. Break PW:Shield first — uninterruptible while shielded.</span>
+</div>
+</div>
+</div>
+<div class="setup-note">Kill only High King Maulgar while leaving all four adds alive. Tanks hold adds while raid nukes High King Maulgar. When Maulgar dies the entire raid runs out the instance and the adds reset. Once it is safe raid lead will call to enter again.</div>
+</div>
+<div class="main-layout">
+<div class="sheet-content">
+<div class="header-row">
+<div class="role-pill role-tank">Tanks</div>
+<div class="role-pill role-healer">Healers</div>
+<div class="role-pill role-dps">DPS</div>
+</div>
+<!-- ============ PULL ============ -->
+<div class="phase-block">
+<div class="phase-bar">Pull on Mage Tank · Synchronized Misdirect Follows · Lock All Four Adds in Place · Never Split DPS off Maulgar</div>
+<div class="col-grid">
+<div class="col col-tank">
+<div class="mech">
+<div class="icon"><img alt="Pre-position" src="https://wow.zamimg.com/images/wow/icons/large/misc_arrowlup.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Pre-position before pull</div>
+<div class="mech-desc">All 4 tanks at their assigned spots BEFORE pull. <span class="role unassigned" data-bind="kiggler-tank" data-default="Kiggler tank">Kiggler tank</span> in upper-left corner. <span class="role unassigned" data-bind="mage-tank" data-default="Mage tank">Mage tank</span> in right corner. They DO NOT move from these spots the entire fight.</div>
+</div>
+</div>
+<div class="mech">
+<div class="icon"><img alt="Mage" src="https://wow.zamimg.com/images/wow/icons/large/classicon_mage.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Mage Pulls and the raid follows</div>
+<div class="mech-desc"><span class="role unassigned" data-bind-group="md-maulgar" data-default="Hunter">Hunter</span> MDs Maulgar onto <span class="role unassigned" data-bind="maulgar-tank" data-default="Main tank">Main tank</span>. <span class="role unassigned" data-bind-group="md-ot" data-default="Hunter">Hunter</span> MDs Olm onto <span class="role unassigned" data-bind="ot-blindeye-olm" data-default="Off tank">Off tank</span> while he picks ups Blindeye. Both shoot together. Kiggler and Krosh are tanked at range and kept still the entire encounter.</div>
+</div>
+</div>
+<div class="mech critical">
+<div class="icon"><img alt="Stonewall" src="https://wow.zamimg.com/images/wow/icons/large/6or_garrison_stonewall.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Maulgar against the wall</div>
+<div class="mech-desc"><span class="role unassigned" data-bind="maulgar-tank" data-default="Main tank">Main tank</span> faces Maulgar AWAY from raid (Arcing Smash cleaves), back to south west wall (Mighty Blow knockback negated).</div>
+</div>
+</div>
+</div>
+<div class="col col-healer">
+<div class="mech">
+<div class="icon"><img alt="Silence" src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_silence.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Don't heal during MD shot</div>
+<div class="mech-desc">Threat from heals during the first 3-4 seconds will overwrite MD. Wait for tanks to lock aggro before any big healing.</div>
+</div>
+</div>
+<div class="mech">
+<div class="icon"><img alt="Healer lock" src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_blindingheal.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Each healer locks on their tank</div>
+<div class="mech-desc">Healers follow assignments and help other healers if you can get away with it. Minimize healing during initial threat. Tanks need 5s to lock aggro before heals come in.</div>
+</div>
+</div>
+</div>
+<div class="col col-dps">
+<div class="mech">
+<div class="icon"><img alt="Wait" src="https://wow.zamimg.com/images/wow/icons/large/ability_seal.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">DPS waits ~5s after pull</div>
+<div class="mech-desc">Tanks need a moment to lock threat. Hard stop until <span class="role unassigned" data-bind="maulgar-tank" data-default="Main tank">Main tank</span> calls "go." </div>
+</div>
+</div><div class="mech">
+<div class="icon"><img alt="Enslave Demon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_enslavedemon.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name"><span class="role unassigned" data-bind="enslave-warlock" data-default="Warlock">Warlock</span> enslaves Olm's felhunters</div>
+<div class="mech-desc">Olm summons Wild Fel Stalkers throughout the fight. Enslave one to use it's taunt and other ability on Olm; OT cleaves any new ones until the warlock can enslave.</div>
+</div>
+</div>
+<div class="mech critical">
+<div class="icon"><img alt="Sword" src="https://wow.zamimg.com/images/wow/icons/large/inv_sword_04.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">This is a Maulgar first and only strategy</div>
+<div class="mech-desc">Adds will not die. They continue to fight when Maulgar dies. DO NOT split DPS onto and add except cleaving blindeye's shield off. Every GCD on an add aside from blindeye management is wasted.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ============ MAULGAR P1 ============ -->
+<div class="phase-block">
+<div class="phase-bar">Phase 1 · Maulgar 100% → 50% · Maintain Kicks on Blindeye and Enslaves on Demons · Four Adds Must Be Controlled</div>
+<div class="col-grid">
+<div class="col col-tank">
+<div class="mech critical">
+<div class="icon"><img alt="Whirlwind" src="https://wow.zamimg.com/images/wow/icons/large/ability_whirlwind.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Whirlwind · Tank Stays in</div>
+<div class="mech-desc">Maulgar Whirlwinds periodically. Main Tank remains on the boss.</div>
+</div>
+</div>
+<div class="mech">
+<div class="icon"><img alt="Spellsteal" src="https://wow.zamimg.com/images/wow/icons/large/spell_arcane_arcane02.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Mage tank spellsteals Spell Shield</div>
+<div class="mech-desc"><span class="role unassigned" data-bind="mage-tank" data-default="Mage tank">Mage tank</span> spellsteals Krosh's Spell Shield for fire damage absorb. Stay in corner.</div>
+</div>
+</div>
+<div class="mech">
+<div class="icon"><img alt="Hex" src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_polymorph.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Kiggler Hex on tank</div>
+<div class="mech-desc">Kiggler hexes the highest-threat target periodically (drops aggro). <span class="role unassigned" data-bind="kiggler-tank" data-default="Kiggler tank">Kiggler tank</span> is moonkin (immune) OR 2 hunters rotating threat.</div>
+</div>
+</div>
+<div class="mech">
+<div class="icon"><img alt="Shield" src="https://wow.zamimg.com/images/wow/icons/large/inv_shield_06.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Off tank holds Blindeye + Olm</div>
+<div class="mech-desc"><span class="role unassigned" data-bind="ot-blindeye-olm" data-default="Off tank">Off tank</span> stacks both adds on the same spot. Death Coil + Olm's felhunter spawns hit raid intermittently. OT cleaves felhunters as they pop.</div>
+</div>
+</div>
+</div>
+<div class="col col-healer">
+<div class="mech">
+<div class="icon"><img alt="Healer cooldowns" src="https://wow.zamimg.com/images/wow/icons/large/ability_priest_holywordlife.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Healer cooldowns NOW</div>
+<div class="mech-desc">Save nothing for "later" — this IS later. Innervates, mana pots, racials. Race the kill.</div>
+</div>
+</div>
+<div class="mech">
+<div class="icon"><img alt="Blast Wave" src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_ragnaros_supernova.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Stay 15y+ from Krosh</div>
+<div class="mech-desc">15-yard fire AoE. Stay 15y+ from Krosh. Mage tank takes the hit; <span class="role unassigned" data-bind="mage-tank-healer" data-default="Healer">Mage tank healer</span> stays in range to heal them but outside Blast Wave.</div>
+</div>
+</div>
+<div class="mech">
+<div class="icon"><img alt="Death Coil" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_deathcoil.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Death Coil on raid</div>
+<div class="mech-desc">Olm Death Coils periodically — heavy single-target damage. <span class="role unassigned" data-bind-group="raid-healers" data-default="Raid healers">Raid healers</span> watch raid frames closely.</div>
+</div>
+</div>
+<div class="mech">
+<div class="icon"><img alt="Lightning" src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_lightning.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Kiggler Lightning Bolts</div>
+<div class="mech-desc">Kiggler casts Lightning Bolts on highest-threat (his tank) and AoE Greater Polymorph: Frog. Polymorphed players are out of the fight 6s — healers spot them.</div>
+</div>
+</div>
+</div>
+<div class="col col-dps">
+<div class="mech critical">
+<div class="icon"><img alt="Bloodlust" src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_bloodlust.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Bloodlust + cooldowns</div>
+<div class="mech-desc">Pop everything. Trinkets, racials, potions, BL. Maulgar 50→0 should take ~30 seconds — longer = increasing risk of fear/charge overlap kills.</div>
+</div>
+</div>
+<div class="mech critical">
+<div class="icon"><img alt="Kick" src="https://wow.zamimg.com/images/wow/icons/large/ability_kick.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Kicks on Blindeye Greater Heal</div>
+<div class="mech-desc"><span class="role unassigned" data-bind="blindeye-kick-1" data-default="Kicker 1">Kicker 1</span> and <span class="role unassigned" data-bind="blindeye-kick-2" data-default="Kicker 2">Kicker 2</span> stagger interrupts on Greater Heal. Power World: Shield blocks kicks  so raid burns it off with cleave.</div>
+</div>
+</div>
+<div class="mech">
+<div class="icon"><img alt="Blast Wave" src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_ragnaros_supernova.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Stay 15y+ from Krosh</div>
+<div class="mech-desc">Blast Wave hits anyone within 15y. Position raid central or south — far from Krosh's right corner.</div>
+</div>
+</div>
+<div class="mech">
+<div class="icon"><img alt="Whirlwind" src="https://wow.zamimg.com/images/wow/icons/large/ability_whirlwind.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Run out on Whirlwind</div>
+<div class="mech-desc">Melee disengage when Maulgar Whirlwinds. Re-engage after — 25-35s safe window before next.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ============ MAULGAR P2 ============ -->
+<div class="phase-block">
+<div class="phase-bar">Phase 2 · Maulgar 50% → 0% · Flurry + Charge + Intimidating Roar · Healers Lock In</div>
+<div class="col-grid">
+<div class="col col-tank">
+<div class="mech critical">
+<div class="icon"><img alt="Shield Wall" src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_shieldwall.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Flurry at 50%</div>
+<div class="mech-desc">Maulgar's damage spikes hard. <span class="role unassigned" data-bind="maulgar-tank" data-default="Main tank">Main tank</span> rotates defensives: Shield Wall, Shield Block, trinkets.</div>
+</div>
+</div>
+<div class="mech critical">
+<div class="icon"><img alt="Charge" src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_charge.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Maulgar can charge into the raid</div>
+<div class="mech-desc">Maulgar charges, stuns, leaves MT. <span class="role unassigned" data-bind="ot-blindeye-olm" data-default="Off tank">Off tank</span> must move the boss back into position out of the raid to stop whirlwind from wiping the raid.</div>
+</div>
+</div>
+<div class="mech">
+<div class="icon"><img alt="Roar" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_psychicscream.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Intimidating Roar (fear)</div>
+<div class="mech-desc">Stuns MT, fears nearby raid for ~4s. <span class="role unassigned" data-bind="maulgar-tank" data-default="Main tank">Main tank</span> stance-dances or trinkets out. Tremor Totem if available.</div>
+</div>
+</div>
+<div class="mech">
+<div class="icon"><img alt="Shield" src="https://wow.zamimg.com/images/wow/icons/large/inv_shield_06.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Other 3 tanks: hold the line</div>
+<div class="mech-desc">Kiggler, Krosh, Blindeye/Olm tanks keep doing what they were doing. Their adds will despawn when Maulgar dies.</div>
+</div>
+</div>
+</div>
+<div class="col col-healer">
+<div class="mech critical">
+<div class="icon"><img alt="Rampage" src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_rampage.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">MT damage doubles</div>
+<div class="mech-desc">Flurry phase. <span class="role unassigned" data-bind="maulgar-healer" data-default="MT healer">MT healer</span> tunnel heals. Other healers chip in if their tank is stable.</div>
+</div>
+</div>
+<div class="mech">
+<div class="icon"><img alt="Stun" src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_stun.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Charge stuns the target</div>
+<div class="mech-desc">When Maulgar charges someone, they're stunned + take damage. <span class="role unassigned" data-bind-group="raid-healers" data-default="Raid healers">Raid healers</span> instant-cast on charge target.</div>
+</div>
+</div>
+</div>
+<div class="col col-dps">
+<div class="mech critical">
+<div class="icon"><img alt="Sword" src="https://wow.zamimg.com/images/wow/icons/large/inv_sword_04.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">EVERY DPS ON MAULGAR</div>
+<div class="mech-desc">No exceptions. Adds are tank-locked — do not assist on them. Burn Maulgar from 100 to 50 as fast as possible.</div>
+</div>
+</div>
+<div class="mech">
+<div class="icon"><img alt="Kick" src="https://wow.zamimg.com/images/wow/icons/large/ability_kick.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Kicks still mandatory</div>
+<div class="mech-desc">Blindeye's Greater Heal during Phase 2 = wipe. Kickers do not let up. Don't let dying-Maulgar get healed back to 60%.</div>
+</div>
+</div>
+<div class="mech">
+<div class="icon"><img alt="Whirlwind" src="https://wow.zamimg.com/images/wow/icons/large/ability_whirlwind.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Whirlwind + Charge overlap</div>
+<div class="mech-desc">If Maulgar Whirlwinds right after Charging into the raid, casters can die instantly. Spread out, don't cluster.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ============ POST-KILL ============ -->
+<div class="phase-block">
+<div class="phase-bar">Maulgar Dies · Adds Continue Fighting · Everyone Runs OUT of the Instance</div>
+<div class="col-grid">
+<div class="col col-tank">
+<div class="mech">
+<div class="icon"><img alt="Sprint" src="https://wow.zamimg.com/images/wow/icons/large/ability_rogue_sprint.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Adds keep fighting</div>
+<div class="mech-desc">When High King Maulgar dies, all four adds continue the encounter. Maintain threat and run them to the door as the raid escapes. If you are tanking Kiggler or Krosh hold them until as many of the raiders escape as possible. One you are outside raid lead will call when it is safe to enter again.</div>
+</div>
+</div>
+</div>
+<div class="col col-healer">
+<div class="mech">
+<div class="icon"><img alt="Sprint" src="https://wow.zamimg.com/images/wow/icons/large/ability_rogue_sprint.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Run out the instance entrance</div>
+<div class="mech-desc">Whole raid runs back to the instance portal and exits. Keep healing tanks and raiders as they flee toward the portal. If the tanks die they will start to one shot everyone running out. Don't stop healing as you run out. Once you exit raid lead will call when it is safe to enter again.</div>
+</div>
+</div>
+</div>
+<div class="col col-dps">
+<div class="mech">
+<div class="icon"><img alt="Sprint" src="https://wow.zamimg.com/images/wow/icons/large/ability_rogue_sprint.jpg"/></div>
+<div class="mech-body">
+<div class="mech-name">Run out immediately</div>
+<div class="mech-desc">When High King Maulgar dies run out of the instance and disregard all of the adds. Sprint out as fast as possible. Raid lead will call when it is safe to enter again.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="image-sidebar">
+<div class="image-card">
+<div class="image-card-label">Pre-pull positions</div>
+<img alt="High King Maulgar pre-pull positioning" class="positioning-img" src="assets/gruul/bosses/maulgar/pre-pull.png"/>
+<div class="image-card-caption">All 4 tanks pre-positioned. Kiggler tank in upper-left (do not move). Mage tank in right corner (do not move). MT pulls Maulgar south against the wall. OT pulls Blindeye + Olm to the left side.</div>
+</div>
+<div class="image-card">
+<div class="image-card-label">During the fight</div>
+<img alt="High King Maulgar in-fight positioning" class="positioning-img" src="assets/gruul/bosses/maulgar/raid-position.png"/>
+<div class="image-card-caption">Each tank/healer pair is locked into their position. Raid clusters south of Maulgar (out of Blast Wave from Krosh, away from Kiggler corner). Melee runs out on Whirlwind, returns when safe.</div>
+</div>
+<div class="reminder-card">
+<div class="reminder-card-label">Wipe Causes</div>
+<ul class="reminder-list">
+<li>Hunter arcane shots Krosh and purges the same shield the mage tank needs to spellsteal to survive.</li>
+<li>Split DPS to an add wasting valueable GCDs that should be on Maulgar.</li>
+<li>Miss a kick on Blindeye's Greater Heal and he heals for 30%.</li>
+<li>Raid fails to clear Blindeye's Power Word: Shield making him kick immune.</li>
+<li>Standing in front of Maulgar's cleave.</li>
+<li>Standing within 15y of Krosh will trigger a blast wave that can one shot.</li>
+<li>Standing within 15y of Kiggler triggering arcane explosion.</li>
+<li>Tanks and warlocks not picking up demons that then kill healers.</li>
+<li>Melee stays in for whirlwind taking 7k+ on plate and instant death on cloth.</li>
+<li>Maulgar charges the raid in P2, tanks do not relocate him and whirlwinds the raid to death.</li>
+<li>Kiggler tank moves out of corner and Kiggler walks into raid, AoE damage everywhere.</li>
+<li>Krosh tank moves out of corner and Krosh walks into raid, Blast Wave one shots most.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sheet-footer">High King Maulgar · Gruul's Lair · raid sheet template</div>
+</div>

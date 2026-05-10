@@ -1,0 +1,113 @@
+<div class="sheet">
+  <div class="boss-header">
+    <div class="boss-zone">Serpentshrine Cavern</div>
+    <h1 class="boss-name">The Lurker Below</h1>
+  </div>
+
+  <div class="setup-block">
+    <div class="setup-grid">
+      <div class="setup-col setup-col-tanks">
+        <div class="setup-col-label">Tanks</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Main tank → <span class="role unassigned" data-bind="ssc-core-main-tank" data-default="Main tank">Main tank</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span><span class="line-text">Off tank → <span class="role unassigned" data-bind="ssc-core-off-tank" data-default="Off tank">Off tank</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Healers</div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-mt-healers" data-default="Main tank healers">Main tank healers</span> → <span class="assignment-target" data-target-bind="ssc-core-main-tank">Main tank</span> <span class="role-label">(Main Tank)</span></span></div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-ot-healers" data-default="Off tank healers">Off tank healers</span> → <span class="assignment-target" data-target-bind="ssc-core-off-tank">Off tank</span> <span class="role-label">(Off Tank)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healing icon"></span><span class="line-text">Raid → <span class="role unassigned" data-bind-group="ssc-core-raid-healers" data-default="Raid healers">Raid healers</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Platforms / CC</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/star.svg" alt="Star"></span><span class="line-text">Platform 1 → <span class="role unassigned" data-bind-group="ssc-lurker-platform-1-assignments" data-default="Platform 1">Platform 1</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/circle.svg" alt="Circle"></span><span class="line-text">Platform 2 → <span class="role unassigned" data-bind-group="ssc-lurker-platform-2-assignments" data-default="Platform 2">Platform 2</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/diamond.svg" alt="Diamond"></span><span class="line-text">Platform 3 → <span class="role unassigned" data-bind-group="ssc-lurker-platform-3-assignments" data-default="Platform 3">Platform 3</span></span></div>
+      </div>
+      <div class="setup-col setup-col-misdirect-wide">
+        <div class="setup-col-label">Misdirects</div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-mt-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> main tank → <span class="assignment-target" data-target-bind="ssc-core-main-tank">Main tank</span></span></div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-ot-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span> <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span> off tank → <span class="assignment-target" data-target-bind="ssc-core-off-tank">Off tank</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Utility</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt="Curse icon"></span><span class="line-text">Elements → <span class="role unassigned" data-bind="ssc-core-curse-of-elements" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholystrength.jpg" alt="Curse icon"></span><span class="line-text">Recklessness → <span class="role unassigned" data-bind="ssc-core-curse-of-recklessness" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_curseoftounges.jpg" alt="Curse icon"></span><span class="line-text">Tongues → <span class="role unassigned" data-bind="ssc-core-curse-of-tongues" data-default="Warlock">Warlock</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-layout">
+    <div class="sheet-content">
+      <div class="header-row"><div class="role-pill role-tank">Tanks</div><div class="role-pill role-healer">Healers</div><div class="role-pill role-dps">DPS</div></div>
+
+      <div class="phase-block"><div class="phase-bar">Phase 1 · Combat (~90 seconds)</div><div class="col-grid">
+        <div class="col col-tank">
+          <div class="mech critical"><div class="icon"><img src="assets/shared/markers/skull.svg" alt="Skull"></div><div class="mech-body"><div class="mech-name">Main Tank Positioning</div><div class="mech-desc">Main Tank must stay in Lurker's hitbox. Lurker will cast Water Bolt that one-shots cloth if no one is in range.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_shieldbash.jpg" alt="Whirl recovery icon"></div><div class="mech-body"><div class="mech-name">Whirl recovery is critical</div><div class="mech-desc">Whirl knocks the tank back. Main Tank can walk forward into the water before it hits to get knocked back onto the platform instead of away. If you get knocked run back in immediately.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_summonwaterelemental.jpg" alt="Spout icon"></div><div class="mech-body"><div class="mech-name">Spout</div><div class="mech-desc">You will see, "takes a deep breath" before Spout. This is the warning. Rotate around the boss avoiding the beam and continue building threat in melee. After Spout ends, expect an immediate Whirl.</div></div></div>
+        </div>
+        <div class="col col-healer">
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_cleave.jpg" alt="Whirl icon"></div><div class="mech-body"><div class="mech-name">Whirl</div><div class="mech-desc">Roughly 3500 physical to everyone in melee. Heavy main tank pressure, keep the main tank topped between knockbacks.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_summonwaterelemental.jpg" alt="Spout icon"></div><div class="mech-body"><div class="mech-name">Spout</div><div class="mech-desc">You will see, "takes a deep breath" before Spout. This is the warning. Jump into the water and let it pass overhead, you can still heal underwater. Anyone caught takes huge damage and a knockback. Heal clipped raiders fast, they will take burn damage swimming back and they may land out of line of sight.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_manarecharge.jpg" alt="Geyser icon"></div><div class="mech-body"><div class="mech-name">Geyser</div><div class="mech-desc">Random target AoE knockup within 10 yards. Do not group too close and top off affected players.</div></div></div>
+        </div>
+        <div class="col col-dps">
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_wispsplode.jpg" alt="Spout warning icon"></div><div class="mech-body"><div class="mech-name">Spout</div><div class="mech-desc">You will see, "takes a deep breath" before Spout. This is the warning. Melee rotate around the boss avoiding the beam. Ranged jump into the water and let it pass overhead, you can still DPS underwater. If you go into the water you will take burn damage, don't stay too long. React immediately, every time.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_charge.jpg" alt="Charge icon"></div><div class="mech-body"><div class="mech-name">Whirl</div><div class="mech-desc">Melee knocked back must get back fast. Save Intercept, Charge, or Feral Charge for this.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_manarecharge.jpg" alt="Geyser icon"></div><div class="mech-body"><div class="mech-name">Stay spread 10 yards</div><div class="mech-desc">Geyser hits everyone within 10 yards of the target.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_battleshout.jpg" alt="Threat icon"></div><div class="mech-body"><div class="mech-name">Ranged cannot rip threat</div><div class="mech-desc">Lurker has threat in melee range only. Ranged do not need to watch their threat here, if all melee die Lurker will then begin to Water Bolt Ranged.</div></div></div>
+        </div>
+      </div></div>
+
+      <div class="phase-block"><div class="phase-bar">Phase 2 · Submerged (60 seconds)</div><div class="col-grid">
+        <div class="col col-tank">
+          <div class="mech critical"><div class="icon"><img src="assets/shared/markers/cross.svg" alt="Cross"></div><div class="mech-body"><div class="mech-name">Both tanks on center platform</div><div class="mech-desc">Main tank and off tank both stay on the central platform. Kill adds, Guardians, spawn around the ring and path inward from outer platforms toward center.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_defensivestance.jpg" alt="Pickup icon"></div><div class="mech-body"><div class="mech-name">Split center pickups</div><div class="mech-desc">Main tank takes single Guardian by Platform Three and tanks by the edge of the platform for ranged to hit. Off Tank takes two Guardians by Platforms One and Two then tanks them nearby so ranged can attack.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_summonwaterelemental.jpg" alt="Emerge icon"></div><div class="mech-body"><div class="mech-name">Main tank ready for emerge</div><div class="mech-desc">Lurker resurfaces at 60 seconds. Main tank must finish adds and reposition fast, the first Spout fires roughly 5 seconds after emerge.</div></div></div>
+        </div>
+        <div class="col col-healer">
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></div><div class="mech-body"><div class="mech-name">Both Tanks On Adds</div><div class="mech-desc">Main tank and off tank both take damage on center platform. Main tank healers and off tank healers stay center to cover both. Outer platforms are covered by raid healers.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_rapidkilling.jpg" alt="Multi-shot icon"></div><div class="mech-body"><div class="mech-name">Ambusher multi-shot</div><div class="mech-desc">Coilfang Ambushers hit outer platforms with multi-shot damage. Make sure outer platforms have heal coverage.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_flashheal.jpg" alt="Pre-cast icon"></div><div class="mech-body"><div class="mech-name">Damage spike on emerge</div><div class="mech-desc">Lurker comes back with an instant Whirl into Spout. Be ready to heal Main tank and any melee taking damage from the whirl.</div></div></div>
+        </div>
+        <div class="col col-dps">
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_cleave.jpg" alt="Adds icon"></div><div class="mech-body"><div class="mech-name">Nine adds in 60 seconds</div><div class="mech-desc">Six Coilfang Ambushers, two per outer platform, and three Coilfang Guardians on center. Hard timer means any not killed continue fighting into Lurker's emerge.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="assets/shared/markers/skull.svg" alt="Skull"></div><div class="mech-body"><div class="mech-name">Each outer platform: Kills both adds</div><div class="mech-desc">Each platform is assigned a CC marker. The DPS on their platforms use their marker to signal which mob is CC'd by that group. Once the ambushers arrive on each platform DPS mark one with their group's marker. The unmarked ambusher dies first while each ranged group maintains CC on the marked ambusher. Once one unmarked ambusher dies ranged turn on the central platform guardian add. Once the guardian is dead, ranged finish their marked CC. The kill order for ranged in this phase is Unmarked Ambusher, Guardian, Marked CC'd Ambusher.</div></div></div>
+          <div class="mech"><div class="icon"><img src="assets/shared/markers/cross.svg" alt="Cross"></div><div class="mech-body"><div class="mech-name">Melee on guardians</div><div class="mech-desc">Both tanks hold guardian adds in the center while melee burns them down. Guardians can cleave for massive damage so stay behind them. Use stuns to help the tanks.</div></div></div>
+          <div class="mech"><div class="icon"><img src="assets/shared/markers/star.svg" alt="Star"></div><div class="mech-body"><div class="mech-name">Stay on your assigned platform</div><div class="mech-desc">Do not drift between outer platforms.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_rogue_feigndeath.jpg" alt="Stop icon"></div><div class="mech-body"><div class="mech-name">Watch your threat</div><div class="mech-desc">Hold off on Lurker for a few globals when he resurfaces and let the main tank get threat before first Spout.</div></div></div>
+        </div>
+      </div></div>
+
+      <div class="phase-block"><div class="phase-bar">Lurker resurfaces · Phase 1 repeats</div></div>
+
+    </div>
+
+    <div class="image-sidebar">
+      <div class="image-card">
+        <div class="image-card-label">Phase 1 positioning</div>
+        <img class="positioning-img" src="assets/ssc/bosses/lurker/lurker-phase-1-positioning.webp" alt="Lurker phase 1 positioning">
+        <div class="image-card-caption">Center platform: melee and main tank on Lurker. Outer platforms: ranged spread. Do not stand within 10 yards of another raider — Geyser hits everyone in range.</div>
+      </div>
+
+      <div class="image-card">
+        <div class="image-card-label">Phase 2 add positioning</div>
+        <img class="positioning-img" src="assets/ssc/bosses/lurker/lurker-phase-2-adds.webp" alt="Lurker phase 2 add positioning">
+        <div class="image-card-caption">Both tanks on center platform holding their adds. Each outer platform kills the marked add while CCers hold the second. Ranged then helps melee with guardians before finishing their marked add.</div>
+      </div>
+
+      <div class="reminder-card">
+        <div class="reminder-card-label">Wipe causes</div>
+        <ul class="reminder-list">
+          <li>Tank leaves melee range.</li>
+          <li>Spout knocks back raiders causing damage and far knockback into burning water.</li>
+          <li>Ambusher CC breaks or is not applied on a platform, that platform wipes.</li>
+          <li>DPS Lurker before main tank locks threat on emerge.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sheet-footer">The Lurker Below · Serpentshrine Cavern · raid sheet</div>
+</div>

@@ -1,0 +1,126 @@
+<div class="sheet">
+  <div class="boss-header">
+    <div class="boss-zone">Serpentshrine Cavern</div>
+    <h1 class="boss-name">Leotheras the Blind</h1>
+  </div>
+
+  <div class="setup-block">
+    <div class="setup-grid">
+      <div class="setup-col setup-col-tanks">
+        <div class="setup-col-label">Tanks</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Humanoid Tank → <span class="role unassigned" data-bind="ssc-core-main-tank" data-default="Humanoid Tank">Humanoid Tank</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_firearmor.jpg" alt="Fire resist icon"></span><span class="line-text">Demon tank → <span class="role unassigned" data-bind="ssc-leotheras-demon-tank" data-default="Demon tank">Demon tank</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span><span class="line-text">Off tank → <span class="role unassigned" data-bind="ssc-core-off-tank" data-default="Off tank">Off tank</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Healers</div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-mt-healers" data-default="Main tank healer(s)">Main tank healer(s)</span> → <span class="assignment-target" data-target-bind="ssc-core-main-tank">Main tank</span> <span class="role-label">(Humanoid Tank)</span></span></div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="ssc-leotheras-demon-tank-healers" data-default="Demon tank healer(s)">Demon tank healer(s)</span> → <span class="assignment-target" data-target-bind="ssc-leotheras-demon-tank">Demon tank</span> <span class="role-label">(Demon Tank)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healing icon"></span><span class="line-text">Raid → <span class="role unassigned" data-bind-group="ssc-core-raid-healers" data-default="Raid healers">Raid healers</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Misdirects</div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-mt-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Humanoid Tank → <span class="assignment-target" data-target-bind="ssc-core-main-tank">Humanoid Tank</span></span></div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-ot-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_firearmor.jpg" alt="Fire resist icon"></span> Demon tank → <span class="assignment-target" data-target-bind="ssc-leotheras-demon-tank">Demon tank</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Utility</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt="Curse icon"></span><span class="line-text">Elements → <span class="role unassigned" data-bind="ssc-core-curse-of-elements" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholystrength.jpg" alt="Curse icon"></span><span class="line-text">Recklessness → <span class="role unassigned" data-bind="ssc-core-curse-of-recklessness" data-default="Warlock">Warlock</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-layout">
+    <div class="sheet-content">
+      <div class="header-row"><div class="role-pill role-tank">Tanks</div><div class="role-pill role-healer">Healers</div><div class="role-pill role-dps">DPS</div></div>
+
+      <div class="phase-block"><div class="phase-bar">Phase 1 · Humanoid Form (~45 seconds)</div><div class="col-grid">
+        <div class="col col-tank">
+          <div class="mech critical"><div class="icon"><img src="assets/shared/markers/skull.svg" alt="Skull"></div><div class="mech-body"><div class="mech-name">MT on Leotheras</div><div class="mech-desc">Main tank holds boss. Off tank ready for Whirlwind reset. Leotheras is immune to taunt.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_whirlwind.jpg" alt="Whirlwind icon"></div><div class="mech-body"><div class="mech-name">Whirlwind drops threat</div><div class="mech-desc">After every Whirlwind, threat is reset. Burst threat immediately when it ends.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_charge.jpg" alt="Charge icon"></div><div class="mech-body"><div class="mech-name">Whirlwind positioning</div><div class="mech-desc">Leotheras targets a random player and spins toward them. Reposition if you're targeted or in between; otherwise stay still.</div></div></div>
+        </div>
+        <div class="col col-healer">
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_deepcuts.jpg" alt="Bleed icon"></div><div class="mech-body"><div class="mech-name">Whirlwind bleed DoT</div><div class="mech-desc">Anyone hit takes heavy damage and a bleed DoT. Only Divine Shield, Blessing of Protection, or Ice Block remove the DoT. Heal through it otherwise.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholyfrenzy.jpg" alt="Threat icon"></div><div class="mech-body"><div class="mech-name">Watch threat after Whirlwind</div><div class="mech-desc">Threat resets. If you heal too aggressively before tank locks aggro, Leotheras turns to you. Pause heals briefly.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></div><div class="mech-body"><div class="mech-name">Pre-position for transition</div><div class="mech-desc">Demon Form starts after ~45s. Demon tank healers prep cooldowns, Chaos Blast ramps fast.</div></div></div>
+        </div>
+        <div class="col col-dps">
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_rogue_feint.jpg" alt="Threat drop icon"></div><div class="mech-body"><div class="mech-name">Stop DPS before Whirlwind ends</div><div class="mech-desc">Threat resets when Whirlwind finishes channeling. Stop attacks and dots before it ends or you rip threat.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_rogue_sprint.jpg" alt="Sprint icon"></div><div class="mech-body"><div class="mech-name">Stay spread, run if targeted</div><div class="mech-desc">Ranged spread out. If Leotheras spins toward you, run far enough that he loses interest and picks a new target. If you are in the path of Leotheras spinning, move out the way.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_whirlwind.jpg" alt="Whirlwind icon"></div><div class="mech-body"><div class="mech-name">Melee disengage on Whirlwind</div><div class="mech-desc">Get out of melee the instant Whirlwind starts.</div></div></div>
+        </div>
+      </div></div>
+
+      <div class="phase-block"><div class="phase-bar">Transition · Humanoid to Demon Form</div><div class="col-grid">
+        <div class="col col-tank"><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_firearmor.jpg" alt="Fire resist icon"></div><div class="mech-body"><div class="mech-name">Demon tank takes Leo</div><div class="mech-desc">Demon tank pulls Demon Leotheras away to the right area. Distance keeps Chaos Blast splash off the raid.</div></div></div></div>
+        <div class="col col-healer"><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></div><div class="mech-body"><div class="mech-name">Switch to Demon tank healing</div><div class="mech-desc">Demon tank healers on Demon tank. Each Chaos Blast hits harder than the last. Stack heals and shields. Trinkets and cooldowns at six to eight stacks and beyond is best.</div></div></div></div>
+        <div class="col col-dps"><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></div><div class="mech-body"><div class="mech-name">Threat Reset</div><div class="mech-desc">Hard stop on DPS dots should stop sooner. Misdirect onto Demon tank. Resume DPS only when demon tank has threat.</div></div></div></div>
+      </div></div>
+
+      <div class="phase-block"><div class="phase-bar">Phase 2 · Demon Form (~60 seconds)</div><div class="col-grid">
+        <div class="col col-tank">
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_fireball02.jpg" alt="Chaos Blast icon"></div><div class="mech-body"><div class="mech-name">Chaos Blast on Demon tank</div><div class="mech-desc">Stacking fire damage debuff. Damage starts low, ramps to lethal. Demon tank survives roughly 12–14 stacks before death, the phase ends well before that. Mitigation is best saved for high damage ramp.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="assets/shared/markers/cross.svg" alt="Cross"></div><div class="mech-body"><div class="mech-name">Tank Demon away from raid</div><div class="mech-desc">Demon tank holds Leotheras on the right area, well away from the left side where the raid sits. Chaos Blast splashes nearby targets for massive damage, distance keeps melee safe. If Demon Tank is melee max range for the tank and melee dps creates enough space for safe DPS.</div></div></div>
+        </div>
+        <div class="col col-healer">
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_flashheal.jpg" alt="Fast healing icon"></div><div class="mech-body"><div class="mech-name">Demon tank damage ramps fast</div><div class="mech-desc">Each Chaos Blast hits harder than the last. Stack heals and shields. Trinkets and cooldowns at six to eight stacks and beyond is best.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_mindtwisting.jpg" alt="Inner Demon icon"></div><div class="mech-body"><div class="mech-name">Insidious Whispers - Kill your Inner Demon</div><div class="mech-desc">About 25 seconds into phase, five random non-aggro players get Insidious Whisper. If you're targeted, switch off the boss and kill your own demon immediately. No one else can damage it for you. If you fail to kill it in time you will be mind controlled for ten minutes.</div></div></div>
+        </div>
+        <div class="col col-dps">
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_mindtwisting.jpg" alt="Insidious Whisper icon"></div><div class="mech-body"><div class="mech-name">Insidious Whispers - Kill your Inner Demon</div><div class="mech-desc">About 25 seconds into phase, five random non-aggro players get Insidious Whisper. If you're targeted, switch off the boss and kill your own demon immediately. No one else can damage it for you. If you fail to kill it in time you will be mind controlled for ten minutes.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_metamorphosis.jpg" alt="Demon icon"></div><div class="mech-body"><div class="mech-name">Demon Form Pump</div><div class="mech-desc">Demon Form damage is mostly tank-only. Free DPS window to burn the boss while watching for Inner Demon.</div></div></div>
+        </div>
+      </div></div>
+
+      <div class="phase-block"><div class="phase-bar">Transition · Demon to Humanoid Form</div><div class="col-grid">
+        <div class="col col-tank"><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_sunder.jpg" alt="Sunder icon"></div><div class="mech-body"><div class="mech-name">Main tank bursts threat</div><div class="mech-desc">After demon form Leotheras transitions back to human. Tanks must burst threat and pick up agro quickly. Leotheras cannot be taunted. Cycles back to phase one humanoid Leotheras mechanics.</div></div></div></div>
+        <div class="col col-healer">
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></div><div class="mech-body"><div class="mech-name">Switch back to main tank healing</div><div class="mech-desc">Drop Demon tank focus. Cycles back to phase one humanoid Leotheras mechanics. Humanoid and Demon switch every 45–60s until 15% HP.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_mindtwisting.jpg" alt="Inner Demon icon"></div><div class="mech-body"><div class="mech-name">Verify ALL Inner Demons dead first</div><div class="mech-desc">If any Inner Demon is still alive when Leotheras returns to humanoid, that player is Mind Controlled for 10 minutes. Confirm all five are dead before transition.</div></div></div>
+        </div>
+        <div class="col col-dps"><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></div><div class="mech-body"><div class="mech-name">Threat Reset</div><div class="mech-desc">Hard stop on DPS dots should stop sooner. Misdirect onto Leotheras's Humanoid tank. Resume DPS only when humanoid tank has threat.</div></div></div></div>
+      </div></div>
+
+      <div class="phase-block"><div class="phase-bar">Phase 3 · Split Form at 15% HP</div><div class="col-grid">
+        <div class="col col-tank">
+          <div class="mech critical"><div class="icon"><img src="assets/shared/markers/skull.svg" alt="Skull"></div><div class="mech-body"><div class="mech-name">Both forms active simultaneously</div><div class="mech-desc">Main tank on Humanoid left side. Demon tank on Demon right side. Keep them separated.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_decisivestrike.jpg" alt="Execute icon"></div><div class="mech-body"><div class="mech-name">Kill Humanoid and Demon despawns</div><div class="mech-desc">Focus all DPS on the Humanoid form. When it dies, Demon form vanishes too. Do not DPS the demon at all here.</div></div></div>
+        </div>
+        <div class="col col-healer">
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_mindtwisting.jpg" alt="Inner Demon icon"></div><div class="mech-body"><div class="mech-name">Inner Demons still trigger</div><div class="mech-desc">Insidious Whisper mechanics resume in split phase. Watch your debuffs and kill your own demon if debuffed with Insidious Whispers.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_divineillumination.jpg" alt="Cooldown icon"></div><div class="mech-body"><div class="mech-name">Cooldowns</div><div class="mech-desc">Chaotic phase with all damage sources active at the same time. Save major mana and healing tools for here if available. Heal through and count on DPS.</div></div></div>
+        </div>
+        <div class="col col-dps">
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_bloodlust.jpg" alt="Bloodlust icon"></div><div class="mech-body"><div class="mech-name">Bloodlust</div><div class="mech-desc">Pop everything and kill Humanoid form fast. Every second of split phase is more Inner Demons and stacking Chaos Blasts.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_mindtwisting.jpg" alt="Inner Demon icon"></div><div class="mech-body"><div class="mech-name">Inner Demons still trigger</div><div class="mech-desc">Insidious Whisper mechanics resume in split phase. Watch your debuffs and kill your own demon if debuffed with Insidious Whispers.</div></div></div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="image-sidebar">
+      <div class="image-card">
+        <div class="image-card-label">Humanoid positioning</div>
+        <img class="positioning-img" src="assets/ssc/bosses/leotheras/leotheras-humanoid-positioning.webp" alt="Leotheras humanoid positioning">
+        <div class="image-card-caption">Main tank holds Leotheras on the upper platform. Melee on boss; ranged and healers spread in a wide arc.</div>
+      </div>
+
+      <div class="image-card">
+        <div class="image-card-label">Demon positioning</div>
+        <img class="positioning-img" src="assets/ssc/bosses/leotheras/leotheras-demon-positioning.webp" alt="Leotheras demon positioning">
+        <div class="image-card-caption">Demon tank holds Demon Leotheras at the lower-right platform edge to keep Chaos Blast splash away from the raid.</div>
+      </div>
+
+      <div class="image-card">
+        <div class="image-card-label">Split positioning</div>
+        <img class="positioning-img" src="assets/ssc/bosses/leotheras/leotheras-demon-split-positioning.webp" alt="Leotheras split positioning">
+        <div class="image-card-caption">At 15%, main tank keeps Humanoid on the upper platform while Demon tank pulls Demon away. Burn Humanoid.</div>
+      </div>
+
+      <div class="reminder-card"><div class="reminder-card-label">Wipe Causes</div><ul class="reminder-list"><li>Pet kills your Inner Demon and you get Mind Controlled for 10 minutes anyway.</li><li>Inner Demon left alive and the player is Mind Controlled for 10 minutes.</li><li>Heal or DPS through Whirlwind threat reset ripping threat resulting in instant death.</li><li>Leftover trash in room, Whirlwind pulls adds, raid wipes.</li><li>Standing too close to the warlock tank and Chaos Blast AoE's the raid.</li><li>Standing in the path of whirlwind and taking massive damage ticks.</li></ul></div>
+    </div>
+  </div>
+
+  <div class="sheet-footer">Leotheras the Blind · Serpentshrine Cavern · raid sheet</div>
+</div>

@@ -1,0 +1,37 @@
+{
+  "id": "tempest-keep",
+  "name": "Tempest Keep",
+  "firstBossId": "alar",
+  "rosterPage": "tk-roster.html",
+  "guidePage": "alar.html",
+  "bosses": [
+    {
+      "id": "alar",
+      "name": "Al'ar",
+      "shortName": "Al'ar",
+      "icon": "assets/shared/markers/boss-icons/alar.webp",
+      "page": "alar.html"
+    },
+    {
+      "id": "void-reaver",
+      "name": "Void Reaver",
+      "shortName": "Void Reaver",
+      "icon": "assets/shared/markers/boss-icons/voidreaver.webp",
+      "page": "void-reaver.html"
+    },
+    {
+      "id": "solarian",
+      "name": "High Astromancer Solarian",
+      "shortName": "Solarian",
+      "icon": "assets/shared/markers/boss-icons/solarion.webp",
+      "page": "solarian.html"
+    },
+    {
+      "id": "kaelthas",
+      "name": "Kael'thas Sunstrider",
+      "shortName": "Kael'thas",
+      "icon": "assets/shared/markers/boss-icons/kaelthas.webp",
+      "page": "kaelthas.html"
+    }
+  ]
+}

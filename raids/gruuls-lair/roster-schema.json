@@ -1,0 +1,87 @@
+{
+  "raidId": "gruuls-lair",
+  "version": 1,
+  "fields": {
+    "main-tank": {
+      "type": "single"
+    },
+    "off-tanks": {
+      "type": "list"
+    },
+    "kiggler-tanks": {
+      "type": "list"
+    },
+    "mage-tank": {
+      "type": "single"
+    },
+    "main-tank-healers": {
+      "type": "list"
+    },
+    "off-tank-healers": {
+      "type": "list"
+    },
+    "raid-healers": {
+      "type": "list"
+    },
+    "kiggler-healer": {
+      "type": "single"
+    },
+    "mage-tank-healer": {
+      "type": "single"
+    },
+    "md-maulgar": {
+      "type": "list"
+    },
+    "md-ot": {
+      "type": "list"
+    },
+    "md-blindeye": {
+      "type": "list"
+    },
+    "md-kiggler": {
+      "type": "list"
+    },
+    "blindeye-kicks": {
+      "type": "list"
+    },
+    "curse-elements": {
+      "type": "single"
+    },
+    "curse-reck": {
+      "type": "single"
+    },
+    "curse-tongues": {
+      "type": "single"
+    },
+    "magtheridon-clicker-1": {
+      "type": "single"
+    },
+    "magtheridon-clicker-2": {
+      "type": "single"
+    },
+    "magtheridon-clicker-3": {
+      "type": "single"
+    },
+    "magtheridon-clicker-4": {
+      "type": "single"
+    },
+    "magtheridon-clicker-5": {
+      "type": "single"
+    },
+    "magtheridon-backup-skull": {
+      "type": "single"
+    },
+    "magtheridon-backup-cross": {
+      "type": "single"
+    },
+    "magtheridon-backup-square": {
+      "type": "single"
+    },
+    "magtheridon-backup-diamond": {
+      "type": "single"
+    },
+    "magtheridon-backup-moon": {
+      "type": "single"
+    }
+  }
+}

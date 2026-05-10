@@ -1,0 +1,152 @@
+<div class="sheet">
+  <div class="boss-header">
+    <div class="boss-zone">Serpentshrine Cavern</div>
+    <h1 class="boss-name">Lady Vashj</h1>
+  </div>
+
+  <div class="setup-block">
+    <div class="setup-grid setup-grid-5">
+      <div class="setup-col">
+        <div class="setup-heading setup-col-label">Tanks</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Main tank → <span class="assignment-target" data-target-bind="ssc-core-main-tank"></span> <span class="role-label">(VASHJ PHASE 1 + 3)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span><span class="line-text">Off tank → <span class="assignment-target" data-target-bind="ssc-core-off-tank"></span> <span class="role-label">(COILFANG ELITES)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span><span class="line-text">Off tank 2 → <span class="assignment-target" data-target-bind="ssc-core-off-tank-2"></span> <span class="role-label">(ELITE BACKUP / MC TAUNTS)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_rogue_sprint.jpg" alt="Strider tank icon"></span><span class="line-text">Strider tank → <span class="role unassigned" data-bind-group="ssc-vashj-strider-tank" data-default="Strider tank">Strider tank</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-heading setup-col-label">Healers</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></span><span class="line-text">Main tank healers → <span class="role unassigned" data-bind-group="ssc-core-mt-healers" data-default="Main tank healers">Main tank healers</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></span><span class="line-text">Off tank healers → <span class="role unassigned" data-bind-group="ssc-core-ot-healers" data-default="Off tank healers">Off tank healers</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></span><span class="line-text">Off tank 2 / Strider tank healers → <span class="role unassigned" data-bind-group="ssc-core-ot-2-healers" data-default="OT 2 / Strider healers">OT 2 / Strider healers</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healing icon"></span><span class="line-text">Raid healers → <span class="role unassigned" data-bind-group="ssc-core-raid-healers" data-default="Raid healers">Raid healers</span></span></div>
+      </div>
+      <div class="setup-col setup-col-misdirect-wide">
+        <div class="setup-heading setup-col-label">Misdirects</div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-mt-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Main tank → <span class="assignment-target" data-target-bind="ssc-core-main-tank"></span></span></div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-ot-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span> Off tank / Elite tank → <span class="assignment-target" data-target-bind="ssc-core-off-tank"></span></span></div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-ot-2-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_rogue_sprint.jpg" alt="Strider tank icon"></span> Strider tank → <span class="assignment-target" data-target-bind="ssc-vashj-strider-tank"></span></span></div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-ot-3-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span> Off Tank 2 → <span class="assignment-target" data-target-bind="ssc-vashj-ot2-or-ot"></span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-heading setup-col-label">Pylon Teams</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/star.svg" alt="Star"></span><span class="line-text">Pylon 1 (NW) → <span class="role unassigned" data-bind-group="ssc-vashj-pylon-1-nw" data-default="Pylon 1 team">Pylon 1 team</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/circle.svg" alt="Circle"></span><span class="line-text">Pylon 2 (NE) → <span class="role unassigned" data-bind-group="ssc-vashj-pylon-2-ne" data-default="Pylon 2 team">Pylon 2 team</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/diamond.svg" alt="Diamond"></span><span class="line-text">Pylon 3 (SE) → <span class="role unassigned" data-bind-group="ssc-vashj-pylon-3-se" data-default="Pylon 3 team">Pylon 3 team</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/triangle.svg" alt="Triangle"></span><span class="line-text">Pylon 4 (SW) → <span class="role unassigned" data-bind-group="ssc-vashj-pylon-4-sw" data-default="Pylon 4 team">Pylon 4 team</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-heading setup-col-label">Utility</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt="Curse icon"></span><span class="line-text">Elements → <span class="role unassigned" data-bind="ssc-core-curse-of-elements" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholystrength.jpg" alt="Curse icon"></span><span class="line-text">Recklessness → <span class="role unassigned" data-bind="ssc-core-curse-of-recklessness" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_curseoftounges.jpg" alt="Curse icon"></span><span class="line-text">Tongues → <span class="role unassigned" data-bind="ssc-core-curse-of-tongues" data-default="Warlock">Warlock</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-layout">
+    <div class="sheet-content">
+      <div class="header-row"><div class="role-pill role-tank">Tanks</div><div class="role-pill role-healer">Healers</div><div class="role-pill role-dps">DPS</div></div>
+
+      <div class="phase-block"><div class="phase-bar">Phase 1 · 100% to 70% · tank and spank</div><div class="col-grid">
+        <div class="col col-tank">
+          <div class="mech critical"><div class="icon"><img src="assets/shared/markers/skull.svg" alt="Skull"></div><div class="mech-body"><div class="mech-name">Main tank on Vashj</div><div class="mech-desc">Main tank holds Vashj on her platform. Standard tanking until 70%.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_lightningshield.jpg" alt="Shock Blast icon"></div><div class="mech-body"><div class="mech-name">Shock Blast tank stun</div><div class="mech-desc">Massive damage to main tank plus five second stun. Shaman in main tank group drops Grounding Totem to absorb. Off tank picks up if main tank drops too low.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_stranglevines.jpg" alt="Entangle icon"></div><div class="mech-body"><div class="mech-name">Entangle on tank</div><div class="mech-desc">Roots main tank in place. Paladin uses Blessing of Freedom; druid uses shapeshift. Do not let it stay up.</div></div></div>
+        </div>
+        <div class="col col-healer">
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_lightningoverload.jpg" alt="Static Charge icon"></div><div class="mech-body"><div class="mech-name">Static Charge spread out</div><div class="mech-desc">Random player gets hit by Static Charge. Deals 2k Nature damage to anyone within 5 yards. If targeted, run away from raid. Healers stay 5+ yards apart at all times.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_potion_76.jpg" alt="Mana potion icon"></div><div class="mech-body"><div class="mech-name">Save mana for Phase Three</div><div class="mech-desc">Phase One healing is light. Conserve mana for the Phase 3 sporebat phase.</div></div></div>
+          <div class="mech"><div class="icon"><img src="assets/shared/markers/star.svg" alt="Star"></div><div class="mech-body"><div class="mech-name">Pre-position for Phase Two</div><div class="mech-desc">Know your pylon location. When Vashj hits 71%, start moving toward your assigned spot.</div></div></div>
+        </div>
+        <div class="col col-dps">
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_rogue_feigndeath.jpg" alt="Stop DPS icon"></div><div class="mech-body"><div class="mech-name">Stop at 71% to position for Phase Two</div><div class="mech-desc">Do not push into 70% accidentally. Slow DPS at 73–72% and confirm everyone is at their Phase Two position before crossing.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_lightning.jpg" alt="Lightning icon"></div><div class="mech-body"><div class="mech-name">Stay 5+ yards apart</div><div class="mech-desc">Static Charge is the main raid damage in Phase One. Stay 5+ yards apart on the inner ring. Raid clusters near boss but maintains spread for charge splash.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_bloodlust.jpg" alt="Bloodlust icon"></div><div class="mech-body"><div class="mech-name">Hold Bloodlust for Phase Three</div><div class="mech-desc">Do not burn Bloodlust early. Save it for the enrage race in Phase 3.</div></div></div>
+        </div>
+      </div></div>
+
+      <div class="phase-block"><div class="phase-bar">Phase 2 · Vashj Damage Immune · Deactivate generators · Kill adds</div><div class="col-grid">
+        <div class="col col-tank">
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_powerwordshield.jpg" alt="Shield icon"></div><div class="mech-body"><div class="mech-name">Vashj shields, main tank free</div><div class="mech-desc">Vashj becomes invulnerable in center. Main tank stays nearby. Threat resets when last pylon drops; main tank must be ready to grab her instantly.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="assets/shared/markers/cross.svg" alt="Cross"></div><div class="mech-body"><div class="mech-name">Coilfang Elites one-shot cloth</div><div class="mech-desc">Off tank grabs Elites instantly. Tank facing away from raid, melee assist.</div></div></div>
+          <div class="mech"><div class="icon"><img src="assets/shared/markers/square.svg" alt="Square"></div><div class="mech-body"><div class="mech-name">Persuasion mind controls</div><div class="mech-desc">Vashj mind controls random player and boosts their damage. Off tank 2 taunts/picks up MCed player. Mind controlled player cannot be CC'd.</div></div></div>
+        </div>
+        <div class="col col-healer">
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_rogue_sprint.jpg" alt="Strider tank icon"></div><div class="mech-body"><div class="mech-name">Watch the strider tank</div><div class="mech-desc">Strider tank kites Striders in a loop on the south outer ring, away from raid. Dedicate a healer to follow them. If the strider tank dies, Striders walk into the raid and Panic-fear everyone.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_psychicscream.jpg" alt="Fear icon"></div><div class="mech-body"><div class="mech-name">Striders fear in melee</div><div class="mech-desc">Coilfang Striders pulse AoE fear every 3s in melee range. Healers stay clear. All classes with DoTs throw them on Striders.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healing icon"></div><div class="mech-body"><div class="mech-name">AoE healing required</div><div class="mech-desc">Constant chip damage from elemental hits plus Forked Lightning cone. Spread heal duties. Do not tunnel any one tank.</div></div></div>
+        </div>
+        <div class="col col-dps">
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_orb_03.jpg" alt="Tainted Core icon"></div><div class="mech-body"><div class="mech-name">Tainted Cores relay chain</div><div class="mech-desc">Tainted Elementals drop cores. Looter is rooted on pickup. Target the next person in the relay chain and use the Tainted Core macro. Cores route to Pylon 1 (NW), Pylon 2 (NE), Pylon 3 (SE), Pylon 4 (SW).</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_elementalshields.jpg" alt="Tainted Elemental icon"></div><div class="mech-body"><div class="mech-name">Tainted Elementals 15s kill window</div><div class="mech-desc">Tainted Elemental's Spawn every ~50s but despawn in 15–20s if not killed. The tainted killer assigned to that quadrant's pylon team burns it instantly and loots the core.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_elementalprecision_1.jpg" alt="Elemental icon"></div><div class="mech-body"><div class="mech-name">Enchanted Elementals must die before they reach Vashj</div><div class="mech-desc">Each one that reaches her gives her a +5% boss damage stack. Ranged DPS picks them off the second they spawn at the water's edge.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_rogue_sprint.jpg" alt="Strider icon"></div><div class="mech-body"><div class="mech-name">Striders are never melee only dots</div><div class="mech-desc">Strider tank kites along the south outer-ring loop. Ranged DoT every Strider as they pass. Warlocks shine here. Melee cannot touch the strider.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="assets/shared/markers/star.svg" alt="Star"></div><div class="mech-body"><div class="mech-name">Drop all four pylons within ~10s</div><div class="mech-desc">All four pylons must come down close together. Coordinate timing on voice. Adds must be controlled before final pylon drops.</div></div></div>
+        </div>
+      </div></div>
+
+      <div class="phase-block"><div class="phase-bar">Phase 3 · 50% to 0% · Phase 1 mechanics + Spore Bats spawning · Race the Enrage</div><div class="col-grid">
+        <div class="col col-tank">
+          <div class="mech critical"><div class="icon"><img src="assets/shared/markers/skull.svg" alt="Skull"></div><div class="mech-body"><div class="mech-name">Main tank grabs Vashj on threat reset</div><div class="mech-desc">Last pylon dropping wipes threat. Main tank taunts immediately. Main tank misdirect should be ready.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_lightningshield.jpg" alt="Shock Blast icon"></div><div class="mech-body"><div class="mech-name">All Phase 1 abilities back</div><div class="mech-desc">Shock Blast, Entangle, Static Charge resume. Grounding Totem rotation continues. Blessing of Freedom and shapeshift breaks Entangle.</div></div></div>
+        </div>
+        <div class="col col-healer">
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_acid_01.jpg" alt="Poison icon"></div><div class="mech-body"><div class="mech-name">Ground poison accumulates</div><div class="mech-desc">Spore Bats spit poison patches that linger on the ground. The longer Phase 3 lasts, the less safe ground remains. Heal smart and use saved mana for the burn.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_potion_76.jpg" alt="Mana icon"></div><div class="mech-body"><div class="mech-name">Cooldowns</div><div class="mech-desc">This is the burn phase. Use everything left Innervate chains, Mana Pot and Mana Tide. If you are still saving cooldowns, you saved them too long.</div></div></div>
+        </div>
+        <div class="col col-dps">
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_pet_bat.jpg" alt="Spore Bat icon"></div><div class="mech-body"><div class="mech-name">Spore Bats the ranged kill priority</div><div class="mech-desc">Bats spawn slowly at first, then accelerate. Ranged DPS focuses bats above all else. Ground poison accumulates and the raid runs out of safe ground if too many drop.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_bloodlust.jpg" alt="Bloodlust icon"></div><div class="mech-body"><div class="mech-name">Bloodlust window</div><div class="mech-desc">Pop everything. Trinkets, racials, potions, Bloodlust. Race the clock.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_acid_01.jpg" alt="Poison icon"></div><div class="mech-body"><div class="mech-name">Move out of poison patches</div><div class="mech-desc">Do not stand in green ground poison. Main tank moves Vashj to clean ground when current spot fills up. Maintain 5+ yard spread for Static Charge.</div></div></div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="image-sidebar">
+      <div class="image-card">
+        <div class="image-card-label">Phase 1 positioning</div>
+        <img class="positioning-img" src="assets/ssc/bosses/vashj/vashj-phase-1-positioning.webp" alt="Vashj phase 1 positioning">
+        <div class="image-card-caption">Raid spreads 5+ yards for Static Charge while main tank holds Vashj on her platform.</div>
+      </div>
+
+      <div class="image-card">
+        <div class="image-card-label">Phase 2 · pylon positioning</div>
+        <img class="positioning-img" src="assets/ssc/bosses/vashj/vashj-phase-2-pylons.webp" alt="Vashj phase 2 pylon positioning">
+        <div class="image-card-caption">Pylon 1 NW, Pylon 2 NE, Pylon 3 SE, Pylon 4 SW. Core relay routes to assigned pylon players. Avoid striders being kited. Melee DPS adds. Ranged kill elementals before they reach Vashj.</div>
+      </div>
+
+      <div class="image-card">
+        <div class="image-card-label">Phase 3 · sub-50% burn</div>
+        <img class="positioning-img" src="assets/ssc/bosses/vashj/vashj-phase-3-burn.webp" alt="Vashj phase 3 burn positioning">
+        <div class="image-card-caption">Vashj returns with Phase 1 mechanics plus Spore Bats. Main tank moves Vashj to clean ground as poison spreads.</div>
+      </div>
+
+      <div class="reminder-card">
+        <div class="reminder-card-label">Wipe Causes</div>
+        <ul class="reminder-list">
+          <li>Push past 70% before everyone is in Phase 2 position.</li>
+          <li>Slow DPS on Tainted Elemental preventing the core drop, dragging phase 2 out.</li>
+          <li>Strider tank dies, Panic fear hits raid, wipe.</li>
+          <li>Melee touches a Strider and dies.</li>
+          <li>Enchanted Elemental reaches Vashj for +5% boss damage stack, main tank eventually dies.</li>
+          <li>Healing not spread far enough across the platform.</li>
+          <li>Slow DPS in Phase 3 causing ground poison patches multiply, platform becomes unhealable.</li>
+          <li>Main tank misses Vashj on threat reset after the last pylon, Vashj walks into the raid.</li>
+        </ul>
+      </div>
+
+      <div class="reminder-card">
+        <div class="reminder-card-label">Tainted Core Macro</div>
+        <div style="margin-top: 0.5rem; padding: 0.7rem; border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 0.5rem; background: rgba(0, 0, 0, 0.28); overflow-wrap: anywhere; word-break: break-word;">
+          <code style="display: block; white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word;">/use Tainted Core</code>
+          <code style="display: block; white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word;">/y &lt;------- TAINTED CORE TO: %t !!!</code>
+          <code style="display: block; white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word;">/s &lt;------- TAINTED CORE TO: %t !!!</code>
+          <code style="display: block; white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word;">/script SendChatMessage("!!! YOU HAVE THE CORE !!!", "WHISPER", "Common", UnitName("target"));</code>
+        </div>
+        <div style="margin-top: 0.55rem; line-height: 1.35;">Target the next person in the relay chain, then mash the macro. Yells, says, and whispers them so they cannot miss it.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sheet-footer">Lady Vashj · Serpentshrine Cavern · raid sheet</div>
+</div>

@@ -1,0 +1,83 @@
+<div class="sheet">
+<!-- ============ GRUUL THE DRAGONKILLER ============ -->
+  <div class="boss-header">
+    <div class="boss-zone">Gruul's Lair</div>
+    <h1 class="boss-name">Gruul the Dragonkiller</h1>
+  </div>
+
+  <div class="setup-block">
+    <div class="setup-label">Raid assignments for the Gruul the Dragonslayer Encounter. Check the spreadsheet for more detailed information on the encounter and your role in it.</div>
+    <div class="setup-grid setup-grid-4">
+      <div class="setup-col setup-col-tanks">
+        <div class="setup-col-label">Tanks</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Gruul Main Tank → <span class="assignment-target" data-target-bind="main-tank"></span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Gruul Off Tank → <span class="assignment-target" data-target-bind="gruul-hurtful-tank"></span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Healers</div>
+        <div class="setup-line"><span class="line-text"><span data-bind="gruul-tank-healer" data-default="MT healer 1" class="role unassigned">MT healer 1</span> &rarr; <span class="assignment-target" data-target-bind="main-tank"></span> <span class="role-label">(GRUUL MAIN TANK)</span></span></div>
+        <div class="setup-line"><span class="line-text"><span data-bind="gruul-hurtful-healer" data-default="OT healer" class="role unassigned">OT healer</span> &rarr; <span class="assignment-target" data-target-bind="gruul-hurtful-tank"></span> <span class="role-label">(GRUUL OFF TANK)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt=""></span><span class="line-text">Raid → <span data-bind-group="raid-healers" data-default="Raid healers" class="role unassigned">Raid healers</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Misdirects</div>
+        <div class="setup-line"><span class="line-text"><span data-bind-group="md-maulgar" data-default="Hunter" class="role unassigned">Hunter</span> &rarr; <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Gruul &rarr; <span class="assignment-target" data-target-bind="main-tank"></span></span></div>
+        <div class="setup-line"><span class="line-text"><span data-bind-group="gruul-off-tank-md" data-default="Hunter" class="role unassigned">Hunter</span> &rarr; <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Gruul &rarr; <span class="assignment-target" data-target-bind="gruul-hurtful-tank"></span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Utility</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt=""></span><span class="line-text">Elements → <span data-bind="curse-elements" data-default="Warlock" class="role unassigned">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholystrength.jpg" alt=""></span><span class="line-text">Recklessness → <span data-bind="curse-reck" data-default="Warlock" class="role unassigned">Warlock</span></span></div>
+      </div>
+    </div>
+    <div class="setup-note">Spread out evenly around Gruul with ranged standing max distance. Separate from other raiders for shatter. Melee will take Hurtful Strike if they become second threat. Growth mechanic causes soft-enrage.</div>
+  </div>
+  <div class="main-layout">
+    <div class="sheet-content">
+      <div class="header-row"><div class="role-pill role-tank">Tanks</div><div class="role-pill role-healer">Healers</div><div class="role-pill role-dps">DPS</div></div>
+
+      <div class="phase-block"><div class="phase-bar">Pull by Misdirects Onto Main and Off Tanks · Off Tank Chases Main Tanks Threat to Stay Second · Raid Surrounds Gruul · Everyone Evenly Spaces From One Another</div><div class="col-grid">
+        <div class="col col-tank"><div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="MD into center hold"></div><div class="mech-body"><div class="mech-name">MD into center hold</div><div class="mech-desc">Main tank receives MD and positions Gruul. Hurtful Strike tank builds second threat immediately and stays in melee range.</div></div></div></div>
+        <div class="col col-healer"><div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_silence.jpg" alt="Threat-safe opening heals"></div><div class="mech-body"><div class="mech-name">Threat-safe opening heals</div><div class="mech-desc">Tank healers wait for stable threat, then hard focus assigned tanks. Raid healers watch early Cave In damage.</div></div></div></div>
+        <div class="col col-dps"><div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_seal.jpg" alt="Controlled openers"></div><div class="mech-body"><div class="mech-name">Controlled openers</div><div class="mech-desc">Wait for tank threat. Stay spread and avoid Cave In.</div></div></div></div>
+      </div></div>
+
+      <div class="phase-block"><div class="phase-bar">Shatter · Growth · Reverberation · Cave In</div><div class="col-grid">
+        <div class="col col-tank">
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_shield_06.jpg" alt="Threat stability"></div><div class="mech-body"><div class="mech-name">Threat stability</div><div class="mech-desc">Main tank keeps Gruul stable. Hurtful Strike tank must remain second threat and in melee range.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_shieldwall.jpg" alt="Growth"></div><div class="mech-body"><div class="mech-name">Growth</div><div class="mech-desc">Incoming tank damage ramps with each Growth stack. Keep mitigation ready and make sure the Hurtful Strike tank stays second threat.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_stone_12.jpg" alt="Cave In"></div><div class="mech-body"><div class="mech-name">Cave In</div><div class="mech-desc">Move Gruul cleanly if Cave In lands under the tank area. Keep boss positioning controlled and avoid dragging him through the raid.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_stone_12.jpg" alt="Fast reposition"></div><div class="mech-body"><div class="mech-name">Fast reposition</div><div class="mech-desc">Expect knockback and reposition quickly. Re-establish boss position after Shatter.</div></div></div>
+        </div>
+        <div class="col col-healer">
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/shaman_pvp_rockshield.jpg" alt="Assignment lock"></div><div class="mech-body"><div class="mech-name">Assignment lock</div><div class="mech-desc">Gruul tank healer focuses main tank. Hurtful healer focuses Hurtful Strike tank. Raid healers cover Cave In damage.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_shieldwall.jpg" alt="Growth"></div><div class="mech-body"><div class="mech-name">Growth</div><div class="mech-desc">Healing pressure ramps every Growth. Shift into stronger tank and raid healing as stacks climb so the raid does not fall behind.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_silence.jpg" alt="Reverberation"></div><div class="mech-body"><div class="mech-name">Reverberation</div><div class="mech-desc">Silences the entire raid for four seconds and is not dispellable. Prepare by putting HoTs on the tanks just before it hits to prevent deaths.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_stone_12.jpg" alt="Pre-top and recover"></div><div class="mech-body"><div class="mech-name">Pre-top and recover</div><div class="mech-desc">Pre-top raid before Shatter. Heal Shatter victims immediately after impact.</div></div></div>
+        </div>
+        <div class="col col-dps">
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/shaman_pvp_rockshield.jpg" alt="Steady uptime"></div><div class="mech-body"><div class="mech-name">Steady uptime</div><div class="mech-desc">Stay spread. Move out of Cave In. Keep steady damage.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_shieldwall.jpg" alt="Growth"></div><div class="mech-body"><div class="mech-name">Growth</div><div class="mech-desc">Damage ramps as Growth stacks climb. Keep uptime high without pulling threat, then save major cooldowns for the kill window.</div></div></div>
+          <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_silence.jpg" alt="Reverberation"></div><div class="mech-body"><div class="mech-name">Reverberation</div><div class="mech-desc">Expect a four second silence. Avoid relying on last-second heals, keep yourself safe before it lands, and resume damage as soon as it ends.</div></div></div>
+          <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_stone_12.jpg" alt="Spacing discipline"></div><div class="mech-body"><div class="mech-name">Spacing discipline</div><div class="mech-desc">Spread away from everyone during Gronn Lord's Grasp. Do not stack before Shatter. Resume damage after Shatter.</div></div></div>
+        </div>
+      </div></div>
+
+      <div class="phase-block"><div class="phase-bar">High Growth · DPS Check</div><div class="col-grid">
+        <div class="col col-tank"><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_shieldwall.jpg" alt="Cooldowns"></div><div class="mech-body"><div class="mech-name">Cooldown chain</div><div class="mech-desc">Growth will cause tanks to take increasing damage until Gruul begins to one shot the raid. Use defensive cooldowns as Growth stacks climb high. Hurtful Strike tank must not drop second threat.</div></div></div></div>
+        <div class="col col-healer"><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_potion_137.jpg" alt="Massive Healing"></div><div class="mech-body"><div class="mech-name">Massive Healing</div><div class="mech-desc">Growth will cause tanks to take increasing damage until Gruul begins to one shot the raid. As stacks build high use major healing cooldowns and mana potions. This is the burn window, do not conserve mana for much longer.</div></div></div></div>
+        <div class="col col-dps"><div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_deepcuts.jpg" alt="Execute kill window"></div><div class="mech-body"><div class="mech-name">Execute kill window</div><div class="mech-desc">Growth will with enough stacks eventually cause the tanks to take unhealable fatal blows. This is not preventable and is a soft-enrage mechanic built into the fight. Gruul either dies here or you do.</div></div></div></div>
+      </div></div>
+    </div>
+
+    <div class="image-sidebar">
+      <div class="image-card">
+        <div class="image-card-label">Gruul positioning</div>
+        <img alt="Gruul raid positioning" class="positioning-img" src="assets/gruul/bosses/gruul/gruul-positioning.png"/>
+        <div class="image-card-caption">Reference raid positioning for Gruul. Click the image to enlarge it on screen.</div>
+      </div>
+      <div class="reminder-card"><div class="reminder-card-label">Gruul wipe causes · don't</div><ul class="reminder-list"><li>Hurtful tank loses second threat.</li><li>Raid clumps before Shatter.</li><li>Players sit in Cave In.</li><li>Healers fail to pre-top before Shatter.</li><li>Growth stacks reach unhealable levels before kill.</li></ul></div>
+    </div>
+  </div>
+  <div class="sheet-footer">Gruul the Dragonkiller · Gruul's Lair · raid sheet</div>
+</div>

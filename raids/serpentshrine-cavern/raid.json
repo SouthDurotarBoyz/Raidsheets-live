@@ -1,0 +1,51 @@
+{
+  "id": "serpentshrine-cavern",
+  "name": "Serpentshrine Cavern",
+  "firstBossId": "hydross",
+  "rosterPage": "ssc-roster.html",
+  "guidePage": "hydross.html",
+  "bosses": [
+    {
+      "id": "hydross",
+      "name": "Hydross the Unstable",
+      "shortName": "Hydross",
+      "icon": "assets/shared/markers/boss-icons/hydross.webp",
+      "page": "hydross.html"
+    },
+    {
+      "id": "lurker",
+      "name": "The Lurker Below",
+      "shortName": "Lurker",
+      "icon": "assets/shared/markers/boss-icons/lurker.webp",
+      "page": "lurker.html"
+    },
+    {
+      "id": "leotheras",
+      "name": "Leotheras the Blind",
+      "shortName": "Leotheras",
+      "icon": "assets/shared/markers/boss-icons/leotheras.webp",
+      "page": "leotheras.html"
+    },
+    {
+      "id": "karathress",
+      "name": "Fathom-Lord Karathress",
+      "shortName": "Karathress",
+      "icon": "assets/shared/markers/boss-icons/karathress.webp",
+      "page": "karathress.html"
+    },
+    {
+      "id": "morogrim",
+      "name": "Morogrim Tidewalker",
+      "shortName": "Morogrim",
+      "icon": "assets/shared/markers/boss-icons/morrogrim.webp",
+      "page": "morogrim.html"
+    },
+    {
+      "id": "vashj",
+      "name": "Lady Vashj",
+      "shortName": "Vashj",
+      "icon": "assets/shared/markers/boss-icons/vasj.webp",
+      "page": "vashj.html"
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+<div class="sheet">
+  <div class="boss-header">
+    <div class="boss-zone">Gruul's Lair</div>
+    <h1 class="boss-name">Magtheridon</h1>
+  </div>
+
+  <div class="setup-block">
+    <div class="setup-label">Raid assignments for the Magtheridon Encounter. Check the spreadsheet for more detailed information on the encounter and your role in it.</div>
+    <div class="setup-grid">
+      <div class="setup-col setup-col-tanks">
+        <div class="setup-col-label">Tanks</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Main Tank → <span data-bind="main-tank" data-default="Main Tank" class="role unassigned">Main Tank</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="X"></span><span class="line-text">Main Tank → <span data-bind="main-tank" data-default="Main Tank" class="role unassigned">Main Tank</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/moon.svg" alt="Moon"></span><span class="line-text">Main Tank → <span data-bind="main-tank" data-default="Main Tank" class="role unassigned">Main Tank</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span><span class="line-text">Off Tank → <span data-bind="blindeye-tank" data-default="Off Tank" class="role unassigned">Off Tank</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/diamond.svg" alt="Diamond"></span><span class="line-text">Off Tank → <span data-bind="blindeye-tank" data-default="Off Tank" class="role unassigned">Off Tank</span></span></div>
+      </div>
+
+      <div class="setup-col">
+        <div class="setup-col-label">Healers</div>
+        <div class="setup-line"><span class="line-text"><span data-bind-group="main-tank-healers" data-default="Main Tank Healer" class="role unassigned">Main Tank Healer</span> → <span data-target-bind="main-tank" class="assignment-target">Main Tank</span> <span class="role-label">(Main Tank)</span></span></div>
+        <div class="setup-line"><span class="line-text"><span data-bind-group="off-tank-healers" data-default="Off Tank Healer" class="role unassigned">Off Tank Healer</span> → <span data-target-bind="blindeye-tank" class="assignment-target">Off Tank</span> <span class="role-label">(Off Tank)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healer icon"></span><span class="line-text">Raid Healers → <span data-bind-group="raid-healers" data-default="Raid Healer" class="role unassigned">Raid Healer</span></span></div>
+      </div>
+
+      <div class="setup-col">
+        <div class="setup-col-label">Kicks</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span><span class="line-text">Channeler → <span data-bind="blindeye-kick-1" data-default="Kicker 1" class="role unassigned">Kicker 1</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="X"></span><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/diamond.svg" alt="Diamond"></span><span class="line-text">Channeler → <span data-bind="blindeye-kick-2" data-default="Kicker 2" class="role unassigned">Kicker 2</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/moon.svg" alt="Moon"></span><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span><span class="line-text">Channeler → <span data-bind="blindeye-kick-3" data-default="Kicker 3" class="role unassigned">Kicker 3</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/diamond.svg" alt="Diamond"></span><span class="line-text">Channeler → <span data-bind="blindeye-kick-4" data-default="Kicker 4" class="role unassigned">Kicker 4</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="X"></span><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span><span class="line-text">Channeler → <span data-bind="blindeye-kick-5" data-default="Kicker 5" class="role unassigned">Kicker 5</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/moon.svg" alt="Moon"></span><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/diamond.svg" alt="Diamond"></span><span class="line-text">Channeler → <span data-bind="blindeye-kick-6" data-default="Kicker 6" class="role unassigned">Kicker 6</span></span></div>
+      </div>
+
+      <div class="setup-col">
+        <div class="setup-col-label">Cube Clickers</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">→ <span data-bind="magtheridon-clicker-1" data-default="Clicker" class="role unassigned">Clicker</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="X"></span><span class="line-text">→ <span data-bind="magtheridon-clicker-2" data-default="Clicker" class="role unassigned">Clicker</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span><span class="line-text">→ <span data-bind="magtheridon-clicker-3" data-default="Clicker" class="role unassigned">Clicker</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/diamond.svg" alt="Diamond"></span><span class="line-text">→ <span data-bind="magtheridon-clicker-4" data-default="Clicker" class="role unassigned">Clicker</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/moon.svg" alt="Moon"></span><span class="line-text">→ <span data-bind="magtheridon-clicker-5" data-default="Clicker" class="role unassigned">Clicker</span></span></div>
+      </div>
+
+      <div class="setup-col">
+        <div class="setup-col-label">Cube Backups</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">→ <span data-bind="magtheridon-backup-skull" data-default="Backup" class="role unassigned">Backup</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="X"></span><span class="line-text">→ <span data-bind="magtheridon-backup-cross" data-default="Backup" class="role unassigned">Backup</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span><span class="line-text">→ <span data-bind="magtheridon-backup-square" data-default="Backup" class="role unassigned">Backup</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/diamond.svg" alt="Diamond"></span><span class="line-text">→ <span data-bind="magtheridon-backup-diamond" data-default="Backup" class="role unassigned">Backup</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/moon.svg" alt="Moon"></span><span class="line-text">→ <span data-bind="magtheridon-backup-moon" data-default="Backup" class="role unassigned">Backup</span></span></div>
+      </div>
+
+      <div class="setup-col">
+        <div class="setup-col-label">Misdirects</div>
+        <div class="setup-line"><span class="line-text"><span data-bind="magtheridon-md-cross" data-default="Hunter" class="role unassigned">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="X"></span> Channeler → <span data-target-bind="main-tank" class="assignment-target">Main Tank</span></span></div>
+        <div class="setup-line"><span class="line-text"><span data-bind="magtheridon-md-diamond" data-default="Hunter" class="role unassigned">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/diamond.svg" alt="Diamond"></span> Channeler → <span data-target-bind="blindeye-tank" class="assignment-target">Off Tank</span></span></div>
+        <div class="setup-line"><span class="line-text"><span data-bind="magtheridon-md-moon" data-default="Hunter" class="role unassigned">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/moon.svg" alt="Moon"></span> Channeler → <span data-target-bind="main-tank" class="assignment-target">Main Tank</span></span></div>
+      </div>
+
+      <div class="setup-col">
+        <div class="setup-col-label">Utility</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt="Curse icon"></span><span class="line-text">Elements → <span data-bind="curse-elements" data-default="Warlock" class="role unassigned">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_sunder.jpg" alt="Recklessness curse icon"></span><span class="line-text">Recklessness → <span data-bind="curse-reck" data-default="Warlock" class="role unassigned">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_curseoftounges.jpg" alt="Tongues curse icon"></span><span class="line-text">Tongues → <span data-bind="curse-tongues" data-default="Warlock" class="role unassigned">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unsummonbuilding.jpg" alt="Banish icon"></span><span class="line-text">Banishes → <span data-bind="enslave-warlock" data-default="Warlock" class="role unassigned">Warlock</span></span></div>
+      </div>
+    </div>
+    <div class="setup-note">Cleave, kick and kill the starting adds. Maintain banish or fear infernals. Quake ~50sec, Blast Nova ~60sec. Avoid fire on the ground. Mitigate damage at 30% push. Clickers must move early and interact with the orb without misclicking off or autoshooting Mag.</div>
+  </div>
+
+  <div class="main-layout">
+    <div class="sheet-content">
+      <div class="header-row">
+        <div class="role-pill role-tank">Tanks</div>
+        <div class="role-pill role-healer">Healers</div>
+        <div class="role-pill role-dps">DPS</div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Phase 1 · Split north + south · Interrupt casts · Banish and CC adds</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_defend.jpg" alt="Main Tank South"></div><div class="mech-body"><div class="mech-name">Main Tank South</div><div class="mech-desc">Main Tank holds Skull, X, and Moon south side. Do not go close to the tank up north to ensure the mobs' spells stay ranged from the raid.</div></div></div>
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_shield_06.jpg" alt="Off Tank North"></div><div class="mech-body"><div class="mech-name">Off Tank North</div><div class="mech-desc">Off Tank holds Square and Diamond in place at the north wall. Do not bring them close to the raid or their spell casts will be in range.</div></div></div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="North Healer"></div><div class="mech-body"><div class="mech-name">North Healer</div><div class="mech-desc">The healer for Off Tank should be close by and the only other player up north taking Shadow Bolt Volleys.</div></div></div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_kick.jpg" alt="Assigned kicks"></div><div class="mech-body"><div class="mech-name">Assigned kicks</div><div class="mech-desc">Interrupt your marked channeler and communicate with your partner in rotation. Be vocal. Good comms save raids.</div></div></div>
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_enslavedemon.jpg" alt="Help CC Adds"></div><div class="mech-body"><div class="mech-name">Help CC Adds</div><div class="mech-desc">The infernals can kill before a warlock gets Banish off. If you see one free, a quick CC can give warlocks time. Stuns, fears, and other CCs work, but do not get off kill target long.</div></div></div>
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_sword_04.jpg" alt="Follow Kill Order"></div><div class="mech-body"><div class="mech-name">Follow Kill Order</div><div class="mech-desc">Adds should be killed with focused single-target damage and cleave, not AoE. Follow the kill order to keep raid damage and phase one duration to a minimum.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Phase 2 · Click assigned cube on Blast Nova</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_defend.jpg" alt="Mag Faces North"></div><div class="mech-body"><div class="mech-name">Mag Faces North</div><div class="mech-desc">Main Tank keeps Magtheridon central in the room facing him away from the raid, looking north. Magtheridon's cleave will one-shot DPS.</div></div></div>
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_shield_06.jpg" alt="Tank and Spank"></div><div class="mech-body"><div class="mech-name">Tank and Spank</div><div class="mech-desc">Phase two of Magtheridon is simple to tank. Stand still with your back to the north wall and do not let Magtheridon turn on the raid.</div></div></div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Cover cube clickers"></div><div class="mech-body"><div class="mech-name">Cover cube clickers</div><div class="mech-desc">Top clickers. They will take damage when they channel. Stabilize the raid during cube activation.</div></div></div>
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_stone_12.jpg" alt="Quake Disruption"></div><div class="mech-body"><div class="mech-name">Quake Disruption</div><div class="mech-desc">Periodically Magtheridon will cast Quake, knocking the entire raid around. Triage anyone launched into fire and anyone who survives being knocked into Magtheridon's cleave. Do not stand so close to Magtheridon that Quake knocks you into cleave. Instant-cast spells work during Quake.</div></div></div>
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_ragnaros_supernova.jpg" alt="Conflagration"></div><div class="mech-body"><div class="mech-name">Conflagration</div><div class="mech-desc">Conflagration places a small ring of fire on the ground, dealing Fire damage over time. Heal anyone with this DoT and avoid it yourself.</div></div></div>
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_potion_137.jpg" alt="Phase three prep"></div><div class="mech-body"><div class="mech-name">Phase three prep</div><div class="mech-desc">Make sure the raid is as topped as possible going into Phase 3. Cave In will cause huge damage and kill anyone low.</div></div></div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_mindtwisting.jpg" alt="Clickers and Backups"></div><div class="mech-body"><div class="mech-name">Clickers and Backups</div><div class="mech-desc">Primary clickers use their marker assignment. Backups cover missed or late clicks. Stay close to your cubes and move to them early. An addon like Deadly Boss Mods is crucial to understand timing on mechanics for this fight. Backups stay hyper aware of your clickers and be nearby just in case.</div></div></div>
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_silence.jpg" alt="If clickers die"></div><div class="mech-body"><div class="mech-name">If clickers die</div><div class="mech-desc">Refer to yourself in third person by saying your character's name is dead and the cube you were responsible for needs to be clicked. No one in the raid knows who &quot;I&quot; am, so be precise.</div></div></div>
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_stone_12.jpg" alt="Quake into cleave deaths"></div><div class="mech-body"><div class="mech-name">Quake into cleave deaths</div><div class="mech-desc">It is not uncommon for melee and even ranged to get knocked by Quake directly into Magtheridon's cleave. Stay far enough back that even a few bad knocks in a row will not kill you.</div></div></div>
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_ragnaros_supernova.jpg" alt="Conflagration"></div><div class="mech-body"><div class="mech-name">Conflagration</div><div class="mech-desc">Fire on the ground. Do not stand in it.</div></div></div>
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_bloodlust.jpg" alt="Lust after first quake"></div><div class="mech-body"><div class="mech-name">Lust after first quake</div><div class="mech-desc">This ensures Lust happens early in the fight with the most people alive and for 100% of the time Magtheridon is banished, taking increased damage on the first click. Blow cooldowns the moment before Blast Nova goes out.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Phase 3 · 30% HP Cave In</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_stone_12.jpg" alt="Cave In"></div><div class="mech-body"><div class="mech-name">Cave In</div><div class="mech-desc">At 30% HP the ceiling caves in, causing 6k+ damage to every raider. This is a good time to use the healthstones you got before the pull.</div></div></div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_potion_137.jpg" alt="Cave In"></div><div class="mech-body"><div class="mech-name">Cave In</div><div class="mech-desc">At 30% HP the ceiling caves in, causing 6k+ damage to every raider. This is a good time to use the healthstones you got before the pull. The raid will take their healthstones here as well, but quick healing is important to recover. Do not become so distracted healing raid damage that the tank dies; this frequently happens in this phase.</div></div></div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_stone_12.jpg" alt="Cave In"></div><div class="mech-body"><div class="mech-name">Cave In</div><div class="mech-desc">At 30% HP the ceiling caves in, causing 6k+ damage to every raider. This is a good time to use the healthstones you got before the pull.</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="image-sidebar">
+      <div class="image-card">
+        <div class="image-card-label">Channeler split</div>
+        <img alt="Magtheridon channeler split positioning" class="positioning-img" src="assets/gruul/bosses/magtheridon/magtheridon-channeler-split.webp">
+        <div class="image-card-caption">North tank and healer stay far from raid holding Square and Diamond up north. Raid kills Skull, X, and Moon down south. Do not take damage from both sides at once.</div>
+      </div>
+
+      <div class="image-card">
+        <div class="image-card-label">Cube clickers</div>
+        <img alt="Magtheridon cube clicker positioning" class="positioning-img" src="assets/gruul/bosses/magtheridon/magtheridon-cube-clickers.webp">
+        <div class="image-card-caption">Cubes are marked for clickers. Backups should always stay nearby as well. Stay aware of your surroundings and your partner. If main is not there to click, it automatically falls on backup.</div>
+      </div>
+
+      <div class="reminder-card">
+        <div class="reminder-card-label">Wipe Causes</div>
+        <ul class="reminder-list">
+          <li>Missed channeler kicks.</li>
+          <li>Cube click missed or late.</li>
+          <li>Tanks not holding marked channelers apart.</li>
+          <li>Hunter assigned to click does not deselect Magtheridon or face away and accidentally auto shoots, breaking the channel and wiping the raid.</li>
+          <li>Tank takes massive damage during and after Cave In but does not get the heals needed.</li>
+          <li>Losing players to preventable deaths from Conflagration, Cave In, and Cleave.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sheet-footer">Magtheridon · Gruul's Lair · raid sheet</div>
+</div>

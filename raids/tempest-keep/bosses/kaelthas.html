@@ -1,0 +1,317 @@
+<div class="sheet">
+  <div class="boss-header">
+    <div class="boss-zone">Tempest Keep</div>
+    <h1 class="boss-name">Kael'thas Sunstrider</h1>
+  </div>
+
+  <div class="setup-block">
+    <div class="setup-grid setup-grid-5">
+      <div class="setup-col">
+        <div class="setup-heading setup-col-label">Tanks</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Thaladred tank → <span class="assignment-target" data-target-bind="tk-kaelthas-thaladred-tank"></span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span><span class="line-text">Sanguinar tank → <span class="assignment-target" data-target-bind="tk-kaelthas-sanguinar-tank"></span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span><span class="line-text">Capernian tank → <span class="assignment-target" data-target-bind="tk-kaelthas-capernian-tank"></span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/diamond.svg" alt="Diamond"></span><span class="line-text">Telonicus tank → <span class="assignment-target" data-target-bind="tk-kaelthas-telonicus-tank"></span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/moon.svg" alt="Moon"></span><span class="line-text">Phoenix tank → <span class="assignment-target" data-target-bind="tk-kaelthas-phoenix-tank"></span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-heading setup-col-label">Healers</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></span><span class="line-text">Main tank healers → <span class="role unassigned" data-bind-group="tk-core-mt-healers" data-default="Main tank healers">Main tank healers</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></span><span class="line-text">Off tank healers → <span class="role unassigned" data-bind-group="tk-core-ot-healers" data-default="Off tank healers">Off tank healers</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healing icon"></span><span class="line-text">Raid healers → <span class="role unassigned" data-bind-group="tk-core-raid-healers" data-default="Raid healers">Raid healers</span></span></div>
+      </div>
+      <div class="setup-col setup-col-misdirect-wide">
+        <div class="setup-heading setup-col-label">Misdirects</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="tk-core-mt-misdirect" data-default="Hunter">Hunter</span> → Main tank</span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="tk-core-ot-misdirect" data-default="Hunter">Hunter</span> → Off tank</span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="tk-core-ot-2-misdirect" data-default="Hunter">Hunter</span> → Off tank 2</span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-heading setup-col-label">Utility</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt="Curse icon"></span><span class="line-text">Elements → <span class="role unassigned" data-bind="tk-core-curse-of-elements" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholystrength.jpg" alt="Curse icon"></span><span class="line-text">Recklessness → <span class="role unassigned" data-bind="tk-core-curse-of-recklessness" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_curseoftounges.jpg" alt="Curse icon"></span><span class="line-text">Tongues → <span class="role unassigned" data-bind="tk-core-curse-of-tongues" data-default="Warlock">Warlock</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-heading setup-col-label">Utility</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_sword_2h_blood_c_01.jpg" alt="Weapon icon"></span><span class="line-text">Weapon tanks → <span class="role unassigned" data-bind-group="tk-kaelthas-weapon-tanks" data-default="Weapon tanks">Weapon tanks</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadowworddominate.jpg" alt="Mind control icon"></span><span class="line-text">Mind control CC → <span class="role unassigned" data-bind-group="tk-kaelthas-mind-control-cc" data-default="Mind control CC">Mind control CC</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_staff_13.jpg" alt="Legendary staff icon"></span><span class="line-text">Legendary staff → <span class="role unassigned" data-bind="tk-kaelthas-legendary-staff" data-default="Staff">Staff</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_weapon_shortblade_15.jpg" alt="Legendary dagger icon"></span><span class="line-text">Legendary dagger → <span class="role unassigned" data-bind="tk-kaelthas-legendary-dagger" data-default="Dagger">Dagger</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_weapon_bow_05.jpg" alt="Legendary bow icon"></span><span class="line-text">Legendary bow → <span class="role unassigned" data-bind="tk-kaelthas-legendary-bow" data-default="Bow">Bow</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_shield_05.jpg" alt="Legendary shield icon"></span><span class="line-text">Legendary shield → <span class="role unassigned" data-bind="tk-kaelthas-legendary-shield" data-default="Shield">Shield</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-layout">
+    <div class="sheet-content">
+      <div class="header-row">
+        <div class="role-pill role-tank">Tanks</div>
+        <div class="role-pill role-healer">Healers</div>
+        <div class="role-pill role-dps">DPS</div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Phase 1 · Advisors one at a time</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_defensivestance.jpg" alt="Advisor tank assignments"></div>
+              <div class="mech-body">
+                <div class="mech-name">Control assigned advisors</div>
+                <div class="mech-desc">Advisors activate one at a time. <span class="assignment-target" data-target-bind="tk-kaelthas-thaladred-tank"></span>, <span class="assignment-target" data-target-bind="tk-kaelthas-sanguinar-tank"></span>, <span class="assignment-target" data-target-bind="tk-kaelthas-capernian-tank"></span>, and <span class="assignment-target" data-target-bind="tk-kaelthas-telonicus-tank"></span> keep each advisor in the planned position.</div>
+              </div>
+            </div>
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_possession.jpg" alt="Thaladred gaze"></div>
+              <div class="mech-body">
+                <div class="mech-name">Keep Thaladred out of raid</div>
+                <div class="mech-desc">When Thaladred gazes a player, the fixate target kites away from the raid path and tanks do not drag other advisors into that route.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Assigned healer coverage"></div>
+              <div class="mech-body">
+                <div class="mech-name">Cover each tank handoff</div>
+                <div class="mech-desc"><span class="role unassigned" data-bind-group="tk-core-mt-healers" data-default="Main tank healers">Main tank healers</span>, <span class="role unassigned" data-bind-group="tk-core-ot-healers" data-default="Off tank healers">Off tank healers</span>, and <span class="role unassigned" data-bind-group="tk-core-raid-healers" data-default="Raid healers">Raid healers</span> track the active advisor and shift before the next one activates.</div>
+              </div>
+            </div>
+            <div class="mech">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_psychicscream.jpg" alt="Sanguinar fear"></div>
+              <div class="mech-body">
+                <div class="mech-name">Stabilize fear and bomb damage</div>
+                <div class="mech-desc">Sanguinar fear must be controlled, and Telonicus bombs or toys require quick spot healing without pulling players through unsafe advisor positions.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_fireball.jpg" alt="Capernian isolation"></div>
+              <div class="mech-body">
+                <div class="mech-name">Respect dangerous positioning</div>
+                <div class="mech-desc">Capernian is caster-tanked away from the raid, Sanguinar fear is controlled, and Telonicus bombs or toys are handled without dragging damage through the group.</div>
+              </div>
+            </div>
+            <div class="mech">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_dualwield.jpg" alt="Advisor kill order"></div>
+              <div class="mech-body">
+                <div class="mech-name">Follow kill order cleanly</div>
+                <div class="mech-desc">DPS burns the active advisor in order and does not cleave advisors into bad positions or force tanks to recover misplaced targets.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Phase 2 · Legendary weapons</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_sword_2h_blood_c_01.jpg" alt="Weapon pickup"></div>
+              <div class="mech-body">
+                <div class="mech-name">Gather weapons fast</div>
+                <div class="mech-desc">Weapons spawn together. <span class="role unassigned" data-bind-group="tk-kaelthas-weapon-tanks" data-default="Weapon tanks">Weapon tanks</span> gather assigned weapons quickly and keep them stacked for clean killing.</div>
+              </div>
+            </div>
+            <div class="mech">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_shieldwall.jpg" alt="Loose weapons"></div>
+              <div class="mech-body">
+                <div class="mech-name">Call loose weapons</div>
+                <div class="mech-desc"><span class="assignment-target" data-target-bind="tk-core-main-tank"></span>, <span class="assignment-target" data-target-bind="tk-core-off-tank"></span>, and <span class="assignment-target" data-target-bind="tk-core-off-tank-2"></span> help snap missed weapons back before they reach healers.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_flashheal.jpg" alt="Heavy weapon damage"></div>
+              <div class="mech-body">
+                <div class="mech-name">Prepare for tank spikes</div>
+                <div class="mech-desc">Healers prepare for heavy tank damage while weapons are loose, then keep raid healing steady as weapon targets settle.</div>
+              </div>
+            </div>
+            <div class="mech">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_staff_13.jpg" alt="Legendary staff"></div>
+              <div class="mech-body">
+                <div class="mech-name">Protect legendary pickups</div>
+                <div class="mech-desc"><span class="role unassigned" data-bind="tk-kaelthas-legendary-staff" data-default="Staff">Staff</span> and <span class="role unassigned" data-bind="tk-kaelthas-legendary-shield" data-default="Shield">Shield</span> assignments matter for the next phases; keep assigned players alive while they collect weapons.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_weapon_shortblade_15.jpg" alt="Legendary weapons"></div>
+              <div class="mech-body">
+                <div class="mech-name">Kill weapons cleanly</div>
+                <div class="mech-desc">Raid kills weapons cleanly, then assigned players pick up legendary staff, dagger, bow, and shield after they die.</div>
+              </div>
+            </div>
+            <div class="mech">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_weapon_bow_05.jpg" alt="Legendary bow and dagger"></div>
+              <div class="mech-body">
+                <div class="mech-name">Confirm your legendary</div>
+                <div class="mech-desc"><span class="role unassigned" data-bind="tk-kaelthas-legendary-dagger" data-default="Dagger">Dagger</span> and <span class="role unassigned" data-bind="tk-kaelthas-legendary-bow" data-default="Bow">Bow</span> users announce pickups before the raid transitions into advisor control.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Phase 3 · Advisors return</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_challange.jpg" alt="Advisors revive"></div>
+              <div class="mech-body">
+                <div class="mech-name">Re-establish control immediately</div>
+                <div class="mech-desc">Advisors revive together. Tanks re-establish assigned advisor control fast, with Capernian kept away from the raid and Thaladred pointed along the kite path.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Advisor return healing"></div>
+              <div class="mech-body">
+                <div class="mech-name">Heal the split damage</div>
+                <div class="mech-desc">Use legendary weapons properly and assign healing quickly as multiple advisors resume damage at once.</div>
+              </div>
+            </div>
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadowworddominate.jpg" alt="Mind Control CC"></div>
+              <div class="mech-body">
+                <div class="mech-name">Call Mind Control targets</div>
+                <div class="mech-desc"><span class="role unassigned" data-bind-group="tk-kaelthas-mind-control-cc" data-default="Mind control CC">Mind control CC</span> handles MCs immediately so healers are not killed or interrupted during the advisor return.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadowworddominate.jpg" alt="Mind Control"></div>
+              <div class="mech-body">
+                <div class="mech-name">CC Mind Control instantly</div>
+                <div class="mech-desc">Mind control CC is critical. Stop controlled players immediately, keep Capernian isolated, and keep moving if Thaladred gazes you.</div>
+              </div>
+            </div>
+            <div class="mech">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_rogue_eviscerate.jpg" alt="Advisor kill order"></div>
+              <div class="mech-body">
+                <div class="mech-name">Kill advisors in order</div>
+                <div class="mech-desc">DPS kills advisors in the assigned order while using legendary weapons properly and avoiding cleave or threat that breaks tank control.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Phase 4 · Kael'thas active</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_fireball02.jpg" alt="Kael'thas pickup"></div>
+              <div class="mech-body">
+                <div class="mech-name">Pick up Kael'thas cleanly</div>
+                <div class="mech-desc">Kael'thas becomes active and <span class="assignment-target" data-target-bind="tk-core-main-tank"></span> holds him stable while the raid finishes the transition.</div>
+              </div>
+            </div>
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_burnout.jpg" alt="Phoenix control"></div>
+              <div class="mech-body">
+                <div class="mech-name">Control Phoenixes and eggs</div>
+                <div class="mech-desc"><span class="assignment-target" data-target-bind="tk-kaelthas-phoenix-tank"></span> controls Phoenixes away from raid, and eggs must die before Phoenixes revive.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_searinglight.jpg" alt="Kael'thas tank healing"></div>
+              <div class="mech-body">
+                <div class="mech-name">Stabilize tank and raid</div>
+                <div class="mech-desc"><span class="role unassigned" data-bind-group="tk-core-mt-healers" data-default="Main tank healers">Main tank healers</span> stabilize Kael'thas pickup while raid healers cover Phoenix, egg, and transition damage.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadowworddominate.jpg" alt="Mind controls"></div>
+              <div class="mech-body">
+                <div class="mech-name">Control Mind Controls</div>
+                <div class="mech-desc">Mind controls must be controlled immediately. Do not tunnel Kael'thas if a controlled player, Phoenix, or egg needs to die.</div>
+              </div>
+            </div>
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_orb_04.jpg" alt="Phoenix eggs"></div>
+              <div class="mech-body">
+                <div class="mech-name">Kill eggs before revive</div>
+                <div class="mech-desc">Swap to Phoenixes and eggs on call so they do not overwhelm the raid during Kael'thas burn windows.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Phase 5 · Gravity Lapse / final burn</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_arcane_blink.jpg" alt="Gravity Lapse positioning"></div>
+              <div class="mech-body">
+                <div class="mech-name">Regroup after each lapse</div>
+                <div class="mech-desc">During Gravity Lapse, spread in the air, avoid Nether Beam chains, and do not float too high or too close to others. After Gravity Lapse, regroup and continue burn.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_circleofrenewal.jpg" alt="Final burn healing"></div>
+              <div class="mech-body">
+                <div class="mech-name">Recover the raid calmly</div>
+                <div class="mech-desc">Top players after each Gravity Lapse and keep enough coverage on any remaining Phoenix or egg assignments.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_arcane_arcanetorrent.jpg" alt="Nether Beam spread"></div>
+              <div class="mech-body">
+                <div class="mech-name">Spread, then finish</div>
+                <div class="mech-desc">Avoid Nether Beam chains in the air, handle Phoenixes and eggs if alive, then finish cleanly without panic movement after the raid regroups.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="image-sidebar">
+      <div class="image-card">
+        <div class="image-card-label">Advisor and weapon positioning</div>
+        <div class="image-card-caption">Placeholder for Phase 1 through Phase 3 positioning. Show advisor tank spots, Capernian isolation, Thaladred kite path, weapon pickup area, and Phase 3 advisor control positions.</div>
+      </div>
+      <div class="image-card">
+        <div class="image-card-label">Kael'thas and Gravity Lapse positioning</div>
+        <div class="image-card-caption">Placeholder for Phase 4 and Phase 5 positioning. Show Kael'thas tank spot, phoenix/egg control area, mind control response area, and Gravity Lapse spread pattern.</div>
+      </div>
+      <div class="reminder-card">
+        <div class="reminder-card-label">Kael'thas Sunstrider wipe causes · don't</div>
+        <ul class="reminder-list">
+          <li>Thaladred gaze target runs through the raid.</li>
+          <li>Capernian is tanked too close and kills nearby players.</li>
+          <li>Weapons are not picked up or assigned legendary weapons are missed.</li>
+          <li>Phase 3 advisors are not re-controlled quickly.</li>
+          <li>Mind controls are not CCed immediately.</li>
+          <li>Phoenixes or eggs are ignored and overwhelm the raid.</li>
+          <li>Tank dies during Kael'thas pickup or advisor return.</li>
+          <li>Gravity Lapse players stack too close and chain Nether Beam damage.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sheet-footer">Kael'thas Sunstrider · Tempest Keep · raid sheet</div>
+</div>

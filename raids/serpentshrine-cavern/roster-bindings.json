@@ -1,0 +1,166 @@
+{
+  "groupDefs": {
+    "ssc-core-mt-healers": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "MT healer"
+    },
+    "ssc-core-ot-healers": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "OT healer"
+    },
+    "ssc-core-ot-2-healers": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "OT 2 healer"
+    },
+    "ssc-core-ot-3-healers": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "OT 3 healer"
+    },
+    "ssc-core-raid-healers": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Raid healer"
+    },
+    "ssc-core-mt-misdirect": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "MD"
+    },
+    "ssc-core-ot-misdirect": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "MD"
+    },
+    "ssc-core-ot-2-misdirect": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "MD"
+    },
+    "ssc-core-ot-3-misdirect": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "MD"
+    },
+    "ssc-core-kicks": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Kicker"
+    },
+    "ssc-core-banish": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Banish"
+    },
+    "ssc-lurker-platform-1-assignments": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Platform 1"
+    },
+    "ssc-lurker-platform-2-assignments": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Platform 2"
+    },
+    "ssc-lurker-platform-3-assignments": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Platform 3"
+    },
+    "ssc-leotheras-demon-tank-healers": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Demon tank healer"
+    },
+    "ssc-morogrim-watery-grave-healers": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Watery Grave healer"
+    },
+    "ssc-vashj-strider-tank": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Strider tank"
+    },
+    "ssc-vashj-pylon-1-nw": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Pylon 1"
+    },
+    "ssc-vashj-pylon-2-ne": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Pylon 2"
+    },
+    "ssc-vashj-pylon-3-se": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Pylon 3"
+    },
+    "ssc-vashj-pylon-4-sw": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Pylon 4"
+    }
+  },
+  "singleDefaults": {
+    "ssc-core-main-tank": "Main tank",
+    "ssc-core-off-tank": "Off tank",
+    "ssc-core-off-tank-2": "Off tank 2",
+    "ssc-core-off-tank-3": "Off tank 3",
+    "ssc-core-curse-of-elements": "Elements",
+    "ssc-core-curse-of-recklessness": "Recklessness",
+    "ssc-core-curse-of-tongues": "Tongues",
+    "ssc-core-decurse": "Decurser",
+    "ssc-core-magic-dispel": "Dispel",
+    "ssc-hydross-frost-resist-tank": "Frost resist tank",
+    "ssc-hydross-nature-resist-tank": "Nature resist tank",
+    "ssc-leotheras-demon-tank": "Demon tank",
+    "ssc-karathress-karathress-tank": "Karathress",
+    "ssc-karathress-tidalvess-tank": "Tidalvess",
+    "ssc-karathress-sharkkis-tank": "Sharkkis",
+    "ssc-karathress-caribdis-tank": "Caribdis",
+    "ssc-morogrim-north-paladin": "North paladin",
+    "ssc-morogrim-south-paladin": "South paladin"
+  },
+  "singleAliases": {},
+  "groupAliases": {},
+  "groupTargetAliases": {},
+  "groupLabels": {
+    "ssc-core-mt-healers": "MT healers",
+    "ssc-core-ot-healers": "OT healers",
+    "ssc-core-ot-2-healers": "OT 2 healers",
+    "ssc-core-ot-3-healers": "OT 3 healers",
+    "ssc-core-raid-healers": "Raid healers",
+    "ssc-core-mt-misdirect": "MT misdirect",
+    "ssc-core-ot-misdirect": "OT misdirect",
+    "ssc-core-ot-2-misdirect": "OT 2 misdirect",
+    "ssc-core-ot-3-misdirect": "OT 3 misdirect",
+    "ssc-core-kicks": "Kicker",
+    "ssc-core-banish": "Banish",
+    "ssc-lurker-platform-1-assignments": "Platform 1 assignments",
+    "ssc-lurker-platform-2-assignments": "Platform 2 assignments",
+    "ssc-lurker-platform-3-assignments": "Platform 3 assignments",
+    "ssc-leotheras-demon-tank-healers": "Demon tank healers",
+    "ssc-morogrim-watery-grave-healers": "Watery Grave healers",
+    "ssc-vashj-strider-tank": "Strider tank",
+    "ssc-vashj-pylon-1-nw": "Pylon 1 (NW)",
+    "ssc-vashj-pylon-2-ne": "Pylon 2 (NE)",
+    "ssc-vashj-pylon-3-se": "Pylon 3 (SE)",
+    "ssc-vashj-pylon-4-sw": "Pylon 4 (SW)"
+  },
+  "indexAliases": {},
+  "derivedBindings": {
+    "ssc-vashj-ot2-or-ot": {
+      "type": "single-fallback",
+      "keys": [
+        "ssc-core-off-tank-2",
+        "ssc-core-off-tank"
+      ],
+      "fallback": "Off tank"
+    }
+  }
+}
