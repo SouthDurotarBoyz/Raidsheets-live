@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tempest Keep · Roster</title>
+<style>
+  @page { size: letter landscape; margin: 0.35in; }
+  @media print { * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; } html, body { background: white !important; background-image: none !important; } body { padding: 0; } .screen-only { display: none !important; } }
+  * { box-sizing: border-box; }
+  html {
+    min-height: 100%;
+    background: #242424;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #F5F5F5;
+    background:
+      linear-gradient(rgba(7, 8, 12, 0.76), rgba(7, 8, 12, 0.82)),
+      url("assets/tk/backgrounds/tk-background.webp"),
+      #242424;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .roster-top-actions,
+  .roster-form {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .roster-top-actions {
+    margin-bottom: 10px;
+    padding: 0 12px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 6px;
+    row-gap: 10px;
+    flex-wrap: wrap;
+  }
+  .roster-form {
+    margin-bottom: 16px;
+    background: #2F2F2F;
+    border: 1px solid #4A4A4A;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .roster-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 22px;
+    border-bottom: 0.5px solid #4A4A4A;
+    background: #333333;
+  }
+  .roster-title h2 { font-size: 14px; font-weight: 500; margin: 0 0 2px; }
+  .roster-title p { font-size: 11.5px; color: #C7C7C7; margin: 0; }
+  .roster-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; margin-left: auto; }
+  .raid-code-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border: 0.5px solid #6FA8DC;
+    border-radius: 5px;
+    background: rgba(111, 168, 220, 0.14);
+    color: #F5F5F5;
+    font-size: 11.5px;
+    line-height: 1.2;
+  }
+  .raid-code-badge[hidden] { display: none !important; }
+  .raid-code-value {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #FFFFFF;
+  }
+  .soft-reserve-control { display: inline-flex; align-items: center; gap: 6px; color: #D8D8D8; font-size: 11px; }
+  .soft-reserve-control input { width: 220px; min-width: 160px; padding: 6px 9px; border: 0.5px solid #626262; border-radius: 5px; background: #3A3A3A; color: #F5F5F5; font: inherit; font-size: 12px; }
+  .soft-reserve-control input::placeholder { color: #C7C7C7; opacity: 1; }
+  .soft-reserve-control input:focus { outline: none; border-color: #6FA8DC; box-shadow: 0 0 0 2px rgba(111, 168, 220, 0.25); }
+  .btn {
+    font-size: 12px;
+    padding: 7px 14px;
+    border: 0.5px solid #626262;
+    background: #4A4A4A;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    color: #F5F5F5;
+    transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+    text-decoration: none;
+  }
+  .btn:hover { background: #555555; border-color: #707070; }
+  .btn:disabled { opacity: 0.65; cursor: not-allowed; }
+  .btn:disabled:hover { background: #4A4A4A; border-color: #626262; }
+  .btn:focus-visible { outline: none; border-color: #6FA8DC; box-shadow: 0 0 0 2px rgba(111, 168, 220, 0.25); }
+  .btn-icon { display: inline-flex; align-items: center; gap: 6px; }
+  .btn-icon-img { width: 14px; height: 14px; object-fit: contain; pointer-events: none; }
+  .btn-primary { background: #4A4A4A; color: #FFFFFF; border-color: #626262; }
+  .btn-primary:hover { background: #555555; border-color: #707070; }
+  .btn-create { background: #1F8A4C; color: #FFFFFF; border-color: #2EA866; }
+  .btn-create:hover { background: #176B3A; border-color: #238A52; }
+  .btn-danger { background: #B3261E; color: #FFFFFF; border-color: #C63D35; }
+  .btn-danger:hover { background: #8C1D18; border-color: #A8322B; }
+  .roster-section { padding: 16px 22px; border-bottom: 0.5px solid #4A4A4A; }
+  .roster-section:last-child { border-bottom: none; }
+  .roster-section-header { font-size: 12px; font-weight: 500; letter-spacing: 0.4px; color: #F5F5F5; margin-bottom: 14px; }
+  .roster-section-header small { display: block; margin-top: 2px; font-size: 10.5px; font-weight: 400; letter-spacing: 0.2px; color: #C7C7C7; }
+  .roster-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
+  .roster-group-label {
+    font-size: 10.5px; font-weight: 500; letter-spacing: 0.7px; text-transform: uppercase;
+    color: #D8D8D8; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .roster-controls-spacer { height: 26px; pointer-events: none; visibility: hidden; }
+  .roster-row {
+    display: grid;
+    grid-template-columns: 24px minmax(0, 142px) minmax(0, 1fr);
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .roster-row .role-icon {
+    width: 22px; height: 22px; border-radius: 3px; overflow: hidden;
+    border: 0.5px solid rgba(0,0,0,0.15); display: inline-flex; align-items: center; justify-content: center;
+  }
+  .roster-row .role-icon img { width: 100%; height: 100%; display: block; object-fit: cover; }
+  .roster-row .role-icon.raid-position-icon { border: none; background: transparent; overflow: visible; }
+  .roster-row .role-icon.raid-position-icon img { width: 18px; height: 18px; object-fit: contain; border-radius: 0; }
+  .roster-row .role-text { font-size: 11.5px; color: #E8E8E8; }
+  .roster-row input {
+    padding: 5px 7px; font-size: 12px; border: 0.5px solid #626262; border-radius: 4px;
+    font-family: inherit; color: #F5F5F5; background: #4A4A4A; width: 100%; min-width: 0;
+  }
+  .roster-row input::placeholder { color: #C7C7C7; opacity: 1; }
+  .roster-row input:focus { outline: none; border-color: #6FA8DC; box-shadow: 0 0 0 2px rgba(111, 168, 220, 0.25); }
+  .boss-roster-section {
+    --boss-role-icon: 20px;
+    --boss-role-label: 92px;
+    --boss-role-input: 136px;
+    --boss-field-width: calc(var(--boss-role-icon) + var(--boss-role-label) + var(--boss-role-input) + 6px);
+    --boss-inline-field-width: var(--boss-field-width);
+  }
+  .boss-roster-section .roster-grid {
+    grid-template-columns: repeat(auto-fit, minmax(var(--boss-inline-field-width), var(--boss-inline-field-width)));
+    gap: 12px 16px;
+    align-items: start;
+    justify-content: start;
+  }
+  .boss-roster-section .roster-group { width: var(--boss-inline-field-width); }
+  .boss-roster-section .roster-row {
+    grid-template-columns: var(--boss-role-icon) minmax(0, var(--boss-role-label)) var(--boss-role-input);
+    gap: 3px;
+    margin-bottom: 6px;
+    width: var(--boss-field-width);
+  }
+  .boss-roster-section .roster-row .role-icon { justify-self: end; }
+  .core-roster-section {
+    --core-role-icon: 24px;
+    --core-role-label: 88px;
+    --core-input-width: 150px;
+    --core-role-input: var(--core-input-width);
+    --core-row-gap: 6px;
+    --core-misdirect-target-width: 104px;
+  }
+  .core-roster-section .roster-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, max-content));
+    gap: 14px 14px;
+    align-items: start;
+    justify-content: start;
+  }
+  .core-roster-section .roster-group { max-width: 100%; }
+  .core-roster-section .core-roster-block-tanks { --core-role-label: 62px; }
+  .core-roster-section .core-roster-block-healers { --core-role-label: 86px; }
+  .core-roster-section .core-roster-block-misdirect {
+    --core-role-label: 0px;
+    --core-misdirect-row-width: calc(
+      var(--core-role-icon) + var(--core-input-width) + var(--core-misdirect-target-width) +
+      var(--core-row-gap) + var(--core-row-gap)
+    );
+    --core-block-width: var(--core-misdirect-row-width);
+    min-width: var(--core-block-width);
+  }
+  .core-roster-section .core-roster-block-utility { --core-role-label: 96px; }
+  .core-roster-section .roster-row {
+    grid-template-columns: var(--core-role-icon) var(--core-role-label) var(--core-role-input);
+    width: max-content;
+    max-width: 100%;
+    gap: var(--core-row-gap);
+  }
+  .roster-row.misdirect-target-row {
+    grid-template-columns: 24px minmax(0, 42px) minmax(0, 1fr) minmax(0, 94px);
+    gap: 7px;
+  }
+  .core-roster-section .roster-row.misdirect-target-row {
+    grid-template-columns: var(--core-role-icon) var(--core-input-width) minmax(var(--core-misdirect-target-width), max-content);
+  }
+  .md-target-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-width: 0;
+    font-size: 11.5px;
+    color: #F5F5F5;
+    white-space: nowrap;
+  }
+  .md-target-label .raid-marker {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    border: none;
+    background: transparent;
+    overflow: visible;
+  }
+  .md-target-label .raid-marker img { width: 18px; height: 18px; display: block; }
+  .md-target-text { overflow: hidden; text-overflow: ellipsis; }
+  .core-roster-section .md-target-label { min-width: max-content; }
+  .core-roster-section .md-target-text { overflow: visible; text-overflow: clip; }
+  .roster-inline-list [data-slot-list] { width: max-content; max-width: 100%; }
+  [data-slot-list] > .slot-controls { width: 100%; justify-content: flex-end; margin-bottom: 6px; }
+  [data-slot-list] > .slot-controls-to-input { width: calc(var(--core-role-icon) + var(--core-row-gap) + var(--core-input-width)); }
+  .slot-controls { display: flex; gap: 4px; }
+  .slot-btn {
+    width: 20px; height: 20px; padding: 0; border: 0.5px solid #626262; background: #4A4A4A;
+    border-radius: 3px; cursor: pointer; font-family: inherit; font-size: 13px; line-height: 1;
+    color: #F5F5F5; display: inline-flex; align-items: center; justify-content: center;
+    transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+  }
+  .slot-btn:hover { background: #555555; border-color: #707070; color: #FFFFFF; }
+  .slot-btn:focus-visible { outline: none; border-color: #6FA8DC; box-shadow: 0 0 0 2px rgba(111, 168, 220, 0.25); }
+  .slot-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+  .notice { max-width: 1280px; margin: 0 auto 10px; color: #F0C36A; padding: 0 12px; }
+  @media (max-width: 700px) { .roster-header { align-items: flex-start; flex-direction: column; } .roster-actions { margin-left: 0; } }
+</style>
+</head>
+<body data-page-role="roster-editor" data-raid-id="tempest-keep">
+<div class="roster-top-actions screen-only">
+  <a class="btn" href="index.html">Home</a>
+  <label class="soft-reserve-control" for="soft-reserve-url">
+    <input id="soft-reserve-url" type="url" placeholder="Soft Reserve URL" autocomplete="off" aria-label="Soft Reserve URL">
+  </label>
+  <div class="roster-actions">
+    <button class="btn btn-create btn-icon" id="export-raid-sheet-link" type="button"><img class="btn-icon-img" src="assets/shared/icons/create-raidsheet.svg" alt="" aria-hidden="true"> <span>Create Raidsheet</span></button>
+    <a class="btn btn-primary btn-icon" id="public-guide-link" href="alar.html"><img class="btn-icon-img" src="assets/shared/icons/raidsheet.svg" alt="" aria-hidden="true"> <span>Raidsheet</span></a>
+    <button class="btn btn-danger btn-icon" id="clear-roster" type="button"><img class="btn-icon-img" src="assets/shared/icons/clear-all.svg" alt="" aria-hidden="true"> <span>Clear all</span></button>
+  </div>
+</div>
+<div id="load-notice" class="notice" role="status" aria-live="polite"></div>
+<form class="roster-form" id="tk-roster-form">
+  <div class="roster-header">
+    <div class="roster-title">
+      <h2>Tempest Keep Roster</h2>
+      <p>Assign Roles then Create Raidsheet to Share</p>
+    </div>
+  </div>
+  <div id="roster-sections"></div>
+</form>
+
+<script>
+window.RaidConfig = { raidId: 'tempest-keep' };
+</script>
+<script src="js/roster-storage.js"></script>
+<script src="js/session-client.js"></script>
+<script src="js/roster-ui-helpers.js"></script>
+<script>
+(function() {
+  'use strict';
+
+  const RAID_ID = 'tempest-keep';
+  const ROSTER_SCHEMA_PATH = 'raids/tempest-keep/roster-schema.json';
+  const GUIDE_PAGE = 'alar.html';
+  const storage = window.RaidRosterStorage || window.GruulsRosterStorage;
+  const sessionClient = window.RaidSessionClient || window.GruulsSessionClient;
+  const SOFT_RESERVE_KEY = 'soft-reserve-url';
+  let state = { groups: {}, singles: {}, meta: {} };
+  let rosterSchema = { fields: {} };
+
+  const iconUrl = window.RosterUiHelpers.iconUrl;
+  const raidMarkerSource = window.RosterUiHelpers.raidMarkerSource;
+  const copyTextWithButtonFeedback = window.RosterUiHelpers.copyTextWithButtonFeedback;
+  const bindSoftReserveInput = window.RosterUiHelpers.bindSoftReserveInput;
+
+  const FIELD_META = {
+    'tk-core-main-tank': { label: 'Main tank', placeholder: 'Tank', marker: 'skull', markerTitle: 'Skull' },
+    'tk-core-off-tank': { label: 'Off tank', placeholder: 'Tank', marker: 'cross', markerTitle: 'Cross' },
+    'tk-core-off-tank-2': { label: 'Off tank 2', placeholder: 'Tank', marker: 'square', markerTitle: 'Square' },
+    'tk-core-off-tank-3': { label: 'Off tank 3', placeholder: 'Tank', marker: 'diamond', markerTitle: 'Diamond' },
+    'tk-core-mt-healers': { label: 'MT healer(s)', placeholder: 'Healer', defaultLabel: 'MT healer', icon: 'spell_holy_greaterheal' },
+    'tk-core-ot-healers': { label: 'OT healer(s)', placeholder: 'Healer', defaultLabel: 'OT healer', icon: 'spell_holy_greaterheal' },
+    'tk-core-ot-2-healers': { label: 'OT 2 healer(s)', placeholder: 'Healer', defaultLabel: 'OT 2 healer', icon: 'spell_holy_greaterheal' },
+    'tk-core-ot-3-healers': { label: 'OT 3 healer(s)', placeholder: 'Healer', defaultLabel: 'OT 3 healer', icon: 'spell_holy_greaterheal' },
+    'tk-core-raid-healers': { label: 'Raid healers', placeholder: 'Healer', defaultLabel: 'Raid healer', icon: 'spell_holy_prayerofhealing' },
+    'tk-core-mt-misdirect': { label: 'MT misdirect', placeholder: 'Hunter', defaultLabel: 'MD', icon: 'ability_hunter_misdirection', targetMarker: 'skull', targetMarkerTitle: 'Skull', targetText: 'main tank', suppressRowLabel: true },
+    'tk-core-ot-misdirect': { label: 'OT misdirect', placeholder: 'Hunter', defaultLabel: 'MD', icon: 'ability_hunter_misdirection', targetMarker: 'cross', targetMarkerTitle: 'Cross', targetText: 'off tank', suppressRowLabel: true },
+    'tk-core-ot-2-misdirect': { label: 'OT 2 misdirect', placeholder: 'Hunter', defaultLabel: 'MD', icon: 'ability_hunter_misdirection', targetMarker: 'square', targetMarkerTitle: 'Square', targetText: 'off tank 2', suppressRowLabel: true },
+    'tk-core-ot-3-misdirect': { label: 'OT 3 misdirect', placeholder: 'Hunter', defaultLabel: 'MD', icon: 'ability_hunter_misdirection', targetMarker: 'diamond', targetMarkerTitle: 'Diamond', targetText: 'off tank 3', suppressRowLabel: true },
+    'tk-core-kicks': { label: 'Kicker', placeholder: 'Kicker', defaultLabel: 'Kicker', icon: 'ability_kick' },
+    'tk-core-curse-of-elements': { label: 'Elements', placeholder: 'Warlock', icon: 'spell_shadow_chilltouch' },
+    'tk-core-curse-of-recklessness': { label: 'Recklessness', placeholder: 'Warlock', icon: 'spell_shadow_unholystrength' },
+    'tk-core-curse-of-tongues': { label: 'Tongues', placeholder: 'Warlock', icon: 'spell_shadow_curseoftounges' },
+    'tk-core-decurse': { label: 'Decurse', placeholder: 'Player', defaultLabel: 'Decurser', icon: 'spell_nature_removecurse' },
+    'tk-core-magic-dispel': { label: 'Magic dispel', placeholder: 'Player', defaultLabel: 'Dispel', icon: 'spell_holy_dispelmagic' },
+    'tk-core-banish': { label: 'Banish', placeholder: 'Warlock', defaultLabel: 'Banish', icon: 'spell_shadow_enslavedemon', forceNumbering: true },
+    'tk-alar-platform-1-tank': { label: 'Platform 1 tank', placeholder: 'Tank', marker: 'star', markerTitle: 'Star' },
+    'tk-alar-platform-2-tank': { label: 'Platform 2 tank', placeholder: 'Tank', marker: 'circle', markerTitle: 'Circle' },
+    'tk-alar-add-tank': { label: 'Add tank', placeholder: 'Tank', marker: 'diamond', markerTitle: 'Diamond' },
+    'tk-alar-add-healers': { label: 'Add healer', placeholder: 'Healer', defaultLabel: 'Add healer', icon: 'spell_holy_greaterheal' },
+    'tk-void-reaver-orb-soakers': { label: 'Orb soaker', placeholder: 'Player', defaultLabel: 'Orb soaker', icon: 'spell_arcane_blast' },
+    'tk-void-reaver-kicks': { label: 'Kicker', placeholder: 'Kicker', defaultLabel: 'Kicker', icon: 'ability_kick' },
+    'tk-solarian-wrath-spread-callers': { label: 'Wrath caller', placeholder: 'Player', defaultLabel: 'Wrath caller', icon: 'spell_arcane_arcanetorrent' },
+    'tk-solarian-add-tanks': { label: 'Add tank', placeholder: 'Tank', defaultLabel: 'Add tank', marker: 'square', markerTitle: 'Square' },
+    'tk-solarian-priest-kicks': { label: 'Priest kick', placeholder: 'Kicker', defaultLabel: 'Priest kick', icon: 'ability_kick' },
+    'tk-kaelthas-thaladred-tank': { label: 'Thaladred tank', placeholder: 'Tank', marker: 'skull', markerTitle: 'Skull' },
+    'tk-kaelthas-sanguinar-tank': { label: 'Sanguinar tank', placeholder: 'Tank', marker: 'cross', markerTitle: 'Cross' },
+    'tk-kaelthas-capernian-tank': { label: 'Capernian tank', placeholder: 'Tank', marker: 'square', markerTitle: 'Square' },
+    'tk-kaelthas-telonicus-tank': { label: 'Telonicus tank', placeholder: 'Tank', marker: 'diamond', markerTitle: 'Diamond' },
+    'tk-kaelthas-weapon-tanks': { label: 'Weapon tank', placeholder: 'Tank', defaultLabel: 'Weapon tank', marker: 'triangle', markerTitle: 'Triangle' },
+    'tk-kaelthas-phoenix-tank': { label: 'Phoenix tank', placeholder: 'Tank', marker: 'moon', markerTitle: 'Moon' },
+    'tk-kaelthas-mind-control-cc': { label: 'Mind control CC', placeholder: 'Player / CC', defaultLabel: 'Mind control CC', icon: 'spell_shadow_shadowworddominate' },
+    'tk-kaelthas-legendary-staff': { label: 'Legendary staff', placeholder: 'Player', icon: 'inv_staff_13' },
+    'tk-kaelthas-legendary-dagger': { label: 'Legendary dagger', placeholder: 'Player', icon: 'inv_weapon_shortblade_38' },
+    'tk-kaelthas-legendary-bow': { label: 'Legendary bow', placeholder: 'Player', icon: 'inv_weapon_bow_19' },
+    'tk-kaelthas-legendary-shield': { label: 'Legendary shield', placeholder: 'Player', icon: 'inv_shield_05' }
+  };
+
+  const ROSTER_LAYOUT = [
+    {
+      title: 'Core roster',
+      blocks: [
+        { title: 'Tanks', fields: ['tk-core-main-tank', 'tk-core-off-tank', 'tk-core-off-tank-2', 'tk-core-off-tank-3'] },
+        { title: 'Healers', fields: ['tk-core-mt-healers', 'tk-core-ot-healers', 'tk-core-ot-2-healers', 'tk-core-ot-3-healers', 'tk-core-raid-healers'] },
+        { title: 'Misdirect', fields: ['tk-core-mt-misdirect', 'tk-core-ot-misdirect', 'tk-core-ot-2-misdirect', 'tk-core-ot-3-misdirect'] },
+        { title: 'Utility', fields: ['tk-core-curse-of-elements', 'tk-core-curse-of-recklessness', 'tk-core-curse-of-tongues', 'tk-core-decurse', 'tk-core-magic-dispel', 'tk-core-banish', 'tk-core-kicks'] }
+      ]
+    },
+    {
+      title: "1 · Al'ar",
+      fields: ['tk-alar-platform-1-tank', 'tk-alar-platform-2-tank', 'tk-alar-add-tank', 'tk-alar-add-healers']
+    },
+    {
+      title: '2 · Void Reaver',
+      fields: ['tk-void-reaver-orb-soakers', 'tk-void-reaver-kicks']
+    },
+    {
+      title: '3 · High Astromancer Solarian',
+      fields: ['tk-solarian-wrath-spread-callers', 'tk-solarian-add-tanks', 'tk-solarian-priest-kicks']
+    },
+    {
+      title: "4 · Kael'thas Sunstrider",
+      fields: ['tk-kaelthas-thaladred-tank', 'tk-kaelthas-sanguinar-tank', 'tk-kaelthas-capernian-tank', 'tk-kaelthas-telonicus-tank', 'tk-kaelthas-weapon-tanks', 'tk-kaelthas-phoenix-tank', 'tk-kaelthas-mind-control-cc', 'tk-kaelthas-legendary-staff', 'tk-kaelthas-legendary-dagger', 'tk-kaelthas-legendary-bow', 'tk-kaelthas-legendary-shield']
+    }
+  ];
+
+  function titleFromKey(key) {
+    return key.replace(/-/g, ' ').replace(/\b\w/g, function(char) { return char.toUpperCase(); });
+  }
+
+  function getFieldMeta(key) {
+    return FIELD_META[key] || { boss: 'Assignments', label: titleFromKey(key), placeholder: 'Player', defaultLabel: 'Player' };
+  }
+
+  function makeRoleIcon(meta) {
+    const iconCell = document.createElement('span');
+    iconCell.className = 'role-icon';
+    const markerSrc = meta.marker ? raidMarkerSource(meta.marker) : '';
+    if (markerSrc) {
+      iconCell.className += ' raid-position-icon';
+      iconCell.innerHTML = '<img src="' + markerSrc + '" alt="' + (meta.markerTitle || meta.label || 'Raid marker') + '" title="' + (meta.markerTitle || meta.label || 'Raid marker') + '">';
+    } else if (meta.icon) {
+      iconCell.innerHTML = '<img src="' + iconUrl(meta.icon) + '" alt="">';
+    }
+    return iconCell;
+  }
+
+  async function loadRosterSchema() {
+    const response = await fetch(ROSTER_SCHEMA_PATH, { cache: 'no-cache' });
+    if (!response.ok) throw new Error('Failed to load Tempest Keep roster schema');
+    const schema = await response.json();
+    return schema && schema.fields ? schema.fields : {};
+  }
+
+  function ensureRosterStateShape(nextState) {
+    const safeState = nextState && typeof nextState === 'object' ? nextState : {};
+    const rosterState = {
+      groups: safeState.groups && typeof safeState.groups === 'object' && !Array.isArray(safeState.groups) ? safeState.groups : {},
+      singles: safeState.singles && typeof safeState.singles === 'object' && !Array.isArray(safeState.singles) ? safeState.singles : {},
+      meta: safeState.meta && typeof safeState.meta === 'object' && !Array.isArray(safeState.meta) ? safeState.meta : {}
+    };
+    if (Object.prototype.hasOwnProperty.call(rosterState.singles, SOFT_RESERVE_KEY)) {
+      if (!Object.prototype.hasOwnProperty.call(rosterState.meta, SOFT_RESERVE_KEY)) rosterState.meta[SOFT_RESERVE_KEY] = rosterState.singles[SOFT_RESERVE_KEY];
+      delete rosterState.singles[SOFT_RESERVE_KEY];
+    }
+    return rosterState;
+  }
+
+  function currentSession() {
+    return sessionClient && sessionClient.getCurrentSession ? sessionClient.getCurrentSession() : { mode: 'local', isSessionBacked: false };
+  }
+
+  function loadState() {
+    if (sessionClient && sessionClient.loadSessionRoster) return Promise.resolve(sessionClient.loadSessionRoster());
+    return Promise.resolve(storage.loadRoster(RAID_ID));
+  }
+
+  function saveState() {
+    const rosterState = ensureRosterStateShape(state);
+    if (sessionClient && sessionClient.saveSessionRoster) return sessionClient.saveSessionRoster(rosterState);
+    storage.saveRoster(rosterState, RAID_ID);
+    return Promise.resolve(true);
+  }
+
+  function clearSavedState() {
+    if (sessionClient && sessionClient.clearSessionRoster) return Promise.resolve(sessionClient.clearSessionRoster());
+    storage.clearRoster(RAID_ID);
+    return Promise.resolve(true);
+  }
+
+  function setButtonContent(button, iconSrc, label) {
+    if (!button) return;
+    button.textContent = '';
+
+    const icon = document.createElement('img');
+    icon.className = 'btn-icon-img';
+    icon.src = iconSrc;
+    icon.alt = '';
+    icon.setAttribute('aria-hidden', 'true');
+    button.appendChild(icon);
+
+    const text = document.createElement('span');
+    text.textContent = label;
+    button.appendChild(text);
+  }
+
+  function raidsheetUrl() {
+    const session = currentSession();
+    const url = new URL(GUIDE_PAGE, location.href);
+    url.search = '';
+    url.hash = '';
+
+    if (session && session.isSessionBacked && session.publicCode) {
+      url.search = '?code=' + encodeURIComponent(session.publicCode);
+    } else if (session && session.isSessionBacked && session.sessionId) {
+      url.search = '?session=' + encodeURIComponent(session.sessionId);
+    }
+
+    return url.href;
+  }
+
+  function publicGuideUrl() {
+    const session = currentSession();
+
+    if (session && session.isSessionBacked && session.publicCode) {
+      return new URL('/raid/' + encodeURIComponent(session.publicCode), location.origin).href;
+    }
+
+    return raidsheetUrl();
+  }
+
+  function copyPublicGuideLink(button) {
+    const session = currentSession();
+    if (!session || !session.isSessionBacked) return Promise.resolve(false);
+    const copied = copyTextWithButtonFeedback(publicGuideUrl(), button, 'Copy this raider view link:');
+    return copied;
+  }
+
+  function exportRaidSheetLink(button) {
+    const session = currentSession();
+    if (session && session.isSessionBacked) {
+      return copyPublicGuideLink(button);
+    }
+
+    if (!sessionClient || !sessionClient.createSessionFromRoster) {
+      const copied = copyTextWithButtonFeedback(publicGuideUrl(), button, 'Online export is unavailable. Copy this local guide link:');
+      return copied;
+    }
+
+    if (button) {
+      button.disabled = true;
+      button.textContent = 'Creating…';
+    }
+
+    return sessionClient.createSessionFromRoster(RAID_ID, ensureRosterStateShape(state))
+      .then(function(data) {
+        if (!data || !data.editUrl) throw new Error('Missing session edit URL');
+        window.location.assign(new URL(data.editUrl, window.location.href).toString());
+      })
+      .catch(function(error) {
+        console.error('[Roster] Unable to export current roster.', error && error.message ? error.message : error);
+        alert('Could not export the current roster. Please try again.');
+      })
+      .finally(function() {
+        if (button) {
+          button.disabled = false;
+          setButtonContent(button, 'assets/shared/icons/create-raidsheet.svg', 'Create Raidsheet');
+        }
+      });
+  }
+
+  function updatePublicGuideControls() {
+    const session = currentSession();
+    const isSessionBacked = !!(session && session.isSessionBacked);
+    const publicCode = session && session.publicCode ? String(session.publicCode).toUpperCase() : '';
+    const guideLink = document.getElementById('public-guide-link');
+    const exportButton = document.getElementById('export-raid-sheet-link');
+    if (guideLink) {
+      guideLink.href = raidsheetUrl();
+      setButtonContent(guideLink, 'assets/shared/icons/raidsheet.svg', 'Raidsheet');
+    }
+    if (exportButton) {
+      exportButton.disabled = false;
+      setButtonContent(
+        exportButton,
+        isSessionBacked ? 'assets/shared/icons/share-link.svg' : 'assets/shared/icons/create-raidsheet.svg',
+        isSessionBacked ? (publicCode ? 'raid/' + publicCode : 'Copy Raider View Link') : 'Create Raidsheet'
+      );
+      exportButton.title = isSessionBacked ? 'Copy the raider view link.' : '';
+    }
+  }
+
+  function normalizeState() {
+    state = ensureRosterStateShape(state);
+
+    Object.keys(rosterSchema.fields).forEach(function(key) {
+      const field = rosterSchema.fields[key] || {};
+      if (field.type === 'list') {
+        if (!Array.isArray(state.groups[key])) {
+          state.groups[key] = state.singles[key] ? [state.singles[key]] : [''];
+          delete state.singles[key];
+        }
+        if (!state.groups[key].length) state.groups[key].push('');
+      }
+    });
+  }
+
+  function singleRow(key) {
+    const meta = getFieldMeta(key);
+    const row = document.createElement('div');
+    row.className = 'roster-row';
+
+    const label = document.createElement('span');
+    label.className = 'role-text';
+    label.textContent = meta.label;
+
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = meta.placeholder || 'Player';
+    input.dataset.roster = key;
+    input.value = state.singles[key] || '';
+    input.addEventListener('input', function() {
+      const trimmed = input.value.trim();
+      if (trimmed) state.singles[key] = trimmed;
+      else delete state.singles[key];
+      saveState();
+    });
+
+    row.appendChild(makeRoleIcon(meta));
+    row.appendChild(label);
+    row.appendChild(input);
+    return row;
+  }
+
+  function slotControls(key) {
+    const controls = document.createElement('span');
+    controls.className = 'slot-controls';
+    controls.innerHTML = '<button class="slot-btn" type="button" data-action="add" data-target="' + key + '" title="Add">+</button><button class="slot-btn" type="button" data-action="remove" data-target="' + key + '" title="Remove">−</button>';
+    return controls;
+  }
+
+  function listRowLabel(meta, key, idx, inlineControls) {
+    const baseLabel = meta.defaultLabel || meta.label || 'Player';
+    if (meta.suppressNumbering) return baseLabel;
+    if (meta.forceNumbering) return baseLabel + ' ' + (idx + 1);
+    if (inlineControls && idx === 0) return meta.label;
+    return baseLabel + (state.groups[key].length > 1 ? ' ' + (idx + 1) : '');
+  }
+
+  function misdirectTargetLabel(meta) {
+    const label = document.createElement('span');
+    label.className = 'md-target-label';
+    label.appendChild(document.createTextNode('→'));
+
+    const marker = document.createElement('span');
+    marker.className = 'raid-marker';
+    marker.innerHTML = '<img src="' + raidMarkerSource(meta.targetMarker) + '" alt="' + (meta.targetMarkerTitle || '') + '" title="' + (meta.targetMarkerTitle || '') + '">';
+    label.appendChild(marker);
+
+    const target = document.createElement('span');
+    target.className = 'md-target-text';
+    target.textContent = '→ ' + (meta.targetText || 'tank');
+    label.appendChild(target);
+    return label;
+  }
+
+  function renderList(list, key) {
+    const meta = getFieldMeta(key);
+    const inlineControls = list.dataset.inlineControls === 'true';
+    const isMisdirect = !!(meta.targetMarker && raidMarkerSource(meta.targetMarker));
+    list.innerHTML = '';
+    if (inlineControls) {
+      const controls = slotControls(key);
+      if (isMisdirect) controls.classList.add('slot-controls-to-input');
+      list.appendChild(controls);
+    }
+
+    state.groups[key].forEach(function(value, idx) {
+      const row = document.createElement('div');
+      row.className = 'roster-row' + (isMisdirect ? ' misdirect-target-row' : '');
+
+      const label = document.createElement('span');
+      label.className = 'role-text';
+      label.textContent = listRowLabel(meta, key, idx, inlineControls);
+
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.placeholder = meta.placeholder || 'Player';
+      input.value = value || '';
+      input.addEventListener('input', function() {
+        state.groups[key][idx] = input.value.trim();
+        saveState();
+      });
+
+      row.appendChild(makeRoleIcon(meta));
+      if (!meta.suppressRowLabel) row.appendChild(label);
+      row.appendChild(input);
+      if (isMisdirect) row.appendChild(misdirectTargetLabel(meta));
+      list.appendChild(row);
+    });
+
+    const removeBtn = document.querySelector('.slot-btn[data-action="remove"][data-target="' + key + '"]');
+    if (removeBtn) removeBtn.disabled = state.groups[key].length <= 1;
+  }
+
+  function controlsSpacer() {
+    const spacer = document.createElement('div');
+    spacer.className = 'roster-controls-spacer';
+    spacer.setAttribute('aria-hidden', 'true');
+    return spacer;
+  }
+
+  function singleFieldBlock(key) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'roster-group roster-inline-field roster-group-has-spacer';
+    wrapper.appendChild(controlsSpacer());
+    wrapper.appendChild(singleRow(key));
+    return wrapper;
+  }
+
+  function listBlock(key, inlineControls) {
+    const meta = getFieldMeta(key);
+    const wrapper = document.createElement('div');
+    wrapper.className = 'roster-group';
+
+    const list = document.createElement('div');
+    list.dataset.slotList = key;
+
+    if (inlineControls) {
+      wrapper.className += ' roster-inline-list';
+      list.dataset.inlineControls = 'true';
+    } else {
+      const header = document.createElement('div');
+      header.className = 'roster-group-label';
+      const title = document.createElement('span');
+      title.textContent = meta.label;
+      header.appendChild(title);
+      header.appendChild(slotControls(key));
+      wrapper.appendChild(header);
+    }
+
+    wrapper.appendChild(list);
+    renderList(list, key);
+    return wrapper;
+  }
+
+  function appendField(container, key, inlineListControls, alignSingleWithLists) {
+    const field = rosterSchema.fields[key];
+    if (!field) return;
+    if (field.type === 'list') {
+      container.appendChild(listBlock(key, inlineListControls));
+      return;
+    }
+    container.appendChild(alignSingleWithLists ? singleFieldBlock(key) : singleRow(key));
+  }
+
+  function fieldIsList(key) {
+    const field = rosterSchema.fields[key];
+    return !!field && field.type === 'list';
+  }
+
+  function sectionHeader(config) {
+    const header = document.createElement('div');
+    header.className = 'roster-section-header';
+    header.appendChild(document.createTextNode(config.title));
+    if (config.subtitle) {
+      const subtitle = document.createElement('small');
+      subtitle.textContent = config.subtitle;
+      header.appendChild(subtitle);
+    }
+    return header;
+  }
+
+  function blockColumn(block, alignWithListBlocks) {
+    const wrapper = document.createElement('div');
+    const blockClass = 'core-roster-block-' + block.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    const needsSpacer = alignWithListBlocks && !fieldIsList(block.fields[0]);
+    wrapper.className = 'roster-group core-roster-block ' + blockClass + (needsSpacer ? ' roster-group-has-spacer' : '');
+
+    const label = document.createElement('div');
+    label.className = 'roster-group-label';
+    label.textContent = block.title;
+    wrapper.appendChild(label);
+    if (needsSpacer) wrapper.appendChild(controlsSpacer());
+
+    block.fields.forEach(function(key) { appendField(wrapper, key, true, false); });
+    return wrapper;
+  }
+
+  function renderRoster() {
+    const sections = document.getElementById('roster-sections');
+    sections.innerHTML = '';
+
+    ROSTER_LAYOUT.forEach(function(config) {
+      const section = document.createElement('section');
+      section.className = 'roster-section';
+      if (config.blocks) section.className += ' core-roster-section';
+      else section.className += ' boss-roster-section';
+      const grid = document.createElement('div');
+      grid.className = 'roster-grid';
+
+      if (config.blocks) {
+        const alignWithListBlocks = config.blocks.some(function(block) { return fieldIsList(block.fields[0]); });
+        config.blocks.forEach(function(block) { grid.appendChild(blockColumn(block, alignWithListBlocks)); });
+      } else {
+        const sectionHasInlineLists = config.fields.some(fieldIsList);
+        config.fields.forEach(function(key) { appendField(grid, key, true, sectionHasInlineLists); });
+      }
+
+      section.appendChild(sectionHeader(config));
+      section.appendChild(grid);
+      sections.appendChild(section);
+    });
+  }
+
+
+  function initSoftReserveInput() {
+    bindSoftReserveInput({ getState: function() { return state; }, key: SOFT_RESERVE_KEY, saveState: saveState });
+  }
+
+  function initButtons() {
+    document.addEventListener('click', function(event) {
+      const btn = event.target && event.target.closest ? event.target.closest('.slot-btn[data-action]') : null;
+      if (!btn) return;
+      const key = btn.dataset.target;
+      if (!rosterSchema.fields[key] || rosterSchema.fields[key].type !== 'list') return;
+      if (btn.dataset.action === 'add') state.groups[key].push('');
+      if (btn.dataset.action === 'remove' && state.groups[key].length > 1) state.groups[key].pop();
+      saveState();
+      const list = document.querySelector('[data-slot-list="' + key + '"]');
+      if (list) renderList(list, key);
+    });
+
+    const exportBtn = document.getElementById('export-raid-sheet-link');
+    if (exportBtn) exportBtn.addEventListener('click', function() {
+      exportRaidSheetLink(exportBtn);
+    });
+
+    const clearBtn = document.getElementById('clear-roster');
+    if (clearBtn) clearBtn.addEventListener('click', function() {
+      if (!confirm('Clear all Tempest Keep assignments?')) return;
+      state = { groups: {}, singles: {}, meta: {} };
+      normalizeState();
+      clearSavedState().then(function() { return saveState(); }).finally(function() {
+        renderRoster();
+        const softReserveInput = document.getElementById('soft-reserve-url');
+        if (softReserveInput) softReserveInput.value = '';
+      });
+    });
+
+  }
+
+  async function init() {
+    try {
+      rosterSchema.fields = await loadRosterSchema();
+    } catch (error) {
+      document.getElementById('load-notice').textContent = 'Unable to load Tempest Keep roster schema.';
+      rosterSchema.fields = {};
+    }
+    try {
+      state = await loadState();
+    } catch (error) {
+      document.getElementById('load-notice').textContent = 'Unable to load the saved Tempest Keep roster. Starting from an empty roster.';
+      state = { groups: {}, singles: {}, meta: {} };
+    }
+    normalizeState();
+    saveState();
+    renderRoster();
+    updatePublicGuideControls();
+    initSoftReserveInput();
+    initButtons();
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>

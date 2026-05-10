@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gruul's Lair Guide Entry</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; margin: 0; background: #F1EFE8; color: #2C2C2A; }
+  .wrap { max-width: 760px; margin: 80px auto; padding: 24px; background: #fff; border: 1px solid #D3D1C7; border-radius: 8px; }
+  h1 { margin-top: 0; font-size: 22px; }
+  .error { background: #FCEBEB; border: 1px solid #F09595; color: #501313; padding: 14px; border-radius: 6px; }
+  a { color: #185FA5; }
+</style>
+</head>
+<body>
+<div class="wrap" id="guide-entry"></div>
+<script>
+(function() {
+  'use strict';
+  var container = document.getElementById('guide-entry');
+  var params = new URLSearchParams(window.location.search);
+  var raid = params.get('raid');
+  var sessionId = params.get('session');
+
+  if (raid === 'gruuls-lair' && sessionId) {
+    var target = new URL('maulgar.html', window.location.href);
+    target.search = '?session=' + encodeURIComponent(sessionId);
+    window.location.replace(target.href);
+    return;
+  }
+
+  container.innerHTML = '<h1>Unable to open raid guide</h1>' +
+    '<div class="error">The public raid guide link is invalid or incomplete. Please request a new link.</div>' +
+    '<p><a href="index.html">Return to raid menu</a></p>';
+})();
+</script>
+</body>
+</html>

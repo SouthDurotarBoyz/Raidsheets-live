@@ -1,0 +1,139 @@
+{
+  "raids": {
+    "maulgar": {
+      "encounter": "High King Maulgar",
+      "assets": [
+        {
+          "name": "background",
+          "path": "assets/gruul/backgrounds/maulgar-background.webp",
+          "used_in": "Maulgar page background"
+        },
+        {
+          "name": "pre-pull positioning",
+          "path": "assets/gruul/bosses/maulgar/pre-pull.png",
+          "used_in": "Maulgar pre-pull positions image card"
+        },
+        {
+          "name": "raid positioning",
+          "path": "assets/gruul/bosses/maulgar/raid-position.png",
+          "used_in": "Maulgar during-fight / raid-position image card"
+        }
+      ]
+    },
+    "gruul": {
+      "encounter": "Gruul the Dragonkiller",
+      "assets": [
+        {
+          "name": "roster background",
+          "path": "assets/gruul/backgrounds/bladesedge-background.webp",
+          "used_in": "Gruul's Lair roster page background"
+        },
+        {
+          "name": "background",
+          "path": "assets/gruul/backgrounds/gruul-background.webp",
+          "used_in": "Gruul page background"
+        },
+        {
+          "name": "raid positioning",
+          "path": "assets/gruul/bosses/gruul/gruul-positioning.png",
+          "used_in": "Gruul positioning image card"
+        }
+      ]
+    },
+    "magtheridon": {
+      "encounter": "Magtheridon",
+      "assets": [
+        {
+          "name": "background",
+          "path": "assets/gruul/backgrounds/magtheridon-background.webp",
+          "used_in": "Magtheridon page background"
+        },
+        {
+          "name": "boss icon",
+          "path": "assets/shared/markers/boss-icons/magtheridon.svg",
+          "used_in": "Magtheridon boss tab icon"
+        },
+        {
+          "name": "channeler split",
+          "path": "assets/gruul/bosses/magtheridon/magtheridon-channeler-split.webp",
+          "used_in": "Magtheridon channeler split image card"
+        },
+        {
+          "name": "cube clickers",
+          "path": "assets/gruul/bosses/magtheridon/magtheridon-cube-clickers.webp",
+          "used_in": "Magtheridon cube clickers image card"
+        }
+      ]
+    },
+    "serpentshrine-cavern": {
+      "encounter": "Serpentshrine Cavern",
+      "assets": [
+        {
+          "name": "roster background",
+          "path": "assets/ssc/backgrounds/ssc.webp",
+          "used_in": "Serpentshrine Cavern roster page background"
+        },
+        {
+          "name": "Hydross background",
+          "path": "assets/ssc/backgrounds/hydross.webp",
+          "used_in": "Hydross page background"
+        },
+        {
+          "name": "Lurker background",
+          "path": "assets/ssc/backgrounds/lurker.webp",
+          "used_in": "The Lurker Below page background"
+        },
+        {
+          "name": "Leotheras background",
+          "path": "assets/ssc/backgrounds/leotheras.webp",
+          "used_in": "Leotheras the Blind page background"
+        },
+        {
+          "name": "Karathress background",
+          "path": "assets/ssc/backgrounds/karathress.webp",
+          "used_in": "Fathom-Lord Karathress page background"
+        },
+        {
+          "name": "Morogrim background",
+          "path": "assets/ssc/backgrounds/Morogrim.webp",
+          "used_in": "Morogrim Tidewalker page background"
+        },
+        {
+          "name": "Vashj background",
+          "path": "assets/ssc/backgrounds/vashj.webp",
+          "used_in": "Lady Vashj page background"
+        }
+      ]
+    },
+    "tempest-keep": {
+      "encounter": "Tempest Keep",
+      "assets": [
+        {
+          "name": "roster background",
+          "path": "assets/tk/backgrounds/tk-background.webp",
+          "used_in": "Tempest Keep roster page background"
+        },
+        {
+          "name": "Al'ar background",
+          "path": "assets/tk/backgrounds/alar.webp",
+          "used_in": "Al'ar page background"
+        },
+        {
+          "name": "Void Reaver background",
+          "path": "assets/tk/backgrounds/Voidreaver.webp",
+          "used_in": "Void Reaver page background"
+        },
+        {
+          "name": "Solarian background",
+          "path": "assets/tk/backgrounds/solarian.webp",
+          "used_in": "High Astromancer Solarian page background"
+        },
+        {
+          "name": "Kael'thas background",
+          "path": "assets/tk/backgrounds/kaelthas.webp",
+          "used_in": "Kael'thas Sunstrider page background"
+        }
+      ]
+    }
+  }
+}
