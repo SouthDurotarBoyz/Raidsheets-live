@@ -1,0 +1,64 @@
+(function() {
+  'use strict';
+
+  function getParams() {
+    return new URLSearchParams(window.location.search || '');
+  }
+
+  function sanitizePage(page) {
+    return typeof page === 'string' ? page.split('?')[0] : '';
+  }
+
+  function buildBossTab(boss, currentBossId, sessionId) {
+    var link = document.createElement('a');
+    var isCurrent = boss.id === currentBossId;
+    link.className = 'btn boss-tab' + (isCurrent ? ' boss-tab-active' : '');
+    var page = sanitizePage(boss.page);
+    link.href = sessionId ? (page + '?session=' + encodeURIComponent(sessionId)) : page;
+    if (isCurrent) link.setAttribute('aria-current', 'page');
+
+    var icon = document.createElement('img');
+    icon.className = 'boss-tab-icon';
+    icon.src = boss.icon;
+    icon.alt = '';
+    link.appendChild(icon);
+    link.appendChild(document.createTextNode(boss.shortName || boss.name || boss.id));
+    return link;
+  }
+
+  function applyNav(raid) {
+    var root = document.body;
+    var bossId = root.getAttribute('data-boss-id');
+    var navContainer = document.querySelector('[data-boss-tabs]');
+    if (!navContainer || !raid || !Array.isArray(raid.bosses)) return;
+
+    var params = getParams();
+    var sessionId = params.get('session');
+    var rosterLink = document.querySelector('.page-nav-actions a[href="roster.html"]');
+    if (rosterLink && sessionId) rosterLink.style.display = 'none';
+
+    navContainer.innerHTML = '';
+    for (var i = 0; i < raid.bosses.length; i += 1) {
+      navContainer.appendChild(buildBossTab(raid.bosses[i], bossId, sessionId));
+    }
+  }
+
+  function init() {
+    var root = document.body;
+    var raidId = root.getAttribute('data-raid-id');
+    if (!raidId) return;
+
+    fetch('raids/' + raidId + '/raid.json', { credentials: 'same-origin' })
+      .then(function(response) {
+        if (!response.ok) throw new Error('Failed to load raid.json');
+        return response.json();
+      })
+      .then(applyNav)
+      .catch(function() {
+        // Keep existing/static nav content if metadata cannot be loaded.
+      });
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
