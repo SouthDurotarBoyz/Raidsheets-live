@@ -1,0 +1,268 @@
+@page { size: letter landscape; margin: 0.35in; }
+
+:root {
+  --tk-page-bg: #111111;
+  --tk-sheet-bg: #2B2B2B;
+  --tk-panel-bg: #383838;
+  --tk-panel-bg-soft: #242424;
+  --tk-border: #55524A;
+  --tk-border-soft: rgba(255, 255, 255, 0.14);
+  --tk-text: #F1EFE8;
+  --tk-text-soft: #D3D1C7;
+  --tk-muted: #B8B4A8;
+
+  --tk-tank-bg: #4A351C;
+  --tk-tank-text: #F3D39C;
+  --tk-healer-bg: #263A20;
+  --tk-healer-text: #CBE7B0;
+  --tk-dps-bg: #4A2424;
+  --tk-dps-text: #F0B4B4;
+  --tk-phase-bg: #20394E;
+  --tk-phase-text: #B9DAF5;
+}
+
+html {
+  min-height: 100%;
+  background: var(--tk-page-bg);
+}
+
+body {
+  --tk-boss-background-image: none;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--tk-text);
+  background:
+    linear-gradient(rgba(7, 8, 12, 0.76), rgba(7, 8, 12, 0.82)),
+    var(--tk-boss-background-image),
+    var(--tk-page-bg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+body[data-boss-id="alar"] {
+  --tk-boss-background-image: url("../../assets/tk/backgrounds/alar.webp");
+}
+
+body[data-boss-id="void-reaver"] {
+  --tk-boss-background-image: url("../../assets/tk/backgrounds/Voidreaver.webp");
+}
+
+body[data-boss-id="solarian"] {
+  --tk-boss-background-image: url("../../assets/tk/backgrounds/solarian.webp");
+}
+
+body[data-boss-id="kaelthas"] {
+  --tk-boss-background-image: url("../../assets/tk/backgrounds/kaelthas.webp");
+}
+
+.page-nav,
+.screen-only {
+  max-width: 1280px;
+  margin: 0 auto 16px;
+}
+
+.page-nav {
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+}
+
+.page-nav a {
+  text-decoration: none;
+}
+
+.sheet {
+  background: var(--tk-sheet-bg);
+  border-color: var(--tk-border);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
+  color: var(--tk-text);
+}
+
+.boss-name {
+  color: var(--tk-text);
+}
+
+.boss-zone,
+.sheet-footer,
+.image-card-label,
+.image-card-caption {
+  color: var(--tk-muted);
+}
+
+.setup-block {
+  background: var(--tk-panel-bg);
+  border: 1px solid var(--tk-border);
+  border-radius: 8px;
+  color: var(--tk-text-soft);
+  margin-bottom: 14px;
+  padding: 12px 16px;
+}
+
+.setup-label {
+  margin-bottom: 8px;
+  color: var(--tk-text);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.setup-grid-5 {
+  color: var(--tk-text-soft);
+  font-size: 12px;
+  gap: 12px;
+}
+
+.setup-grid-5 .setup-col-misdirect-wide {
+  flex: 0 0 auto;
+}
+
+.setup-col-label,
+.setup-grid-5 b,
+.setup-block .role {
+  color: var(--tk-text);
+}
+
+.setup-col-label {
+  font-size: 10px;
+  margin-bottom: 6px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.setup-line {
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.setup-line span.line-text,
+.setup-line .line-text {
+  line-height: 1.45;
+}
+
+.setup-line .role-icon-inline {
+  background: rgba(244, 241, 232, 0.08);
+  border-color: var(--tk-border-soft);
+}
+
+.setup-line .role-icon-inline.raid-marker-inline {
+  background: transparent;
+  border-color: transparent;
+}
+
+.setup-block .role.unassigned,
+.role.unassigned {
+  color: #B4B2A9;
+}
+
+.setup-block .role-label,
+.setup-block .tank-paren,
+.role-label {
+  color: #D0D0D0;
+  opacity: 0.78;
+}
+
+.role-pill {
+  font-size: 13px;
+  padding: 8px;
+  border: 1px solid var(--tk-border-soft);
+  border-radius: 6px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.role-tank,
+.col-tank {
+  background: var(--tk-tank-bg);
+  color: var(--tk-tank-text);
+}
+
+.role-healer,
+.col-healer {
+  background: var(--tk-healer-bg);
+  color: var(--tk-healer-text);
+}
+
+.role-dps,
+.col-dps {
+  background: var(--tk-dps-bg);
+  color: var(--tk-dps-text);
+}
+
+.phase-bar {
+  margin-bottom: 7px;
+  padding: 8px 12px;
+  background: var(--tk-phase-bg);
+  border: 1px solid var(--tk-border-soft);
+  border-radius: 6px;
+  color: var(--tk-phase-text);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+}
+
+.col {
+  padding: 10px;
+  border: 0.5px solid var(--tk-border-soft);
+  border-radius: 6px;
+}
+
+.mech-name,
+.role {
+  color: var(--tk-text);
+}
+
+.mech-name {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.mech-name.danger,
+.critical .mech-name {
+  color: #FFB3B3;
+}
+
+.mech-desc {
+  font-size: 11.5px;
+  color: var(--tk-text-soft);
+}
+
+.image-card {
+  background: var(--tk-panel-bg-soft);
+  border-color: var(--tk-border);
+}
+
+.reminder-card {
+  background: #3A2424;
+  border-color: #7D3D3D;
+}
+
+.reminder-card-label {
+  color: #FFB3B3;
+}
+
+.reminder-list,
+.reminder-list li {
+  color: #F0D0D0;
+}
+
+.sheet-footer {
+  border-top-color: var(--tk-border);
+}
+
+@media print {
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  html,
+  body { background: white; background-image: none; }
+  body { padding: 0; }
+  .screen-only { display: none !important; }
+  .sheet { box-shadow: none; border: none; padding: 0; max-width: none; }
+  .phase-block, .setup-block, .header-row, .image-card, .reminder-card { page-break-inside: avoid; }
+}

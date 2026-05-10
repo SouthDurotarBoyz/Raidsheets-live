@@ -1,0 +1,483 @@
+@page { size: letter landscape; margin: 0.35in; }
+  @media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    html { background: white !important; }
+    body { background: white; padding: 0; }
+    .roster-form { display: none !important; }
+    .sheet { box-shadow: none; border: none; padding: 0; max-width: none; }
+    .phase-block, .setup-block, .header-row, .image-card, .reminder-card { page-break-inside: avoid; }
+  }
+
+
+  html {
+    min-height: 100%;
+    background: #1a120f url("../../assets/gruul/backgrounds/maulgar-background.webp") center center / cover no-repeat fixed;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #2C2C2A;
+    background: transparent;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+  }
+
+  /* ===========================================
+     Roster form (screen only)
+     =========================================== */
+  .roster-form {
+    max-width: 1280px;
+    margin: 0 auto 16px;
+    background: white;
+    border: 1px solid #D3D1C7;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .roster-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 22px;
+    border-bottom: 0.5px solid #D3D1C7;
+    background: #F8F7F3;
+  }
+  .roster-title h2 { font-size: 14px; font-weight: 500; margin: 0 0 2px; }
+  .roster-title p { font-size: 11.5px; color: #888780; margin: 0; }
+  .roster-actions { display: flex; gap: 8px; }
+  .roster-section {
+    padding: 16px 22px;
+    border-bottom: 0.5px solid #D3D1C7;
+  }
+  .roster-section:last-child { border-bottom: none; }
+
+  .roster-section-header {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    color: #2C2C2A;
+    margin-bottom: 14px;
+  }
+  .roster-section-header span {
+    font-weight: 400;
+    color: #888780;
+    margin-left: 8px;
+  }
+
+  .roster-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 22px;
+  }
+
+  .roster-group-label {
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    color: #888780;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .roster-subgroup-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: #5F5E5A;
+    margin: 14px 0 6px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .roster-subgroup-label:first-of-type { margin-top: 4px; }
+  .roster-subgroup-label .target-name {
+    font-size: 10px;
+    font-weight: 400;
+    color: #888780;
+    margin-left: 4px;
+  }
+  .roster-subgroup-label .target-name:empty { display: none; }
+
+  /* Add/remove slot buttons inline with group label */
+  .slot-controls { display: flex; gap: 4px; }
+  .slot-btn {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: 0.5px solid #D3D1C7;
+    background: white;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1;
+    color: #5F5E5A;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .slot-btn:hover { background: #F1EFE8; color: #2C2C2A; }
+  .slot-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+  .roster-row {
+    display: grid;
+    grid-template-columns: 24px minmax(0, 100px) minmax(0, 1fr);
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .roster-row:last-child { margin-bottom: 0; }
+
+  .roster-row .role-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 3px;
+    overflow: hidden;
+    border: 0.5px solid rgba(0,0,0,0.15);
+  }
+  .roster-row .role-icon img { width: 100%; height: 100%; display: block; }
+
+  .roster-row .role-text {
+    font-size: 11.5px;
+    color: #5F5E5A;
+  }
+
+  .roster-row input {
+    padding: 5px 7px;
+    font-size: 12px;
+    border: 0.5px solid #D3D1C7;
+    border-radius: 4px;
+    font-family: inherit;
+    color: #2C2C2A;
+    width: 100%;
+    min-width: 0;
+  }
+  .roster-row input:focus {
+    outline: none;
+    border-color: #185FA5;
+    box-shadow: 0 0 0 2px rgba(24, 95, 165, 0.15);
+  }
+
+  .roster-section.boss-section { background: #FAFAFA; }
+
+  /* ===========================================
+     The sheet
+     =========================================== */
+
+  .setup-block {
+    background: #FAEEDA;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+  }
+  .setup-label { font-size: 10.5px; font-weight: 500; color: #854F0B; letter-spacing: 0.6px; margin-bottom: 8px; }
+  .setup-grid,
+  .setup-grid-4,
+  .setup-grid-5 {
+    gap: 12px;
+    font-size: 12px;
+    color: #633806;
+  }
+  /* Role label badge after (Tankname) — small, muted, uppercase */
+  .role-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: #888780;
+    margin-left: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+  }
+  .setup-block .role-label {
+    color: #854F0B;
+    opacity: 0.65;
+  }
+  .setup-col-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: #412402;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .setup-line {
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+  .setup-line .role-icon-inline {
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    overflow: hidden;
+    border: 0.5px solid rgba(0,0,0,0.15);
+    flex-shrink: 0;
+  }
+  .setup-line .role-icon-inline img { width: 100%; height: 100%; display: block; }
+  .setup-line span.line-text { line-height: 1.45; }
+  .setup-block .maulgar-kick-note-line {
+    margin-top: 6px;
+    white-space: normal;
+  }
+  .setup-block .maulgar-kick-note-line .maulgar-kick-note {
+    display: block;
+    max-width: 155px;
+    font-size: 11px;
+    opacity: 0.85;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+  .setup-grid b { color: #412402; font-weight: 500; }
+  .setup-note { font-size: 11.5px; color: #633806; margin-top: 10px; opacity: 0.9; padding-top: 10px; border-top: 0.5px solid rgba(133, 79, 11, 0.2); }
+
+  .role-pill { text-align: center; padding: 8px; border-radius: 6px; font-weight: 500; font-size: 13px; }
+  .role-tank   { background: #FAEEDA; color: #854F0B; }
+  .role-healer { background: #EAF3DE; color: #27500A; }
+  .role-dps    { background: #FCEBEB; color: #791F1F; }
+
+  .phase-bar {
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 7px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    background: #E6F1FB;
+    color: #0C447C;
+  }
+
+  .col { padding: 10px; border-radius: 6px; border: 0.5px solid rgba(0,0,0,0.08); }
+  .col-tank   { background: #FAEEDA; }
+  .col-healer { background: #EAF3DE; }
+  .col-dps    { background: #FCEBEB; }
+
+  .mech-name { font-weight: 500; font-size: 12px; margin-bottom: 2px; color: #2C2C2A; }
+  .mech-desc { color: #5F5E5A; font-size: 11px; line-height: 1.5; }
+
+  .role { font-weight: 500; color: #2C2C2A; }
+  .role.unassigned { font-weight: 400; color: #888780; font-style: italic; }
+  .setup-block .role { color: #412402; }
+  .setup-block .setup-col-tanks .assignment-target { color: #412402; font-weight: 500; }
+  .setup-block .role.unassigned { color: #B4B2A9; }
+
+  /* Parenthetical tank-name in setup lines: "Frost tank (Doodoo): healer" */
+  .tank-paren {
+    font-size: 11px;
+    font-weight: 400;
+    opacity: 0.75;
+  }
+
+  .image-card svg { width: 100%; height: auto; display: block; background: #F8F7F3; border-radius: 4px; }
+
+  /* Raid marker image badges used in the roster misdirect rows. */
+  .raid-marker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 5px;
+    background: #F8F7F3;
+    border: 0.5px solid #D3D1C7;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.55);
+    padding: 2px;
+    box-sizing: border-box;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+
+  .raid-marker img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    display: block;
+  }
+
+
+/* Standalone split-page controls */
+@media print { .screen-only { display: none !important; } }
+.screen-only {
+  max-width: 1280px;
+  margin: 0 auto 16px;
+}
+.page-nav a {
+  text-decoration: none;
+}
+.copy-note {
+  font-size: 11px;
+  color: #888780;
+  margin-top: 4px;
+}
+
+  /* Remove the small wrapper outline from embedded raid marker SVGs. */
+  .setup-line .role-icon-inline.raid-marker-plain {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .setup-line .role-icon-inline.raid-marker-plain img {
+    border-radius: 0 !important;
+  }
+
+
+
+
+  /* Dark gray sheet background override */
+  body {
+    color: #E9E7DE;
+  }
+
+  .roster-form,
+  .sheet,
+  .slot-btn {
+    background: #2B2B2B;
+    border-color: #55524A;
+    color: #E9E7DE;
+  }
+
+  .roster-header,
+  .roster-section.boss-section,
+  .image-card svg,
+  .raid-marker {
+    background: #242424;
+    border-color: #55524A;
+  }
+
+  .roster-header,
+  .roster-section,
+  .sheet-footer {
+    border-color: #55524A;
+  }
+
+  .boss-zone,
+  .roster-title p,
+  .roster-section-header span,
+  .roster-group-label,
+  .roster-subgroup-label .target-name,
+  .role-label,
+  .sheet-footer,
+  .copy-note {
+    color: #B8B4A8;
+  }
+
+  .roster-section-header,
+  .boss-name,
+  .mech-name,
+  .role,
+  .roster-row input {
+    color: #F1EFE8;
+  }
+
+  .roster-subgroup-label,
+  .roster-row .role-text,
+  .slot-btn,
+  .mech-desc {
+    color: #D3D1C7;
+  }
+
+  .roster-row input {
+    background: #1F1F1F;
+    border-color: #5F5B52;
+  }
+
+  .slot-btn:hover {
+    background: #3A3A3A;
+    color: #FFFFFF;
+  }
+
+  .role-tank,
+  .col-tank {
+    background: #4A351C;
+    color: #F3D39C;
+  }
+
+  .role-healer,
+  .col-healer {
+    background: #263A20;
+    color: #CBE7B0;
+  }
+
+  .role-dps,
+  .col-dps {
+    background: #4A2424;
+    color: #F0B4B4;
+  }
+
+  .phase-bar {
+    background: #20394E;
+    color: #B9DAF5;
+  }
+
+  .setup-block {
+    background: #383838;
+    border-color: #4A4A4A;
+    color: #D3D1C7;
+  }
+
+  .setup-block .setup-label {
+    color: #F2F2F2;
+  }
+
+  .setup-block .setup-grid,
+  .setup-block .setup-grid-4,
+  .setup-block .setup-grid-5,
+  .setup-line .line-text {
+    color: #D3D1C7;
+  }
+
+  .setup-block .setup-col-label,
+  .setup-block .setup-grid b {
+    color: #F1EFE8;
+  }
+
+  .setup-block .role {
+    color: #F3D39C;
+  }
+
+  .setup-block .assignment-target {
+    color: #D3D1C7;
+    font-weight: 400;
+  }
+
+  .setup-block .setup-col-tanks .assignment-target {
+    color: #F3D39C;
+    font-weight: 500;
+  }
+
+  .setup-block .role-label {
+    color: #D0D0D0;
+    opacity: 0.78;
+  }
+
+  .setup-note {
+    color: #D3D1C7;
+    border-top-color: rgba(255, 255, 255, 0.14);
+  }
+
+  .reminder-card {
+    background: #3A2424;
+    border-color: #7D3D3D;
+  }
+
+  .reminder-card-label {
+    color: #FFB3B3;
+  }
+
+  .reminder-list,
+  .reminder-list li {
+    color: #F0D0D0;
+  }
+
+
+  @media print {
+    html,
+    body {
+      background: #2B2B2B !important;
+    }
+  }

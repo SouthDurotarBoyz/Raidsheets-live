@@ -1,0 +1,275 @@
+@page { size: letter landscape; margin: 0.35in; }
+
+:root {
+  --ssc-page-bg: #09161b;
+  --ssc-sheet-bg: #2B2B2B;
+  --ssc-panel-bg: #383838;
+  --ssc-panel-bg-soft: #242424;
+  --ssc-border: #55524A;
+  --ssc-border-soft: rgba(255, 255, 255, 0.14);
+  --ssc-text: #F1EFE8;
+  --ssc-text-soft: #D3D1C7;
+  --ssc-muted: #B8B4A8;
+  --ssc-assigned: #F3D39C;
+
+  --ssc-tank-bg: #4A351C;
+  --ssc-tank-text: #F3D39C;
+  --ssc-healer-bg: #263A20;
+  --ssc-healer-text: #CBE7B0;
+  --ssc-dps-bg: #4A2424;
+  --ssc-dps-text: #F0B4B4;
+  --ssc-phase-bg: #20394E;
+  --ssc-phase-text: #B9DAF5;
+}
+
+html {
+  min-height: 100%;
+  background: var(--ssc-page-bg);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ssc-text);
+  background-color: var(--ssc-page-bg);
+  background-image: none;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+body[data-boss-id="hydross"] {
+  background-image: url('../../assets/ssc/backgrounds/hydross.webp');
+}
+
+body[data-boss-id="lurker"] {
+  background-image: url('../../assets/ssc/backgrounds/lurker.webp');
+}
+
+body[data-boss-id="leotheras"] {
+  background-image: url('../../assets/ssc/backgrounds/leotheras.webp');
+}
+
+body[data-boss-id="karathress"] {
+  background-image: url('../../assets/ssc/backgrounds/karathress.webp');
+}
+
+body[data-boss-id="morogrim"] {
+  background-image: url('../../assets/ssc/backgrounds/Morogrim.webp');
+}
+
+body[data-boss-id="vashj"] {
+  background-image: url('../../assets/ssc/backgrounds/vashj.webp');
+}
+
+.page-nav,
+.screen-only {
+  max-width: 1280px;
+  margin: 0 auto 16px;
+}
+
+.page-nav {
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+}
+
+.page-nav a {
+  text-decoration: none;
+}
+
+.sheet {
+  background: var(--ssc-sheet-bg);
+  border-color: var(--ssc-border);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
+  color: var(--ssc-text);
+}
+
+.boss-name {
+  color: var(--ssc-text);
+}
+
+.boss-zone,
+.sheet-footer,
+.image-card-label,
+.image-card-caption {
+  color: var(--ssc-muted);
+}
+
+.setup-block {
+  background: var(--ssc-panel-bg);
+  border: 1px solid var(--ssc-border);
+  border-radius: 8px;
+  color: var(--ssc-text-soft);
+  margin-bottom: 14px;
+  padding: 12px 16px;
+}
+
+.setup-label {
+  margin-bottom: 8px;
+  color: var(--ssc-text);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.setup-col-label,
+.setup-grid-5 b {
+  color: var(--ssc-text);
+}
+
+.setup-block .role {
+  color: var(--ssc-assigned);
+  font-weight: 500;
+}
+
+.setup-block .assignment-target {
+  color: var(--ssc-text-soft);
+  font-weight: 500;
+}
+
+.setup-block .setup-col-tanks .role {
+  color: var(--ssc-assigned);
+}
+
+.setup-col-label {
+  font-size: 10px;
+  margin-bottom: 6px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.setup-block .role-label,
+.setup-block .tank-paren {
+  color: #D0D0D0;
+  opacity: 0.78;
+}
+
+.setup-grid-5 {
+  color: var(--ssc-text-soft);
+  font-size: 12px;
+  gap: 12px;
+}
+
+.setup-grid-5 .setup-col-misdirect-wide {
+  flex: 0 0 auto;
+}
+
+.setup-line {
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.setup-line span.line-text {
+  line-height: 1.45;
+}
+
+.setup-block .role.unassigned,
+.role.unassigned {
+  color: var(--ssc-muted);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.role-pill {
+  font-size: 13px;
+  padding: 8px;
+  border: 1px solid var(--ssc-border-soft);
+  border-radius: 6px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.role-tank,
+.col-tank {
+  background: var(--ssc-tank-bg);
+  color: var(--ssc-tank-text);
+}
+
+.role-healer,
+.col-healer {
+  background: var(--ssc-healer-bg);
+  color: var(--ssc-healer-text);
+}
+
+.role-dps,
+.col-dps {
+  background: var(--ssc-dps-bg);
+  color: var(--ssc-dps-text);
+}
+
+.phase-bar {
+  margin-bottom: 7px;
+  padding: 8px 12px;
+  background: var(--ssc-phase-bg);
+  border: 1px solid var(--ssc-border-soft);
+  border-radius: 6px;
+  color: var(--ssc-phase-text);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+}
+
+.col {
+  padding: 10px;
+  border: 0.5px solid var(--ssc-border-soft);
+  border-radius: 6px;
+}
+
+.mech-name,
+.role {
+  color: var(--ssc-text);
+}
+
+.mech-name {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.mech-name.danger,
+.critical .mech-name {
+  color: #FFB3B3;
+}
+
+.mech-desc {
+  font-size: 11.5px;
+  color: var(--ssc-text-soft);
+}
+
+.image-card {
+  background: var(--ssc-panel-bg-soft);
+  border-color: var(--ssc-border);
+}
+
+.reminder-card {
+  background: #3A2424;
+  border-color: #7D3D3D;
+}
+
+.reminder-card-label {
+  color: #FFB3B3;
+}
+
+.reminder-list,
+.reminder-list li {
+  color: #F0D0D0;
+}
+
+.sheet-footer {
+  border-top-color: var(--ssc-border);
+}
+
+@media print {
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  body { background: white; padding: 0; }
+  .screen-only { display: none !important; }
+  .sheet { box-shadow: none; border: none; padding: 0; max-width: none; }
+  .phase-block, .setup-block, .header-row, .image-card, .reminder-card { page-break-inside: avoid; }
+}

@@ -1,0 +1,612 @@
+@page { size: letter landscape; margin: 0.35in; }
+  @media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    body { background: white; padding: 0; }
+    body::before, body::after { display: none !important; }
+    .roster-form { display: none !important; }
+    .sheet { box-shadow: none; border: none; padding: 0; max-width: none; }
+    .phase-block, .setup-block, .header-row, .image-card, .reminder-card { page-break-inside: avoid; }
+  }
+
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #2C2C2A;
+    background: #0e1012;
+    margin: 0;
+    padding: 20px;
+    position: relative;
+    min-height: 100vh;
+  }
+/* ===========================================
+     Roster form (screen only)
+     =========================================== */
+  .roster-form {
+    max-width: 1280px;
+    margin: 0 auto 16px;
+    background: white;
+    border: 1px solid #D3D1C7;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .roster-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 22px;
+    border-bottom: 0.5px solid #D3D1C7;
+    background: #F8F7F3;
+  }
+  .roster-title h2 { font-size: 14px; font-weight: 500; margin: 0 0 2px; }
+  .roster-title p { font-size: 11.5px; color: #888780; margin: 0; }
+  .roster-actions { display: flex; gap: 8px; }
+  .roster-section {
+    padding: 16px 22px;
+    border-bottom: 0.5px solid #D3D1C7;
+  }
+  .roster-section:last-child { border-bottom: none; }
+
+  .roster-section-header {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    color: #2C2C2A;
+    margin-bottom: 14px;
+  }
+  .roster-section-header span {
+    font-weight: 400;
+    color: #888780;
+    margin-left: 8px;
+  }
+
+  .roster-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 22px;
+  }
+
+  .roster-group-label {
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    color: #888780;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .roster-subgroup-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: #5F5E5A;
+    margin: 14px 0 6px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .roster-subgroup-label:first-of-type { margin-top: 4px; }
+  .roster-subgroup-label .target-name {
+    font-size: 10px;
+    font-weight: 400;
+    color: #888780;
+    margin-left: 4px;
+  }
+  .roster-subgroup-label .target-name:empty { display: none; }
+
+  /* Add/remove slot buttons inline with group label */
+  .slot-controls { display: flex; gap: 4px; }
+  .slot-btn {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: 0.5px solid #D3D1C7;
+    background: white;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1;
+    color: #5F5E5A;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .slot-btn:hover { background: #F1EFE8; color: #2C2C2A; }
+  .slot-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+  .roster-row {
+    display: grid;
+    grid-template-columns: 24px minmax(0, 100px) minmax(0, 1fr);
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .roster-row:last-child { margin-bottom: 0; }
+
+  .roster-row .role-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 3px;
+    overflow: hidden;
+    border: 0.5px solid rgba(0,0,0,0.15);
+  }
+  .roster-row .role-icon img { width: 100%; height: 100%; display: block; }
+
+  .roster-row .role-text {
+    font-size: 11.5px;
+    color: #5F5E5A;
+  }
+
+  .roster-row input {
+    padding: 5px 7px;
+    font-size: 12px;
+    border: 0.5px solid #D3D1C7;
+    border-radius: 4px;
+    font-family: inherit;
+    color: #2C2C2A;
+    width: 100%;
+    min-width: 0;
+  }
+  .roster-row input:focus {
+    outline: none;
+    border-color: #185FA5;
+    box-shadow: 0 0 0 2px rgba(24, 95, 165, 0.15);
+  }
+
+  .roster-section.boss-section { background: #FAFAFA; }
+
+  /* ===========================================
+     The sheet
+     =========================================== */
+
+  .setup-block {
+    background: #FAEEDA;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+  }
+  .setup-label { font-size: 10.5px; font-weight: 500; color: #854F0B; letter-spacing: 0.6px; margin-bottom: 8px; }
+  .setup-grid,
+  .setup-grid-4,
+  .setup-grid-5 {
+    gap: 12px;
+    font-size: 12px;
+    color: #633806;
+  }
+  /* Role label badge after (Tankname) — small, muted, uppercase */
+  .role-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: #888780;
+    margin-left: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+  }
+  .setup-block .role-label {
+    color: #854F0B;
+    opacity: 0.65;
+  }
+  .setup-col-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: #412402;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .setup-line {
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+  .setup-line .role-icon-inline {
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    overflow: hidden;
+    border: 0.5px solid rgba(0,0,0,0.15);
+    flex-shrink: 0;
+  }
+  .setup-line .role-icon-inline img { width: 100%; height: 100%; display: block; }
+  .setup-line span.line-text { line-height: 1.45; }
+  .setup-grid b { color: #412402; font-weight: 500; }
+  .setup-note { font-size: 11.5px; color: #633806; margin-top: 10px; opacity: 0.9; padding-top: 10px; border-top: 0.5px solid rgba(133, 79, 11, 0.2); }
+
+  .role-pill { text-align: center; padding: 8px; border-radius: 6px; font-weight: 500; font-size: 13px; }
+  .role-tank   { background: #FAEEDA; color: #854F0B; }
+  .role-healer { background: #EAF3DE; color: #27500A; }
+  .role-dps    { background: #FCEBEB; color: #791F1F; }
+
+  .phase-bar {
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 7px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    background: #E6F1FB;
+    color: #0C447C;
+  }
+
+  .col { padding: 10px; border-radius: 6px; border: 0.5px solid rgba(0,0,0,0.08); }
+  .col-tank   { background: #FAEEDA; }
+  .col-healer { background: #EAF3DE; }
+  .col-dps    { background: #FCEBEB; }
+
+  .mech-name { font-weight: 500; font-size: 12px; margin-bottom: 2px; color: #2C2C2A; }
+  .mech-desc { color: #5F5E5A; font-size: 11px; line-height: 1.5; }
+
+  .role { font-weight: 500; color: #2C2C2A; }
+  .role.unassigned { font-weight: 400; color: #888780; font-style: italic; }
+  .setup-block .role { color: #412402; }
+  .setup-block .role.unassigned { color: #B4B2A9; }
+
+  /* Parenthetical tank-name in setup lines: "Frost tank (Doodoo): healer" */
+  .tank-paren {
+    font-size: 11px;
+    font-weight: 400;
+    opacity: 0.75;
+  }
+
+  .image-card svg { width: 100%; height: auto; display: block; background: #F8F7F3; border-radius: 4px; }
+  .image-card img.positioning-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(0,0,0,0.16);
+  }
+
+  /* Raid marker image badges used in the roster misdirect rows. */
+  .raid-marker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 5px;
+    background: #F8F7F3;
+    border: 0.5px solid #D3D1C7;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.55);
+    padding: 2px;
+    box-sizing: border-box;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+
+  .raid-marker img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .setup-line .role-icon-inline.raid-marker-inline {
+    border: none;
+    background: transparent;
+    border-radius: 0;
+    overflow: visible;
+  }
+
+  .setup-line .role-icon-inline.raid-marker-inline img {
+    border-radius: 0;
+  }
+
+
+/* Standalone split-page controls */
+@media print { .screen-only { display: none !important; } }
+.screen-only {
+  max-width: 1280px;
+  margin: 0 auto 16px;
+}
+.page-nav a {
+  text-decoration: none;
+}
+.copy-note {
+  font-size: 11px;
+  color: #888780;
+  margin-top: 4px;
+}
+
+
+/* ==========================================================
+   Maulgar design-system shell applied to Gruul
+   Pass: Step 1 + Step 2 only
+   Scope: visual foundation only; encounter text/roster bindings unchanged.
+   ========================================================== */
+
+:root {
+  --gl-page-bg: #17191b;
+  --gl-sheet-bg: #2B2B2B;
+  --gl-panel-bg: #383838;
+  --gl-panel-bg-soft: #242424;
+  --gl-border: #55524A;
+  --gl-border-soft: rgba(255, 255, 255, 0.14);
+  --gl-text: #F1EFE8;
+  --gl-text-soft: #D3D1C7;
+  --gl-muted: #B8B4A8;
+
+  --gl-tank-bg: #4A351C;
+  --gl-tank-text: #F3D39C;
+  --gl-healer-bg: #263A20;
+  --gl-healer-text: #CBE7B0;
+  --gl-dps-bg: #4A2424;
+  --gl-dps-text: #F0B4B4;
+  --gl-phase-bg: #20394E;
+  --gl-phase-text: #B9DAF5;
+  --gl-warning-bg: #FFD2D2;
+  --gl-warning-border: #C93A3A;
+  --gl-warning-text: #4F0808;
+}
+
+html {
+  min-height: 100%;
+  background: var(--gl-page-bg);
+}
+
+body {
+  color: var(--gl-text);
+  background: #0e1012;
+}
+
+@media print {
+  body {
+    background: #17191b !important;
+  }
+  .sheet {
+    background: var(--gl-sheet-bg) !important;
+  }
+}
+
+.roster-form {
+  background: var(--gl-panel-bg);
+  border-color: var(--gl-border);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.28);
+}
+
+.copy-note,
+.roster-title p,
+.boss-zone,
+.sheet-footer,
+.roster-group-label,
+.roster-section-header span,
+.image-card-label {
+  color: var(--gl-muted);
+}
+
+
+.sheet {
+  background: var(--gl-sheet-bg);
+  color: var(--gl-text);
+  border-color: var(--gl-border);
+  box-shadow: 0 18px 44px rgba(0,0,0,0.34);
+}
+
+.boss-name {
+  color: var(--gl-text);
+}
+
+.setup-block {
+  background: var(--gl-panel-bg);
+  border: 1px solid var(--gl-border);
+  color: var(--gl-text-soft);
+}
+
+.setup-label {
+  color: var(--gl-text);
+}
+
+.setup-grid,
+.setup-grid-4,
+.setup-grid-5,
+.setup-note {
+  color: var(--gl-text-soft);
+}
+
+.setup-col-label,
+.setup-grid b {
+  color: var(--gl-text);
+}
+
+.setup-block .role {
+  color: var(--gl-tank-text);
+}
+
+.setup-block .assignment-target {
+  color: var(--gl-text-soft);
+  font-weight: 500;
+}
+
+.setup-block .setup-col-tanks .assignment-target {
+  color: var(--gl-tank-text);
+}
+
+.setup-block .role-label,
+.setup-block .tank-paren {
+  color: #D0D0D0;
+}
+
+.setup-block .role.unassigned,
+.role.unassigned {
+  color: #B4B2A9;
+}
+
+.setup-note {
+  border-top-color: var(--gl-border-soft);
+}
+
+.role-pill {
+  border: 1px solid var(--gl-border-soft);
+}
+
+.role-tank {
+  background: var(--gl-tank-bg);
+  color: var(--gl-tank-text);
+}
+
+.role-healer {
+  background: var(--gl-healer-bg);
+  color: var(--gl-healer-text);
+}
+
+.role-dps {
+  background: var(--gl-dps-bg);
+  color: var(--gl-dps-text);
+}
+
+.phase-bar {
+  background: var(--gl-phase-bg);
+  color: var(--gl-phase-text);
+  border: 1px solid var(--gl-border-soft);
+}
+
+.col {
+  border-color: var(--gl-border-soft);
+}
+
+.col-tank {
+  background: color-mix(in srgb, var(--gl-tank-bg) 72%, var(--gl-panel-bg));
+}
+
+.col-healer {
+  background: color-mix(in srgb, var(--gl-healer-bg) 72%, var(--gl-panel-bg));
+}
+
+.col-dps {
+  background: color-mix(in srgb, var(--gl-dps-bg) 72%, var(--gl-panel-bg));
+}
+
+/* Fallbacks for browsers without color-mix */
+@supports not (background: color-mix(in srgb, #000 50%, #fff)) {
+  .col-tank { background: #332b21; }
+  .col-healer { background: #263020; }
+  .col-dps { background: #332123; }
+}
+
+.mech-name,
+.role {
+  color: var(--gl-text);
+}
+
+.mech-name.danger,
+.critical .mech-name {
+  color: #FFB3B3;
+}
+
+.mech-desc {
+  color: var(--gl-text-soft);
+}
+
+.reminder-card {
+  background: #3A2424;
+  border-color: #7D3D3D;
+}
+
+.reminder-card-label {
+  color: #FFB3B3;
+}
+
+.reminder-list,
+.reminder-list li {
+  color: #F0D0D0;
+}
+
+.image-card svg {
+  background: var(--gl-panel-bg-soft);
+}
+
+.sheet-footer {
+  border-top-color: var(--gl-border);
+}
+
+.raid-marker {
+  background: #242424;
+  border-color: var(--gl-border);
+}
+
+/* Click-to-enlarge foundation for later Gruul positioning images. */
+.positioning-img,
+.image-card img.positioning-img {
+  cursor: zoom-in;
+}
+
+.image-popout-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.82);
+  z-index: 9999;
+  padding: 24px;
+}
+
+.image-popout-overlay.is-open {
+  display: flex;
+}
+
+.image-popout-overlay img {
+  max-width: min(96vw, 1400px);
+  max-height: 92vh;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.55);
+}
+
+.image-popout-close {
+  position: fixed;
+  top: 16px;
+  right: 18px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 999px;
+  background: rgba(20,20,20,0.85);
+  color: white;
+  font-size: 24px;
+  line-height: 34px;
+  cursor: pointer;
+}
+
+
+/* ==========================================================
+   DEFINITIVE SCREEN BACKGROUND FIX
+   This must stay at the very end of the stylesheet.
+   ========================================================== */
+html {
+  min-height: 100% !important;
+  background: #0e1012 !important;
+}
+
+body {
+  min-height: 100vh !important;
+  background-color: #0e1012 !important;
+  background-image: url('../../assets/gruul/backgrounds/gruul-background.webp') !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+body::before,
+body::after {
+  content: none !important;
+  display: none !important;
+}
+
+@media print {
+  html,
+  body {
+    background-color: #0e1012 !important;
+    background-image: url('../../assets/gruul/backgrounds/gruul-background.webp') !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+  }
+}
