@@ -1,2 +1,2 @@
-/raid/:code /raid.html 200
-/raid/:code/ /raid.html 200
+/raid/:code /raid.html?code=:code 302
+/raid/:code/ /raid.html?code=:code 302
