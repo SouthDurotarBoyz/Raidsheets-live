@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAID_NAME · Roster</title>
+<style>
+  /* Keep this template self-contained until roster CSS is shared globally. */
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    background: #242424;
+    color: #F5F5F5;
+  }
+  .roster-top-actions,
+  .roster-form {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .roster-top-actions {
+    margin-bottom: 10px;
+    padding: 0 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .roster-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; margin-left: auto; }
+  .btn {
+    font-size: 12px;
+    padding: 7px 14px;
+    border: 0.5px solid #626262;
+    background: #4A4A4A;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    color: #F5F5F5;
+    transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+    text-decoration: none;
+  }
+  .btn:hover { background: #555555; border-color: #707070; }
+  .btn:focus-visible { outline: none; border-color: #6FA8DC; box-shadow: 0 0 0 2px rgba(111, 168, 220, 0.25); }
+  .btn-primary { background: #4A4A4A; color: #FFFFFF; border-color: #626262; }
+  .btn-primary:hover { background: #555555; border-color: #707070; }
+  .btn-danger { background: #B3261E; color: #FFFFFF; border-color: #C63D35; }
+  .btn-danger:hover { background: #8C1D18; border-color: #A8322B; }
+  .roster-form {
+    background: #2F2F2F;
+    border: 1px solid #4A4A4A;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .roster-header { padding: 16px 22px; border-bottom: 0.5px solid #4A4A4A; background: #333333; }
+  .roster-title h2 { font-size: 14px; font-weight: 500; margin: 0 0 2px; }
+  .roster-title p { font-size: 11.5px; color: #C7C7C7; margin: 0; }
+  .roster-section { padding: 16px 22px; border-bottom: 0.5px solid #4A4A4A; }
+  .roster-section:last-child { border-bottom: 0; }
+  .roster-section h3 { margin: 0 0 12px; font-size: 13px; font-weight: 600; color: #F5F5F5; }
+  .roster-blocks { display: grid; grid-template-columns: repeat(auto-fit, minmax(var(--block-min, 280px), 1fr)); gap: 14px; }
+  .roster-block {
+    --label-width: 88px;
+    --target-min-width: 104px;
+    border: 0.5px solid #4A4A4A;
+    border-radius: 6px;
+    padding: 12px;
+    background: #333333;
+  }
+  .roster-block--core-melee { --block-min: 300px; --label-width: 96px; }
+  .roster-block--core-ranged { --block-min: 340px; --label-width: 104px; }
+  .roster-block--core-support { --block-min: 360px; --label-width: 80px; --target-min-width: 128px; }
+  .roster-block--core-utility { --block-min: 320px; --label-width: 128px; }
+  .roster-block--boss { --block-min: 320px; --label-width: 116px; }
+  .roster-block h4 { margin: 0 0 10px; font-size: 12px; font-weight: 600; color: #D8D8D8; }
+  .roster-block--align-direct-rows h4 { margin-bottom: calc(10px + 1.5em + 10px); }
+  .field-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; min-width: 0; }
+  .field-row:last-child { margin-bottom: 0; }
+  .field-label { flex: 0 0 var(--label-width); font-size: 12px; color: #E8E8E8; }
+  .assignment-input { min-width: 0; flex: 1 1 150px; padding: 6px 8px; border: 0.5px solid #626262; border-radius: 4px; font-family: inherit; color: #F5F5F5; background: #4A4A4A; }
+  .assignment-input::placeholder { color: #C7C7C7; opacity: 1; }
+  .assignment-input:focus { outline: none; border-color: #6FA8DC; box-shadow: 0 0 0 2px rgba(111, 168, 220, 0.25); }
+  .field-controls { display: flex; width: calc(100% - var(--label-width) - 8px); margin-left: calc(var(--label-width) + 8px); justify-content: flex-end; gap: 4px; margin-bottom: 6px; }
+  .field-controls--targeted { width: calc(100% - var(--label-width) - var(--target-min-width) - 38px); }
+  .icon-btn { width: 24px; height: 24px; padding: 0; line-height: 1; }
+  .target-marker { flex: 0 0 auto; font-size: 14px; line-height: 1; }
+  .target-text { flex: 0 0 var(--target-min-width); min-width: var(--target-min-width); font-size: 12px; color: #E8E8E8; white-space: nowrap; }
+</style>
+</head>
+<body data-raid-id="RAID_ID">
+<div class="roster-top-actions screen-only">
+  <a class="btn" href="index.html">Home</a>
+  <div class="roster-actions">
+    <a class="btn btn-primary" id="public-guide-link" href="GUIDE_PAGE">Guide</a>
+    <button class="btn" id="copy-public-guide-link" type="button">Copy Public Raid Guide Link</button>
+    <button class="btn btn-danger" id="clear-roster" type="button">Clear all</button>
+  </div>
+</div>
+<form class="roster-form" id="RAID_ID-roster-form">
+  <div class="roster-header">
+    <div class="roster-title">
+      <h2>RAID_NAME Roster</h2>
+      <p>Shared Core roster assignments plus boss-specific sections for RAID_NAME.</p>
+    </div>
+  </div>
+
+  <section class="roster-section" aria-labelledby="core-roster-heading">
+    <h3 id="core-roster-heading">Core roster</h3>
+    <div class="roster-blocks">
+      <div class="roster-block roster-block--core-melee" data-field-block="core-melee">
+        <h4>Core melee / tanks</h4>
+      </div>
+      <div class="roster-block roster-block--core-ranged roster-block--align-direct-rows" data-field-block="core-ranged" data-align-direct-rows="true">
+        <h4>Core ranged / healers</h4>
+      </div>
+      <div class="roster-block roster-block--core-support" data-field-block="core-support">
+        <h4>Core support</h4>
+      </div>
+      <div class="roster-block roster-block--core-utility" data-field-block="core-utility">
+        <h4>Core utility</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="roster-section" aria-labelledby="boss-roster-heading">
+    <h3 id="boss-roster-heading">Boss-specific assignments</h3>
+    <div class="roster-blocks">
+      <div class="roster-block roster-block--boss" data-field-block="boss-example">
+        <h4>Boss phase / mechanic placeholder</h4>
+      </div>
+    </div>
+  </section>
+</form>
+<script>
+window.RaidConfig = { raidId: 'RAID_ID' };
+</script>
+<script src="js/roster-storage.js"></script>
+<script>
+(function() {
+  'use strict';
+  const RAID_ID = 'RAID_ID';
+  const GUIDE_PAGE = 'GUIDE_PAGE';
+  const SESSION_BACKED = false;
+  const storage = window.RaidRosterStorage || window.GruulsRosterStorage;
+  let state = storage.loadRoster(RAID_ID) || { groups: {}, singles: {} };
+
+  // FIELD_META is intentionally generic. Copy the pattern and replace keys/labels
+  // with the exact data-bind values consumed by the raid's boss sheets. Keep
+  // assignment meaning on each row label; do not add a mini heading that repeats
+  // the row just to hold list controls. List controls belong in a top-right
+  // control row immediately above the fields they modify.
+  const FIELD_META = [
+    {
+      block: 'core-melee',
+      type: 'list',
+      key: 'core_tanks',
+      label: 'Tank',
+      rows: 2,
+      placeholder: 'Character name'
+    },
+    {
+      block: 'core-ranged',
+      type: 'single',
+      key: 'fixed_utility_role',
+      label: 'Utility',
+      placeholder: 'Character name'
+    },
+    {
+      block: 'core-support',
+      type: 'list',
+      key: 'misdirect_style_assignments',
+      label: 'MD',
+      rows: 2,
+      placeholder: 'Hunter name',
+      suppressNumbering: true,
+      targetMarker: '◆',
+      targetText: 'Target role'
+    },
+    {
+      block: 'core-utility',
+      type: 'single',
+      key: 'core_curse_of_elements',
+      label: 'Elements',
+      placeholder: 'Warlock name'
+    },
+    {
+      block: 'core-utility',
+      type: 'single',
+      key: 'core_curse_of_recklessness',
+      label: 'Recklessness',
+      placeholder: 'Warlock name'
+    },
+    {
+      block: 'core-utility',
+      type: 'single',
+      key: 'core_curse_of_tongues',
+      label: 'Curse of Tongues',
+      sheetLabel: 'Tongues',
+      placeholder: 'Warlock name'
+    },
+    {
+      block: 'core-utility',
+      type: 'list',
+      key: 'core_kickers',
+      label: 'Kicker',
+      rows: 1,
+      placeholder: 'Kicker name'
+    },
+    {
+      block: 'boss-example',
+      type: 'list',
+      key: 'boss_mechanic_group',
+      label: 'Mechanic',
+      rows: 3,
+      placeholder: 'Character name'
+    },
+    {
+      block: 'boss-example',
+      type: 'single',
+      key: 'boss_fixed_assignment',
+      label: 'Fixed role',
+      placeholder: 'Character name'
+    }
+  ];
+
+  function saveState() {
+    storage.saveRoster(state, RAID_ID);
+  }
+
+  function publicGuidePath() {
+    const sessionId = SESSION_BACKED ? new URLSearchParams(location.search).get('session') : '';
+    return sessionId ? GUIDE_PAGE + '?session=' + encodeURIComponent(sessionId) : GUIDE_PAGE;
+  }
+
+  function publicGuideUrl() {
+    const url = new URL(publicGuidePath(), location.href);
+    url.hash = '';
+    return url.href;
+  }
+
+  async function copyPublicGuideLink(button) {
+    const url = publicGuideUrl();
+    try {
+      await navigator.clipboard.writeText(url);
+      const original = button.textContent;
+      button.textContent = 'Copied';
+      setTimeout(function() { button.textContent = original; }, 1400);
+    } catch (error) {
+      window.prompt('Copy this public raid guide entry point:', url);
+    }
+  }
+
+  function resetState() {
+    state = { groups: {}, singles: {} };
+    saveState();
+  }
+
+  function labelFor(meta, index) {
+    if (meta.suppressNumbering) return meta.label;
+    return meta.label + (index === 0 ? '' : ' ' + (index + 1));
+  }
+
+  function ensureList(meta) {
+    if (!Array.isArray(state.groups[meta.key])) {
+      state.groups[meta.key] = Array.from({ length: meta.rows || 1 }, function() { return ''; });
+    }
+    return state.groups[meta.key];
+  }
+
+  function createInput(value, placeholder) {
+    const input = document.createElement('input');
+    input.className = 'assignment-input';
+    input.type = 'text';
+    input.autocomplete = 'off';
+    input.placeholder = placeholder || '';
+    input.value = value || '';
+    return input;
+  }
+
+
+  function createFieldControls(meta, values) {
+    const controls = document.createElement('span');
+    controls.className = 'field-controls';
+    if (meta.targetMarker || meta.targetText) controls.classList.add('field-controls--targeted');
+
+    const add = document.createElement('button');
+    add.className = 'btn icon-btn';
+    add.type = 'button';
+    add.textContent = '+';
+    add.setAttribute('aria-label', 'Add ' + meta.label);
+    add.addEventListener('click', function() {
+      values.push('');
+      saveState();
+      location.reload();
+    });
+
+    const remove = document.createElement('button');
+    remove.className = 'btn icon-btn';
+    remove.type = 'button';
+    remove.textContent = '−';
+    remove.setAttribute('aria-label', 'Remove ' + meta.label);
+    remove.addEventListener('click', function() {
+      if (values.length <= 1) return;
+      values.pop();
+      saveState();
+      location.reload();
+    });
+
+    controls.appendChild(add);
+    controls.appendChild(remove);
+    return controls;
+  }
+
+  function createRow(meta, index, value, listValues) {
+    const row = document.createElement('div');
+    row.className = 'field-row';
+
+    const label = document.createElement('label');
+    label.className = 'field-label';
+    label.textContent = meta.type === 'list' ? labelFor(meta, index) : meta.label;
+    row.appendChild(label);
+
+    const input = createInput(value, meta.placeholder);
+    input.dataset.bind = meta.key;
+    if (meta.type === 'list') input.dataset.bindIndex = index;
+    row.appendChild(input);
+
+    if (meta.targetMarker) {
+      const marker = document.createElement('span');
+      marker.className = 'target-marker';
+      marker.setAttribute('aria-hidden', 'true');
+      marker.textContent = meta.targetMarker;
+      row.appendChild(marker);
+    }
+
+    if (meta.targetText) {
+      const target = document.createElement('span');
+      target.className = 'target-text';
+      target.textContent = meta.targetText;
+      row.appendChild(target);
+    }
+
+    if (meta.type === 'list') {
+      input.addEventListener('input', function() {
+        ensureList(meta)[index] = input.value;
+        saveState();
+      });
+    } else {
+      input.addEventListener('input', function() {
+        state.singles[meta.key] = input.value;
+        saveState();
+      });
+    }
+
+    return row;
+  }
+
+  function renderField(meta) {
+    const block = document.querySelector('[data-field-block="' + meta.block + '"]');
+    if (!block) return;
+
+    if (meta.type === 'list') {
+      const values = ensureList(meta);
+      block.appendChild(createFieldControls(meta, values));
+      values.forEach(function(value, index) {
+        block.appendChild(createRow(meta, index, value, values));
+      });
+
+      return;
+    }
+
+    block.appendChild(createRow(meta, 0, state.singles[meta.key] || ''));
+  }
+
+  FIELD_META.forEach(renderField);
+
+  const guideLink = document.getElementById('public-guide-link');
+  if (guideLink) guideLink.setAttribute('href', publicGuidePath());
+
+  const publicGuideBtn = document.getElementById('copy-public-guide-link');
+  if (publicGuideBtn) publicGuideBtn.addEventListener('click', function() {
+    copyPublicGuideLink(publicGuideBtn);
+  });
+
+  const clearBtn = document.getElementById('clear-roster');
+  if (clearBtn) clearBtn.addEventListener('click', function() {
+    if (!confirm('Clear all assignments?')) return;
+    resetState();
+    location.reload();
+  });
+})();
+</script>
+</body>
+</html>
