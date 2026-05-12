@@ -9,12 +9,28 @@
     return typeof page === 'string' ? page.split('?')[0] : '';
   }
 
-  function buildBossTab(boss, currentBossId, sessionId) {
+  function getPreservedQueryString(params) {
+    var preservedParams = new URLSearchParams();
+    var allowedParams = {
+      code: true,
+      session: true,
+      edit: true,
+      key: true
+    };
+
+    params.forEach(function(value, key) {
+      if (allowedParams[key]) preservedParams.append(key, value);
+    });
+
+    return preservedParams.toString();
+  }
+
+  function buildBossTab(boss, currentBossId, preservedQueryString) {
     var link = document.createElement('a');
     var isCurrent = boss.id === currentBossId;
     link.className = 'btn boss-tab' + (isCurrent ? ' boss-tab-active' : '');
     var page = sanitizePage(boss.page);
-    link.href = sessionId ? (page + '?session=' + encodeURIComponent(sessionId)) : page;
+    link.href = preservedQueryString ? (page + '?' + preservedQueryString) : page;
     if (isCurrent) link.setAttribute('aria-current', 'page');
 
     var icon = document.createElement('img');
@@ -33,13 +49,15 @@
     if (!navContainer || !raid || !Array.isArray(raid.bosses)) return;
 
     var params = getParams();
+    var preservedQueryString = getPreservedQueryString(params);
     var sessionId = params.get('session');
+    var publicCode = params.get('code');
     var rosterLink = document.querySelector('.page-nav-actions a[href="roster.html"]');
-    if (rosterLink && sessionId) rosterLink.style.display = 'none';
+    if (rosterLink && (sessionId || publicCode)) rosterLink.style.display = 'none';
 
     navContainer.innerHTML = '';
     for (var i = 0; i < raid.bosses.length; i += 1) {
-      navContainer.appendChild(buildBossTab(raid.bosses[i], bossId, sessionId));
+      navContainer.appendChild(buildBossTab(raid.bosses[i], bossId, preservedQueryString));
     }
   }
 
