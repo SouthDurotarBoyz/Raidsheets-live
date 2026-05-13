@@ -284,7 +284,7 @@ window.RaidConfig = { raidId: 'tempest-keep' };
 
   const iconUrl = window.RosterUiHelpers.iconUrl;
   const raidMarkerSource = window.RosterUiHelpers.raidMarkerSource;
-  const copyTextWithButtonFeedback = window.RosterUiHelpers.copyTextWithButtonFeedback;
+  const copyTextPromiseWithButtonFeedback = window.RosterUiHelpers.copyTextPromiseWithButtonFeedback;
   const bindSoftReserveInput = window.RosterUiHelpers.bindSoftReserveInput;
 
   const FIELD_META = {
@@ -463,10 +463,25 @@ window.RaidConfig = { raidId: 'tempest-keep' };
     return raidsheetUrl();
   }
 
+  function publicGuideUrlFromSessionData(data) {
+    if (data && data.publicCode) {
+      return new URL('/raid/' + encodeURIComponent(String(data.publicCode).toUpperCase()), location.origin).href;
+    }
+
+    if (data && data.sessionId) {
+      const url = new URL(GUIDE_PAGE, location.href);
+      url.search = '?session=' + encodeURIComponent(data.sessionId);
+      url.hash = '';
+      return url.href;
+    }
+
+    return publicGuideUrl();
+  }
+
   function copyPublicGuideLink(button) {
     const session = currentSession();
     if (!session || !session.isSessionBacked) return Promise.resolve(false);
-    const copied = copyTextWithButtonFeedback(publicGuideUrl(), button, 'Copy this raider view link:');
+    const copied = copyTextPromiseWithButtonFeedback(Promise.resolve(publicGuideUrl()), button, 'Copy this raider view link:');
     return copied;
   }
 
@@ -477,19 +492,34 @@ window.RaidConfig = { raidId: 'tempest-keep' };
     }
 
     if (!sessionClient || !sessionClient.createSessionFromRoster) {
-      const copied = copyTextWithButtonFeedback(publicGuideUrl(), button, 'Online export is unavailable. Copy this local guide link:');
+      const copied = copyTextPromiseWithButtonFeedback(Promise.resolve(publicGuideUrl()), button, 'Online export is unavailable. Copy this local guide link:');
       return copied;
     }
+
+    const sessionPromise = sessionClient.createSessionFromRoster(RAID_ID, ensureRosterStateShape(state))
+      .then(function(data) {
+        if (!data || !data.editUrl) throw new Error('Missing session edit URL');
+        return data;
+      });
+    const copied = copyTextPromiseWithButtonFeedback(
+      sessionPromise.then(publicGuideUrlFromSessionData),
+      button,
+      'Copy this raider view link:'
+    ).catch(function(error) {
+      console.warn('[Roster] Unable to copy raider view link.', error && error.message ? error.message : error);
+      return false;
+    });
 
     if (button) {
       button.disabled = true;
       button.textContent = 'Creating…';
     }
 
-    return sessionClient.createSessionFromRoster(RAID_ID, ensureRosterStateShape(state))
+    return sessionPromise
       .then(function(data) {
-        if (!data || !data.editUrl) throw new Error('Missing session edit URL');
-        window.location.assign(new URL(data.editUrl, window.location.href).toString());
+        return copied.then(function() {
+          window.location.assign(new URL(data.editUrl, window.location.href).toString());
+        });
       })
       .catch(function(error) {
         console.error('[Roster] Unable to export current roster.', error && error.message ? error.message : error);
