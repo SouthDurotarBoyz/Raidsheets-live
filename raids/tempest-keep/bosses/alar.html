@@ -15,9 +15,9 @@
       </div>
       <div class="setup-col">
         <div class="setup-heading setup-col-label">Healers</div>
-        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="tk-core-mt-healers" data-default="Main tank healers">Main tank healers</span> → <span class="assignment-target" data-target-bind="tk-core-main-tank"></span> <span class="role-label">(MAIN TANK)</span></span></div>
-        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="tk-alar-add-healers" data-default="Add tank healers">Add tank healers</span> → <span class="assignment-target" data-target-bind="tk-alar-add-tank"></span> <span class="role-label">(ADD TANK)</span></span></div>
-        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healing icon"></span><span class="line-text">Raid healers → <span class="role unassigned" data-bind-group="tk-core-raid-healers" data-default="Raid healers">Raid healers</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="tk-core-mt-healers" data-default="Main tank healers">Main tank healers</span> → Main tank → <span class="assignment-target" data-target-bind="tk-core-main-tank"></span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="tk-alar-add-healers" data-default="Add tank healers">Add tank healers</span> → Add tank → <span class="assignment-target" data-target-bind="tk-alar-add-tank"></span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healing icon"></span><span class="line-text">Raid healing → <span class="role unassigned" data-bind-group="tk-core-raid-healers" data-default="Raid healers">Raid healers</span></span></div>
       </div>
       <div class="setup-col setup-col-misdirect-wide">
         <div class="setup-heading setup-col-label">Misdirects</div>
@@ -49,14 +49,14 @@
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_defensivestance.jpg" alt="Platform tanks"></div>
               <div class="mech-body">
                 <div class="mech-name">Cover every landing</div>
-                <div class="mech-desc"><span class="assignment-target" data-target-bind="tk-alar-platform-1-tank"></span> and <span class="assignment-target" data-target-bind="tk-alar-platform-2-tank"></span> pre-position and move early. Al'ar must always have a tank in melee range when landed.</div>
+                <div class="mech-desc"><span class="assignment-target" data-target-bind="tk-alar-platform-1-tank"></span> and <span class="assignment-target" data-target-bind="tk-alar-platform-2-tank"></span> move early and cover each landing before Al'ar arrives.</div>
               </div>
             </div>
             <div class="mech critical">
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_fireball.jpg" alt="Flame Buffet"></div>
               <div class="mech-body">
                 <div class="mech-name">No melee tank = Flame Buffet</div>
-                <div class="mech-desc">If a platform is empty when Al'ar lands, Flame Buffet stacks on the raid and can quickly wipe the pull.</div>
+                <div class="mech-desc">Call missed coverage immediately. An empty landing starts Flame Buffet stacks on the raid.</div>
               </div>
             </div>
           </div>
@@ -65,14 +65,14 @@
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Tank healing"></div>
               <div class="mech-body">
                 <div class="mech-name">Track platform tanks</div>
-                <div class="mech-desc"><span class="role unassigned" data-bind-group="tk-core-mt-healers" data-default="Main tank healers">Main tank healers</span> keep range on active platform tanks as they rotate, then stabilize the next landing immediately.</div>
+                <div class="mech-desc"><span class="role unassigned" data-bind-group="tk-core-mt-healers" data-default="Main tank healers">Main tank healers</span> keep range on platform tanks and pre-heal each landing.</div>
               </div>
             </div>
             <div class="mech">
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healing"></div>
               <div class="mech-body">
                 <div class="mech-name">Light raid triage</div>
-                <div class="mech-desc"><span class="role unassigned" data-bind-group="tk-core-raid-healers" data-default="Raid healers">Raid healers</span> cover incidental platform, Ember, and movement damage without drifting onto unsafe upper ledges.</div>
+                <div class="mech-desc"><span class="role unassigned" data-bind-group="tk-core-raid-healers" data-default="Raid healers">Raid healers</span> stabilize Flame Buffet ticks and movement damage from safe ground positions.</div>
               </div>
             </div>
           </div>
@@ -81,14 +81,14 @@
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_flamebolt.jpg" alt="Ranged focus"></div>
               <div class="mech-body">
                 <div class="mech-name">Ranged from center</div>
-                <div class="mech-desc">Ranged can focus Al'ar from center or ground positions while tanks handle the platform rotation above.</div>
+                <div class="mech-desc">DPS Al'ar from assigned ground spots; do not chase platforms unless assigned.</div>
               </div>
             </div>
             <div class="mech critical">
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_elemental_totem.jpg" alt="Ember adds"></div>
               <div class="mech-body">
                 <div class="mech-name">Melee handle Ember adds safely</div>
-                <div class="mech-desc">Swap to Ember adds as assigned, keep them controlled away from loose players, and avoid cleaving them into the raid.</div>
+                <div class="mech-desc">Swap to Ember adds when assigned and kill them away from the raid stack.</div>
               </div>
             </div>
           </div>
@@ -103,14 +103,14 @@
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_selfdestruct.jpg" alt="Flame Quills"></div>
               <div class="mech-body">
                 <div class="mech-name">Jump down on Flame Quills</div>
-                <div class="mech-desc">When Al'ar flies to center and starts Flame Quills, platform tanks leave the upper platforms immediately or die fast.</div>
+                <div class="mech-desc">When Al'ar starts Flame Quills, tanks leave upper platforms immediately.</div>
               </div>
             </div>
             <div class="mech">
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_charge.jpg" alt="Re-cover platforms"></div>
               <div class="mech-body">
                 <div class="mech-name">Re-cover before the next land</div>
-                <div class="mech-desc">After Quills ends, move back up early and re-cover landing platforms before Al'ar chooses the next perch.</div>
+                <div class="mech-desc">After Quills, tanks move back up early and re-cover landing platforms.</div>
               </div>
             </div>
           </div>
@@ -119,7 +119,7 @@
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_powerwordshield.jpg" alt="Platform danger"></div>
               <div class="mech-body">
                 <div class="mech-name">Do not heal from upper platforms</div>
-                <div class="mech-desc">Drop with the tanks when Flame Quills starts. Anyone remaining upstairs can die before heals land.</div>
+                <div class="mech-desc">Drop when Flame Quills starts, keep safe range, then prepare recovery healing.</div>
               </div>
             </div>
           </div>
@@ -128,7 +128,7 @@
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_rogue_sprint.jpg" alt="Leave platforms"></div>
               <div class="mech-body">
                 <div class="mech-name">Clear upper platforms</div>
-                <div class="mech-desc">Stop tunneling and get down as soon as Flame Quills begins. Resume damage after tanks safely re-cover the landing points.</div>
+                <div class="mech-desc">Stop tunneling, clear upper platforms, and resume once platforms are safe.</div>
               </div>
             </div>
           </div>
@@ -143,7 +143,7 @@
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_burningspeed.jpg" alt="Rebirth pickup"></div>
               <div class="mech-body">
                 <div class="mech-name">Fast boss pickup</div>
-                <div class="mech-desc">At 0% in Phase 1, Al'ar casts Rebirth into Phase 2. <span class="assignment-target" data-target-bind="tk-core-main-tank"></span> and backup tanks get threat and face the boss quickly.</div>
+                <div class="mech-desc">At Rebirth, <span class="assignment-target" data-target-bind="tk-core-main-tank"></span> and backups pick up Al'ar fast and face him away.</div>
               </div>
             </div>
           </div>
@@ -152,7 +152,7 @@
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_flashheal.jpg" alt="Heavy damage"></div>
               <div class="mech-body">
                 <div class="mech-name">Prepare for heavier damage</div>
-                <div class="mech-desc">Pre-position away from center, then shift to heavier tank and raid healing as Phase 2 starts.</div>
+                <div class="mech-desc">Pre-position away from center, then stabilize tanks and Rebirth raid damage.</div>
               </div>
             </div>
           </div>
@@ -161,7 +161,7 @@
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_rogue_feint.jpg" alt="Move from center"></div>
               <div class="mech-body">
                 <div class="mech-name">Move away from Rebirth</div>
-                <div class="mech-desc">When Phase 1 ends, clear the center and landing area so tanks can pick up Al'ar without extra raid damage or body-blocking.</div>
+                <div class="mech-desc">Clear center on Rebirth, then resume damage after the boss is positioned.</div>
               </div>
             </div>
           </div>
@@ -176,14 +176,14 @@
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_shieldbash.jpg" alt="Melt Armor"></div>
               <div class="mech-body">
                 <div class="mech-name">Swap on Melt Armor</div>
-                <div class="mech-desc"><span class="assignment-target" data-target-bind="tk-core-main-tank"></span>, <span class="assignment-target" data-target-bind="tk-core-off-tank"></span>, and <span class="assignment-target" data-target-bind="tk-core-off-tank-2"></span> rotate cleanly when Melt Armor lands.</div>
+                <div class="mech-desc"><span class="assignment-target" data-target-bind="tk-core-main-tank"></span>, <span class="assignment-target" data-target-bind="tk-core-off-tank"></span>, and <span class="assignment-target" data-target-bind="tk-core-off-tank-2"></span> taunt-swap immediately on Melt Armor.</div>
               </div>
             </div>
             <div class="mech critical">
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_meteorstorm.jpg" alt="Dive Bomb adds"></div>
               <div class="mech-body">
                 <div class="mech-name">Add tank after Dive Bomb</div>
-                <div class="mech-desc"><span class="assignment-target" data-target-bind="tk-alar-add-tank"></span> picks up Ember adds after Dive Bomb and drags them to the safe kill area away from the raid.</div>
+                <div class="mech-desc"><span class="assignment-target" data-target-bind="tk-alar-add-tank"></span> picks up Embers after Dive Bomb and drags them to the safe kill area.</div>
               </div>
             </div>
           </div>
@@ -192,14 +192,14 @@
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_searinglight.jpg" alt="Add tank healing"></div>
               <div class="mech-body">
                 <div class="mech-name">Keep add tank alive</div>
-                <div class="mech-desc"><span class="role unassigned" data-bind-group="tk-alar-add-healers" data-default="Add tank healers">Add tank healers</span> stay ready for Ember pickup spikes while the raid is moving out of Dive Bomb.</div>
+                <div class="mech-desc"><span class="role unassigned" data-bind-group="tk-alar-add-healers" data-default="Add tank healers">Add tank healers</span> pre-heal Ember pickups and cover add-tank spikes after Dive Bomb.</div>
               </div>
             </div>
             <div class="mech">
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid reposition healing"></div>
               <div class="mech-body">
                 <div class="mech-name">Heal the move, then spread</div>
-                <div class="mech-desc"><span class="role unassigned" data-bind-group="tk-core-raid-healers" data-default="Raid healers">Raid healers</span> cover Dive Bomb movement and Flame Patch mistakes, then spread back out with the raid.</div>
+                <div class="mech-desc"><span class="role unassigned" data-bind-group="tk-core-raid-healers" data-default="Raid healers">Raid healers</span> heal Dive Bomb movement and recover Flame Patch mistakes from spread positions.</div>
               </div>
             </div>
           </div>
@@ -208,14 +208,14 @@
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_flameshock.jpg" alt="Flame Patch"></div>
               <div class="mech-body">
                 <div class="mech-name">Never stand in Flame Patch</div>
-                <div class="mech-desc">Move immediately. Flame Patch punishes stacked players and makes healer recovery much harder during Phase 2.</div>
+                <div class="mech-desc">Move out immediately, keep spread, and do not drag Flame Patch through other players.</div>
               </div>
             </div>
             <div class="mech critical">
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_elemental_totem.jpg" alt="Ember explosions"></div>
               <div class="mech-body">
                 <div class="mech-name">Kill Ember adds away from raid</div>
-                <div class="mech-desc">During Dive Bomb, stack or move as assigned, then spread back out. Burn Ember adds only in the safe area because they explode on death.</div>
+                <div class="mech-desc">Move on Dive Bomb, then burn Embers only in the safe area; they explode on death.</div>
               </div>
             </div>
           </div>
@@ -226,22 +226,22 @@
     <div class="image-sidebar">
       <div class="image-card">
         <div class="image-card-label">Phase 1 platform positioning</div>
-        <div class="image-card-caption">Placeholder for the Phase 1 platform rotation image. Show platform tanks, ranged center positions, melee/add pickup path, and safe movement for Flame Quills.</div>
+        <div class="image-card-caption">Positioning reference for Phase 1: platform tank coverage, ground DPS/healer spots, Ember pathing, and Flame Quills exits.</div>
       </div>
       <div class="image-card">
         <div class="image-card-label">Phase 2 Dive Bomb positioning</div>
-        <div class="image-card-caption">Placeholder for the Phase 2 Dive Bomb and add-control image. Show stack/move pattern, boss pickup, add tank path, and safe add kill area.</div>
+        <div class="image-card-caption">Positioning reference for Phase 2: Dive Bomb movement, boss pickup, add-tank path, and the safe Ember kill area.</div>
       </div>
       <div class="reminder-card">
         <div class="reminder-card-label">Al'ar wipe causes · don't</div>
         <ul class="reminder-list">
-          <li>Tank reaches platform late and Flame Buffet stacks.</li>
-          <li>Players stay on upper platform during Flame Quills.</li>
+          <li>Platform tank is late and Flame Buffet stacks on the raid.</li>
+          <li>Players stay upstairs during Flame Quills and die.</li>
           <li>Ember adds die in the raid and explode.</li>
-          <li>Tanks fail to swap on Melt Armor.</li>
-          <li>Raid stands in Flame Patch.</li>
-          <li>Dive Bomb movement is late or add pickup is missed.</li>
-          <li>Add tank dies during Phase 2 movement.</li>
+          <li>Phase 2 tanks miss or delay the Melt Armor swap.</li>
+          <li>Raid stands in Flame Patch during movement.</li>
+          <li>Dive Bomb movement is late and add pickup falls behind.</li>
+          <li>Add tank dies while collecting Embers.</li>
         </ul>
       </div>
     </div>
