@@ -21,25 +21,85 @@
     return RAID_MARKERS[markerName];
   }
 
-  async function copyTextWithButtonFeedback(text, button, promptMessage) {
-    try {
-      await navigator.clipboard.writeText(text);
-      if (!button) return;
+  function cloneButtonContent(button) {
+    if (!button) return null;
+    return Array.from(button.childNodes).map(function(node) {
+      return node.cloneNode(true);
+    });
+  }
 
-      const originalChildNodes = Array.from(button.childNodes).map(function(node) {
-        return node.cloneNode(true);
+  function showCopiedButtonFeedback(button, originalChildNodes) {
+    if (!button) return;
+
+    const nodesToRestore = originalChildNodes || cloneButtonContent(button);
+
+    button.textContent = 'Copied';
+    setTimeout(function() {
+      button.textContent = '';
+      nodesToRestore.forEach(function(node) {
+        button.appendChild(node);
       });
+    }, 1400);
+  }
 
-      button.textContent = 'Copied';
-      setTimeout(function() {
-        button.textContent = '';
-        originalChildNodes.forEach(function(node) {
-          button.appendChild(node);
-        });
-      }, 1400);
+  async function copyResolvedTextWithButtonFeedback(text, button, promptMessage, originalChildNodes) {
+    const resolvedText = String(text || '');
+    try {
+      await navigator.clipboard.writeText(resolvedText);
+      showCopiedButtonFeedback(button, originalChildNodes);
+      return true;
     } catch (error) {
-      window.prompt(promptMessage, text);
+      window.prompt(promptMessage, resolvedText);
+      return false;
     }
+  }
+
+  function copyTextWithButtonFeedback(text, button, promptMessage) {
+    return copyResolvedTextWithButtonFeedback(text, button, promptMessage, cloneButtonContent(button));
+  }
+
+  function resolveCopyText(textPromise) {
+    return Promise.resolve().then(function() {
+      return typeof textPromise === 'function' ? textPromise() : textPromise;
+    }).then(function(text) {
+      return String(text || '');
+    });
+  }
+
+  async function copyTextPromiseWithButtonFeedback(textPromise, button, promptMessage) {
+    const originalChildNodes = cloneButtonContent(button);
+    const resolvedTextPromise = resolveCopyText(textPromise);
+
+    if (navigator.clipboard && navigator.clipboard.write && window.ClipboardItem) {
+      let writePromise;
+
+      try {
+        const item = new window.ClipboardItem({
+          'text/plain': resolvedTextPromise.then(function(text) {
+            return new Blob([text], { type: 'text/plain' });
+          })
+        });
+        writePromise = navigator.clipboard.write([item]);
+      } catch (error) {
+        return resolvedTextPromise.then(function(text) {
+          return copyResolvedTextWithButtonFeedback(text, button, promptMessage, originalChildNodes);
+        });
+      }
+
+      try {
+        await writePromise;
+        showCopiedButtonFeedback(button, originalChildNodes);
+        return true;
+      } catch (error) {
+        const text = await resolvedTextPromise;
+        window.prompt(promptMessage, text);
+        return false;
+      }
+    }
+
+    return resolvedTextPromise.then(function(text) {
+      return copyResolvedTextWithButtonFeedback(text, button, promptMessage, originalChildNodes);
+    });
   }
 
   function bindSoftReserveInput(options) {
@@ -77,6 +137,7 @@
     iconUrl: iconUrl,
     raidMarkerSource: raidMarkerSource,
     copyTextWithButtonFeedback: copyTextWithButtonFeedback,
+    copyTextPromiseWithButtonFeedback: copyTextPromiseWithButtonFeedback,
     bindSoftReserveInput: bindSoftReserveInput
   };
 })(window);
