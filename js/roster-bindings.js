@@ -370,6 +370,19 @@
     }, []);
     return values[index] || '';
   }
+  function getGroupSlotModulo(groupName, modulo, remainder) {
+    const slotModulo = Number(modulo);
+    const slotRemainder = Number(remainder) || 0;
+    if (!Number.isFinite(slotModulo) || slotModulo <= 0) return '';
+    const values = Array.isArray(state.groups[groupName]) ? state.groups[groupName] : [];
+    return values.reduce(function(cleanValues, value) {
+      const trimmed = value ? value.trim() : '';
+      if (trimmed) cleanValues.push(trimmed);
+      return cleanValues;
+    }, []).filter(function(value, index) {
+      return index % slotModulo === slotRemainder;
+    }).join(', ');
+  }
   function getIndexedAlias(key) { const spec = INDEX_ALIASES[key]; return spec ? cleanList(state.groups[spec.group])[spec.index] || '' : ''; }
   function getDerivedValue(key) {
     const spec = DERIVED_BINDINGS[key];
@@ -377,6 +390,7 @@
     if (spec.type === 'group-slot') return getRawGroupSlot(spec.group, spec.index || 0);
     if (spec.type === 'group-slot-fallback') return getRawGroupSlot(spec.group, spec.index || 0) || getRawGroupSlot(spec.group, spec.fallbackIndex || 0);
     if (spec.type === 'unique-group-slot') return getUniqueGroupSlot(spec.groups, spec.index || 0);
+    if (spec.type === 'group-slot-modulo') return getGroupSlotModulo(spec.group, spec.modulo, spec.remainder);
     if (spec.type === 'olm-tank') {
       const values = Array.isArray(state.groups[spec.group]) ? state.groups[spec.group] : [];
       return getRawGroupSlot(spec.group, values.length >= 2 ? 1 : 0);

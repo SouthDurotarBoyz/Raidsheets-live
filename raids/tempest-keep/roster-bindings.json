@@ -70,21 +70,6 @@
       "minCount": 0,
       "defaultLabel": "Kicker"
     },
-    "tk-solarian-wrath-spread-callers": {
-      "defaultCount": 0,
-      "minCount": 0,
-      "defaultLabel": "Wrath caller"
-    },
-    "tk-solarian-add-tanks": {
-      "defaultCount": 0,
-      "minCount": 0,
-      "defaultLabel": "Add tank"
-    },
-    "tk-solarian-priest-kicks": {
-      "defaultCount": 0,
-      "minCount": 0,
-      "defaultLabel": "Priest kick"
-    },
     "tk-kaelthas-weapon-tanks": {
       "defaultCount": 0,
       "minCount": 0,
@@ -128,10 +113,7 @@
       "tk-core-ot-3-healers"
     ],
     "tk-solarian-raid-healers": [
-      "tk-core-raid-healers",
-      "tk-core-ot-healers",
-      "tk-core-ot-2-healers",
-      "tk-core-ot-3-healers"
+      "tk-core-raid-healers"
     ],
     "tk-kaelthas-raid-healers": [
       "tk-core-raid-healers",
@@ -159,9 +141,6 @@
     "tk-alar-add-healers": "Add healer",
     "tk-void-reaver-orb-soakers": "Orb soaker",
     "tk-void-reaver-kicks": "Kicker",
-    "tk-solarian-wrath-spread-callers": "Wrath caller",
-    "tk-solarian-add-tanks": "Add tank",
-    "tk-solarian-priest-kicks": "Priest kick",
     "tk-kaelthas-weapon-tanks": "Weapon tank",
     "tk-kaelthas-mind-control-cc": "Mind control CC",
     "tk-alar-raid-healers": "Raid healers",
@@ -170,5 +149,20 @@
     "tk-void-reaver-raid-healers": "Raid healers"
   },
   "indexAliases": {},
-  "derivedBindings": {}
+  "derivedBindings": {
+    "tk-solarian-square-add-kicks": {
+      "type": "group-slot-modulo",
+      "group": "tk-core-kicks",
+      "modulo": 2,
+      "remainder": 0,
+      "fallback": "Square Add kicks"
+    },
+    "tk-solarian-moon-add-kicks": {
+      "type": "group-slot-modulo",
+      "group": "tk-core-kicks",
+      "modulo": 2,
+      "remainder": 1,
+      "fallback": "Moon Add kicks"
+    }
+  }
 }
