@@ -120,7 +120,29 @@
     "tk-kaelthas-legendary-shield": "Legendary shield"
   },
   "singleAliases": {},
-  "groupAliases": {},
+  "groupAliases": {
+    "tk-alar-raid-healers": [
+      "tk-core-raid-healers",
+      "tk-core-ot-healers",
+      "tk-core-ot-2-healers",
+      "tk-core-ot-3-healers"
+    ],
+    "tk-solarian-raid-healers": [
+      "tk-core-raid-healers",
+      "tk-core-ot-healers",
+      "tk-core-ot-2-healers",
+      "tk-core-ot-3-healers"
+    ],
+    "tk-kaelthas-raid-healers": [
+      "tk-core-raid-healers",
+      "tk-core-ot-2-healers",
+      "tk-core-ot-3-healers"
+    ],
+    "tk-void-reaver-raid-healers": [
+      "tk-core-raid-healers",
+      "tk-core-ot-3-healers"
+    ]
+  },
   "groupTargetAliases": {},
   "groupLabels": {
     "tk-core-mt-healers": "MT healers",
@@ -141,7 +163,11 @@
     "tk-solarian-add-tanks": "Add tank",
     "tk-solarian-priest-kicks": "Priest kick",
     "tk-kaelthas-weapon-tanks": "Weapon tank",
-    "tk-kaelthas-mind-control-cc": "Mind control CC"
+    "tk-kaelthas-mind-control-cc": "Mind control CC",
+    "tk-alar-raid-healers": "Raid healers",
+    "tk-solarian-raid-healers": "Raid healers",
+    "tk-kaelthas-raid-healers": "Raid healers",
+    "tk-void-reaver-raid-healers": "Raid healers"
   },
   "indexAliases": {},
   "derivedBindings": {}

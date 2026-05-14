@@ -402,7 +402,26 @@
     }
     return '';
   }
-  function getGroupValue(groupName) { if (GROUP_ALIASES[groupName]) return GROUP_ALIASES[groupName].map(getGroupValue).filter(Boolean).join(', '); return cleanList(state.groups[groupName]).join(', '); }
+  function getGroupValues(groupName, visitedAliases, seenValues) {
+    const aliasGroups = GROUP_ALIASES[groupName];
+    if (aliasGroups) {
+      if (visitedAliases[groupName]) return [];
+      visitedAliases[groupName] = true;
+      return aliasGroups.reduce(function(values, aliasGroupName) {
+        return values.concat(getGroupValues(aliasGroupName, visitedAliases, seenValues));
+      }, []);
+    }
+
+    return cleanList(state.groups[groupName]).reduce(function(values, value) {
+      const trimmed = value.trim();
+      const normalized = trimmed.toLowerCase();
+      if (!trimmed || seenValues[normalized]) return values;
+      seenValues[normalized] = true;
+      values.push(trimmed);
+      return values;
+    }, []);
+  }
+  function getGroupValue(groupName) { return getGroupValues(groupName, {}, {}).join(', '); }
   function getSingleValue(key) {
     if (DERIVED_BINDINGS[key]) return getDerivedValue(key);
     if (INDEX_ALIASES[key]) return getIndexedAlias(key);
