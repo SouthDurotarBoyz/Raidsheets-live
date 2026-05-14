@@ -9,7 +9,7 @@
       <div class="setup-col">
         <div class="setup-heading setup-col-label">Tanks</div>
         <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Main tank → <span class="assignment-target" data-target-bind="tk-core-main-tank"></span></span></div>
-        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span><span class="line-text">Add tanks → <span class="role unassigned" data-bind-group="tk-solarian-add-tanks" data-default="Add tanks">Add tanks</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span><span class="line-text">Add tank → <span class="assignment-target" data-target-bind="tk-core-off-tank"></span></span></div>
       </div>
       <div class="setup-col">
         <div class="setup-heading setup-col-label">Healers</div>
@@ -19,7 +19,7 @@
       <div class="setup-col setup-col-misdirect-wide">
         <div class="setup-heading setup-col-label">Misdirects</div>
         <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="tk-core-mt-misdirect" data-default="Hunter">Hunter</span> → Main tank → <span class="assignment-target" data-target-bind="tk-core-main-tank"></span></span></div>
-        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="tk-core-ot-misdirect" data-default="Hunter">Hunter</span> → Add tanks → <span class="role unassigned" data-bind-group="tk-solarian-add-tanks" data-default="Add tanks">Add tanks</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="tk-core-ot-misdirect" data-default="Hunter">Hunter</span> → Add tank → <span class="assignment-target" data-target-bind="tk-core-off-tank"></span></span></div>
       </div>
       <div class="setup-col">
         <div class="setup-heading setup-col-label">Utility</div>
@@ -28,9 +28,8 @@
         <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_curseoftounges.jpg" alt="Curse icon"></span><span class="line-text">Tongues → <span class="role unassigned" data-bind="tk-core-curse-of-tongues" data-default="Warlock">Warlock</span></span></div>
       </div>
       <div class="setup-col">
-        <div class="setup-heading setup-col-label">Kicks / Calls</div>
-        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_kick.jpg" alt="Kick icon"></span><span class="line-text">Priest kicks → <span class="role unassigned" data-bind-group="tk-solarian-priest-kicks" data-default="Priest kicks">Priest kicks</span></span></div>
-        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_borrowedtime.jpg" alt="Call icon"></span><span class="line-text">Wrath spread callers → <span class="role unassigned" data-bind-group="tk-solarian-wrath-spread-callers" data-default="Wrath spread callers">Wrath spread callers</span></span></div>
+        <div class="setup-heading setup-col-label">Kicks</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_kick.jpg" alt="Kick icon"></span><span class="line-text">Priest kicks → <span class="role unassigned" data-bind-group="tk-core-kicks" data-default="Core kicks">Core kicks</span></span></div>
       </div>
     </div>
   </div>
@@ -69,7 +68,7 @@
               <img class="icon" src="https://wow.zamimg.com/images/wow/icons/large/spell_arcane_blink.jpg" alt="Arcane movement icon">
               <div class="mech-body">
                 <div class="mech-name">Open carefully and stay spread</div>
-                <div class="mech-desc">DPS opens after the tank position is stable, keeps safe spacing for Wrath of the Astromancer, and listens for <span class="role unassigned" data-bind-group="tk-solarian-wrath-spread-callers" data-default="Wrath spread callers">Wrath spread callers</span> to identify who must move.</div>
+                <div class="mech-desc">DPS opens after the tank position is stable and keeps safe spacing for Wrath of the Astromancer. Wrath target moves out immediately; everyone else holds spread.</div>
               </div>
             </div>
           </div>
@@ -117,7 +116,7 @@
               <img class="icon" src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_charge.jpg" alt="Charge icon">
               <div class="mech-body">
                 <div class="mech-name">Gather Solarium Agents</div>
-                <div class="mech-desc">When Solarian disappears, <span class="role unassigned" data-bind-group="tk-solarian-add-tanks" data-default="Add tanks">Add tanks</span> move to pickup zones, collect Solarium Agents quickly, and keep them controlled so AoE can land without loose adds hitting healers.</div>
+                <div class="mech-desc">When Solarian disappears, <span class="assignment-target" data-target-bind="tk-core-off-tank"></span> moves to pickup zones, collects Solarium Agents quickly, and keeps them controlled so AoE can land without loose adds hitting healers.</div>
               </div>
             </div>
           </div>
@@ -126,7 +125,7 @@
               <img class="icon" src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_renew.jpg" alt="Renew icon">
               <div class="mech-body">
                 <div class="mech-name">Stabilize pickups and kicks</div>
-                <div class="mech-desc">Cover add tank spikes as Agents are gathered, then watch players assigned to priests. Missed Solarium Priest casts and heals can stabilize the add wave, so keep kick teams alive while raid damage is rolling.</div>
+                <div class="mech-desc">Cover off tank spikes as Agents are gathered, then watch players assigned to priests. Missed Solarium Priest casts and heals can stabilize the add wave, so keep core kickers alive while raid damage is rolling.</div>
               </div>
             </div>
           </div>
@@ -135,7 +134,7 @@
               <img class="icon" src="https://wow.zamimg.com/images/wow/icons/large/ability_kick.jpg" alt="Kick icon">
               <div class="mech-body">
                 <div class="mech-name">Priests are priority</div>
-                <div class="mech-desc">AoE or kill Solarium Agents cleanly, but swap fast when Solarium Priests appear. <span class="role unassigned" data-bind-group="tk-solarian-priest-kicks" data-default="Priest kicks">Priest kicks</span> interrupt and control priest casts first; DPS tunnel on Agents only after priests are handled.</div>
+                <div class="mech-desc">AoE or kill Solarium Agents cleanly, but swap fast when Solarium Priests appear. <span class="role unassigned" data-bind-group="tk-core-kicks" data-default="Core kicks">Core kicks</span> handle priest interrupts and control casts first; DPS tunnel on Agents only after priests are handled.</div>
               </div>
             </div>
           </div>
@@ -185,15 +184,15 @@
       <div class="image-card">
         <div class="image-card-label">Add phase positioning</div>
         <img alt="High Astromancer Solarian add phase positioning" class="positioning-img" src="assets/tk/bosses/solarian/solarian-adds.webp"/>
-        <div class="image-card-caption">Add phase reference: add tank pickup zones, Solarium Agent control, priest interrupt positions, and where the raid should collapse or spread.</div>
+        <div class="image-card-caption">Add phase reference: off tank pickup zones, Solarium Agent control, priest interrupt positions, and where the raid should collapse or spread.</div>
       </div>
       <div class="reminder-card">
         <div class="reminder-card-label">High Astromancer Solarian wipe causes</div>
         <ul class="reminder-list">
           <li>Wrath target does not move out and explodes in the raid.</li>
           <li>Raid stacks too tightly during Wrath.</li>
-          <li>Add tanks miss Solarium Agents during the disappear phase.</li>
-          <li>Priest kicks are missed and priests stabilize the add wave.</li>
+          <li>Off tank misses Solarium Agents during the disappear phase.</li>
+          <li>Core kicks are missed and priests stabilize the add wave.</li>
           <li>DPS stays on the wrong target when priests spawn.</li>
           <li>Healers fall behind during raid damage and add pickup.</li>
           <li>Final phase pickup is slow after transformation.</li>
