@@ -108,12 +108,13 @@
   "groupAliases": {
     "tk-alar-raid-healers": [
       "tk-core-raid-healers",
-      "tk-core-ot-healers",
       "tk-core-ot-2-healers",
       "tk-core-ot-3-healers"
     ],
     "tk-solarian-raid-healers": [
-      "tk-core-raid-healers"
+      "tk-core-raid-healers",
+      "tk-core-ot-2-healers",
+      "tk-core-ot-3-healers"
     ],
     "tk-kaelthas-raid-healers": [
       "tk-core-raid-healers",
