@@ -80,7 +80,13 @@
     "gruul-curse-reck": "curse-reck"
   },
   "groupAliases": {
+    "maulgar-raid-healers": [
+      "raid-healers"
+    ],
     "gruul-raid-healers": [
+      "raid-healers"
+    ],
+    "magtheridon-raid-healers": [
       "raid-healers"
     ],
     "gruul-md": [
@@ -109,7 +115,9 @@
     "md-blindeye": "Blindeye misdirects",
     "blindeye-kicks": "Kicks",
     "gruul-raid-healers": "Raid healers",
-    "gruul-md": "Gruul MDs"
+    "gruul-md": "Gruul MDs",
+    "maulgar-raid-healers": "Raid healers",
+    "magtheridon-raid-healers": "Raid healers"
   },
   "indexAliases": {
     "blindeye-kick-1": {
