@@ -127,7 +127,34 @@
     "ssc-morogrim-south-paladin": "South paladin"
   },
   "singleAliases": {},
-  "groupAliases": {},
+  "groupAliases": {
+    "ssc-hydross-raid-healers": [
+      "ssc-core-raid-healers",
+      "ssc-core-ot-3-healers"
+    ],
+    "ssc-lurker-raid-healers": [
+      "ssc-core-raid-healers",
+      "ssc-core-ot-2-healers",
+      "ssc-core-ot-3-healers"
+    ],
+    "ssc-leotheras-raid-healers": [
+      "ssc-core-raid-healers",
+      "ssc-core-ot-healers",
+      "ssc-core-ot-2-healers",
+      "ssc-core-ot-3-healers"
+    ],
+    "ssc-karathress-raid-healers": [
+      "ssc-core-raid-healers"
+    ],
+    "ssc-morogrim-raid-healers": [
+      "ssc-core-raid-healers",
+      "ssc-core-ot-3-healers"
+    ],
+    "ssc-vashj-raid-healers": [
+      "ssc-core-raid-healers",
+      "ssc-core-ot-3-healers"
+    ]
+  },
   "groupTargetAliases": {},
   "groupLabels": {
     "ssc-core-mt-healers": "MT healers",
@@ -150,7 +177,13 @@
     "ssc-vashj-pylon-1-nw": "Pylon 1 (NW)",
     "ssc-vashj-pylon-2-ne": "Pylon 2 (NE)",
     "ssc-vashj-pylon-3-se": "Pylon 3 (SE)",
-    "ssc-vashj-pylon-4-sw": "Pylon 4 (SW)"
+    "ssc-vashj-pylon-4-sw": "Pylon 4 (SW)",
+    "ssc-hydross-raid-healers": "Raid healers",
+    "ssc-lurker-raid-healers": "Raid healers",
+    "ssc-leotheras-raid-healers": "Raid healers",
+    "ssc-karathress-raid-healers": "Raid healers",
+    "ssc-morogrim-raid-healers": "Raid healers",
+    "ssc-vashj-raid-healers": "Raid healers"
   },
   "indexAliases": {},
   "derivedBindings": {
