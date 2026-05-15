@@ -24,6 +24,7 @@
     "ssc-core-banish": { "type": "list" },
     "ssc-hydross-frost-resist-tank": { "type": "single" },
     "ssc-hydross-nature-resist-tank": { "type": "single" },
+    "ssc-hydross-add-tank": { "type": "single" },
     "ssc-lurker-platform-1-assignments": { "type": "list" },
     "ssc-lurker-platform-2-assignments": { "type": "list" },
     "ssc-lurker-platform-3-assignments": { "type": "list" },
