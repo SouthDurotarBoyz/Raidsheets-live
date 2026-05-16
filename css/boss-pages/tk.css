@@ -10,6 +10,7 @@
   --tk-text: #F1EFE8;
   --tk-text-soft: #D3D1C7;
   --tk-muted: #B8B4A8;
+  --tk-assigned: #F3D39C;
 
   --tk-tank-bg: #4A351C;
   --tk-tank-text: #F3D39C;
@@ -122,9 +123,18 @@ body[data-boss-id="kaelthas"] {
 }
 
 .setup-col-label,
-.setup-grid-5 b,
-.setup-block .role {
+.setup-grid-5 b {
   color: var(--tk-text);
+}
+
+.setup-block .role {
+  color: var(--tk-assigned);
+  font-weight: 500;
+}
+
+.setup-block .assignment-target {
+  color: var(--tk-text-soft);
+  font-weight: 500;
 }
 
 .setup-col-label {
@@ -158,7 +168,9 @@ body[data-boss-id="kaelthas"] {
 
 .setup-block .role.unassigned,
 .role.unassigned {
-  color: #B4B2A9;
+  color: var(--tk-muted);
+  font-style: italic;
+  font-weight: 400;
 }
 
 .setup-block .role-label,
