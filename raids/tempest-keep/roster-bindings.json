@@ -55,11 +55,6 @@
       "minCount": 0,
       "defaultLabel": "Banish"
     },
-    "tk-alar-add-healers": {
-      "defaultCount": 0,
-      "minCount": 0,
-      "defaultLabel": "Add healer"
-    },
     "tk-void-reaver-orb-soakers": {
       "defaultCount": 0,
       "minCount": 0,
@@ -108,7 +103,6 @@
   "groupAliases": {
     "tk-alar-raid-healers": [
       "tk-core-raid-healers",
-      "tk-core-ot-2-healers",
       "tk-core-ot-3-healers"
     ],
     "tk-solarian-raid-healers": [
@@ -139,7 +133,6 @@
     "tk-core-ot-3-misdirect": "OT 3 misdirect",
     "tk-core-kicks": "Kicker",
     "tk-core-banish": "Banish",
-    "tk-alar-add-healers": "Add healer",
     "tk-void-reaver-orb-soakers": "Orb soaker",
     "tk-void-reaver-kicks": "Kicker",
     "tk-kaelthas-weapon-tanks": "Weapon tank",
