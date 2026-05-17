@@ -22,7 +22,6 @@
     "tk-core-decurse": { "type": "single" },
     "tk-core-magic-dispel": { "type": "single" },
     "tk-core-banish": { "type": "list" },
-    "tk-alar-add-healers": { "type": "list" },
     "tk-void-reaver-orb-soakers": { "type": "list" },
     "tk-kaelthas-thaladred-tank": { "type": "single" },
     "tk-kaelthas-sanguinar-tank": { "type": "single" },
