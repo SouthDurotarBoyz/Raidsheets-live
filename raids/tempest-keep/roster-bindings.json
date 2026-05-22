@@ -107,7 +107,6 @@
     ],
     "tk-solarian-raid-healers": [
       "tk-core-raid-healers",
-      "tk-core-ot-2-healers",
       "tk-core-ot-3-healers"
     ],
     "tk-kaelthas-raid-healers": [
