@@ -5,6 +5,9 @@
   const sessionClient = window.RaidSessionClient;
   const STORAGE_KEY = storage.STORAGE_KEY;
   const SOFT_RESERVE_KEY = 'soft-reserve-url';
+  const SESSION_VIEW_REFRESH_INTERVAL_MS = 30000;
+  const SESSION_VIEW_REFRESH_JITTER_MS = 5000;
+  const SESSION_VIEW_REFRESH_BACKOFF_MAX_MS = 300000;
   
   const EMPTY_BINDING_CONFIG = Object.freeze({});
 
@@ -48,7 +51,8 @@
   }
 
   let state = { groups: {}, singles: {}, meta: {} };
-  let sessionViewRefreshIntervalId = null;
+  let sessionViewRefreshTimerId = null;
+  let sessionViewRefreshFailureCount = 0;
   let sessionViewVisibilityHandlerAttached = false;
   let sessionViewExpired = false;
 
@@ -245,10 +249,39 @@
       state = normalizeRosterState(nextState);
       updateAllBindings();
       updateSoftReserveLink();
+      sessionViewRefreshFailureCount = 0;
     }).catch(function(error) {
       if (handleSessionExpiredError(error)) return;
+      sessionViewRefreshFailureCount += 1;
       console.warn('Unable to refresh session roster bindings.', error);
     });
+  }
+
+  function getSessionViewRefreshDelay() {
+    if (sessionViewRefreshFailureCount <= 0) {
+      return SESSION_VIEW_REFRESH_INTERVAL_MS + Math.floor(Math.random() * (SESSION_VIEW_REFRESH_JITTER_MS + 1));
+    }
+    const failureDelayMs = Math.min(SESSION_VIEW_REFRESH_BACKOFF_MAX_MS, 60000 * Math.pow(2, sessionViewRefreshFailureCount - 1));
+    return failureDelayMs;
+  }
+
+  function scheduleSessionViewRefresh(delayMs) {
+    stopSessionViewPolling();
+    if (!isSessionViewMode() || isDocumentHidden()) return;
+    sessionViewRefreshTimerId = global.setTimeout(function() {
+      sessionViewRefreshTimerId = null;
+      if (!isSessionViewMode() || isDocumentHidden()) {
+        stopSessionViewPolling();
+        return;
+      }
+      refreshSessionBindings().finally(function() {
+        if (!isSessionViewMode() || isDocumentHidden()) {
+          stopSessionViewPolling();
+          return;
+        }
+        scheduleSessionViewRefresh(getSessionViewRefreshDelay());
+      });
+    }, delayMs);
   }
 
   function isDocumentHidden() {
@@ -268,9 +301,9 @@
   }
 
   function stopSessionViewPolling() {
-    if (!sessionViewRefreshIntervalId) return;
-    clearInterval(sessionViewRefreshIntervalId);
-    sessionViewRefreshIntervalId = null;
+    if (!sessionViewRefreshTimerId) return;
+    clearTimeout(sessionViewRefreshTimerId);
+    sessionViewRefreshTimerId = null;
   }
 
   function handleSessionViewVisibilityChange() {
@@ -285,7 +318,10 @@
       return;
     }
 
-    refreshSessionBindings();
+    refreshSessionBindings().finally(function() {
+      if (!isSessionViewMode() || isDocumentHidden()) return;
+      scheduleSessionViewRefresh(getSessionViewRefreshDelay());
+    });
   }
 
   function startSessionViewPolling() {
@@ -296,6 +332,8 @@
     }
 
     addSessionViewVisibilityHandler();
+    if (isDocumentHidden()) return;
+    scheduleSessionViewRefresh(getSessionViewRefreshDelay());
   }
 
   function migrateOldState() {
