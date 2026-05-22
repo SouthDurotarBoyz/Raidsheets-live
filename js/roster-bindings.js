@@ -4,7 +4,6 @@
   const storage = window.RaidRosterStorage;
   const sessionClient = window.RaidSessionClient;
   const STORAGE_KEY = storage.STORAGE_KEY;
-  const SESSION_VIEW_REFRESH_INTERVAL_MS = 10000;
   const SOFT_RESERVE_KEY = 'soft-reserve-url';
   
   const EMPTY_BINDING_CONFIG = Object.freeze({});
@@ -286,9 +285,7 @@
       return;
     }
 
-    stopSessionViewPolling();
     refreshSessionBindings();
-    startSessionViewPolling();
   }
 
   function startSessionViewPolling() {
@@ -299,15 +296,6 @@
     }
 
     addSessionViewVisibilityHandler();
-    if (isDocumentHidden()) return;
-
-    sessionViewRefreshIntervalId = setInterval(function() {
-      if (isDocumentHidden()) {
-        stopSessionViewPolling();
-        return;
-      }
-      refreshSessionBindings();
-    }, SESSION_VIEW_REFRESH_INTERVAL_MS);
   }
 
   function migrateOldState() {
