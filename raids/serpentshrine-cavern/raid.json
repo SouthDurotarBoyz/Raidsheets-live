@@ -6,6 +6,13 @@
   "guidePage": "hydross.html",
   "bosses": [
     {
+      "id": "trash",
+      "name": "SSC Trash",
+      "shortName": "Trash",
+      "icon": "assets/shared/markers/skull.svg",
+      "page": "ssc-trash.html"
+    },
+    {
       "id": "hydross",
       "name": "Hydross the Unstable",
       "shortName": "Hydross",
