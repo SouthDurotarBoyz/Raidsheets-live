@@ -10,13 +10,13 @@
         <div class="setup-col-label">Tanks</div>
         <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Main tank → <span class="role unassigned" data-bind="ssc-core-main-tank" data-default="Main tank">Main tank</span></span></div>
         <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span><span class="line-text">Off tank → <span class="role unassigned" data-bind="ssc-core-off-tank" data-default="Off tank">Off tank</span></span></div>
-        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span><span class="line-text">Add / loose mob tank → <span class="role unassigned" data-bind="ssc-core-off-tank-2" data-default="Add tank">Add tank</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span><span class="line-text">Off tank → <span class="role unassigned" data-bind="ssc-core-off-tank-2" data-default="Off tank">Off tank</span></span></div>
       </div>
       <div class="setup-col setup-col-misdirect-wide">
         <div class="setup-col-label">Misdirects</div>
         <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-mt-misdirect" data-default="Hunter">Hunter</span> → <span class="role-label">(MAIN TANK)</span> → <span class="assignment-target" data-target-bind="ssc-core-main-tank"></span></span></div>
         <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-ot-misdirect" data-default="Hunter">Hunter</span> → <span class="role-label">(OFF TANK)</span> → <span class="assignment-target" data-target-bind="ssc-core-off-tank"></span></span></div>
-        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-ot-2-misdirect" data-default="Hunter">Hunter</span> → <span class="role-label">(ADD TANK)</span> → <span class="assignment-target" data-target-bind="ssc-core-off-tank-2"></span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="ssc-core-ot-2-misdirect" data-default="Hunter">Hunter</span> → <span class="role-label">(OFF TANK)</span> → <span class="assignment-target" data-target-bind="ssc-core-off-tank-2"></span></span></div>
       </div>
       <div class="setup-col">
         <div class="setup-col-label">Interrupts / CC</div>
@@ -35,27 +35,45 @@
   <div class="main-layout">
     <div class="sheet-content">
       <div class="phase-block">
-        <div class="phase-bar">A. Pre-Hydross Trash</div>
-        <div class="reminder-card"><div class="reminder-card-label">Local priority</div><ol><li>Coilfang Hate-Screamer or Serpentshrine Sporebats, depending on raid preference.</li><li>Coilfang Beast-Tamer.</li><li>Underbog Colossus mechanics / death adds.</li><li>Remaining bats or minor adds.</li></ol></div>
+        <div class="phase-bar">A. Underbog Colossus</div>
+        <div class="reminder-card"><div class="reminder-card-label">Kill Priority</div><ol><li>Underbog Colossus.</li><li>Death-spawned adds / Ragers.</li></ol></div>
         <div class="col-grid">
           <div class="col col-tank">
-            <div class="mech critical"><div class="icon"><img src="assets/shared/markers/skull.svg" alt="Skull"></div><div class="mech-body"><div class="mech-name">Beast-Tamer pack</div><div class="mech-desc">Main tank normally picks up Coilfang Beast-Tamer and faces it away because it cleaves. Off tank(s) pick up the other mobs and hold Sporebats or Hate-Screamers steady for the kill order.</div></div></div>
-            <div class="mech"><div class="icon"><img src="assets/shared/markers/cross.svg" alt="Cross"></div><div class="mech-body"><div class="mech-name">Underbog Colossus calls</div><div class="mech-desc">Underbog Colossus rolls different ability pairs and death effects. Call what it rolls, keep it controlled, and have the off tank gather any Ragers or other death adds for quick cleave.</div></div></div>
+            <div class="mech critical"><div class="icon"><img src="assets/shared/markers/skull.svg" alt="Skull"></div><div class="mech-body"><div class="mech-name">Own Colossus calls</div><div class="mech-desc">Colossus appears throughout the raid, so it gets its own section. Call the ability pair or death effect, then react fast.</div></div></div>
+            <div class="mech"><div class="icon"><img src="assets/shared/markers/cross.svg" alt="Cross"></div><div class="mech-body"><div class="mech-name">Death adds</div><div class="mech-desc">On death, Colossus can spawn many Ragers or other adds. Off tank gathers them and the raid cleaves quickly.</div></div></div>
           </div>
           <div class="col col-healer">
-            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_acid_01.jpg" alt="Disease icon"></div><div class="mech-body"><div class="mech-name">Cleanse and move</div><div class="mech-desc">Initial Infection is a disease DoT and should be cleansed quickly. Targeted Acid Geyser players run to the tank / Colossus position so the spray does not hit the raid.</div></div></div>
-            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_earthquake.jpg" alt="Quake icon"></div><div class="mech-body"><div class="mech-name">Spore Quake / Toxic Pool</div><div class="mech-desc">Spore Quake has very large range, so move out fast. Toxic Pool is ground poison; move out and keep healing mobile players.</div></div></div>
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_acid_01.jpg" alt="Disease icon"></div><div class="mech-body"><div class="mech-name">Cleanse and cover</div><div class="mech-desc">Initial Infection is a disease DoT; cleanse it quickly. Atrophic Blow reduces Strength and Stamina, and Frenzy increases attack speed.</div></div></div>
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_monsterscales_02.jpg" alt="Parasite icon"></div><div class="mech-body"><div class="mech-name">Parasite handling</div><div class="mech-desc">Serpentshrine Parasite spawns a parasite after a delay. Call it, control it, and kill it without losing the Colossus tank.</div></div></div>
           </div>
           <div class="col col-dps">
-            <div class="mech critical"><div class="icon"><img src="assets/shared/markers/skull.svg" alt="Skull"></div><div class="mech-body"><div class="mech-name">Pick silence or charge first</div><div class="mech-desc">Raid may kill Sporebats first or Hate-Screamers first depending on whether charge stuns or silence is the bigger issue. Hate-Screamer uses Sonic Scream near itself and a 5 second AoE Silence.</div></div></div>
-            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_druid_ferociousbite.jpg" alt="Beast icon"></div><div class="mech-body"><div class="mech-name">Burn Bestial Wrath</div><div class="mech-desc">Beast-Tamer uses Bestial Wrath, increasing its damage and empowering the two Sporebats. Sporebats charge the furthest target, stun, and apply Spore Burst Nature splash plus DoT.</div></div></div>
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_earthquake.jpg" alt="Quake icon"></div><div class="mech-body"><div class="mech-name">Move for raid damage</div><div class="mech-desc">Acid Geyser targets a random player; that player runs to the tank / Colossus position to avoid spraying the raid. Spore Quake has very large range, so move out fast.</div></div></div>
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_corrosivebreath.jpg" alt="Poison icon"></div><div class="mech-body"><div class="mech-name">Avoid poison</div><div class="mech-desc">Toxic Pool is ground poison; move out. Swap quickly to Death-spawned adds / Ragers when the Colossus dies.</div></div></div>
           </div>
         </div>
       </div>
 
       <div class="phase-block">
-        <div class="phase-bar">B. Pre-Lurker Trash</div>
-        <div class="reminder-card"><div class="reminder-card-label">Local priority</div><ol><li>Coilfang Priestess.</li><li>Coilfang Shatterer.</li><li>Vashj’ir Honor Guard.</li><li>Greyheart Technician.</li><li>Remaining stacked trash.</li></ol></div>
+        <div class="phase-bar">B. Pre-Hydross Trash</div>
+        <div class="reminder-card"><div class="reminder-card-label">Kill Priority</div><ol><li>Hate-Screamers + Sporebats, cleaved together.</li><li>Beast-Tamer.</li></ol></div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech critical"><div class="icon"><img src="assets/shared/markers/skull.svg" alt="Skull"></div><div class="mech-body"><div class="mech-name">Beast-Tamer pack</div><div class="mech-desc">Main tank normally picks up Coilfang Beast-Tamer and faces it away because it cleaves. Off tank(s) pick up the other mobs for cleave.</div></div></div>
+            <div class="mech"><div class="icon"><img src="assets/shared/markers/cross.svg" alt="Cross"></div><div class="mech-body"><div class="mech-name">Hold cleave targets</div><div class="mech-desc">Sporebats and Hate-Screamers get cleaved together. Keep them stacked and controlled while the Beast-Tamer is faced away from the raid.</div></div></div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_psychicscream.jpg" alt="Scream icon"></div><div class="mech-body"><div class="mech-name">Silence and charge damage</div><div class="mech-desc">Coilfang Hate-Screamer uses Sonic Scream and a 5-second AoE Silence. Serpentshrine Sporebats charge the furthest target, stun, and apply Spore Burst Nature splash plus DoT.</div></div></div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical"><div class="icon"><img src="assets/shared/markers/skull.svg" alt="Skull"></div><div class="mech-body"><div class="mech-name">Cleave first pack targets</div><div class="mech-desc">Kill Hate-Screamers and Sporebats together. Stay in range for control, avoid being the furthest target when possible, and do not split damage away from the cleave stack.</div></div></div>
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_druid_ferociousbite.jpg" alt="Beast icon"></div><div class="mech-body"><div class="mech-name">Bestial Wrath</div><div class="mech-desc">Beast-Tamer uses Bestial Wrath, increasing its damage and empowering the two Sporebats. Burn it after the cleave targets are under control.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">C. Pre-Lurker Trash</div>
+        <div class="reminder-card"><div class="reminder-card-label">Kill Priority</div><ol><li>Priestess.</li><li>Shatterer.</li><li>Honor Guard.</li><li>Technician.</li></ol></div>
         <div class="col-grid">
           <div class="col col-tank">
             <div class="mech critical"><div class="icon"><img src="assets/shared/markers/skull.svg" alt="Skull"></div><div class="mech-body"><div class="mech-name">Honor Guard positioning</div><div class="mech-desc">Vashj’ir Honor Guard has Enrage / Frenzy, melee-range Frightening Shout, Knockback, and Mortal Cleave. Face Honor Guards away and use wall or pillar positioning when possible.</div></div></div>
@@ -67,14 +85,14 @@
           </div>
           <div class="col col-dps">
             <div class="mech critical"><div class="icon"><img src="assets/shared/markers/cross.svg" alt="Cross"></div><div class="mech-body"><div class="mech-name">Control Shatter Armor</div><div class="mech-desc">Coilfang Shatterer applies Shatter Armor, reducing tank armor by 50% for 15 seconds. Grounding Totem can prevent Shatter Armor, then kill Shatterer after Priestess.</div></div></div>
-            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_selfdestruct.jpg" alt="AoE icon"></div><div class="mech-body"><div class="mech-name">AoE after control</div><div class="mech-desc">Wait for tank threat and priority targets before broad AoE. Cleave the remaining stacked trash only after Priestess Spirit and Shatterer pressure are handled.</div></div></div>
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_selfdestruct.jpg" alt="AoE icon"></div><div class="mech-body"><div class="mech-name">AoE after control</div><div class="mech-desc">Wait for tank threat and priority targets before broad AoE. Cleave only after Priestess Spirit and Shatterer pressure are handled.</div></div></div>
           </div>
         </div>
       </div>
 
       <div class="phase-block">
-        <div class="phase-bar">C. Pre-Leotheras Trash</div>
-        <div class="reminder-card"><div class="reminder-card-label">Local priority</div><ol><li>Greyheart Nether-Mage if not sheeped.</li><li>Greyheart Tidecaller.</li><li>Water Elemental Totem immediately when it appears.</li><li>Greyheart Skulker.</li><li>Greyheart Shield-Bearer.</li><li>Coilfang Fathom-Witch.</li><li>Coilfang Serpentguard.</li><li>Banished Serpentshrine Lurker last.</li></ol></div>
+        <div class="phase-bar">D. Pre-Leotheras Trash</div>
+        <div class="reminder-card"><div class="reminder-card-label">Kill Priority</div><ol><li>Greyheart Nether-Mage if not sheeped.</li><li>Greyheart Tidecaller.</li><li>Water Elemental Totem immediately when it appears.</li><li>Greyheart Skulker.</li><li>Greyheart Shield-Bearer.</li><li>Coilfang Fathom-Witch.</li><li>Coilfang Serpentguard.</li><li>Banished Serpentshrine Lurker last.</li></ol></div>
         <div class="col-grid">
           <div class="col col-tank">
             <div class="mech critical"><div class="icon"><img src="assets/shared/markers/skull.svg" alt="Skull"></div><div class="mech-body"><div class="mech-name">Sheep or kill Nether-Mage</div><div class="mech-desc">Greyheart Nether-Mage is highly dangerous but can be Polymorphed. If Nether-Mages are sheeped, kill Greyheart Tidecaller first; otherwise remove the Nether-Mage before it chains instant spells.</div></div></div>
@@ -94,8 +112,8 @@
       </div>
 
       <div class="phase-block">
-        <div class="phase-bar">D. Pre-Morogrim Trash</div>
-        <div class="reminder-card"><div class="reminder-card-label">Local priority</div><ol><li>Tidewalker Depth-Seer.</li><li>Tidewalker Hydromancer.</li><li>Tidewalker Shaman.</li><li>Tidewalker Warrior.</li><li>Tidewalker Lurker / Harpooner / minor murlocs.</li></ol></div>
+        <div class="phase-bar">E. Pre-Morogrim Trash</div>
+        <div class="reminder-card"><div class="reminder-card-label">Kill Priority</div><ol><li>Tidewalker Depth-Seer.</li><li>Tidewalker Hydromancer.</li><li>Tidewalker Shaman.</li><li>Tidewalker Warrior.</li><li>Tidewalker Lurker / Harpooner / minor murlocs.</li></ol></div>
         <div class="col-grid">
           <div class="col col-tank">
             <div class="mech critical"><div class="icon"><img src="assets/shared/markers/skull.svg" alt="Skull"></div><div class="mech-body"><div class="mech-name">Depth-Seer first</div><div class="mech-desc">Tidewalker Depth-Seer casts Healing Touch, which must be interrupted, and Rejuvenation on other murlocs. Keep it controlled until it dies.</div></div></div>
@@ -113,7 +131,7 @@
       </div>
 
       <div class="phase-block">
-        <div class="phase-bar">E. When In Doubt Priority</div>
+        <div class="phase-bar">F. When In Doubt Priority</div>
         <div class="reminder-card"><div class="reminder-card-label">When in doubt</div><ol><li>MC / knockback wipe mobs.</li><li>Healers.</li><li>Totems that create adds.</li><li>Beast-Tamer / dangerous summons.</li><li>Armor or aura mobs.</li><li>Fear / cleave mobs.</li><li>Casters.</li><li>Minor AoE adds.</li></ol></div>
       </div>
     </div>
