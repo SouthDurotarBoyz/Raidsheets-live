@@ -55,6 +55,26 @@
       "minCount": 0,
       "defaultLabel": "Banish"
     },
+    "ssc-trash-square-sheep": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Square sheep"
+    },
+    "ssc-trash-moon-sheep": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Moon sheep"
+    },
+    "ssc-trash-triangle-banish": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Triangle banish"
+    },
+    "ssc-trash-diamond-banish": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Diamond banish"
+    },
     "ssc-lurker-platform-1-assignments": {
       "defaultCount": 0,
       "minCount": 0,
@@ -169,6 +189,10 @@
     "ssc-core-ot-3-misdirect": "OT 3 misdirect",
     "ssc-core-kicks": "Kicker",
     "ssc-core-banish": "Banish",
+    "ssc-trash-square-sheep": "Square sheep",
+    "ssc-trash-moon-sheep": "Moon sheep",
+    "ssc-trash-triangle-banish": "Triangle banish",
+    "ssc-trash-diamond-banish": "Diamond banish",
     "ssc-lurker-platform-1-assignments": "Platform 1 assignments",
     "ssc-lurker-platform-2-assignments": "Platform 2 assignments",
     "ssc-lurker-platform-3-assignments": "Platform 3 assignments",

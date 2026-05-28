@@ -297,6 +297,10 @@ window.RaidConfig = { raidId: 'serpentshrine-cavern' };
     'ssc-core-decurse': { label: 'Decurse', placeholder: 'Player', defaultLabel: 'Decurser', icon: 'spell_nature_removecurse' },
     'ssc-core-magic-dispel': { label: 'Magic dispel', placeholder: 'Player', defaultLabel: 'Dispel', icon: 'spell_holy_dispelmagic' },
     'ssc-core-banish': { label: 'Banish', placeholder: 'Warlock', defaultLabel: 'Banish', icon: 'spell_shadow_enslavedemon', forceNumbering: true },
+    'ssc-trash-square-sheep': { label: 'Square sheep', placeholder: 'Mage', defaultLabel: 'Mage', marker: 'square', markerTitle: 'Square', maxCount: 2 },
+    'ssc-trash-moon-sheep': { label: 'Moon sheep', placeholder: 'Mage', defaultLabel: 'Mage', marker: 'moon', markerTitle: 'Moon', maxCount: 1 },
+    'ssc-trash-triangle-banish': { label: 'Triangle banish', placeholder: 'Warlock', defaultLabel: 'Warlock', marker: 'triangle', markerTitle: 'Triangle', maxCount: 1 },
+    'ssc-trash-diamond-banish': { label: 'Diamond banish', placeholder: 'Warlock', defaultLabel: 'Warlock', marker: 'diamond', markerTitle: 'Diamond', maxCount: 1 },
     'ssc-hydross-frost-resist-tank': { label: 'Frost resist tank', placeholder: 'Tank', icon: 'spell_frost_frostarmor02' },
     'ssc-hydross-nature-resist-tank': { label: 'Nature resist tank', placeholder: 'Tank', icon: 'spell_nature_resistnature' },
     'ssc-hydross-add-tank': { label: 'Add tank', placeholder: 'Tank', marker: 'square', markerTitle: 'Square' },
@@ -319,6 +323,26 @@ window.RaidConfig = { raidId: 'serpentshrine-cavern' };
     'ssc-vashj-pylon-4-sw': { label: 'Pylon 4 (SW)', placeholder: 'Player / Relay', defaultLabel: 'Pylon 4', marker: 'triangle', markerTitle: 'Triangle' }
   };
 
+
+  const UNIQUE_LIST_GROUPS = {
+    'ssc-trash-square-sheep': {
+      fields: ['ssc-trash-square-sheep', 'ssc-trash-moon-sheep'],
+      message: 'That Mage is already assigned to another sheep marker.'
+    },
+    'ssc-trash-moon-sheep': {
+      fields: ['ssc-trash-square-sheep', 'ssc-trash-moon-sheep'],
+      message: 'That Mage is already assigned to another sheep marker.'
+    },
+    'ssc-trash-triangle-banish': {
+      fields: ['ssc-trash-triangle-banish', 'ssc-trash-diamond-banish'],
+      message: 'That Warlock is already assigned to another banish marker.'
+    },
+    'ssc-trash-diamond-banish': {
+      fields: ['ssc-trash-triangle-banish', 'ssc-trash-diamond-banish'],
+      message: 'That Warlock is already assigned to another banish marker.'
+    }
+  };
+
   const ROSTER_LAYOUT = [
     {
       title: 'Core roster',
@@ -326,7 +350,8 @@ window.RaidConfig = { raidId: 'serpentshrine-cavern' };
         { title: 'Tanks', fields: ['ssc-core-main-tank', 'ssc-core-off-tank', 'ssc-core-off-tank-2', 'ssc-core-off-tank-3'] },
         { title: 'Healers', fields: ['ssc-core-mt-healers', 'ssc-core-ot-healers', 'ssc-core-ot-2-healers', 'ssc-core-ot-3-healers', 'ssc-core-raid-healers'] },
         { title: 'Misdirect', fields: ['ssc-core-mt-misdirect', 'ssc-core-ot-misdirect', 'ssc-core-ot-2-misdirect', 'ssc-core-ot-3-misdirect'] },
-        { title: 'Utility', fields: ['ssc-core-curse-of-elements', 'ssc-core-curse-of-recklessness', 'ssc-core-curse-of-tongues', 'ssc-core-decurse', 'ssc-core-magic-dispel', 'ssc-core-banish', 'ssc-core-kicks'] }
+        { title: 'Utility', fields: ['ssc-core-curse-of-elements', 'ssc-core-curse-of-recklessness', 'ssc-core-curse-of-tongues', 'ssc-core-decurse', 'ssc-core-magic-dispel', 'ssc-core-banish', 'ssc-core-kicks'] },
+        { title: 'Trash CC', fields: ['ssc-trash-square-sheep', 'ssc-trash-moon-sheep', 'ssc-trash-triangle-banish', 'ssc-trash-diamond-banish'] }
       ]
     },
     {
@@ -625,6 +650,43 @@ window.RaidConfig = { raidId: 'serpentshrine-cavern' };
     return label;
   }
 
+
+  function normalizedAssignmentName(value) {
+    return (value || '').trim().toLowerCase();
+  }
+
+  function findDuplicateListAssignment(key, idx, value) {
+    const uniqueConfig = UNIQUE_LIST_GROUPS[key];
+    const normalizedValue = normalizedAssignmentName(value);
+    if (!uniqueConfig || !normalizedValue) return false;
+    return uniqueConfig.fields.some(function(fieldKey) {
+      return (state.groups[fieldKey] || []).some(function(existingValue, existingIdx) {
+        if (fieldKey === key && existingIdx === idx) return false;
+        return normalizedAssignmentName(existingValue) === normalizedValue;
+      });
+    });
+  }
+
+  function validateUniqueListAssignment(key, idx, input) {
+    const uniqueConfig = UNIQUE_LIST_GROUPS[key];
+    if (!uniqueConfig || !findDuplicateListAssignment(key, idx, input.value)) return true;
+    input.value = '';
+    state.groups[key][idx] = '';
+    alert(uniqueConfig.message);
+    saveState();
+    return false;
+  }
+
+  function maxCountForList(key) {
+    const meta = getFieldMeta(key);
+    return Number.isInteger(meta.maxCount) ? meta.maxCount : null;
+  }
+
+  function listHasMaxSlots(key) {
+    const maxCount = maxCountForList(key);
+    return maxCount !== null && state.groups[key].length >= maxCount;
+  }
+
   function renderList(list, key) {
     const meta = getFieldMeta(key);
     const inlineControls = list.dataset.inlineControls === 'true';
@@ -649,6 +711,7 @@ window.RaidConfig = { raidId: 'serpentshrine-cavern' };
       input.placeholder = meta.placeholder || 'Player';
       input.value = value || '';
       input.addEventListener('input', function() {
+        if (!validateUniqueListAssignment(key, idx, input)) return;
         state.groups[key][idx] = input.value.trim();
         saveState();
       });
@@ -660,8 +723,12 @@ window.RaidConfig = { raidId: 'serpentshrine-cavern' };
       list.appendChild(row);
     });
 
-    const removeBtn = document.querySelector('.slot-btn[data-action="remove"][data-target="' + key + '"]');
-    if (removeBtn) removeBtn.disabled = state.groups[key].length <= 1;
+    document.querySelectorAll('.slot-btn[data-action="add"][data-target="' + key + '"]').forEach(function(addBtn) {
+      addBtn.disabled = listHasMaxSlots(key);
+    });
+    document.querySelectorAll('.slot-btn[data-action="remove"][data-target="' + key + '"]').forEach(function(removeBtn) {
+      removeBtn.disabled = state.groups[key].length <= 1;
+    });
   }
 
   function controlsSpacer() {
@@ -785,7 +852,10 @@ window.RaidConfig = { raidId: 'serpentshrine-cavern' };
       if (!btn) return;
       const key = btn.dataset.target;
       if (!rosterSchema.fields[key] || rosterSchema.fields[key].type !== 'list') return;
-      if (btn.dataset.action === 'add') state.groups[key].push('');
+      if (btn.dataset.action === 'add') {
+        if (listHasMaxSlots(key)) return;
+        state.groups[key].push('');
+      }
       if (btn.dataset.action === 'remove' && state.groups[key].length > 1) state.groups[key].pop();
       saveState();
       const list = document.querySelector('[data-slot-list="' + key + '"]');
