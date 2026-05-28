@@ -60,11 +60,6 @@
       "minCount": 0,
       "defaultLabel": "Orb soaker"
     },
-    "tk-void-reaver-kicks": {
-      "defaultCount": 0,
-      "minCount": 0,
-      "defaultLabel": "Kicker"
-    },
     "tk-kaelthas-weapon-tanks": {
       "defaultCount": 0,
       "minCount": 0,
@@ -133,7 +128,6 @@
     "tk-core-kicks": "Kicker",
     "tk-core-banish": "Banish",
     "tk-void-reaver-orb-soakers": "Orb soaker",
-    "tk-void-reaver-kicks": "Kicker",
     "tk-kaelthas-weapon-tanks": "Weapon tank",
     "tk-kaelthas-mind-control-cc": "Mind control CC",
     "tk-alar-raid-healers": "Raid healers",
