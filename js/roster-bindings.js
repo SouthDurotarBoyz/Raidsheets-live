@@ -490,7 +490,13 @@
     groupKeys.forEach(function(groupName) {
       const value = getGroupValue(groupName);
       const isAssigned = !!value;
-      document.querySelectorAll('[data-bind-group="' + groupName + '"]').forEach(function(el) { el.textContent = value || el.dataset.default || groupNamePlural(groupName); el.classList.toggle('unassigned', !isAssigned); });
+      document.querySelectorAll('[data-bind-group="' + groupName + '"]').forEach(function(el) {
+        const hideEmptyRow = el.dataset.hideEmptyRow === 'true';
+        const setupLine = hideEmptyRow && el.closest ? el.closest('.setup-line') : null;
+        if (setupLine) setupLine.style.display = isAssigned ? '' : 'none';
+        el.textContent = value || (hideEmptyRow ? '' : el.dataset.default || groupNamePlural(groupName));
+        el.classList.toggle('unassigned', !isAssigned);
+      });
     });
     document.querySelectorAll('[data-target-bind]').forEach(function(el) {
       const key = el.dataset.targetBind;
