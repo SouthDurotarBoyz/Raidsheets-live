@@ -24,8 +24,6 @@
     "ssc-core-banish": { "type": "list" },
     "ssc-trash-square-sheep": { "type": "list" },
     "ssc-trash-moon-sheep": { "type": "list" },
-    "ssc-trash-triangle-banish": { "type": "list" },
-    "ssc-trash-diamond-banish": { "type": "list" },
     "ssc-hydross-frost-resist-tank": { "type": "single" },
     "ssc-hydross-nature-resist-tank": { "type": "single" },
     "ssc-hydross-add-tank": { "type": "single" },
