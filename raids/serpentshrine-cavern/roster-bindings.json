@@ -65,16 +65,6 @@
       "minCount": 0,
       "defaultLabel": "Moon sheep"
     },
-    "ssc-trash-triangle-banish": {
-      "defaultCount": 0,
-      "minCount": 0,
-      "defaultLabel": "Triangle banish"
-    },
-    "ssc-trash-diamond-banish": {
-      "defaultCount": 0,
-      "minCount": 0,
-      "defaultLabel": "Diamond banish"
-    },
     "ssc-lurker-platform-1-assignments": {
       "defaultCount": 0,
       "minCount": 0,
@@ -191,8 +181,6 @@
     "ssc-core-banish": "Banish",
     "ssc-trash-square-sheep": "Square sheep",
     "ssc-trash-moon-sheep": "Moon sheep",
-    "ssc-trash-triangle-banish": "Triangle banish",
-    "ssc-trash-diamond-banish": "Diamond banish",
     "ssc-lurker-platform-1-assignments": "Platform 1 assignments",
     "ssc-lurker-platform-2-assignments": "Platform 2 assignments",
     "ssc-lurker-platform-3-assignments": "Platform 3 assignments",
@@ -219,6 +207,18 @@
         "ssc-core-off-tank"
       ],
       "fallback": "Off tank"
+    },
+    "ssc-trash-triangle-banish": {
+      "type": "group-slot",
+      "group": "ssc-core-banish",
+      "index": 0,
+      "fallback": "Warlock"
+    },
+    "ssc-trash-diamond-banish": {
+      "type": "group-slot",
+      "group": "ssc-core-banish",
+      "index": 1,
+      "fallback": "Warlock"
     }
   }
 }

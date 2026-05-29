@@ -481,7 +481,13 @@
     singleKeys.forEach(function(key) {
       const value = getSingleValue(key);
       const isAssigned = !!value;
-      document.querySelectorAll('[data-bind="' + key + '"]').forEach(function(el) { el.textContent = value || fallbackForSingle(key, el); el.classList.toggle('unassigned', !isAssigned); });
+      document.querySelectorAll('[data-bind="' + key + '"]').forEach(function(el) {
+        const hideEmptyRow = el.dataset.hideEmptyRow === 'true';
+        const setupLine = hideEmptyRow && el.closest ? el.closest('.setup-line') : null;
+        if (setupLine) setupLine.style.display = isAssigned ? '' : 'none';
+        el.textContent = value || (hideEmptyRow ? '' : fallbackForSingle(key, el));
+        el.classList.toggle('unassigned', !isAssigned);
+      });
     });
     const schemaGroupKeys = Object.keys(schemaFields || {}).filter(isListField);
     const groupKeys = new Set(schemaGroupKeys.concat(Object.keys(GROUP_DEFS)).concat(Object.keys(GROUP_ALIASES)));

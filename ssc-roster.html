@@ -299,8 +299,6 @@ window.RaidConfig = { raidId: 'serpentshrine-cavern' };
     'ssc-core-banish': { label: 'Banish', placeholder: 'Warlock', defaultLabel: 'Banish', icon: 'spell_shadow_enslavedemon', forceNumbering: true },
     'ssc-trash-square-sheep': { label: 'Square sheep', placeholder: 'Mage', defaultLabel: 'Mage', marker: 'square', markerTitle: 'Square', maxCount: 2 },
     'ssc-trash-moon-sheep': { label: 'Moon sheep', placeholder: 'Mage', defaultLabel: 'Mage', marker: 'moon', markerTitle: 'Moon', maxCount: 1 },
-    'ssc-trash-triangle-banish': { label: 'Triangle banish', placeholder: 'Warlock', defaultLabel: 'Warlock', marker: 'triangle', markerTitle: 'Triangle', maxCount: 1 },
-    'ssc-trash-diamond-banish': { label: 'Diamond banish', placeholder: 'Warlock', defaultLabel: 'Warlock', marker: 'diamond', markerTitle: 'Diamond', maxCount: 1 },
     'ssc-hydross-frost-resist-tank': { label: 'Frost resist tank', placeholder: 'Tank', icon: 'spell_frost_frostarmor02' },
     'ssc-hydross-nature-resist-tank': { label: 'Nature resist tank', placeholder: 'Tank', icon: 'spell_nature_resistnature' },
     'ssc-hydross-add-tank': { label: 'Add tank', placeholder: 'Tank', marker: 'square', markerTitle: 'Square' },
@@ -332,14 +330,6 @@ window.RaidConfig = { raidId: 'serpentshrine-cavern' };
     'ssc-trash-moon-sheep': {
       fields: ['ssc-trash-square-sheep', 'ssc-trash-moon-sheep'],
       message: 'That Mage is already assigned to another sheep marker.'
-    },
-    'ssc-trash-triangle-banish': {
-      fields: ['ssc-trash-triangle-banish', 'ssc-trash-diamond-banish'],
-      message: 'That Warlock is already assigned to another banish marker.'
-    },
-    'ssc-trash-diamond-banish': {
-      fields: ['ssc-trash-triangle-banish', 'ssc-trash-diamond-banish'],
-      message: 'That Warlock is already assigned to another banish marker.'
     }
   };
 
@@ -350,8 +340,7 @@ window.RaidConfig = { raidId: 'serpentshrine-cavern' };
         { title: 'Tanks', fields: ['ssc-core-main-tank', 'ssc-core-off-tank', 'ssc-core-off-tank-2', 'ssc-core-off-tank-3'] },
         { title: 'Healers', fields: ['ssc-core-mt-healers', 'ssc-core-ot-healers', 'ssc-core-ot-2-healers', 'ssc-core-ot-3-healers', 'ssc-core-raid-healers'] },
         { title: 'Misdirect', fields: ['ssc-core-mt-misdirect', 'ssc-core-ot-misdirect', 'ssc-core-ot-2-misdirect', 'ssc-core-ot-3-misdirect'] },
-        { title: 'Utility', fields: ['ssc-core-curse-of-elements', 'ssc-core-curse-of-recklessness', 'ssc-core-curse-of-tongues', 'ssc-core-decurse', 'ssc-core-magic-dispel', 'ssc-core-banish', 'ssc-core-kicks'] },
-        { title: 'Trash CC', fields: ['ssc-trash-square-sheep', 'ssc-trash-moon-sheep', 'ssc-trash-triangle-banish', 'ssc-trash-diamond-banish'] }
+        { title: 'Utility', fields: ['ssc-core-curse-of-elements', 'ssc-core-curse-of-recklessness', 'ssc-core-curse-of-tongues', 'ssc-core-decurse', 'ssc-core-magic-dispel', 'ssc-core-banish', 'ssc-trash-square-sheep', 'ssc-trash-moon-sheep', 'ssc-core-kicks'] }
       ]
     },
     {
