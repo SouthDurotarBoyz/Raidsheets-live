@@ -78,16 +78,7 @@
     return !!(global.location && global.location.hash && global.location.hash.match(/(?:^#|&)roster=([^&]+)/));
   }
   function canImportRosterFromHash(){
-    var doc=global.document;
-    var role=getPageRole();
-    var hasBossId=!!(doc && doc.querySelector && doc.querySelector('[data-boss-id]'));
-    if(role) return role === 'roster-editor' && !hasBossId;
-    if(hasBossId || !doc) return false;
-    var path=global.location && global.location.pathname ? global.location.pathname : '';
-    var fileName=path.split('/').pop();
-    if(fileName === 'roster.html' || /-roster\.html$/.test(fileName)) return true;
-    if(doc.querySelector && doc.querySelector('.roster-form, [data-roster-editor]')) return true;
-    return false;
+    return getPageRole() === 'roster-editor' && !!getCurrentRaidId();
   }
   function importRosterFromHash(){
     var match=location.hash.match(/(?:^#|&)roster=([^&]+)/); if(!match) return false;
