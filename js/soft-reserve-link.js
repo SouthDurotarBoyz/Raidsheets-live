@@ -1,7 +1,6 @@
 (function(global) {
   'use strict';
 
-  var SOFT_RESERVE_KEY = 'soft-reserve-url';
   var SOFT_RESERVE_SELECTOR = '[data-soft-reserve-link="true"]';
   var PUBLIC_CODE_PATTERN = /^[ABCDEFGHJKLMNPQRSTUVWXYZ23456789]{5}$/;
   var SESSION_ID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -10,6 +9,11 @@
 
   function getStorage() {
     return global.RaidRosterStorage;
+  }
+
+  function getSoftReserveKey() {
+    var storage = getStorage();
+    return storage && storage.SOFT_RESERVE_KEY ? storage.SOFT_RESERVE_KEY : '';
   }
 
   function hasRaidSessionClient() {
@@ -75,9 +79,18 @@
   }
 
   function softReserveUrlFromRoster(rosterState) {
+    var key = getSoftReserveKey();
     var meta = rosterState && rosterState.meta && typeof rosterState.meta === 'object' ? rosterState.meta : {};
     var singles = rosterState && rosterState.singles && typeof rosterState.singles === 'object' ? rosterState.singles : {};
-    var savedUrl = Object.prototype.hasOwnProperty.call(meta, SOFT_RESERVE_KEY) ? meta[SOFT_RESERVE_KEY] : singles[SOFT_RESERVE_KEY];
+    var savedUrl;
+    if (!key) {
+      return {
+        savedUrl: '',
+        href: '',
+        text: ''
+      };
+    }
+    savedUrl = Object.prototype.hasOwnProperty.call(meta, key) ? meta[key] : singles[key];
     return {
       savedUrl: normalizeUrl(savedUrl),
       href: normalizeUrl(savedUrl),
@@ -90,22 +103,12 @@
     return softReserveUrlFromRoster(state);
   }
 
-  function findHomeLink() {
+  function findSoftReserveAnchor() {
     var pageNav = document.querySelector('.page-nav');
-    var links;
-    var i;
 
     if (!pageNav) return null;
 
-    var homeLink = pageNav.querySelector('a[href="index.html"]');
-    if (homeLink) return homeLink;
-
-    links = pageNav.querySelectorAll('a');
-    for (i = 0; i < links.length; i += 1) {
-      if (links[i].textContent.trim() === 'Home') return links[i];
-    }
-
-    return null;
+    return pageNav.querySelector('[data-soft-reserve-anchor]') || pageNav.querySelector('[data-home-link]');
   }
 
   function updateButton(link, url) {
@@ -125,25 +128,25 @@
 
   function updateLink(url) {
     var existingLink = document.querySelector(SOFT_RESERVE_SELECTOR);
-    var homeLink;
+    var anchor;
 
     if (!url.href || !url.text) {
       if (existingLink) existingLink.remove();
       return;
     }
 
-    homeLink = findHomeLink();
-    if (!homeLink) return;
+    anchor = findSoftReserveAnchor();
+    if (!anchor) return;
 
     if (existingLink) {
       updateButton(existingLink, url);
-      if (existingLink.previousElementSibling !== homeLink) {
-        homeLink.insertAdjacentElement('afterend', existingLink);
+      if (existingLink.previousElementSibling !== anchor) {
+        anchor.insertAdjacentElement('afterend', existingLink);
       }
       return;
     }
 
-    homeLink.insertAdjacentElement('afterend', createButton(url));
+    anchor.insertAdjacentElement('afterend', createButton(url));
   }
 
   var lastUrl = {
@@ -169,7 +172,7 @@
       savedUrl: lastUrl.savedUrl || '',
       displayText: navLink ? navLink.textContent.trim() : (lastUrl.text || ''),
       href: navLink ? navLink.href : (lastUrl.href || ''),
-      hasHomeLink: !!findHomeLink(),
+      hasSoftReserveAnchor: !!findSoftReserveAnchor(),
       hasPageNav: !!pageNav,
       isSessionBacked: isSessionBackedPage(),
       skippedLocalInit: lastInitSkippedLocalStorage,

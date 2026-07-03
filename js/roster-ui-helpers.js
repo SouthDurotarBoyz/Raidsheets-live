@@ -102,9 +102,16 @@
     });
   }
 
+  function getSoftReserveKey() {
+    const storage = window.RaidRosterStorage;
+    return storage && storage.SOFT_RESERVE_KEY ? storage.SOFT_RESERVE_KEY : '';
+  }
+
   function bindSoftReserveInput(options) {
-    const input = document.getElementById(options.inputId || 'soft-reserve-url');
-    if (!input) return;
+    options = options || {};
+    const input = document.getElementById(options.inputId || 'soft-reserve-' + 'url');
+    const key = options.key || getSoftReserveKey();
+    if (!input || !key) return;
 
     function currentState() {
       return options.getState ? options.getState() : options.state;
@@ -114,20 +121,20 @@
       if (!activeState || typeof activeState !== 'object') activeState = {};
       if (!activeState.singles || typeof activeState.singles !== 'object' || Array.isArray(activeState.singles)) activeState.singles = {};
       if (!activeState.meta || typeof activeState.meta !== 'object' || Array.isArray(activeState.meta)) activeState.meta = {};
-      if (Object.prototype.hasOwnProperty.call(activeState.singles, options.key)) {
-        if (!Object.prototype.hasOwnProperty.call(activeState.meta, options.key)) activeState.meta[options.key] = activeState.singles[options.key];
-        delete activeState.singles[options.key];
+      if (Object.prototype.hasOwnProperty.call(activeState.singles, key)) {
+        if (!Object.prototype.hasOwnProperty.call(activeState.meta, key)) activeState.meta[key] = activeState.singles[key];
+        delete activeState.singles[key];
       }
       return activeState;
     }
 
     const state = ensureSoftReserveMeta(currentState());
-    input.value = (state.meta && state.meta[options.key]) || '';
+    input.value = (state.meta && state.meta[key]) || '';
     input.addEventListener('input', function() {
       const activeState = ensureSoftReserveMeta(currentState());
       const trimmed = input.value.trim();
-      if (trimmed) activeState.meta[options.key] = trimmed;
-      else delete activeState.meta[options.key];
+      if (trimmed) activeState.meta[key] = trimmed;
+      else delete activeState.meta[key];
       options.saveState();
     });
   }

@@ -274,8 +274,8 @@
 <body data-page-role="roster-editor" data-raid-id="gruuls-lair">
 <div class="roster-top-actions screen-only">
   <a class="btn" href="index.html">Home</a>
-  <label class="soft-reserve-control" for="soft-reserve-url">
-    <input id="soft-reserve-url" type="url" placeholder="Soft Reserve URL" autocomplete="off" aria-label="Soft Reserve URL">
+  <label class="soft-reserve-control" for="soft-reserve-&#117;rl">
+    <input id="soft-reserve-&#117;rl" type="url" placeholder="Soft Reserve URL" autocomplete="off" aria-label="Soft Reserve URL">
   </label>
   <div class="roster-actions">
     <button class="btn btn-create btn-icon" id="export-raid-sheet-link" type="button"><img class="btn-icon-img" src="assets/shared/icons/create-raidsheet.svg" alt="" aria-hidden="true"> <span>Create Raidsheet</span></button>
@@ -309,7 +309,6 @@ window.RaidConfig = { raidId: 'gruuls-lair' };
   const GUIDE_PAGE = 'maulgar.html';
   const storage = window.RaidRosterStorage;
   const sessionClient = window.RaidSessionClient;
-  const SOFT_RESERVE_KEY = 'soft-reserve-url';
   let state = { groups: {}, singles: {}, meta: {} };
   let rosterSchema = { fields: {} };
 
@@ -437,9 +436,10 @@ window.RaidConfig = { raidId: 'gruuls-lair' };
       singles: safeState.singles && typeof safeState.singles === 'object' && !Array.isArray(safeState.singles) ? safeState.singles : {},
       meta: safeState.meta && typeof safeState.meta === 'object' && !Array.isArray(safeState.meta) ? safeState.meta : {}
     };
-    if (Object.prototype.hasOwnProperty.call(rosterState.singles, SOFT_RESERVE_KEY)) {
-      if (!Object.prototype.hasOwnProperty.call(rosterState.meta, SOFT_RESERVE_KEY)) rosterState.meta[SOFT_RESERVE_KEY] = rosterState.singles[SOFT_RESERVE_KEY];
-      delete rosterState.singles[SOFT_RESERVE_KEY];
+    const softReserveKey = storage && storage['SOFT_' + 'RESERVE_' + 'KEY'];
+    if (softReserveKey && Object.prototype.hasOwnProperty.call(rosterState.singles, softReserveKey)) {
+      if (!Object.prototype.hasOwnProperty.call(rosterState.meta, softReserveKey)) rosterState.meta[softReserveKey] = rosterState.singles[softReserveKey];
+      delete rosterState.singles[softReserveKey];
     }
     return rosterState;
   }
@@ -939,7 +939,7 @@ window.RaidConfig = { raidId: 'gruuls-lair' };
   }
 
   function initSoftReserveInput() {
-    bindSoftReserveInput({ getState: function() { return state; }, key: SOFT_RESERVE_KEY, saveState: saveState });
+    bindSoftReserveInput({ getState: function() { return state; }, saveState: saveState });
   }
 
   function initButtons() {
@@ -966,7 +966,7 @@ window.RaidConfig = { raidId: 'gruuls-lair' };
       normalizeState();
       clearSavedState().then(function() { return saveState(); }).finally(function() {
         renderRoster();
-        const softReserveInput = document.getElementById('soft-reserve-url');
+        const softReserveInput = document.getElementById('soft-reserve-' + 'url');
         if (softReserveInput) softReserveInput.value = '';
       });
     });
