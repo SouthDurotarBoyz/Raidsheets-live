@@ -26,70 +26,11 @@
 (function() {
   'use strict';
   window.RaidRosterStorage.importRosterFromHash();
-  (window.BossSheetLoader ? window.BossSheetLoader.loadAll() : Promise.resolve()).then(function() {
+  (window.BossSheetLoader ? window.BossSheetLoader.loadAll() : Promise.resolve()).then(function(){
     window.RaidRosterBindings.init();
   });
   window.addEventListener('storage', function(event) {
     if (event.key === window.RaidRosterStorage.STORAGE_KEY) location.reload();
-  });
-})();
-</script>
-<script>
-(function() {
-  'use strict';
-
-  function ready(fn) {
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
-    else fn();
-  }
-
-  ready(function() {
-    var imgs = Array.prototype.slice.call(document.querySelectorAll('img.positioning-img'));
-    if (!imgs.length) return;
-
-    var overlay = document.createElement('div');
-    overlay.className = 'image-popout-overlay';
-    overlay.setAttribute('aria-hidden', 'true');
-
-    var close = document.createElement('button');
-    close.className = 'image-popout-close';
-    close.type = 'button';
-    close.setAttribute('aria-label', 'Close enlarged image');
-    close.textContent = '×';
-
-    var big = document.createElement('img');
-    big.alt = '';
-
-    overlay.appendChild(close);
-    overlay.appendChild(big);
-    document.body.appendChild(overlay);
-
-    function open(src, alt) {
-      big.src = src;
-      big.alt = alt || '';
-      overlay.classList.add('is-open');
-      overlay.setAttribute('aria-hidden', 'false');
-    }
-
-    function closeOverlay() {
-      overlay.classList.remove('is-open');
-      overlay.setAttribute('aria-hidden', 'true');
-      big.src = '';
-    }
-
-    imgs.forEach(function(img) {
-      img.addEventListener('click', function() {
-        open(img.currentSrc || img.src, img.alt);
-      });
-    });
-
-    close.addEventListener('click', closeOverlay);
-    overlay.addEventListener('click', function(e) {
-      if (e.target === overlay) closeOverlay();
-    });
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeOverlay();
-    });
   });
 })();
 </script>
