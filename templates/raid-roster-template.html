@@ -143,7 +143,7 @@ window.RaidConfig = { raidId: 'RAID_ID' };
   const RAID_ID = 'RAID_ID';
   const GUIDE_PAGE = 'GUIDE_PAGE';
   const SESSION_BACKED = false;
-  const storage = window.RaidRosterStorage || window.GruulsRosterStorage;
+  const storage = window.RaidRosterStorage;
   let state = storage.loadRoster(RAID_ID) || { groups: {}, singles: {} };
 
   // FIELD_META is intentionally generic. Copy the pattern and replace keys/labels
