@@ -11,7 +11,6 @@
     BOSS_VIEW: 'boss-view',
     RAID_RESOLVER: 'raid-resolver'
   };
-  var readingStorageRaidId = false;
   var sessionSaveDebounceTimer = null;
   var pendingSessionSave = null;
   var pendingSessionSaveWaiters = [];
@@ -64,53 +63,20 @@
     return (global.RaidConfig && global.RaidConfig.raidId) || getBodyAttribute('data-raid-id') || '';
   }
 
-  function getStorageRaidId(){
-    if (!storage || !storage.getCurrentRaidId || readingStorageRaidId) return '';
-
-    readingStorageRaidId = true;
-    try {
-      return storage.getCurrentRaidId() || '';
-    } catch (err) {
-      console.warn('[RaidSessionClient] Unable to derive raid ID from storage.', err && err.message ? err.message : err);
-      return '';
-    } finally {
-      readingStorageRaidId = false;
-    }
-  }
-
   function getCurrentRaidId(){
-    return getConfiguredRaidId() || getStorageRaidId() || null;
-  }
-
-  function getBossIdFromPath(){
-    var fileMatch = getPathname().match(/([^\/]+)\.html$/);
-    if (!fileMatch) return null;
-
-    var fileName = fileMatch[1];
-    if (fileName === 'roster' || /-roster$/.test(fileName)) return null;
-    return fileName;
+    return getConfiguredRaidId() || null;
   }
 
   function getCurrentBossId(){
-    return getBodyAttribute('data-boss-id') || getBossIdFromPath();
+    return getBodyAttribute('data-boss-id') || null;
   }
 
   function hasRosterEditorRole(){
-    var pageRole = getPageRole();
-    if (pageRole === PAGE_ROLES.ROSTER_EDITOR) return true;
-    if (pageRole === PAGE_ROLES.BOSS_VIEW || pageRole === PAGE_ROLES.RAID_RESOLVER) return false;
-
-    var path = getPathname();
-    if (/\b(?:roster|[^\/]+-roster)\.html$/.test(path)) return true;
-    return !!(global.document && global.document.querySelector && global.document.querySelector('.roster-form, [data-roster-editor]'));
+    return getPageRole() === PAGE_ROLES.ROSTER_EDITOR;
   }
 
   function hasBossViewRole(){
-    var pageRole = getPageRole();
-    if (pageRole === PAGE_ROLES.BOSS_VIEW) return true;
-    if (pageRole === PAGE_ROLES.ROSTER_EDITOR || pageRole === PAGE_ROLES.RAID_RESOLVER) return false;
-
-    return !!getCurrentBossId();
+    return getPageRole() === PAGE_ROLES.BOSS_VIEW;
   }
 
 
@@ -154,8 +120,6 @@
   }
 
   function getCurrentSession(){
-    if (readingStorageRaidId) return emptySession(getConfiguredRaidId());
-
     var params = getSearchParams();
     var sessionId = params.get('session');
     var editToken = params.get('edit') || params.get('key');
