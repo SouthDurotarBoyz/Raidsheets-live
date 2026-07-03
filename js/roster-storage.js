@@ -115,7 +115,7 @@
     }
     return result;
   }
-  var api={STORAGE_KEY_PREFIX:STORAGE_KEY_PREFIX,DATA_VERSION:DATA_VERSION,getCurrentRaidId:getCurrentRaidId,getStorageKey:getStorageKey,getEmptyRoster:getEmptyRoster,parseRoster:parseRoster,loadRoster:loadRoster,saveRoster:saveRoster,clearRoster:clearRoster,canImportRosterFromHash:canImportRosterFromHash,importRosterFromHash:importRosterFromHash,debugStorage:debugStorage};
+  var api={STORAGE_KEY_PREFIX:STORAGE_KEY_PREFIX,DATA_VERSION:DATA_VERSION,SOFT_RESERVE_KEY:SOFT_RESERVE_KEY,getCurrentRaidId:getCurrentRaidId,getStorageKey:getStorageKey,getEmptyRoster:getEmptyRoster,parseRoster:parseRoster,loadRoster:loadRoster,saveRoster:saveRoster,clearRoster:clearRoster,canImportRosterFromHash:canImportRosterFromHash,importRosterFromHash:importRosterFromHash,debugStorage:debugStorage};
   Object.defineProperty(api,'STORAGE_KEY',{get:function(){ return getStorageKey(); },enumerable:true});
   global.RaidRosterStorage=api;
 })(window);
