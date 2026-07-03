@@ -3,7 +3,6 @@
 
   const storage = window.RaidRosterStorage;
   const sessionClient = window.RaidSessionClient;
-  const STORAGE_KEY = storage.STORAGE_KEY;
   const SOFT_RESERVE_KEY = 'soft-reserve-url';
   const SESSION_VIEW_REFRESH_INTERVAL_MS = 30000;
   const SESSION_VIEW_REFRESH_JITTER_MS = 5000;
