@@ -52,8 +52,15 @@
     var preservedQueryString = getPreservedQueryString(params);
     var sessionId = params.get('session');
     var publicCode = params.get('code');
-    var rosterLink = document.querySelector('.page-nav-actions a[href="roster.html"]');
-    if (rosterLink && (sessionId || publicCode)) rosterLink.style.display = 'none';
+    var rosterPage = sanitizePage(raid.rosterPage);
+    var rosterLink = document.querySelector('[data-roster-link]');
+    if (rosterLink) {
+      if (sessionId || publicCode) {
+        rosterLink.style.display = 'none';
+      } else if (rosterPage) {
+        rosterLink.href = rosterPage;
+      }
+    }
 
     navContainer.innerHTML = '';
     for (var i = 0; i < raid.bosses.length; i += 1) {
