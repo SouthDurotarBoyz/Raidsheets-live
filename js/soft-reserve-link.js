@@ -9,7 +9,7 @@
   var lastInitSkippedLocalStorage = false;
 
   function getStorage() {
-    return global.RaidRosterStorage || global.GruulsRosterStorage;
+    return global.RaidRosterStorage;
   }
 
   function hasRaidSessionClient() {
