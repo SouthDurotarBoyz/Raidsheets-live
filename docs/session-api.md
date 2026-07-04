@@ -51,14 +51,14 @@ The existing deployed Worker contract must keep working until the renamed Worker
 - Future API base after deployment validation: `https://raidsheets-session-api.southdurotarboyz.workers.dev`
 - Read/write route: `/api/sessions/:sessionId`
 - Create route, where used by backend/frontend integration: `/api/sessions`
-- Existing Gruul edit URL compatibility: `roster.html?session=...&key=...`
+- Legacy Gruul `?key=` edit-token compatibility is retired. Edit URLs use `roster.html?session=...&edit=...`.
 - Existing Gruul boss view URLs:
   - `maulgar.html?session=...`
   - `gruul.html?session=...`
 - Existing write header: `X-Edit-Token`
 - Existing write body: `{ "roster": { "groups": {}, "singles": {}, "meta": {} } }`
 
-New Worker-created edit URLs use `edit` as the edit-token query parameter, while write requests still preserve `key` compatibility for existing links. Legacy viewer links with `?session=<sessionId>` remain supported; future raider-facing links will use `/raid/<publicCode>`.
+Worker-created edit URLs use `edit` as the edit-token query parameter. Write requests no longer accept `?key=` as an edit token. Legacy viewer links with `?session=<sessionId>` remain supported; future raider-facing links will use `/raid/<publicCode>`.
 
 ## Worker Route Contract
 
@@ -213,7 +213,7 @@ Requirements:
 - View-only clients must not be able to write.
 - Invalid roster shape returns `400`.
 - The backend must not allow a write to change the session `raidId`.
-- Write authorization accepts `X-Edit-Token`, `Authorization: Bearer ...`, `?edit=...`, and legacy `?key=...` tokens.
+- Write authorization accepts `X-Edit-Token`, `Authorization: Bearer ...`, and `?edit=...` tokens. Legacy `?key=` edit-token compatibility is retired and requests with only `?key=` return `401`.
 
 ### Clear Session Roster
 

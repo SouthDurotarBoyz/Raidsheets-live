@@ -122,7 +122,7 @@
   function getCurrentSession(){
     var params = getSearchParams();
     var sessionId = params.get('session');
-    var editToken = params.get('edit') || params.get('key');
+    var editToken = params.get('edit');
     var publicCode = getPublicCode();
     var raidId = getCurrentRaidId();
     var bossId = getCurrentBossId();
@@ -345,7 +345,7 @@
 
     try {
       var parsed = new global.URL(editUrl, global.location && global.location.href ? global.location.href : API_BASE);
-      return parsed.searchParams.get('edit') || parsed.searchParams.get('key') || '';
+      return parsed.searchParams.get('edit') || '';
     } catch (err) {
       return '';
     }
