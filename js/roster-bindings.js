@@ -74,10 +74,6 @@
     return '';
   }
 
-  function usesGruulLegacyBindings() {
-    return currentRaidId === 'gruuls-lair' && hasRaidBindingConfig;
-  }
-
   function isListField(key) {
     if (schemaFields[key] && schemaFields[key].type === 'list') return true;
     return !!GROUP_DEFS[key];
@@ -153,13 +149,12 @@
       if (!Object.prototype.hasOwnProperty.call(state.meta, SOFT_RESERVE_KEY)) state.meta[SOFT_RESERVE_KEY] = state.singles[SOFT_RESERVE_KEY];
       delete state.singles[SOFT_RESERVE_KEY];
     }
-    migrateOldState();
     Object.keys(schemaFields || {}).forEach(function(key) {
       const field = schemaFields[key] || {};
       if (field.type === 'list') {
         if (!Array.isArray(state.groups[key])) {
-          const legacyDefault = usesGruulLegacyBindings() && GROUP_DEFS[key] ? GROUP_DEFS[key].defaultCount : 0;
-          state.groups[key] = new Array(legacyDefault).fill('');
+          const defaultCount = GROUP_DEFS[key] ? GROUP_DEFS[key].defaultCount || 0 : 0;
+          state.groups[key] = new Array(defaultCount).fill('');
         }
         return;
       }
@@ -333,45 +328,6 @@
     addSessionViewVisibilityHandler();
     if (isDocumentHidden()) return;
     scheduleSessionViewRefresh(getSessionViewRefreshDelay());
-  }
-
-  function migrateOldState() {
-    // Temporary Gruul legacy migration path; SSC/TK and future raids must not run these old field moves.
-    if (getCurrentRaidId() !== 'gruuls-lair') return;
-    const singles = state.singles || {};
-    const groups = state.groups || {};
-    moveSingle('maulgar-tank', 'main-tank');
-    moveSingle('gruul-tank', 'main-tank');
-    moveSingleToGroup('ot-blindeye-olm', 'off-tanks');
-    moveSingleToGroup('gruul-hurtful-tank', 'off-tanks');
-    moveSingleToGroup('kiggler-tank', 'kiggler-tanks');
-    moveSingleToGroup('maulgar-healer', 'main-tank-healers');
-    moveSingleToGroup('gruul-tank-healer', 'main-tank-healers');
-    moveSingleToGroup('ot-healer', 'off-tank-healers');
-    moveSingleToGroup('gruul-hurtful-healer', 'off-tank-healers');
-    moveSingleToGroup('blindeye-kick-1', 'blindeye-kicks', 0);
-    moveSingleToGroup('blindeye-kick-2', 'blindeye-kicks', 1);
-    mergeGroup('gruul-raid-healers', 'raid-healers');
-    mergeGroup('gruul-md', 'md-maulgar');
-    moveSingle('gruul-curse-elements', 'curse-elements');
-    moveSingle('gruul-curse-reck', 'curse-reck');
-
-    function moveSingle(from, to) { if (!singles[to] && singles[from]) singles[to] = singles[from]; delete singles[from]; }
-    function moveSingleToGroup(from, to, preferredIndex) {
-      if (singles[from]) {
-        if (!Array.isArray(groups[to])) groups[to] = [];
-        const index = typeof preferredIndex === 'number' ? preferredIndex : 0;
-        if (!groups[to][index]) groups[to][index] = singles[from];
-      }
-      delete singles[from];
-    }
-    function mergeGroup(from, to) {
-      if (Array.isArray(groups[from])) {
-        if (!Array.isArray(groups[to])) groups[to] = [];
-        groups[from].forEach(function(value) { if (value && groups[to].indexOf(value) === -1) groups[to].push(value); });
-      }
-      delete groups[from];
-    }
   }
 
   function cleanList(values) { return (values || []).filter(function(value) { return value && value.trim(); }); }
@@ -555,8 +511,7 @@
         groupLabels: Object.keys(GROUP_LABELS || {}).sort(),
         indexAliases: Object.keys(INDEX_ALIASES || {}).sort(),
         derivedBindings: Object.keys(DERIVED_BINDINGS || {}).sort()
-      },
-      usesGruulLegacyBindings: usesGruulLegacyBindings()
+      }
     };
   }
 
