@@ -214,7 +214,7 @@ test('POST /api/sessions rejects oversized request bodies before parsing JSON', 
   });
 });
 
-test('Gruul create/read/update flow supports edit URLs and legacy key writes', async () => {
+test('Gruul create/read/update flow supports edit URLs and rejects retired key writes', async () => {
   const env = createFakeEnv();
   const created = await createSession(env, 'gruuls-lair');
 
@@ -331,7 +331,7 @@ test('Gruul create/read/update flow supports edit URLs and legacy key writes', a
   );
   assert.equal(response.status, 400);
 
-  const keyRoster = {
+  const retiredKeyRoster = {
     groups: { g1: ['Tanky'] },
     singles: { s1: 'Healz' },
     meta: { 'soft-reserve-url': 'https://softres.it/key' }
@@ -341,7 +341,23 @@ test('Gruul create/read/update flow supports edit URLs and legacy key writes', a
     new Request(`https://example.com/api/sessions/${created.sessionId}?key=${editToken}`, {
       method: 'PUT',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ raidId: 'tempest-keep', roster: keyRoster })
+      body: JSON.stringify({ raidId: 'tempest-keep', roster: retiredKeyRoster })
+    }),
+    env
+  );
+  assert.equal(response.status, 401);
+
+  const editRoster = {
+    groups: { g2: ['Edit'] },
+    singles: { s2: 'Query' },
+    meta: { 'soft-reserve-url': 'https://softres.it/edit' }
+  };
+
+  response = await worker.fetch(
+    new Request(`https://example.com/api/sessions/${created.sessionId}?edit=${editToken}`, {
+      method: 'PUT',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ roster: editRoster })
     }),
     env
   );
@@ -349,7 +365,31 @@ test('Gruul create/read/update flow supports edit URLs and legacy key writes', a
   let updated = await readJson(response);
   assert.equal(updated.publicCode, created.publicCode);
   assert.equal(updated.raidId, 'gruuls-lair');
-  assert.deepEqual(updated.roster, keyRoster);
+  assert.deepEqual(updated.roster, editRoster);
+  assert.ok(!('editTokenHash' in updated));
+
+  const bearerRoster = {
+    groups: { g2: ['Bear'] },
+    singles: { s2: 'Token' },
+    meta: { 'soft-reserve-url': 'https://softres.it/bearer' }
+  };
+
+  response = await worker.fetch(
+    new Request(`https://example.com/api/sessions/${created.sessionId}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${editToken}`
+      },
+      body: JSON.stringify({ roster: bearerRoster })
+    }),
+    env
+  );
+  assert.equal(response.status, 200);
+  updated = await readJson(response);
+  assert.equal(updated.publicCode, created.publicCode);
+  assert.equal(updated.raidId, 'gruuls-lair');
+  assert.deepEqual(updated.roster, bearerRoster);
   assert.ok(!('editTokenHash' in updated));
 
   const headerRoster = {

@@ -479,12 +479,6 @@ function getEditTokenFromRequest(request, url) {
   if (editQueryToken && editQueryToken.trim()) {
     return editQueryToken.trim();
   }
-
-  const keyQueryToken = url.searchParams.get('key');
-  if (keyQueryToken && keyQueryToken.trim()) {
-    return keyQueryToken.trim();
-  }
-
   return '';
 }
 
