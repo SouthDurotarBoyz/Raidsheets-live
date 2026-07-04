@@ -2,13 +2,28 @@
 
 ## Purpose
 
-This checklist describes current manual deployment and smoke validation for raid-generic sessions after Legacy Retirement Plan Tasks 1 through 8. See [Legacy Retirement Plan Status](legacy-retirement-plan.md) for the completed cleanup sequence.
+This checklist describes current deployment and smoke validation for raid-generic sessions after Legacy Retirement Plan Tasks 1 through 8. See [Legacy Retirement Plan Status](legacy-retirement-plan.md) for the completed cleanup sequence.
 
 This is a deployment and smoke checklist only. It is not a request to change runtime code, Worker code, page shells, raid metadata, or API route prefixes.
 
-## Manual deployment note
+## Deployment model (current)
 
-Deployment is performed manually by the repo owner with `wrangler`. This repository does not prove that a deployment has happened unless a commit, tag, release note, or other repo artifact says so.
+Repo-verified facts:
+
+- `worker/wrangler.toml` names the Worker `raidsheets-session-api` (`main = "src/index.js"`). This is a Worker service name, not a repo-name mirror. Do not rename it to match the repository name.
+- `js/session-client.js` points the frontend at `https://api.raidsheets.com`.
+
+Operational settings (managed in the Cloudflare dashboard, not in this repo; verified against the dashboard on 2026-07-04):
+
+- The session API Worker auto-deploys from `main` via Cloudflare Workers Builds. Build settings: root directory `worker`, deploy command `npx wrangler deploy`, production branch `main`, non-production branch builds disabled.
+- `api.raidsheets.com` is bound to `raidsheets-session-api` (Production).
+- The frontend deploys separately via Cloudflare Pages on every merge to `main`.
+- No manual `wrangler deploy` is required for the normal main-branch deployment path.
+- Post-deploy smoke checks should be run after Cloudflare Workers Builds and Cloudflare Pages finish deploying `main`.
+
+Historical note:
+
+- This project originally lived in `SouthDurotarBoyz/Raidsheets`. On 2026-05-10 it was shipped as a new repository, `SouthDurotarBoyz/Raidsheets-live`, and the original repository was deleted. The Worker's git connection still pointed at the deleted repository, so automatic builds silently stopped, and the Worker served the old repository's final deploy (PR #349, version `e0131a84`) for 55 days. The frontend was unaffected because the Pages project was created against `Raidsheets-live`. The Worker was reconnected to `Raidsheets-live` on 2026-07-04.
 
 Keep the route prefix as `/api`. Do not document or test `/api/v1` for the current session contract.
 
@@ -115,7 +130,7 @@ The current shared session shape supports Gruul's Lair, Serpentshrine Cavern, an
 
 - Do not remove local roster mode.
 - Do not change the `/api` route prefix.
-- Do not claim deployment has happened unless the repo itself proves it.
+- Do not claim deployment has happened unless a green Workers Builds run or post-deploy smoke checks confirm it.
 - Do not treat `?key=` as an accepted edit-token source. It is retired and rejected.
 
 ## Out of scope
