@@ -4,15 +4,15 @@
 
 The Worker was originally deployed with the Gruul-specific name `gruuls-lair-session-api`. The Worker configuration now uses the raid-generic name `raidsheets-session-api` because the session backend supports Gruul's Lair, Serpentshrine Cavern, and Tempest Keep.
 
-The frontend `API_BASE` still points at the legacy deployed endpoint until the renamed Worker is deployed and smoke-tested:
+The frontend `API_BASE` currently points at the production API host:
 
 ```text
-https://gruuls-lair-session-api.southdurotarboyz.workers.dev
+https://api.raidsheets.com
 ```
 
-After the `raidsheets-session-api` deployment passes smoke tests, update `js/session-client.js` in a separate PR. Do **not** change `js/session-client.js` to the new Worker endpoint, `/api/v1`, or another API base in the Worker rename PR.
+Do **not** change the API route prefix to `/api/v1` for the current contract.
 
-See [Raid-Generic Session Activation Checklist](session-activation-checklist.md) for the deployment smoke tests and decision gates required before wiring SSC/TK session UX.
+See [Raid-Generic Session Deployment and Smoke Checklist](session-activation-checklist.md) for current deployment smoke tests.
 
 ## Goal
 
@@ -36,19 +36,13 @@ Canonical raid IDs:
 | Serpentshrine Cavern | `serpentshrine-cavern` | `ssc-roster.html` | `hydross.html` |
 | Tempest Keep | `tempest-keep` | `tk-roster.html` | `alar.html` |
 
-The frontend derives the current page raid ID from, in order:
-
-1. `window.RaidConfig.raidId`;
-2. `body[data-raid-id]`;
-3. `RaidRosterStorage.getCurrentRaidId()`.
+The frontend derives the current page raid ID from explicit metadata: `window.RaidConfig.raidId` or `body[data-raid-id]`.
 
 ## Compatibility Requirements
 
-The existing deployed Worker contract must keep working until the renamed Worker is deployed, smoke-tested, and the frontend `API_BASE` is updated in a separate PR:
+The current public API contract is:
 
-- Old Gruul-specific Worker/API base: `https://gruuls-lair-session-api.southdurotarboyz.workers.dev`
-- New raid-generic Worker name: `raidsheets-session-api`
-- Future API base after deployment validation: `https://raidsheets-session-api.southdurotarboyz.workers.dev`
+- Current frontend API base: `https://api.raidsheets.com`
 - Read/write route: `/api/sessions/:sessionId`
 - Create route, where used by backend/frontend integration: `/api/sessions`
 - Legacy Gruul `?key=` edit-token compatibility is retired. Edit URLs use `roster.html?session=...&edit=...`.
@@ -62,7 +56,7 @@ Worker-created edit URLs use `edit` as the edit-token query parameter. Write req
 
 ## Worker Route Contract
 
-The Worker source implements the route shape below for the existing `/api/sessions` endpoints. Frontend activation for additional raids should still wait until deployment is updated and tested.
+The Worker source implements the route shape below for the existing `/api/sessions` endpoints.
 
 ### Create Session
 
@@ -289,14 +283,13 @@ This prevents a Gruul session URL from accidentally populating SSC or TK pages o
 - Reject all writes without a valid edit token.
 - Treat edit tokens as bearer secrets in URLs; avoid analytics/logging capture where possible.
 
-## Migration Plan
+## Legacy retirement status
 
-1. Preserve local roster mode and the deployed Gruul session API.
-2. Generalize frontend session detection so it no longer depends only on `roster.html`, `maulgar.html`, and `gruul.html` path checks.
-3. Update the Worker to accept and persist all supported `raidId` values.
-4. Update Worker URL generation to return raid-specific roster and boss URLs.
-5. Enable session-client usage on SSC/TK roster pages only after the Worker supports those raid IDs.
-6. Validate Gruul edit/view URLs and local mode after each step.
-7. Deploy and smoke-test the renamed `raidsheets-session-api` Worker before changing frontend routing.
-8. After smoke tests pass, update `js/session-client.js` `API_BASE` in a separate PR.
-9. Only then consider changing API prefixes or additional deployment routing.
+Legacy Retirement Plan Tasks 1 through 8 are completed and merged. Task 9 is the docs truth pass. See [Legacy Retirement Plan Status](legacy-retirement-plan.md). Current invariants:
+
+1. Preserve public filenames and public URLs.
+2. Preserve local roster mode.
+3. Keep the `/api` route prefix.
+4. Keep `?session=`, `?edit=`, and `#roster=` behavior where their page flows use them.
+5. Keep `?key=` retired as an edit-token source.
+6. Do not change runtime behavior in docs-only updates.
