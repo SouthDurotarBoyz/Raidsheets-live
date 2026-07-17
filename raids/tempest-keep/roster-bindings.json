@@ -141,12 +141,12 @@
       "remainder": 0,
       "fallback": "Square Add kicks"
     },
-    "tk-solarian-moon-add-kicks": {
+    "tk-solarian-cross-add-kicks": {
       "type": "group-slot-modulo",
       "group": "tk-core-kicks",
       "modulo": 2,
       "remainder": 1,
-      "fallback": "Moon Add kicks"
+      "fallback": "Cross Add kicks"
     }
   }
 }
