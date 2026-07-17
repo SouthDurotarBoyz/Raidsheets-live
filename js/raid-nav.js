@@ -2,16 +2,38 @@
   'use strict';
 
   var bossTabNavigationPending = false;
+  var bossTabNavigationFallbackTimerId = null;
 
   function isModifiedNavigation(event) {
     return event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey;
   }
 
   function lockBossTabs() {
+    if (bossTabNavigationFallbackTimerId !== null) {
+      window.clearTimeout(bossTabNavigationFallbackTimerId);
+    }
+
     var bossTabs = document.querySelectorAll('[data-boss-tabs] .boss-tab');
     for (var i = 0; i < bossTabs.length; i += 1) {
       bossTabs[i].setAttribute('aria-disabled', 'true');
       bossTabs[i].classList.add('boss-tab-pending');
+    }
+
+    bossTabNavigationFallbackTimerId = window.setTimeout(unlockBossTabs, 5000);
+  }
+
+  function unlockBossTabs() {
+    bossTabNavigationPending = false;
+
+    if (bossTabNavigationFallbackTimerId !== null) {
+      window.clearTimeout(bossTabNavigationFallbackTimerId);
+      bossTabNavigationFallbackTimerId = null;
+    }
+
+    var bossTabs = document.querySelectorAll('[data-boss-tabs] .boss-tab');
+    for (var i = 0; i < bossTabs.length; i += 1) {
+      bossTabs[i].removeAttribute('aria-disabled');
+      bossTabs[i].classList.remove('boss-tab-pending');
     }
   }
 
@@ -107,6 +129,8 @@
         // Keep existing/static nav content if metadata cannot be loaded.
       });
   }
+
+  window.addEventListener('pageshow', unlockBossTabs);
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
