@@ -10,6 +10,7 @@
         <div class="setup-col-label">Tanks</div>
         <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Main tank → <span class="role unassigned" data-bind="hyjal-core-main-tank" data-default="Main tank">Main tank</span></span></div>
         <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span><span class="line-text">Doomguard tank → <span class="role unassigned" data-bind="hyjal-core-off-tank" data-default="Doomguard tank">Doomguard tank</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span><span class="line-text">Off tank 2 → <span class="role unassigned" data-bind="hyjal-core-off-tank-2" data-default="Off tank 2">Off tank 2</span></span></div>
       </div>
       <div class="setup-col">
         <div class="setup-col-label">Healers</div>
@@ -21,6 +22,7 @@
         <div class="setup-col-label">Misdirects</div>
         <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="hyjal-core-mt-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Main tank → <span class="assignment-target" data-target-bind="hyjal-core-main-tank"></span></span></div>
         <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="hyjal-core-ot-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span> Doomguard tank → <span class="assignment-target" data-target-bind="hyjal-core-off-tank"></span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="hyjal-core-ot-2-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span> Off tank 2 → <span class="assignment-target" data-target-bind="hyjal-core-off-tank-2"></span></span></div>
       </div>
       <div class="setup-col">
         <div class="setup-col-label">Utility</div>
@@ -70,13 +72,17 @@
             </div>
             <div class="mech critical">
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_impphaseshift.jpg" alt="Silence"></div>
-              <div class="mech-body"><div class="mech-name">Silence recovery</div><div class="mech-desc">Howl of Azgalor silences nearby players.</div></div>
+              <div class="mech-body"><div class="mech-name">Silence recovery</div><div class="mech-desc">Plan for silence, stacking HoTs on the tank to keep him alive. Players can have a Paladin with Improved Concentration Aura put into a healer group to reduce their silence to 5.6 seconds instead of 8.</div></div>
             </div>
           </div>
           <div class="col col-dps">
             <div class="mech critical">
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_auraofdarkness.jpg" alt="Doom"></div>
               <div class="mech-body"><div class="mech-name">Doom target runs to OT</div><div class="mech-desc">Doom target runs toward the Off tank before doom ends.</div></div>
+            </div>
+            <div class="mech">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_soulgem.jpg" alt="Soulstone"></div>
+              <div class="mech-body"><div class="mech-name">Soul Stone Doom</div><div class="mech-desc">Warlocks should have Master Soulstone crafted and ready to be applied to any player who is afflicted by Doom, because they will be killed in 20 seconds.</div></div>
             </div>
             <div class="mech">
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_dualwield.jpg" alt="Attack Azgalor"></div>
