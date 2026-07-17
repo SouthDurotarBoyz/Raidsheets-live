@@ -23,16 +23,12 @@
     "tk-core-magic-dispel": { "type": "single" },
     "tk-core-banish": { "type": "list" },
     "tk-void-reaver-orb-soakers": { "type": "list" },
-    "tk-kaelthas-thaladred-tank": { "type": "single" },
     "tk-kaelthas-sanguinar-tank": { "type": "single" },
     "tk-kaelthas-capernian-tank": { "type": "single" },
     "tk-kaelthas-telonicus-tank": { "type": "single" },
-    "tk-kaelthas-weapon-tanks": { "type": "list" },
+    "tk-kaelthas-bow-tanks": { "type": "list" },
+    "tk-kaelthas-axe-tank": { "type": "single" },
     "tk-kaelthas-phoenix-tank": { "type": "single" },
-    "tk-kaelthas-mind-control-cc": { "type": "list" },
-    "tk-kaelthas-legendary-staff": { "type": "single" },
-    "tk-kaelthas-legendary-dagger": { "type": "single" },
-    "tk-kaelthas-legendary-bow": { "type": "single" },
-    "tk-kaelthas-legendary-shield": { "type": "single" }
+    "tk-kaelthas-mind-control-cc": { "type": "list" }
   }
 }
