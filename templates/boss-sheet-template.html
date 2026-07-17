@@ -5,18 +5,18 @@
   </div>
 
   <div class="setup-block">
-    <!-- Replace placeholder binding keys with namespaced keys registered in roster-bindings.json, and in roster-schema.json plus the roster editor form when user editable. Use raid-level keys like <raid-prefix>-core-main-tank or boss-specific keys like <raid-prefix>-<boss-id>-raid-healers. -->
+    <!-- Replace placeholder binding keys with namespaced keys registered in roster-bindings.json, and in roster-schema.json plus the roster editor form when user editable. Use raid-level keys like RAID_PREFIX-core-main-tank or boss-specific keys like <raid-prefix>-<boss-id>-raid-healers. -->
     <div class="setup-grid setup-grid-5">
       <div class="setup-col setup-col-tanks">
         <div class="setup-col-label">Tanks</div>
         <!-- Primary assignment slots use data-bind/data-bind-group, data-default, and role unassigned. Do not use data-target-bind as the only source for a new assignment slot. -->
         <div class="setup-line">
           <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span>
-          <span class="line-text">Main Tank → <span data-bind="<raid-prefix>-core-main-tank" data-default="Main Tank" class="role unassigned">Main Tank</span></span>
+          <span class="line-text">Main Tank → <span data-bind="RAID_PREFIX-core-main-tank" data-default="Main Tank" class="role unassigned">Main Tank</span></span>
         </div>
         <div class="setup-line">
           <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/moon.svg" alt="Moon"></span>
-          <span class="line-text">Off Tank → <span data-bind="<raid-prefix>-core-off-tank" data-default="Off Tank" class="role unassigned">Off Tank</span></span>
+          <span class="line-text">Off Tank → <span data-bind="RAID_PREFIX-core-off-tank" data-default="Off Tank" class="role unassigned">Off Tank</span></span>
         </div>
         <!-- Contextual references use assignment-target with data-target-bind only after the source binding exists; do not duplicate the same target with a second visible data-bind or rename live keys casually. -->
       </div>
@@ -24,24 +24,24 @@
       <div class="setup-col">
         <div class="setup-col-label">Healers</div>
         <div class="setup-line">
-          <span class="line-text"><span data-bind="<raid-prefix>-core-main-tank-healer" data-default="MT Healer" class="role unassigned">MT Healer</span> → <span data-target-bind="<raid-prefix>-core-main-tank" class="assignment-target">Main Tank</span> <span class="role-label">(Main Tank)</span></span>
+          <span class="line-text"><span data-bind-group="RAID_PREFIX-core-mt-healers" data-default="MT Healer" class="role unassigned">MT Healer</span> → <span data-target-bind="RAID_PREFIX-core-main-tank" class="assignment-target">Main Tank</span> <span class="role-label">(Main Tank)</span></span>
         </div>
         <div class="setup-line">
-          <span class="line-text"><span data-bind="<raid-prefix>-core-off-tank-healer" data-default="OT Healer" class="role unassigned">OT Healer</span> → <span data-target-bind="<raid-prefix>-core-off-tank" class="assignment-target">Off Tank</span> <span class="role-label">(Off Tank)</span></span>
+          <span class="line-text"><span data-bind-group="RAID_PREFIX-core-ot-healers" data-default="OT Healer" class="role unassigned">OT Healer</span> → <span data-target-bind="RAID_PREFIX-core-off-tank" class="assignment-target">Off Tank</span> <span class="role-label">(Off Tank)</span></span>
         </div>
         <div class="setup-line">
           <span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healer icon"></span>
-          <span class="line-text">Raid → <span data-bind-group="<raid-prefix>-core-raid-healers" data-default="Raid Healers" class="role unassigned">Raid Healers</span></span>
+          <span class="line-text">Raid → <span data-bind-group="RAID_PREFIX-core-raid-healers" data-default="Raid Healers" class="role unassigned">Raid Healers</span></span>
         </div>
       </div>
 
       <div class="setup-col">
         <div class="setup-col-label">Misdirects</div>
         <div class="setup-line">
-          <span class="line-text"><span data-bind-group="<raid-prefix>-core-md-main-tank" data-default="Hunter" class="role unassigned">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Boss/Add Name → <span data-target-bind="<raid-prefix>-core-main-tank" class="assignment-target">Main Tank</span></span>
+          <span class="line-text"><span data-bind-group="RAID_PREFIX-core-mt-misdirect" data-default="Hunter" class="role unassigned">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Boss/Add Name → <span data-target-bind="RAID_PREFIX-core-main-tank" class="assignment-target">Main Tank</span></span>
         </div>
         <div class="setup-line">
-          <span class="line-text"><span data-bind-group="<raid-prefix>-core-md-off-tank" data-default="Hunter" class="role unassigned">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/moon.svg" alt="Moon"></span> Boss/Add Name → <span data-target-bind="<raid-prefix>-core-off-tank" class="assignment-target">Off Tank</span></span>
+          <span class="line-text"><span data-bind-group="RAID_PREFIX-core-ot-misdirect" data-default="Hunter" class="role unassigned">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/moon.svg" alt="Moon"></span> Boss/Add Name → <span data-target-bind="RAID_PREFIX-core-off-tank" class="assignment-target">Off Tank</span></span>
         </div>
       </div>
 
@@ -49,15 +49,15 @@
         <div class="setup-col-label">Utility</div>
         <div class="setup-line">
           <span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt="Elements icon"></span>
-          <span class="line-text">Elements → <span data-bind="<raid-prefix>-core-curse-elements" data-default="Warlock" class="role unassigned">Warlock</span></span>
+          <span class="line-text">Elements → <span data-bind="RAID_PREFIX-core-curse-of-elements" data-default="Warlock" class="role unassigned">Warlock</span></span>
         </div>
         <div class="setup-line">
           <span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholystrength.jpg" alt="Recklessness icon"></span>
-          <span class="line-text">Recklessness → <span data-bind="<raid-prefix>-core-curse-recklessness" data-default="Warlock" class="role unassigned">Warlock</span></span>
+          <span class="line-text">Recklessness → <span data-bind="RAID_PREFIX-core-curse-of-recklessness" data-default="Warlock" class="role unassigned">Warlock</span></span>
         </div>
         <div class="setup-line">
           <span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_curseoftounges.jpg" alt="Tongues icon"></span>
-          <span class="line-text">Tongues → <span data-bind="<raid-prefix>-core-curse-tongues" data-default="Warlock" class="role unassigned">Warlock</span></span>
+          <span class="line-text">Tongues → <span data-bind="RAID_PREFIX-core-curse-of-tongues" data-default="Warlock" class="role unassigned">Warlock</span></span>
         </div>
       </div>
 
@@ -66,12 +66,12 @@
         <div class="setup-col-label">Kicks</div>
         <div class="setup-line">
           <span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_kick.jpg" alt="Kick icon"></span>
-          <span class="line-text">Kick 1 → <span data-bind="<raid-prefix>-<boss-id>-kick-1" data-default="Kicker 1" class="role unassigned">Kicker 1</span></span>
+          <span class="line-text">Kick 1 → <span data-bind="RAID_PREFIX-BOSS_ID-kick-1" data-default="Kicker 1" class="role unassigned">Kicker 1</span></span>
         </div>
         <div class="setup-line">
           <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span>
           <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span>
-          <span class="line-text">Channeler → <span data-bind="<raid-prefix>-<boss-id>-kick-channeler-1" data-default="Kicker" class="role unassigned">Kicker</span></span>
+          <span class="line-text">Channeler → <span data-bind="RAID_PREFIX-BOSS_ID-kick-channeler-1" data-default="Kicker" class="role unassigned">Kicker</span></span>
         </div>
       </div>
 
@@ -80,11 +80,11 @@
         <div class="setup-col-label">Special Assignments</div>
         <div class="setup-line">
           <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span>
-          <span class="line-text">Boss Assignment → <span data-bind="<raid-prefix>-<boss-id>-special-assignment-1" data-default="Assigned Player" class="role unassigned">Assigned Player</span></span>
+          <span class="line-text">Boss Assignment → <span data-bind="RAID_PREFIX-BOSS_ID-special-assignment-1" data-default="Assigned Player" class="role unassigned">Assigned Player</span></span>
         </div>
         <div class="setup-line">
           <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/triangle.svg" alt="Triangle"></span>
-          <span class="line-text">Boss Assignment Backup → <span data-bind="<raid-prefix>-<boss-id>-special-assignment-backup-1" data-default="Backup Player" class="role unassigned">Backup Player</span></span>
+          <span class="line-text">Boss Assignment Backup → <span data-bind="RAID_PREFIX-BOSS_ID-special-assignment-backup-1" data-default="Backup Player" class="role unassigned">Backup Player</span></span>
         </div>
       </div>
     </div>
@@ -107,7 +107,7 @@
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_shieldwall.jpg" alt="Tank defensive"></div>
               <div class="mech-body">
                 <div class="mech-name">Establish boss position</div>
-                <div class="mech-desc"><span data-bind="<raid-prefix>-core-main-tank" data-default="Main Tank" class="role unassigned">Main Tank</span> anchors BOSS_NAME at the assigned marker before DPS opens.</div>
+                <div class="mech-desc"><span data-bind="RAID_PREFIX-core-main-tank" data-default="Main Tank" class="role unassigned">Main Tank</span> anchors BOSS_NAME at the assigned marker before DPS opens.</div>
               </div>
             </div>
             <div class="mech">
@@ -131,7 +131,7 @@
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healing"></div>
               <div class="mech-body">
                 <div class="mech-name">Raid coverage</div>
-                <div class="mech-desc"><span data-bind-group="<raid-prefix>-core-raid-healers" data-default="Raid Healers" class="role unassigned">Raid Healers</span> stabilize early raid damage while assignments settle.</div>
+                <div class="mech-desc"><span data-bind-group="RAID_PREFIX-core-raid-healers" data-default="Raid Healers" class="role unassigned">Raid Healers</span> stabilize early raid damage while assignments settle.</div>
               </div>
             </div>
           </div>
@@ -148,7 +148,7 @@
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt="Utility assignment"></div>
               <div class="mech-body">
                 <div class="mech-name">Apply utility</div>
-                <div class="mech-desc"><span data-bind="<raid-prefix>-core-curse-elements" data-default="Warlock" class="role unassigned">Warlock</span> applies assigned utility after pull threat is stable.</div>
+                <div class="mech-desc"><span data-bind="RAID_PREFIX-core-curse-of-elements" data-default="Warlock" class="role unassigned">Warlock</span> applies assigned utility after pull threat is stable.</div>
               </div>
             </div>
           </div>
