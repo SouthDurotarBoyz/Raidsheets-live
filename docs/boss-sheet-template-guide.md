@@ -182,6 +182,14 @@ Roster-page local slot metadata, including minimum and maximum slot counts and p
 
 When validating binding configuration, confirm that `singleDefaults` and `groupDefs` do not retain stale keys that are absent from the schema, aliases, derived bindings, and live fragments.
 
+Run the dependency-free roster binding validator after adding or changing roster-bound assignments:
+
+```bash
+node scripts/validate-roster-bindings.mjs
+```
+
+The validator catches fragment binding keys that are missing from the raid schema or binding config, along with aliases and derived binding references that point to missing fields or groups. Review warnings for potentially stale configuration; validation failures must block the PR.
+
 ## 10) Sidebar image placeholders and wipe reminders
 
 Every boss sheet should include the right-side `image-sidebar` inside `main-layout`, next to `sheet-content`, unless there is a documented exception. Codex should not omit this sidebar when creating new boss foundations from the template.
