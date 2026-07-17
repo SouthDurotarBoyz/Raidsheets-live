@@ -55,11 +55,6 @@
       "minCount": 0,
       "defaultLabel": "Banish"
     },
-    "hyjal-kazrogal-mana-drain-healers": {
-      "defaultCount": 0,
-      "minCount": 0,
-      "defaultLabel": "Healer"
-    },
     "hyjal-archimonde-tear-clickers": {
       "defaultCount": 0,
       "minCount": 0,
@@ -90,7 +85,6 @@
     "hyjal-core-ot-3-misdirect": "Core Ot 3 Misdirect",
     "hyjal-core-kicks": "Core Kicks",
     "hyjal-core-banish": "Core Banish",
-    "hyjal-kazrogal-mana-drain-healers": "Kazrogal Mana Drain Healers",
     "hyjal-archimonde-tear-clickers": "Archimonde Tear Clickers"
   },
   "derivedBindings": {}

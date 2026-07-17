@@ -65,9 +65,6 @@
     "hyjal-core-banish": {
       "type": "list"
     },
-    "hyjal-kazrogal-mana-drain-healers": {
-      "type": "list"
-    },
     "hyjal-archimonde-tear-clickers": {
       "type": "list"
     }
