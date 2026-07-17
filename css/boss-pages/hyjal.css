@@ -1,6 +1,37 @@
 body {
-  background: linear-gradient(145deg, #071510 0%, #173326 48%, #20170f 100%);
+  background:
+    radial-gradient(circle at 18% 8%, rgba(91, 132, 79, 0.22), transparent 34%),
+    linear-gradient(145deg, #071510 0%, #173326 48%, #20170f 100%);
   background-attachment: fixed;
+}
+
+.sheet {
+  background: #f8f7f1;
+  border-color: #a9b5a4;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.36);
+}
+
+.boss-header {
+  border-left: 4px solid #55764e;
+  padding-left: 12px;
+}
+
+.setup-block {
+  background: #f0f3eb;
+  border-color: #bdc8b7;
+}
+
+.phase-bar {
+  background: #344c35;
+}
+
+.image-card {
+  background: #243126;
+  border-color: #516653;
+}
+
+.image-card-label {
+  color: #dce9d7;
 }
 
 .image-placeholder {
@@ -8,8 +39,15 @@ body {
   display: grid;
   place-items: center;
   padding: 20px;
-  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(202, 220, 197, 0.28);
   border-radius: 6px;
-  color: #d7e7dc;
+  background: linear-gradient(145deg, rgba(86, 116, 83, 0.35), rgba(25, 37, 27, 0.7));
+  color: #e1ebdd;
+  font-size: 12px;
+  letter-spacing: 0.2px;
   text-align: center;
+}
+
+.image-card-caption {
+  color: #c8d3c4;
 }
