@@ -120,18 +120,18 @@ body[data-boss-id="trash"] {
   text-transform: uppercase;
 }
 
-.setup-grid-5 {
+.setup-grid {
   color: var(--hyjal-text-soft);
   font-size: 12px;
   gap: 12px;
 }
 
-.setup-grid-5 .setup-col-misdirect-wide {
+.setup-grid .setup-col-misdirect-wide {
   flex: 0 0 auto;
 }
 
 .setup-col-label,
-.setup-grid-5 b {
+.setup-grid b {
   color: var(--hyjal-text);
 }
 

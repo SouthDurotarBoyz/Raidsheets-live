@@ -57,7 +57,7 @@
     }
   },
   "groupAliases": {
-    "hyjal-rage-raid-healers": [
+    "hyjal-rage-winterchill-raid-healers": [
       "hyjal-core-ot-healers",
       "hyjal-core-ot-2-healers",
       "hyjal-core-ot-3-healers",
@@ -101,23 +101,23 @@
     "hyjal-archimonde-fear-ward": "Fear Ward"
   },
   "groupLabels": {
-    "hyjal-core-mt-healers": "Core Mt Healers",
-    "hyjal-core-ot-healers": "Core Ot Healers",
-    "hyjal-core-ot-2-healers": "Core Ot 2 Healers",
-    "hyjal-core-ot-3-healers": "Core Ot 3 Healers",
-    "hyjal-core-raid-healers": "Core Raid Healers",
-    "hyjal-core-mt-misdirect": "Core Mt Misdirect",
-    "hyjal-core-ot-misdirect": "Core Ot Misdirect",
-    "hyjal-core-ot-2-misdirect": "Core Ot 2 Misdirect",
-    "hyjal-core-ot-3-misdirect": "Core Ot 3 Misdirect",
-    "hyjal-core-kicks": "Core Kicks",
-    "hyjal-core-banish": "Core Banish",
-    "hyjal-rage-raid-healers": "Rage Raid Healers",
-    "hyjal-anetheron-raid-healers": "Anetheron Raid Healers",
-    "hyjal-kazrogal-raid-healers": "Kaz'rogal Raid Healers",
-    "hyjal-azgalor-raid-healers": "Azgalor Raid Healers",
-    "hyjal-archimonde-main-tank-healers": "Archimonde Main Tank Healers",
-    "hyjal-archimonde-raid-healers": "Archimonde Raid Healers"
+    "hyjal-core-mt-healers": "MT healers",
+    "hyjal-core-ot-healers": "OT healers",
+    "hyjal-core-ot-2-healers": "OT 2 healers",
+    "hyjal-core-ot-3-healers": "OT 3 healers",
+    "hyjal-core-raid-healers": "Raid healers",
+    "hyjal-core-mt-misdirect": "MT misdirect",
+    "hyjal-core-ot-misdirect": "OT misdirect",
+    "hyjal-core-ot-2-misdirect": "OT 2 misdirect",
+    "hyjal-core-ot-3-misdirect": "OT 3 misdirect",
+    "hyjal-core-kicks": "Kicks",
+    "hyjal-core-banish": "Banish",
+    "hyjal-rage-winterchill-raid-healers": "Rage Winterchill raid healers",
+    "hyjal-anetheron-raid-healers": "Anetheron raid healers",
+    "hyjal-kazrogal-raid-healers": "Kaz'rogal raid healers",
+    "hyjal-azgalor-raid-healers": "Azgalor raid healers",
+    "hyjal-archimonde-main-tank-healers": "Archimonde main tank healers",
+    "hyjal-archimonde-raid-healers": "Archimonde raid healers"
   },
   "derivedBindings": {}
 }
