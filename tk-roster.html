@@ -307,6 +307,16 @@ window.RaidConfig = { raidId: 'tempest-keep' };
     'tk-core-decurse': { label: 'Decurse', placeholder: 'Player', defaultLabel: 'Decurser', icon: 'spell_nature_removecurse' },
     'tk-core-magic-dispel': { label: 'Magic dispel', placeholder: 'Player', defaultLabel: 'Dispel', icon: 'spell_holy_dispelmagic' },
     'tk-core-banish': { label: 'Banish', placeholder: 'Warlock', defaultLabel: 'Banish', icon: 'spell_shadow_enslavedemon', forceNumbering: true },
+    'tk-trash-sheep': {
+      label: 'Mage sheep', placeholder: 'Mage', defaultLabel: 'Sheep', icon: 'spell_nature_polymorph',
+      defaultCount: 2, minCount: 2, maxCount: 4,
+      slots: [
+        { label: 'Square sheep', marker: 'square', markerTitle: 'Square' },
+        { label: 'Moon sheep', marker: 'moon', markerTitle: 'Moon' },
+        { label: 'Circle sheep', marker: 'circle', markerTitle: 'Circle' },
+        { label: 'Star sheep', marker: 'star', markerTitle: 'Star' }
+      ]
+    },
     'tk-void-reaver-orb-soakers': { label: 'Orb dodger', placeholder: 'Player', defaultLabel: 'Orb dodgers', icon: 'spell_arcane_blast' },
     'tk-kaelthas-kaelthas-tank': { label: "Kael'thas tank", placeholder: 'Tank', marker: 'skull', markerTitle: 'Skull' },
     'tk-kaelthas-sanguinar-tank': { label: 'Sanguinar tank', placeholder: 'Tank', marker: 'cross', markerTitle: 'Cross' },
@@ -325,7 +335,7 @@ window.RaidConfig = { raidId: 'tempest-keep' };
         { title: 'Tanks', fields: ['tk-core-main-tank', 'tk-core-off-tank', 'tk-core-off-tank-2', 'tk-core-off-tank-3'] },
         { title: 'Healers', fields: ['tk-core-mt-healers', 'tk-core-ot-healers', 'tk-core-ot-2-healers', 'tk-core-ot-3-healers', 'tk-core-raid-healers'] },
         { title: 'Misdirect', fields: ['tk-core-mt-misdirect', 'tk-core-ot-misdirect', 'tk-core-ot-2-misdirect', 'tk-core-ot-3-misdirect'] },
-        { title: 'Utility', fields: ['tk-core-curse-of-elements', 'tk-core-curse-of-recklessness', 'tk-core-curse-of-tongues', 'tk-core-decurse', 'tk-core-magic-dispel', 'tk-core-banish', 'tk-core-kicks'] }
+        { title: 'Utility', fields: ['tk-core-curse-of-elements', 'tk-core-curse-of-recklessness', 'tk-core-curse-of-tongues', 'tk-core-decurse', 'tk-core-magic-dispel', 'tk-core-banish', 'tk-trash-sheep', 'tk-core-kicks'] }
       ]
     },
     {
@@ -344,6 +354,20 @@ window.RaidConfig = { raidId: 'tempest-keep' };
 
   function getFieldMeta(key) {
     return FIELD_META[key] || { boss: 'Assignments', label: titleFromKey(key), placeholder: 'Player', defaultLabel: 'Player' };
+  }
+
+  function listMinimum(key) {
+    const meta = getFieldMeta(key);
+    return Number.isInteger(meta.minCount) ? meta.minCount : 1;
+  }
+
+  function listMaximum(key) {
+    const maxCount = getFieldMeta(key).maxCount;
+    return Number.isInteger(maxCount) ? maxCount : Infinity;
+  }
+
+  function listRowMeta(meta, idx) {
+    return meta.slots && meta.slots[idx] ? Object.assign({}, meta, meta.slots[idx]) : meta;
   }
 
   function makeRoleIcon(meta) {
@@ -545,7 +569,10 @@ window.RaidConfig = { raidId: 'tempest-keep' };
           state.groups[key] = state.singles[key] ? [state.singles[key]] : [''];
           delete state.singles[key];
         }
-        if (!state.groups[key].length) state.groups[key].push('');
+        const defaultCount = Number.isInteger(getFieldMeta(key).defaultCount) ? getFieldMeta(key).defaultCount : 1;
+        const requiredCount = Math.max(defaultCount, listMinimum(key));
+        while (state.groups[key].length < requiredCount) state.groups[key].push('');
+        if (state.groups[key].length > listMaximum(key)) state.groups[key] = state.groups[key].slice(0, listMaximum(key));
       }
     });
   }
@@ -621,12 +648,13 @@ window.RaidConfig = { raidId: 'tempest-keep' };
     }
 
     state.groups[key].forEach(function(value, idx) {
+      const rowMeta = listRowMeta(meta, idx);
       const row = document.createElement('div');
       row.className = 'roster-row' + (isMisdirect ? ' misdirect-target-row' : '');
 
       const label = document.createElement('span');
       label.className = 'role-text';
-      label.textContent = listRowLabel(meta, key, idx, inlineControls);
+      label.textContent = rowMeta === meta ? listRowLabel(meta, key, idx, inlineControls) : rowMeta.label;
 
       const input = document.createElement('input');
       input.type = 'text';
@@ -637,7 +665,7 @@ window.RaidConfig = { raidId: 'tempest-keep' };
         saveState();
       });
 
-      row.appendChild(makeRoleIcon(meta));
+      row.appendChild(makeRoleIcon(rowMeta));
       if (!meta.suppressRowLabel) row.appendChild(label);
       row.appendChild(input);
       if (isMisdirect) row.appendChild(misdirectTargetLabel(meta));
@@ -645,7 +673,9 @@ window.RaidConfig = { raidId: 'tempest-keep' };
     });
 
     const removeBtn = document.querySelector('.slot-btn[data-action="remove"][data-target="' + key + '"]');
-    if (removeBtn) removeBtn.disabled = state.groups[key].length <= 1;
+    if (removeBtn) removeBtn.disabled = state.groups[key].length <= listMinimum(key);
+    const addBtn = document.querySelector('.slot-btn[data-action="add"][data-target="' + key + '"]');
+    if (addBtn) addBtn.disabled = state.groups[key].length >= listMaximum(key);
   }
 
   function controlsSpacer() {
@@ -769,8 +799,8 @@ window.RaidConfig = { raidId: 'tempest-keep' };
       if (!btn) return;
       const key = btn.dataset.target;
       if (!rosterSchema.fields[key] || rosterSchema.fields[key].type !== 'list') return;
-      if (btn.dataset.action === 'add') state.groups[key].push('');
-      if (btn.dataset.action === 'remove' && state.groups[key].length > 1) state.groups[key].pop();
+      if (btn.dataset.action === 'add' && state.groups[key].length < listMaximum(key)) state.groups[key].push('');
+      if (btn.dataset.action === 'remove' && state.groups[key].length > listMinimum(key)) state.groups[key].pop();
       saveState();
       const list = document.querySelector('[data-slot-list="' + key + '"]');
       if (list) renderList(list, key);
