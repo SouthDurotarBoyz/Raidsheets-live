@@ -6,8 +6,7 @@
   </div>
 
   <div class="setup-block">
-    <div class="setup-label">Raid assignments for the Gruul the Dragonslayer Encounter. Check the spreadsheet for more detailed information on the encounter and your role in it.</div>
-    <div class="setup-grid setup-grid-4">
+    <div class="setup-grid setup-grid-5">
       <div class="setup-col setup-col-tanks">
         <div class="setup-col-label">Tanks</div>
         <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Gruul Main Tank → <span class="assignment-target" data-target-bind="main-tank"></span></span></div>
@@ -15,14 +14,14 @@
       </div>
       <div class="setup-col">
         <div class="setup-col-label">Healers</div>
-        <div class="setup-line"><span class="line-text"><span data-bind="gruul-tank-healer" data-default="MT healer 1" class="role unassigned">MT healer 1</span> &rarr; <span class="assignment-target" data-target-bind="main-tank"></span> <span class="role-label">(GRUUL MAIN TANK)</span></span></div>
-        <div class="setup-line"><span class="line-text"><span data-bind="gruul-hurtful-healer" data-default="OT healer" class="role unassigned">OT healer</span> &rarr; <span class="assignment-target" data-target-bind="gruul-hurtful-tank"></span> <span class="role-label">(GRUUL OFF TANK)</span></span></div>
+        <div class="setup-line"><span class="line-text"><span data-bind-group="main-tank-healers" data-default="MT healer 1" class="role unassigned">MT healer 1</span> → <span class="assignment-target" data-target-bind="main-tank"></span> <span class="role-label">(GRUUL MAIN TANK)</span></span></div>
+        <div class="setup-line"><span class="line-text"><span data-bind-group="off-tank-healers" data-default="OT healer" class="role unassigned">OT healer</span> → <span class="assignment-target" data-target-bind="gruul-hurtful-tank"></span> <span class="role-label">(GRUUL OFF TANK)</span></span></div>
         <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt=""></span><span class="line-text">Raid → <span data-bind-group="gruul-raid-healers" data-default="Raid healers" class="role unassigned">Raid healers</span></span></div>
       </div>
       <div class="setup-col">
         <div class="setup-col-label">Misdirects</div>
-        <div class="setup-line"><span class="line-text"><span data-bind-group="md-maulgar" data-default="Hunter" class="role unassigned">Hunter</span> &rarr; <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Gruul &rarr; <span class="assignment-target" data-target-bind="main-tank"></span></span></div>
-        <div class="setup-line"><span class="line-text"><span data-bind-group="gruul-off-tank-md" data-default="Hunter" class="role unassigned">Hunter</span> &rarr; <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Gruul &rarr; <span class="assignment-target" data-target-bind="gruul-hurtful-tank"></span></span></div>
+        <div class="setup-line"><span class="line-text"><span data-bind-group="md-maulgar" data-default="Hunter" class="role unassigned">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Gruul → <span class="assignment-target" data-target-bind="main-tank"></span></span></div>
+        <div class="setup-line"><span class="line-text"><span data-bind-group="gruul-off-tank-md" data-default="Hunter" class="role unassigned">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Gruul → <span class="assignment-target" data-target-bind="gruul-hurtful-tank"></span></span></div>
       </div>
       <div class="setup-col">
         <div class="setup-col-label">Utility</div>

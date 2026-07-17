@@ -7,27 +7,27 @@
 <div class="setup-grid setup-grid-5">
 <div class="setup-col setup-col-tanks">
 <div class="setup-col-label">Tanks</div>
-<div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Maulgar Tank → <span class="assignment-target" data-target-bind="maulgar-tank"></span></span></div>
+<div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Maulgar Tank → <span class="assignment-target" data-target-bind="main-tank"></span></span></div>
 <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/moon.svg" alt="Moon"></span><span class="line-text">Blindeye Tank → <span class="assignment-target" data-target-bind="blindeye-tank"></span></span></div>
 <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span><span class="line-text">Olm Tank → <span class="assignment-target" data-target-bind="olm-tank"></span></span></div>
 <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span><span class="line-text">Krosh Tank → <span class="assignment-target" data-target-bind="mage-tank"></span></span></div>
-<div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/diamond.svg" alt="Diamond"></span><span class="line-text">Kiggler Tank → <span class="assignment-target" data-target-bind="kiggler-tank"></span></span></div>
+<div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/diamond.svg" alt="Diamond"></span><span class="line-text">Kiggler Tank → <span class="assignment-target" data-target-bind="kiggler-tanks"></span></span></div>
 </div>
 <div class="setup-col">
 <div class="setup-col-label">Healers</div>
-<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind="maulgar-healer" data-default="Healer">Healer</span> &rarr; <span class="assignment-target" data-target-bind="maulgar-tank"></span> <span class="role-label">(Maulgar Tank)</span></span></div>
-<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind="blindeye-healer" data-default="Healer">Healer</span> &rarr; <span class="assignment-target" data-target-bind="blindeye-tank"></span> <span class="role-label">(Blindeye Tank)</span></span></div>
-<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind="olm-healer" data-default="Healer">Healer</span> &rarr; <span class="assignment-target" data-target-bind="olm-tank"></span> <span class="role-label">(Olm Tank)</span></span></div>
-<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind="mage-tank-healer" data-default="Healer">Healer</span> &rarr; <span class="assignment-target" data-target-bind="mage-tank"></span> <span class="role-label">(Krosh Tank)</span></span></div>
-<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind="kiggler-healer" data-default="Healer">Healer</span> &rarr; <span class="assignment-target" data-target-bind="kiggler-tank"></span> <span class="role-label">(Kiggler Tank)</span></span></div>
+<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="main-tank-healers" data-default="Healer">Healer</span> → <span class="assignment-target" data-target-bind="main-tank"></span> <span class="role-label">(Maulgar Tank)</span></span></div>
+<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind="blindeye-healer" data-default="Healer">Healer</span> → <span class="assignment-target" data-target-bind="blindeye-tank"></span> <span class="role-label">(Blindeye Tank)</span></span></div>
+<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind="olm-healer" data-default="Healer">Healer</span> → <span class="assignment-target" data-target-bind="olm-tank"></span> <span class="role-label">(Olm Tank)</span></span></div>
+<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind="mage-tank-healer" data-default="Healer">Healer</span> → <span class="assignment-target" data-target-bind="mage-tank"></span> <span class="role-label">(Krosh Tank)</span></span></div>
+<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind="kiggler-healer" data-default="Healer">Healer</span> → <span class="assignment-target" data-target-bind="kiggler-tanks"></span> <span class="role-label">(Kiggler Tank)</span></span></div>
 <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt=""></span><span class="line-text">Raid → <span class="role unassigned" data-bind-group="maulgar-raid-healers" data-default="Raid healers">Raid healers</span></span></div>
 </div>
 <div class="setup-col">
 <div class="setup-col-label">Misdirects</div>
-<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="md-maulgar" data-default="Hunter">Hunter</span> &rarr; <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Maulgar &rarr; <span class="assignment-target" data-target-bind="maulgar-tank"></span></span></div>
-<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="md-blindeye" data-default="Hunter">Hunter</span> &rarr; <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/moon.svg" alt="Moon"></span> Blindeye &rarr; <span class="assignment-target" data-target-bind="blindeye-tank"></span></span></div>
-<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="md-ot" data-default="Hunter">Hunter</span> &rarr; <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span> Olm &rarr; <span class="assignment-target" data-target-bind="olm-tank"></span></span></div>
-<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="md-kiggler" data-default="Hunter">Hunter</span> &rarr; <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/diamond.svg" alt="Diamond"></span> Kiggler &rarr; <span class="assignment-target" data-target-bind="kiggler-tank"></span></span></div>
+<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="md-maulgar" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Maulgar → <span class="assignment-target" data-target-bind="main-tank"></span></span></div>
+<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="md-blindeye" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/moon.svg" alt="Moon"></span> Blindeye → <span class="assignment-target" data-target-bind="blindeye-tank"></span></span></div>
+<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="md-ot" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span> Olm → <span class="assignment-target" data-target-bind="olm-tank"></span></span></div>
+<div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="md-kiggler" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/diamond.svg" alt="Diamond"></span> Kiggler → <span class="assignment-target" data-target-bind="kiggler-tanks"></span></span></div>
 </div>
 <div class="setup-col">
 <div class="setup-col-label">Utility</div>
@@ -41,7 +41,7 @@
 <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_kick.jpg" alt=""></span><span class="line-text">Kick 1 → <span class="role unassigned" data-bind="blindeye-kick-1" data-default="Kicker 1">Kicker 1</span></span></div>
 <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_kick.jpg" alt=""></span><span class="line-text">Kick 2 → <span class="role unassigned" data-bind="blindeye-kick-2" data-default="Kicker 2">Kicker 2</span></span></div>
 <div class="setup-line maulgar-kick-note-line">
-<span class="line-text maulgar-kick-note">Stagger kicks. Break PW:Shield first — uninterruptible while shielded.</span>
+<span class="line-text maulgar-kick-note">Stagger kicks. Break PW:Shield first - uninterruptible while shielded.</span>
 </div>
 </div>
 </div>
@@ -63,21 +63,21 @@
 <div class="icon"><img alt="Pre-position" src="https://wow.zamimg.com/images/wow/icons/large/misc_arrowlup.jpg"/></div>
 <div class="mech-body">
 <div class="mech-name">Pre-position before pull</div>
-<div class="mech-desc">All 4 tanks at their assigned spots BEFORE pull. <span class="role unassigned" data-bind="kiggler-tank" data-default="Kiggler tank">Kiggler tank</span> in upper-left corner. <span class="role unassigned" data-bind="mage-tank" data-default="Mage tank">Mage tank</span> in right corner. They DO NOT move from these spots the entire fight.</div>
+<div class="mech-desc">All 4 tanks at their assigned spots BEFORE pull. <span class="role unassigned" data-bind-group="kiggler-tanks" data-default="Kiggler tank">Kiggler tank</span> in upper-left corner. <span class="role unassigned" data-bind="mage-tank" data-default="Mage tank">Mage tank</span> in right corner. They DO NOT move from these spots the entire fight.</div>
 </div>
 </div>
 <div class="mech">
 <div class="icon"><img alt="Mage" src="https://wow.zamimg.com/images/wow/icons/large/classicon_mage.jpg"/></div>
 <div class="mech-body">
 <div class="mech-name">Mage Pulls and the raid follows</div>
-<div class="mech-desc"><span class="role unassigned" data-bind-group="md-maulgar" data-default="Hunter">Hunter</span> MDs Maulgar onto <span class="role unassigned" data-bind="maulgar-tank" data-default="Main tank">Main tank</span>. <span class="role unassigned" data-bind-group="md-ot" data-default="Hunter">Hunter</span> MDs Olm onto <span class="role unassigned" data-bind="ot-blindeye-olm" data-default="Off tank">Off tank</span> while he picks ups Blindeye. Both shoot together. Kiggler and Krosh are tanked at range and kept still the entire encounter.</div>
+<div class="mech-desc"><span class="role unassigned" data-bind-group="md-maulgar" data-default="Hunter">Hunter</span> MDs Maulgar onto <span class="role unassigned" data-bind="main-tank" data-default="Main tank">Main tank</span>. <span class="role unassigned" data-bind-group="md-ot" data-default="Hunter">Hunter</span> MDs Olm onto <span class="role unassigned" data-bind-group="off-tanks" data-default="Off tank">Off tank</span> while he picks ups Blindeye. Both shoot together. Kiggler and Krosh are tanked at range and kept still the entire encounter.</div>
 </div>
 </div>
 <div class="mech critical">
 <div class="icon"><img alt="Stonewall" src="https://wow.zamimg.com/images/wow/icons/large/6or_garrison_stonewall.jpg"/></div>
 <div class="mech-body">
 <div class="mech-name">Maulgar against the wall</div>
-<div class="mech-desc"><span class="role unassigned" data-bind="maulgar-tank" data-default="Main tank">Main tank</span> faces Maulgar AWAY from raid (Arcing Smash cleaves), back to south west wall (Mighty Blow knockback negated).</div>
+<div class="mech-desc"><span class="role unassigned" data-bind="main-tank" data-default="Main tank">Main tank</span> faces Maulgar AWAY from raid (Arcing Smash cleaves), back to south west wall (Mighty Blow knockback negated).</div>
 </div>
 </div>
 </div>
@@ -102,7 +102,7 @@
 <div class="icon"><img alt="Wait" src="https://wow.zamimg.com/images/wow/icons/large/ability_seal.jpg"/></div>
 <div class="mech-body">
 <div class="mech-name">DPS waits ~5s after pull</div>
-<div class="mech-desc">Tanks need a moment to lock threat. Hard stop until <span class="role unassigned" data-bind="maulgar-tank" data-default="Main tank">Main tank</span> calls "go." </div>
+<div class="mech-desc">Tanks need a moment to lock threat. Hard stop until <span class="role unassigned" data-bind="main-tank" data-default="Main tank">Main tank</span> calls "go." </div>
 </div>
 </div><div class="mech">
 <div class="icon"><img alt="Enslave Demon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_enslavedemon.jpg"/></div>
@@ -144,14 +144,14 @@
 <div class="icon"><img alt="Hex" src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_polymorph.jpg"/></div>
 <div class="mech-body">
 <div class="mech-name">Kiggler Hex on tank</div>
-<div class="mech-desc">Kiggler hexes the highest-threat target periodically (drops aggro). <span class="role unassigned" data-bind="kiggler-tank" data-default="Kiggler tank">Kiggler tank</span> is moonkin (immune) OR 2 hunters rotating threat.</div>
+<div class="mech-desc">Kiggler hexes the highest-threat target periodically (drops aggro). <span class="role unassigned" data-bind-group="kiggler-tanks" data-default="Kiggler tank">Kiggler tank</span> is moonkin (immune) OR 2 hunters rotating threat.</div>
 </div>
 </div>
 <div class="mech">
 <div class="icon"><img alt="Shield" src="https://wow.zamimg.com/images/wow/icons/large/inv_shield_06.jpg"/></div>
 <div class="mech-body">
 <div class="mech-name">Off tank holds Blindeye + Olm</div>
-<div class="mech-desc"><span class="role unassigned" data-bind="ot-blindeye-olm" data-default="Off tank">Off tank</span> stacks both adds on the same spot. Death Coil + Olm's felhunter spawns hit raid intermittently. OT cleaves felhunters as they pop.</div>
+<div class="mech-desc"><span class="role unassigned" data-bind-group="off-tanks" data-default="Off tank">Off tank</span> stacks both adds on the same spot. Death Coil + Olm's felhunter spawns hit raid intermittently. OT cleaves felhunters as they pop.</div>
 </div>
 </div>
 </div>
@@ -160,7 +160,7 @@
 <div class="icon"><img alt="Healer cooldowns" src="https://wow.zamimg.com/images/wow/icons/large/ability_priest_holywordlife.jpg"/></div>
 <div class="mech-body">
 <div class="mech-name">Healer cooldowns NOW</div>
-<div class="mech-desc">Save nothing for "later" — this IS later. Innervates, mana pots, racials. Race the kill.</div>
+<div class="mech-desc">Save nothing for "later" - this IS later. Innervates, mana pots, racials. Race the kill.</div>
 </div>
 </div>
 <div class="mech">
@@ -174,14 +174,14 @@
 <div class="icon"><img alt="Death Coil" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_deathcoil.jpg"/></div>
 <div class="mech-body">
 <div class="mech-name">Death Coil on raid</div>
-<div class="mech-desc">Olm Death Coils periodically — heavy single-target damage. <span class="role unassigned" data-bind-group="maulgar-raid-healers" data-default="Raid healers">Raid healers</span> watch raid frames closely.</div>
+<div class="mech-desc">Olm Death Coils periodically - heavy single-target damage. <span class="role unassigned" data-bind-group="maulgar-raid-healers" data-default="Raid healers">Raid healers</span> watch raid frames closely.</div>
 </div>
 </div>
 <div class="mech">
 <div class="icon"><img alt="Lightning" src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_lightning.jpg"/></div>
 <div class="mech-body">
 <div class="mech-name">Kiggler Lightning Bolts</div>
-<div class="mech-desc">Kiggler casts Lightning Bolts on highest-threat (his tank) and AoE Greater Polymorph: Frog. Polymorphed players are out of the fight 6s — healers spot them.</div>
+<div class="mech-desc">Kiggler casts Lightning Bolts on highest-threat (his tank) and AoE Greater Polymorph: Frog. Polymorphed players are out of the fight 6s - healers spot them.</div>
 </div>
 </div>
 </div>
@@ -190,7 +190,7 @@
 <div class="icon"><img alt="Bloodlust" src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_bloodlust.jpg"/></div>
 <div class="mech-body">
 <div class="mech-name">Bloodlust + cooldowns</div>
-<div class="mech-desc">Pop everything. Trinkets, racials, potions, BL. Maulgar 50→0 should take ~30 seconds — longer = increasing risk of fear/charge overlap kills.</div>
+<div class="mech-desc">Pop everything. Trinkets, racials, potions, BL. Maulgar 50→0 should take ~30 seconds - longer = increasing risk of fear/charge overlap kills.</div>
 </div>
 </div>
 <div class="mech critical">
@@ -204,14 +204,14 @@
 <div class="icon"><img alt="Blast Wave" src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_ragnaros_supernova.jpg"/></div>
 <div class="mech-body">
 <div class="mech-name">Stay 15y+ from Krosh</div>
-<div class="mech-desc">Blast Wave hits anyone within 15y. Position raid central or south — far from Krosh's right corner.</div>
+<div class="mech-desc">Blast Wave hits anyone within 15y. Position raid central or south - far from Krosh's right corner.</div>
 </div>
 </div>
 <div class="mech">
 <div class="icon"><img alt="Whirlwind" src="https://wow.zamimg.com/images/wow/icons/large/ability_whirlwind.jpg"/></div>
 <div class="mech-body">
 <div class="mech-name">Run out on Whirlwind</div>
-<div class="mech-desc">Melee disengage when Maulgar Whirlwinds. Re-engage after — 25-35s safe window before next.</div>
+<div class="mech-desc">Melee disengage when Maulgar Whirlwinds. Re-engage after - 25-35s safe window before next.</div>
 </div>
 </div>
 </div>
@@ -226,21 +226,21 @@
 <div class="icon"><img alt="Shield Wall" src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_shieldwall.jpg"/></div>
 <div class="mech-body">
 <div class="mech-name">Flurry at 50%</div>
-<div class="mech-desc">Maulgar's damage spikes hard. <span class="role unassigned" data-bind="maulgar-tank" data-default="Main tank">Main tank</span> rotates defensives: Shield Wall, Shield Block, trinkets.</div>
+<div class="mech-desc">Maulgar's damage spikes hard. <span class="role unassigned" data-bind="main-tank" data-default="Main tank">Main tank</span> rotates defensives: Shield Wall, Shield Block, trinkets.</div>
 </div>
 </div>
 <div class="mech critical">
 <div class="icon"><img alt="Charge" src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_charge.jpg"/></div>
 <div class="mech-body">
 <div class="mech-name">Maulgar can charge into the raid</div>
-<div class="mech-desc">Maulgar charges, stuns, leaves MT. <span class="role unassigned" data-bind="ot-blindeye-olm" data-default="Off tank">Off tank</span> must move the boss back into position out of the raid to stop whirlwind from wiping the raid.</div>
+<div class="mech-desc">Maulgar charges, stuns, leaves MT. <span class="role unassigned" data-bind-group="off-tanks" data-default="Off tank">Off tank</span> must move the boss back into position out of the raid to stop whirlwind from wiping the raid.</div>
 </div>
 </div>
 <div class="mech">
 <div class="icon"><img alt="Roar" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_psychicscream.jpg"/></div>
 <div class="mech-body">
 <div class="mech-name">Intimidating Roar (fear)</div>
-<div class="mech-desc">Stuns MT, fears nearby raid for ~4s. <span class="role unassigned" data-bind="maulgar-tank" data-default="Main tank">Main tank</span> stance-dances or trinkets out. Tremor Totem if available.</div>
+<div class="mech-desc">Stuns MT, fears nearby raid for ~4s. <span class="role unassigned" data-bind="main-tank" data-default="Main tank">Main tank</span> stance-dances or trinkets out. Tremor Totem if available.</div>
 </div>
 </div>
 <div class="mech">
@@ -256,7 +256,7 @@
 <div class="icon"><img alt="Rampage" src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_rampage.jpg"/></div>
 <div class="mech-body">
 <div class="mech-name">MT damage doubles</div>
-<div class="mech-desc">Flurry phase. <span class="role unassigned" data-bind="maulgar-healer" data-default="MT healer">MT healer</span> tunnel heals. Other healers chip in if their tank is stable.</div>
+<div class="mech-desc">Flurry phase. <span class="role unassigned" data-bind-group="main-tank-healers" data-default="MT healer">MT healer</span> tunnel heals. Other healers chip in if their tank is stable.</div>
 </div>
 </div>
 <div class="mech">
@@ -272,7 +272,7 @@
 <div class="icon"><img alt="Sword" src="https://wow.zamimg.com/images/wow/icons/large/inv_sword_04.jpg"/></div>
 <div class="mech-body">
 <div class="mech-name">EVERY DPS ON MAULGAR</div>
-<div class="mech-desc">No exceptions. Adds are tank-locked — do not assist on them. Burn Maulgar from 100 to 50 as fast as possible.</div>
+<div class="mech-desc">No exceptions. Adds are tank-locked - do not assist on them. Burn Maulgar from 100 to 50 as fast as possible.</div>
 </div>
 </div>
 <div class="mech">

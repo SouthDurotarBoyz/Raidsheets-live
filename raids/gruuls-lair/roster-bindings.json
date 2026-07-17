@@ -36,19 +36,19 @@
       "defaultLabel": "Hunter"
     },
     "md-kiggler": {
-      "defaultCount": 0,
+      "defaultCount": 1,
       "minCount": 0,
       "defaultLabel": "Hunter"
     },
     "md-blindeye": {
-      "defaultCount": 0,
+      "defaultCount": 1,
       "minCount": 0,
       "defaultLabel": "Hunter"
     },
     "blindeye-kicks": {
       "defaultCount": 6,
       "minCount": 0,
-      "defaultLabel": "Kicker"
+      "defaultLabel": "Kick"
     }
   },
   "singleDefaults": {
@@ -58,6 +58,7 @@
     "kiggler-healer": "Kiggler Healer",
     "curse-elements": "Warlock",
     "curse-reck": "Warlock",
+    "curse-tongues": "Warlock",
     "magtheridon-clicker-1": "Clicker",
     "magtheridon-clicker-2": "Clicker",
     "magtheridon-clicker-3": "Clicker",
@@ -69,16 +70,7 @@
     "magtheridon-backup-diamond": "Backup",
     "magtheridon-backup-moon": "Backup"
   },
-  "singleAliases": {
-    "maulgar-tank": "main-tank",
-    "gruul-tank": "main-tank",
-    "maulgar-healer": "main-tank-healers",
-    "gruul-tank-healer": "main-tank-healers",
-    "ot-healer": "off-tank-healers",
-    "gruul-hurtful-healer": "off-tank-healers",
-    "gruul-curse-elements": "curse-elements",
-    "gruul-curse-reck": "curse-reck"
-  },
+  "singleAliases": {},
   "groupAliases": {
     "maulgar-raid-healers": [
       "raid-healers"
@@ -99,10 +91,7 @@
       "md-blindeye"
     ]
   },
-  "groupTargetAliases": {
-    "ot-blindeye-olm": "off-tanks",
-    "kiggler-tank": "kiggler-tanks"
-  },
+  "groupTargetAliases": {},
   "groupLabels": {
     "off-tanks": "Off tanks",
     "kiggler-tanks": "Kiggler tanks",
