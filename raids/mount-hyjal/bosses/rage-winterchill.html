@@ -19,17 +19,17 @@
       </div>
       <div class="setup-col setup-col-misdirect-wide">
         <div class="setup-col-label">Misdirects</div>
-        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="hyjal-core-mt-misdirect" data-default="Hunter">Hunter</span> → Main tank → <span class="assignment-target" data-target-bind="hyjal-core-main-tank"></span></span></div>
-        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="hyjal-core-ot-misdirect" data-default="Hunter">Hunter</span> → Off tank → <span class="assignment-target" data-target-bind="hyjal-core-off-tank"></span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="hyjal-core-mt-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Main tank → <span class="assignment-target" data-target-bind="hyjal-core-main-tank"></span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="hyjal-core-ot-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span> Off tank → <span class="assignment-target" data-target-bind="hyjal-core-off-tank"></span></span></div>
       </div>
       <div class="setup-col">
         <div class="setup-col-label">Utility</div>
-        <div class="setup-line"><span class="line-text">Decurse → <span class="role unassigned" data-bind="hyjal-core-decurse" data-default="Player">Player</span></span></div>
-        <div class="setup-line"><span class="line-text">Magic dispel → <span class="role unassigned" data-bind="hyjal-core-magic-dispel" data-default="Player">Player</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_removecurse.jpg" alt="Remove Curse icon"></span><span class="line-text">Decurse → <span class="role unassigned" data-bind="hyjal-core-decurse" data-default="Player">Player</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_dispelmagic.jpg" alt="Dispel Magic icon"></span><span class="line-text">Magic dispel → <span class="role unassigned" data-bind="hyjal-core-magic-dispel" data-default="Player">Player</span></span></div>
       </div>
       <div class="setup-col">
         <div class="setup-col-label">Rage Assignments</div>
-        <div class="setup-line"><span class="line-text">Icebolt healers → <span class="role unassigned" data-bind-group="hyjal-rage-frost-tomb-healers" data-default="Icebolt healers">Icebolt healers</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostbolt02.jpg" alt="Icebolt icon"></span><span class="line-text">Icebolt healers → <span class="role unassigned" data-bind-group="hyjal-rage-frost-tomb-healers" data-default="Icebolt healers">Icebolt healers</span></span></div>
       </div>
     </div>
   </div>
@@ -47,55 +47,79 @@
         <div class="col-grid">
           <div class="col col-tank">
             <div class="mech">
+              <div class="icon"><img src="assets/shared/markers/skull.svg" alt="Main tank"></div>
               <div class="mech-body">
                 <div class="mech-name">Hold Rage steady</div>
                 <div class="mech-desc">Set the boss in the center and avoid unnecessary movement. The off tank stays ready to stabilize Rage if the main tank is stunned by Icebolt.</div>
               </div>
             </div>
+            <div class="mech">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostarmor02.jpg" alt="Frost Armor"></div>
+              <div class="mech-body">
+                <div class="mech-name">Frost Armor</div>
+                <div class="mech-desc">Frost Armor slows attackers who strike Rage. Dispelling it is optional rather than a primary assignment.</div>
+              </div>
+            </div>
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_deathanddecay.jpg" alt="Death and Decay"></div>
+              <div class="mech-body">
+                <div class="mech-name">Death &amp; Decay movement</div>
+                <div class="mech-desc">Move only as far as needed to leave dangerous ground while keeping Rage stable and predictable for the raid.</div>
+              </div>
+            </div>
           </div>
           <div class="col col-healer">
             <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostbolt02.jpg" alt="Icebolt"></div>
               <div class="mech-body">
-                <div class="mech-name">React to Icebolt</div>
-                <div class="mech-desc">Assigned Icebolt healers immediately focus the stunned target through its heavy damage. Keep tank and raid coverage while everyone remains spread.</div>
+                <div class="mech-name">Icebolt heal target</div>
+                <div class="mech-desc">Icebolt stuns one player and deals heavy damage. Assigned Icebolt healers immediately focus the target through the full effect.</div>
+              </div>
+            </div>
+            <div class="mech">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healing"></div>
+              <div class="mech-body">
+                <div class="mech-name">Raid spread coverage</div>
+                <div class="mech-desc">Keep the tank and raid topped while everyone maintains spacing around the boss.</div>
+              </div>
+            </div>
+            <div class="mech">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostnova.jpg" alt="Frost Nova"></div>
+              <div class="mech-body">
+                <div class="mech-name">Frost Nova dispel</div>
+                <div class="mech-desc">Dispel the root when it prevents a player from escaping Death &amp; Decay; otherwise preserve the assigned coverage.</div>
               </div>
             </div>
           </div>
           <div class="col col-dps">
-            <div class="mech critical">
+            <div class="mech">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_rogue_sprint.jpg" alt="Spread"></div>
               <div class="mech-body">
-                <div class="mech-name">Spread and move</div>
-                <div class="mech-desc">Spread around the boss. Use a stun break or PvP trinket if Icebolt targets you, and leave Death &amp; Decay immediately.</div>
+                <div class="mech-name">Spread around boss</div>
+                <div class="mech-desc">Fan out around Rage and avoid stacking so the raid can react cleanly to targeted mechanics.</div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="phase-block">
-        <div class="phase-bar">Critical mechanics</div>
-        <div class="mech critical">
-          <div class="mech-body">
-            <div class="mech-name">Icebolt</div>
-            <div class="mech-desc">Stuns one player and deals heavy damage over a short duration. Assigned healers focus the target; stun breaks and PvP trinkets can end the stun early.</div>
-          </div>
-        </div>
-        <div class="mech critical">
-          <div class="mech-body">
-            <div class="mech-name">Death &amp; Decay</div>
-            <div class="mech-desc">Creates a large damaging ground effect. Everyone inside moves out immediately.</div>
-          </div>
-        </div>
-        <div class="mech">
-          <div class="mech-body">
-            <div class="mech-name">Frost Nova</div>
-            <div class="mech-desc">Roots players within 20 yards. It can be dispelled, but prioritize removing it when a rooted player must escape Death &amp; Decay.</div>
-          </div>
-        </div>
-        <div class="mech">
-          <div class="mech-body">
-            <div class="mech-name">Frost Armor</div>
-            <div class="mech-desc">Slows attackers who strike Rage. It can be dispelled, but is not a primary assignment.</div>
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_deathanddecay.jpg" alt="Death and Decay"></div>
+              <div class="mech-body">
+                <div class="mech-name">Death &amp; Decay</div>
+                <div class="mech-desc">Move out immediately. Do not finish a cast or wait for a dispel while standing in the ground effect.</div>
+              </div>
+            </div>
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_jewelry_trinketpvp_01.jpg" alt="PvP trinket"></div>
+              <div class="mech-body">
+                <div class="mech-name">Icebolt self-save</div>
+                <div class="mech-desc">Use an available stun break or PvP trinket if Icebolt targets you, reducing the time healers must cover its damage.</div>
+              </div>
+            </div>
+            <div class="mech">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_savageblow.jpg" alt="Attack"></div>
+              <div class="mech-body">
+                <div class="mech-name">Kill boss</div>
+                <div class="mech-desc">Burn Rage once movement and Icebolt responses are controlled; survival remains the only priority swap.</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
