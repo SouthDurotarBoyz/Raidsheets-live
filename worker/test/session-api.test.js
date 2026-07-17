@@ -192,6 +192,18 @@ test('session API validates create requests and missing sessions', async () => {
   assert.equal(response.status, 404);
 });
 
+
+test('Mount Hyjal sessions use Hyjal edit and boss view URLs', async () => {
+  const env = createFakeEnv();
+  const created = await createSession(env, 'mount-hyjal');
+
+  assert.equal(created.raidId, 'mount-hyjal');
+  assert.match(created.editUrl, /^hyjal-roster\.html\?session=/);
+  assert.match(created.viewUrl, /^rage-winterchill\.html\?session=/);
+  assert.match(created.viewUrls.archimonde, /^archimonde\.html\?session=/);
+  assert.match(created.viewUrls.trash, /^hyjal-trash\.html\?session=/);
+});
+
 test('POST /api/sessions rejects oversized request bodies before parsing JSON', async () => {
   const env = createFakeEnv();
   const response = await worker.fetch(

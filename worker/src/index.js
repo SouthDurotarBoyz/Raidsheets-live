@@ -387,6 +387,18 @@ const RAID_CONFIGS = {
       solarian: 'solarian.html',
       kaelthas: 'kaelthas.html'
     }
+  },
+  'mount-hyjal': {
+    rosterPage: 'hyjal-roster.html',
+    defaultViewPage: 'rage-winterchill.html',
+    bossViewPages: {
+      trash: 'hyjal-trash.html',
+      'rage-winterchill': 'rage-winterchill.html',
+      anetheron: 'anetheron.html',
+      kazrogal: 'kazrogal.html',
+      azgalor: 'azgalor.html',
+      archimonde: 'archimonde.html'
+    }
   }
 };
 

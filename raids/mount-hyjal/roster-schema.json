@@ -1,0 +1,93 @@
+{
+  "raidId": "mount-hyjal",
+  "version": 1,
+  "fields": {
+    "hyjal-core-main-tank": {
+      "type": "single"
+    },
+    "hyjal-core-off-tank": {
+      "type": "single"
+    },
+    "hyjal-core-off-tank-2": {
+      "type": "single"
+    },
+    "hyjal-core-off-tank-3": {
+      "type": "single"
+    },
+    "hyjal-core-curse-of-elements": {
+      "type": "single"
+    },
+    "hyjal-core-curse-of-recklessness": {
+      "type": "single"
+    },
+    "hyjal-core-curse-of-tongues": {
+      "type": "single"
+    },
+    "hyjal-core-decurse": {
+      "type": "single"
+    },
+    "hyjal-core-magic-dispel": {
+      "type": "single"
+    },
+    "hyjal-anetheron-infernal-tank": {
+      "type": "single"
+    },
+    "hyjal-azgalor-doom-guard-tank": {
+      "type": "single"
+    },
+    "hyjal-archimonde-fear-ward": {
+      "type": "single"
+    },
+    "hyjal-core-mt-healers": {
+      "type": "list"
+    },
+    "hyjal-core-ot-healers": {
+      "type": "list"
+    },
+    "hyjal-core-ot-2-healers": {
+      "type": "list"
+    },
+    "hyjal-core-ot-3-healers": {
+      "type": "list"
+    },
+    "hyjal-core-raid-healers": {
+      "type": "list"
+    },
+    "hyjal-core-mt-misdirect": {
+      "type": "list"
+    },
+    "hyjal-core-ot-misdirect": {
+      "type": "list"
+    },
+    "hyjal-core-ot-2-misdirect": {
+      "type": "list"
+    },
+    "hyjal-core-ot-3-misdirect": {
+      "type": "list"
+    },
+    "hyjal-core-kicks": {
+      "type": "list"
+    },
+    "hyjal-core-banish": {
+      "type": "list"
+    },
+    "hyjal-trash-wave-tanks": {
+      "type": "list"
+    },
+    "hyjal-trash-aoe-cc": {
+      "type": "list"
+    },
+    "hyjal-trash-decurse": {
+      "type": "list"
+    },
+    "hyjal-rage-frost-tomb-healers": {
+      "type": "list"
+    },
+    "hyjal-kazrogal-mana-drain-healers": {
+      "type": "list"
+    },
+    "hyjal-archimonde-tear-clickers": {
+      "type": "list"
+    }
+  }
+}
