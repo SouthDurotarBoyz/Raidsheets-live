@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/boss-sheet.css"/>
+<link rel="stylesheet" href="css/boss-pages/hyjal.css"/>
+<title>Azgalor · Raid Sheet</title>
+</head>
+<body data-page-role="boss-view" data-raid-id="mount-hyjal" data-boss-id="azgalor">
+<div class="screen-only page-nav">
+  <a class="btn" href="index.html" data-soft-reserve-anchor>Home</a>
+  <div class="page-nav-actions">
+    <a class="btn" href="hyjal-roster.html" data-roster-link>Roster</a>
+    <div class="boss-tabs" aria-label="Boss tabs" data-boss-tabs></div>
+  </div>
+</div>
+<div data-boss-sheet-container data-boss-partial="raids/mount-hyjal/bosses/azgalor.html"></div>
+<script src="js/raid-nav.js"></script>
+<script src="js/roster-storage.js"></script>
+<script src="js/soft-reserve-link.js"></script>
+<script src="js/session-client.js"></script>
+<script src="js/roster-bindings.js"></script>
+<script src="js/boss-sheet-loader.js"></script>
+<script>
+(function() {
+  'use strict';
+  window.RaidRosterStorage.importRosterFromHash();
+  (window.BossSheetLoader ? window.BossSheetLoader.loadAll() : Promise.resolve()).then(function() { window.RaidRosterBindings.init(); });
+  window.addEventListener('storage', function(event) { if (event.key === window.RaidRosterStorage.STORAGE_KEY) location.reload(); });
+})();
+</script>
+</body>
+</html>

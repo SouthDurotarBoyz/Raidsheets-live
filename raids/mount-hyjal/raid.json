@@ -1,0 +1,52 @@
+{
+  "id": "mount-hyjal",
+  "name": "The Battle for Mount Hyjal",
+  "displayName": "Mount Hyjal",
+  "firstBossId": "rage-winterchill",
+  "rosterPage": "hyjal-roster.html",
+  "guidePage": "rage-winterchill.html",
+  "bosses": [
+    {
+      "id": "trash",
+      "name": "Trash",
+      "shortName": "Trash",
+      "icon": "assets/shared/markers/skull.svg",
+      "page": "hyjal-trash.html"
+    },
+    {
+      "id": "rage-winterchill",
+      "name": "Rage Winterchill",
+      "shortName": "Rage Winterchill",
+      "icon": "assets/shared/markers/moon.svg",
+      "page": "rage-winterchill.html"
+    },
+    {
+      "id": "anetheron",
+      "name": "Anetheron",
+      "shortName": "Anetheron",
+      "icon": "assets/shared/markers/cross.svg",
+      "page": "anetheron.html"
+    },
+    {
+      "id": "kazrogal",
+      "name": "Kaz'rogal",
+      "shortName": "Kaz'rogal",
+      "icon": "assets/shared/markers/square.svg",
+      "page": "kazrogal.html"
+    },
+    {
+      "id": "azgalor",
+      "name": "Azgalor",
+      "shortName": "Azgalor",
+      "icon": "assets/shared/markers/diamond.svg",
+      "page": "azgalor.html"
+    },
+    {
+      "id": "archimonde",
+      "name": "Archimonde",
+      "shortName": "Archimonde",
+      "icon": "assets/shared/markers/star.svg",
+      "page": "archimonde.html"
+    }
+  ]
+}
