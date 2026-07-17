@@ -17,35 +17,35 @@
       "id": "rage-winterchill",
       "name": "Rage Winterchill",
       "shortName": "Rage Winterchill",
-      "icon": "assets/shared/markers/moon.svg",
+      "icon": "https://wow.zamimg.com/images/wow/icons/large/achievement_boss_kelthuzad_01.jpg",
       "page": "rage-winterchill.html"
     },
     {
       "id": "anetheron",
       "name": "Anetheron",
       "shortName": "Anetheron",
-      "icon": "assets/shared/markers/cross.svg",
+      "icon": "https://wow.zamimg.com/images/wow/icons/large/achievement_boss_argus_varimathras.jpg",
       "page": "anetheron.html"
     },
     {
       "id": "kazrogal",
       "name": "Kaz'rogal",
       "shortName": "Kaz'rogal",
-      "icon": "assets/shared/markers/square.svg",
+      "icon": "https://wow.zamimg.com/images/wow/icons/large/warlock_summon_doomguard.jpg",
       "page": "kazrogal.html"
     },
     {
       "id": "azgalor",
       "name": "Azgalor",
       "shortName": "Azgalor",
-      "icon": "assets/shared/markers/diamond.svg",
+      "icon": "https://wow.zamimg.com/images/wow/icons/large/achievement_boss_magtheridon.jpg",
       "page": "azgalor.html"
     },
     {
       "id": "archimonde",
       "name": "Archimonde",
       "shortName": "Archimonde",
-      "icon": "assets/shared/markers/star.svg",
+      "icon": "https://wow.zamimg.com/images/wow/icons/large/achievement_boss_archimonde.jpg",
       "page": "archimonde.html"
     }
   ]
