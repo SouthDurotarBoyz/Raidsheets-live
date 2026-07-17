@@ -118,7 +118,10 @@ Do not imply or assume that adding only `raid.json` is enough for roster-bound a
 
 When writing boss setup fragments, output final player-visible markup only:
 
-- The top assignment block should use `setup-block`, `setup-grid setup-grid-5`, `setup-col`, `setup-col-label`, `setup-line`, and `line-text`.
+- The top assignment block should use `setup-block`, `setup-grid`, `setup-col`, `setup-col-label`, `setup-line`, and `line-text`.
+- Use `setup-grid` as the required setup assignment grid class. Existing density/helper classes such as `setup-grid-4` or `setup-grid-5` may remain on legacy or live fragments when already present.
+- Raid-specific CSS should target `.setup-grid` for shared setup theming instead of only targeting one density helper class.
+- Do not create new raid-specific styling that only works for one setup-grid density class unless the exception is intentional and documented.
 - Prefer `setup-col-label` for column headings. Do not use `setup-heading` in new template examples unless a backward-compatible exception requires it.
 - Add `setup-col-tanks` to the Tanks setup column so tank assignment targets can be styled distinctly.
 - Do not add top assignment/setup prose above the setup grid.
@@ -127,7 +130,7 @@ When writing boss setup fragments, output final player-visible markup only:
 - Top setup assignment rows use arrow formatting (`→`), not colon formatting.
 - The top assignment block should include these standard columns in this order: `Tanks`, `Healers`, `Misdirects`, `Utility`, then `Kicks` only if the boss uses kicks.
 - Treat `Utility` as the standard top-row utility assignment column aligned with `Tanks`, `Healers`, and `Misdirects`.
-- Utility rows should use the visible labels `Elements`, `Recklessness`, and `Tongues`.
+- Utility curse rows may use either short labels (`Elements`, `Recklessness`, `Tongues`) or full labels (`Curse of Elements`, `Curse of Recklessness`, `Curse of Tongues`), but labels must be consistent within a raid.
 - Utility binding keys must be namespaced and registered, such as `<raid-prefix>-core-curse-of-elements`.
 - The top assignment block should not include `Notes` or `Interrupts / Utility`.
 - Notes belong in normal lower content and mechanics areas when needed.
@@ -158,8 +161,9 @@ Standard row patterns:
 - Misdirect rows: `Hunter → Marker Icon Boss/Add Name → Target Tank`.
   - Use `data-bind-group` for hunter assignment groups and `data-target-bind` for target tank names.
   - Use the live core group keys `<raid-prefix>-core-mt-misdirect`, `<raid-prefix>-core-ot-misdirect`, `<raid-prefix>-core-ot-2-misdirect`, and `<raid-prefix>-core-ot-3-misdirect`.
-  - Do not use a leading Hunter Misdirection spell icon in the top setup assignment section.
-- Utility rows: `Elements → Warlock`, `Recklessness → Warlock`, and `Tongues → Warlock`.
+  - Misdirect rows may use the Misdirection icon before the Hunter assignment group when that matches the live raid visual style.
+  - Preserve `data-bind-group` and `data-target-bind`. Do not change misdirect assignment behavior just to change visual row order.
+- Utility rows may use short labels (`Elements → Warlock`, `Recklessness → Warlock`, and `Tongues → Warlock`) or full labels (`Curse of Elements → Warlock`, `Curse of Recklessness → Warlock`, and `Curse of Tongues → Warlock`), but the selected style must be consistent within a raid.
   - Use namespaced `data-bind` keys such as `<raid-prefix>-core-curse-of-elements`, `<raid-prefix>-core-curse-of-recklessness`, and `<raid-prefix>-core-curse-of-tongues`, and register them before relying on roster data.
 - Kick rows: `Kick 1 → Kicker` or `Marker Icon Marker Icon Channeler → Kicker`.
   - Use boss-specific namespaced `data-bind` keys, such as `<raid-prefix>-<boss-id>-kick-1`.
