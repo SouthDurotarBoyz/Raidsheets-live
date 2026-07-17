@@ -29,12 +29,6 @@
     "hyjal-core-magic-dispel": {
       "type": "single"
     },
-    "hyjal-anetheron-infernal-tank": {
-      "type": "single"
-    },
-    "hyjal-azgalor-doom-guard-tank": {
-      "type": "single"
-    },
     "hyjal-archimonde-fear-ward": {
       "type": "single"
     },
@@ -69,18 +63,6 @@
       "type": "list"
     },
     "hyjal-core-banish": {
-      "type": "list"
-    },
-    "hyjal-trash-wave-tanks": {
-      "type": "list"
-    },
-    "hyjal-trash-aoe-cc": {
-      "type": "list"
-    },
-    "hyjal-trash-decurse": {
-      "type": "list"
-    },
-    "hyjal-rage-frost-tomb-healers": {
       "type": "list"
     },
     "hyjal-kazrogal-mana-drain-healers": {

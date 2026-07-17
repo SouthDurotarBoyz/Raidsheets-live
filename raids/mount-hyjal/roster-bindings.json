@@ -55,26 +55,6 @@
       "minCount": 0,
       "defaultLabel": "Banish"
     },
-    "hyjal-trash-wave-tanks": {
-      "defaultCount": 0,
-      "minCount": 0,
-      "defaultLabel": "Tank"
-    },
-    "hyjal-trash-aoe-cc": {
-      "defaultCount": 0,
-      "minCount": 0,
-      "defaultLabel": "AoE CC"
-    },
-    "hyjal-trash-decurse": {
-      "defaultCount": 0,
-      "minCount": 0,
-      "defaultLabel": "Decurser"
-    },
-    "hyjal-rage-frost-tomb-healers": {
-      "defaultCount": 0,
-      "minCount": 0,
-      "defaultLabel": "Healer"
-    },
     "hyjal-kazrogal-mana-drain-healers": {
       "defaultCount": 0,
       "minCount": 0,
@@ -96,8 +76,6 @@
     "hyjal-core-curse-of-tongues": "Warlock",
     "hyjal-core-decurse": "Player",
     "hyjal-core-magic-dispel": "Player",
-    "hyjal-anetheron-infernal-tank": "Infernal tank",
-    "hyjal-azgalor-doom-guard-tank": "Doomguard tank",
     "hyjal-archimonde-fear-ward": "Fear Ward"
   },
   "groupLabels": {
@@ -112,10 +90,6 @@
     "hyjal-core-ot-3-misdirect": "Core Ot 3 Misdirect",
     "hyjal-core-kicks": "Core Kicks",
     "hyjal-core-banish": "Core Banish",
-    "hyjal-trash-wave-tanks": "Trash Wave Tanks",
-    "hyjal-trash-aoe-cc": "Trash Aoe Cc",
-    "hyjal-trash-decurse": "Trash Decurse",
-    "hyjal-rage-frost-tomb-healers": "Rage Frost Tomb Healers",
     "hyjal-kazrogal-mana-drain-healers": "Kazrogal Mana Drain Healers",
     "hyjal-archimonde-tear-clickers": "Archimonde Tear Clickers"
   },
