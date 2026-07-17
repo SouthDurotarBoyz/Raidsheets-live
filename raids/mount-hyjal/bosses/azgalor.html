@@ -1,39 +1,115 @@
 <div class="sheet">
-  <div class="boss-header"><div class="boss-zone">The Battle for Mount Hyjal</div><h1 class="boss-name">Azgalor</h1></div>
-  <div class="setup-block"><div class="setup-grid setup-grid-5">
-    <div class="setup-col setup-col-tanks"><div class="setup-col-label">Tanks</div><div class="setup-line">Main tank → <span class="role unassigned" data-bind="hyjal-core-main-tank" data-default="Main tank">Main tank</span></div><div class="setup-line">Off tank → <span class="role unassigned" data-bind="hyjal-core-off-tank" data-default="Off tank">Off tank</span></div></div>
-    <div class="setup-col"><div class="setup-col-label">Healers</div><div class="setup-line"><span class="role unassigned" data-bind-group="hyjal-core-mt-healers" data-default="MT healers">MT healers</span></div><div class="setup-line"><span class="role unassigned" data-bind-group="hyjal-core-ot-healers" data-default="OT healers">OT healers</span></div><div class="setup-line"><span class="role unassigned" data-bind-group="hyjal-core-ot-2-healers" data-default="OT 2 healers">OT 2 healers</span></div><div class="setup-line"><span class="role unassigned" data-bind-group="hyjal-core-ot-3-healers" data-default="OT 3 healers">OT 3 healers</span></div><div class="setup-line"><span class="role unassigned" data-bind-group="hyjal-core-raid-healers" data-default="Raid healers">Raid healers</span></div></div>
-    <div class="setup-col setup-col-misdirect-wide"><div class="setup-col-label">Misdirects</div><div class="setup-line"><span class="role unassigned" data-bind-group="hyjal-core-mt-misdirect" data-default="Hunter">Hunter</span> → <span class="assignment-target" data-target-bind="hyjal-core-main-tank"></span></div><div class="setup-line"><span class="role unassigned" data-bind-group="hyjal-core-ot-misdirect" data-default="Hunter">Hunter</span> → <span class="assignment-target" data-target-bind="hyjal-core-off-tank"></span></div></div>
-    <div class="setup-col"><div class="setup-col-label">Utility</div><div class="setup-line">Kicks → <span class="role unassigned" data-bind-group="hyjal-core-kicks" data-default="Kickers">Kickers</span></div><div class="setup-line">Decurse → <span class="role unassigned" data-bind="hyjal-core-decurse" data-default="Player">Player</span></div><div class="setup-line">Magic dispel → <span class="role unassigned" data-bind="hyjal-core-magic-dispel" data-default="Player">Player</span></div><div class="setup-line">Doomguard tank → <span class="role unassigned" data-bind="hyjal-azgalor-doom-guard-tank" data-default="Player">Player</span></div></div>
-  </div></div>
+  <div class="boss-header">
+    <div class="boss-zone">The Battle for Mount Hyjal</div>
+    <h1 class="boss-name">Azgalor</h1>
+  </div>
+
+  <div class="setup-block">
+    <div class="setup-grid setup-grid-5">
+      <div class="setup-col setup-col-tanks">
+        <div class="setup-col-label">Tanks</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Main tank → <span class="role unassigned" data-bind="hyjal-core-main-tank" data-default="Main tank">Main tank</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span><span class="line-text">Doomguard tank → <span class="role unassigned" data-bind="hyjal-azgalor-doom-guard-tank" data-default="Doomguard tank">Doomguard tank</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Healers</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="hyjal-core-mt-healers" data-default="MT healers">MT healers</span> → <span class="assignment-target" data-target-bind="hyjal-core-main-tank"></span> <span class="role-label">(MAIN TANK)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="hyjal-core-ot-healers" data-default="Doomguard tank healers">Doomguard tank healers</span> → <span class="assignment-target" data-target-bind="hyjal-azgalor-doom-guard-tank"></span> <span class="role-label">(DOOMGUARD TANK)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healing icon"></span><span class="line-text">Raid healers → <span class="role unassigned" data-bind-group="hyjal-core-raid-healers" data-default="Raid healers">Raid healers</span></span></div>
+      </div>
+      <div class="setup-col setup-col-misdirect-wide">
+        <div class="setup-col-label">Misdirects</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="hyjal-core-mt-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Main tank → <span class="assignment-target" data-target-bind="hyjal-core-main-tank"></span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="hyjal-core-ot-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span> Doomguard tank → <span class="assignment-target" data-target-bind="hyjal-azgalor-doom-guard-tank"></span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Utility</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt="Curse of Elements icon"></span><span class="line-text">Curse of Elements → <span class="role unassigned" data-bind="hyjal-core-curse-of-elements" data-default="Player">Player</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholystrength.jpg" alt="Curse of Recklessness icon"></span><span class="line-text">Curse of Recklessness → <span class="role unassigned" data-bind="hyjal-core-curse-of-recklessness" data-default="Player">Player</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_curseoftounges.jpg" alt="Curse of Tongues icon"></span><span class="line-text">Curse of Tongues → <span class="role unassigned" data-bind="hyjal-core-curse-of-tongues" data-default="Player">Player</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Azgalor Assignments</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span><span class="line-text">Doomguard tank → <span class="role unassigned" data-bind="hyjal-azgalor-doom-guard-tank" data-default="Doomguard tank">Doomguard tank</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_auraofdarkness.jpg" alt="Doom icon"></span><span class="line-text">Doom target → Run to the NPC camp</span></div>
+      </div>
+    </div>
+  </div>
+
   <div class="main-layout">
     <div class="sheet-content">
-      <div class="phase-block">
-        <div class="phase-bar">Assignment focus</div>
-        <div class="mech">
-          <div class="mech-body">
-            <div class="mech-name">Current raid assignments</div>
-            <div class="mech-desc">Use the assignments above for the current raid sheet. Detailed strategy will be filled in by a boss-specific PR.</div>
-          </div>
-        </div>
+      <div class="header-row">
+        <div class="role-pill role-tank">Tanks</div>
+        <div class="role-pill role-healer">Healers</div>
+        <div class="role-pill role-dps">DPS</div>
       </div>
+
       <div class="phase-block">
-        <div class="phase-bar">Raid reminders</div>
-        <div class="mech">
-          <div class="mech-body">
-            <div class="mech-name">Strategy notes pending</div>
-            <div class="mech-desc">Keep these assignments visible during the encounter; final mechanics and positioning notes remain intentionally deferred.</div>
+        <div class="phase-bar">Phase 1 · Doomguard control and movement</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech">
+              <div class="icon"><img src="assets/shared/markers/skull.svg" alt="Main tank"></div>
+              <div class="mech-body"><div class="mech-name">Tank in the Center</div><div class="mech-desc">Main tank keeps Azgalor stable and faced away from the raid.</div></div>
+            </div>
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_summoninfernal.jpg" alt="Doomguard"></div>
+              <div class="mech-body"><div class="mech-name">Doomguard pickup</div><div class="mech-desc">Doomguard tank picks up each Doomguard quickly when Doom resolves.</div></div>
+            </div>
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_rainoffire.jpg" alt="Rain of Fire"></div>
+              <div class="mech-body"><div class="mech-name">Rain of Fire movement</div><div class="mech-desc">Keep boss positioning stable, but move out of Rain of Fire immediately.</div></div>
+            </div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Tank healing"></div>
+              <div class="mech-body"><div class="mech-name">Tank coverage</div><div class="mech-desc">Keep main tank stable through cleave and boss pressure.</div></div>
+            </div>
+            <div class="mech">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_flashheal.jpg" alt="Doomguard tank healing"></div>
+              <div class="mech-body"><div class="mech-name">Doomguard tank coverage</div><div class="mech-desc">Keep dedicated coverage on the Doomguard tank when Doomguards are active.</div></div>
+            </div>
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_impphaseshift.jpg" alt="Silence"></div>
+              <div class="mech-body"><div class="mech-name">Silence recovery</div><div class="mech-desc">Howl of Azgalor silences nearby players. Avoid getting caught when coverage is needed.</div></div>
+            </div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_auraofdarkness.jpg" alt="Doom"></div>
+              <div class="mech-body"><div class="mech-name">Doom target runs out</div><div class="mech-desc">Doom target runs away from the raid toward the NPC camp before Doom resolves.</div></div>
+            </div>
+            <div class="mech">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_dualwield.jpg" alt="Attack Azgalor"></div>
+              <div class="mech-body"><div class="mech-name">Do not chase Doomguards</div><div class="mech-desc">Stay on Azgalor unless assigned otherwise; Doomguards are controlled away from the raid.</div></div>
+            </div>
+            <div class="mech critical">
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_rainoffire.jpg" alt="Rain of Fire"></div>
+              <div class="mech-body"><div class="mech-name">Rain of Fire</div><div class="mech-desc">Move immediately and do not finish casts while standing in Rain of Fire.</div></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
     <aside class="image-sidebar">
       <div class="image-card">
         <div class="image-card-label">Positioning</div>
         <div class="image-placeholder">Positioning image placeholder</div>
         <div class="image-card-caption">Replace with the encounter positioning image when available.</div>
       </div>
+      <div class="reminder-card">
+        <div class="reminder-card-label">Wipe Causes</div>
+        <ul class="reminder-list">
+          <li>Doom target dies in the raid.</li>
+          <li>Doomguard runs through the raid freely.</li>
+          <li>Raid stands in Rain of Fire.</li>
+          <li>Healers are silenced during tank damage.</li>
+        </ul>
+      </div>
     </aside>
   </div>
+
   <div class="sheet-footer">Azgalor · Mount Hyjal · raid sheet</div>
 </div>
