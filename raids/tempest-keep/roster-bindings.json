@@ -55,6 +55,11 @@
       "minCount": 0,
       "defaultLabel": "Banish"
     },
+    "tk-trash-sheep": {
+      "defaultCount": 2,
+      "minCount": 2,
+      "defaultLabel": "Sheep"
+    },
     "tk-void-reaver-orb-soakers": {
       "defaultCount": 0,
       "minCount": 0,
@@ -124,6 +129,7 @@
     "tk-core-ot-3-misdirect": "OT 3 misdirect",
     "tk-core-kicks": "Kicker",
     "tk-core-banish": "Banish",
+    "tk-trash-sheep": "Mage sheep",
     "tk-void-reaver-orb-soakers": "Orb soaker",
     "tk-kaelthas-bow-tanks": "Bow tanks",
     "tk-kaelthas-mind-control-cc": "Mind control CC",
@@ -134,6 +140,42 @@
   },
   "indexAliases": {},
   "derivedBindings": {
+    "tk-trash-triangle-banish": {
+      "type": "group-slot",
+      "group": "tk-core-banish",
+      "index": 0,
+      "fallback": "Warlock"
+    },
+    "tk-trash-diamond-banish": {
+      "type": "group-slot",
+      "group": "tk-core-banish",
+      "index": 1,
+      "fallback": "Warlock"
+    },
+    "tk-trash-square-sheep": {
+      "type": "group-slot",
+      "group": "tk-trash-sheep",
+      "index": 0,
+      "fallback": "Mage"
+    },
+    "tk-trash-moon-sheep": {
+      "type": "group-slot",
+      "group": "tk-trash-sheep",
+      "index": 1,
+      "fallback": "Mage"
+    },
+    "tk-trash-circle-sheep": {
+      "type": "group-slot",
+      "group": "tk-trash-sheep",
+      "index": 2,
+      "fallback": "Mage"
+    },
+    "tk-trash-star-sheep": {
+      "type": "group-slot",
+      "group": "tk-trash-sheep",
+      "index": 3,
+      "fallback": "Mage"
+    },
     "tk-solarian-square-add-kicks": {
       "type": "group-slot-modulo",
       "group": "tk-core-kicks",

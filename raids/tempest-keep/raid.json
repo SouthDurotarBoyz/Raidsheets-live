@@ -6,6 +6,13 @@
   "guidePage": "alar.html",
   "bosses": [
     {
+      "id": "trash",
+      "name": "TK Trash",
+      "shortName": "Trash",
+      "icon": "assets/shared/markers/skull.svg",
+      "page": "tk-trash.html"
+    },
+    {
       "id": "alar",
       "name": "Al'ar",
       "shortName": "Al'ar",
