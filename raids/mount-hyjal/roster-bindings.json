@@ -61,6 +61,38 @@
       "defaultLabel": "Tear clicker"
     }
   },
+  "groupAliases": {
+    "hyjal-rage-raid-healers": [
+      "hyjal-core-ot-healers",
+      "hyjal-core-ot-2-healers",
+      "hyjal-core-ot-3-healers",
+      "hyjal-core-raid-healers"
+    ],
+    "hyjal-anetheron-raid-healers": [
+      "hyjal-core-ot-2-healers",
+      "hyjal-core-ot-3-healers",
+      "hyjal-core-raid-healers"
+    ],
+    "hyjal-kazrogal-raid-healers": [
+      "hyjal-core-ot-healers",
+      "hyjal-core-ot-2-healers",
+      "hyjal-core-ot-3-healers",
+      "hyjal-core-raid-healers"
+    ],
+    "hyjal-azgalor-raid-healers": [
+      "hyjal-core-ot-3-healers",
+      "hyjal-core-raid-healers"
+    ],
+    "hyjal-archimonde-main-tank-healers": [
+      "hyjal-core-mt-healers",
+      "hyjal-core-ot-healers"
+    ],
+    "hyjal-archimonde-raid-healers": [
+      "hyjal-core-ot-2-healers",
+      "hyjal-core-ot-3-healers",
+      "hyjal-core-raid-healers"
+    ]
+  },
   "singleDefaults": {
     "hyjal-core-main-tank": "Main tank",
     "hyjal-core-off-tank": "Off tank",
@@ -85,7 +117,13 @@
     "hyjal-core-ot-3-misdirect": "Core Ot 3 Misdirect",
     "hyjal-core-kicks": "Core Kicks",
     "hyjal-core-banish": "Core Banish",
-    "hyjal-archimonde-tear-clickers": "Archimonde Tear Clickers"
+    "hyjal-archimonde-tear-clickers": "Archimonde Tear Clickers",
+    "hyjal-rage-raid-healers": "Rage Raid Healers",
+    "hyjal-anetheron-raid-healers": "Anetheron Raid Healers",
+    "hyjal-kazrogal-raid-healers": "Kaz'rogal Raid Healers",
+    "hyjal-azgalor-raid-healers": "Azgalor Raid Healers",
+    "hyjal-archimonde-main-tank-healers": "Archimonde Main Tank Healers",
+    "hyjal-archimonde-raid-healers": "Archimonde Raid Healers"
   },
   "derivedBindings": {}
 }
