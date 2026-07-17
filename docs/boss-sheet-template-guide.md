@@ -238,3 +238,37 @@ Confirm:
 - Phase columns align correctly
 - Real sidebar images load, or placeholder cards are used when assets are not available
 - No nav, loader, script, or style markup was added to the boss content file
+
+## New raid registration checklist
+
+A new raid is not fully registered until all of the following exist:
+
+- `raids/<raid-id>/raid.json`
+- Root boss shell pages
+- Boss fragments under `raids/<raid-id>/bosses/`
+- A roster page
+- `raids/<raid-id>/roster-schema.json`
+- `raids/<raid-id>/roster-bindings.json`
+- An `index.html` raid card
+- A `worker/src/index.js` `RAID_CONFIGS` entry
+- Worker tests updated for the new raid
+- Cloudflare Workers Builds deployed from `main` after merge
+
+The Worker rejects session creation for any `raidId` not present in `RAID_CONFIGS`. The Worker entry must include `rosterPage`, `defaultViewPage`, and `bossViewPages`; frontend `raid.json` is not enough for session-backed sharing. Do not add a Worker raid entry until the matching public pages exist.
+
+## Naming decisions before generation
+
+Choose names before generating boss pages because public URLs and binding keys should not be renamed casually after launch. For Hyjal, use:
+
+- Raid id: `mount-hyjal`
+- Binding prefix: `hyjal`
+- Roster page: `hyjal-roster.html`
+- Stylesheet: `css/boss-pages/hyjal.css`
+- Asset folder: `assets/hyjal/`
+- Raid folder: `raids/mount-hyjal/`
+
+## Roster page source of truth
+
+`templates/raid-roster-template.html` is local-only unless it is explicitly upgraded. For a new session-backed raid, copy the newest live session-backed roster page, currently `tk-roster.html` or `ssc-roster.html`, and adapt the raid id, schema path, guide page, `FIELD_META`, and `ROSTER_LAYOUT`.
+
+Do not use `templates/raid-roster-template.html` for a raid that must support shared session links on day one. If the template is used, the PR must explicitly say the roster is local-only.

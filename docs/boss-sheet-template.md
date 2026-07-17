@@ -1,3 +1,7 @@
+# Superseded boss sheet template standard
+
+This document is retained for historical context. For current boss shell, fragment, roster binding, trash-page, derived-binding, and new-raid registration guidance, use docs/boss-sheet-template-guide.md.
+
 # Boss sheet template standard
 
 This document defines the reusable boss-sheet template standard for future raid, boss, and trash sheets. The current visual and structural source pattern comes from the newer SSC sheet format, but the rules below are generic and should be reusable for Gruul, SSC, TK, and future raids.
