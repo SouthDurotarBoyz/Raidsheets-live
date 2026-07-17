@@ -1,6 +1,20 @@
 (function() {
   'use strict';
 
+  var bossTabNavigationPending = false;
+
+  function isModifiedNavigation(event) {
+    return event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey;
+  }
+
+  function lockBossTabs() {
+    var bossTabs = document.querySelectorAll('[data-boss-tabs] .boss-tab');
+    for (var i = 0; i < bossTabs.length; i += 1) {
+      bossTabs[i].setAttribute('aria-disabled', 'true');
+      bossTabs[i].classList.add('boss-tab-pending');
+    }
+  }
+
   function getParams() {
     return new URLSearchParams(window.location.search || '');
   }
@@ -31,6 +45,17 @@
     var page = sanitizePage(boss.page);
     link.href = preservedQueryString ? (page + '?' + preservedQueryString) : page;
     if (isCurrent) link.setAttribute('aria-current', 'page');
+
+    link.addEventListener('click', function(event) {
+      if (isModifiedNavigation(event)) return;
+      if (bossTabNavigationPending) {
+        event.preventDefault();
+        return;
+      }
+
+      bossTabNavigationPending = true;
+      lockBossTabs();
+    });
 
     var icon = document.createElement('img');
     icon.className = 'boss-tab-icon';
