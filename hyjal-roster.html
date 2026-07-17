@@ -358,7 +358,7 @@ window.RaidConfig = { raidId: 'mount-hyjal' };
 
   async function loadRosterSchema() {
     const response = await fetch(ROSTER_SCHEMA_PATH, { cache: 'no-cache' });
-    if (!response.ok) throw new Error('Failed to load Tempest Keep roster schema');
+    if (!response.ok) throw new Error('Failed to load Mount Hyjal roster schema');
     const schema = await response.json();
     return schema && schema.fields ? schema.fields : {};
   }
@@ -786,7 +786,7 @@ window.RaidConfig = { raidId: 'mount-hyjal' };
 
     const clearBtn = document.getElementById('clear-roster');
     if (clearBtn) clearBtn.addEventListener('click', function() {
-      if (!confirm('Clear all Tempest Keep assignments?')) return;
+      if (!confirm('Clear all Mount Hyjal assignments?')) return;
       state = { groups: {}, singles: {}, meta: {} };
       normalizeState();
       clearSavedState().then(function() { return saveState(); }).finally(function() {
@@ -802,13 +802,13 @@ window.RaidConfig = { raidId: 'mount-hyjal' };
     try {
       rosterSchema.fields = await loadRosterSchema();
     } catch (error) {
-      document.getElementById('load-notice').textContent = 'Unable to load Tempest Keep roster schema.';
+      document.getElementById('load-notice').textContent = 'Unable to load Mount Hyjal roster schema.';
       rosterSchema.fields = {};
     }
     try {
       state = await loadState();
     } catch (error) {
-      document.getElementById('load-notice').textContent = 'Unable to load the saved Tempest Keep roster. Starting from an empty roster.';
+      document.getElementById('load-notice').textContent = 'Unable to load the saved Mount Hyjal roster. Starting from an empty roster.';
       state = { groups: {}, singles: {}, meta: {} };
     }
     normalizeState();
