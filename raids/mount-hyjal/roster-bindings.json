@@ -54,11 +54,6 @@
       "defaultCount": 0,
       "minCount": 0,
       "defaultLabel": "Banish"
-    },
-    "hyjal-archimonde-tear-clickers": {
-      "defaultCount": 0,
-      "minCount": 0,
-      "defaultLabel": "Tear clicker"
     }
   },
   "groupAliases": {
@@ -117,7 +112,6 @@
     "hyjal-core-ot-3-misdirect": "Core Ot 3 Misdirect",
     "hyjal-core-kicks": "Core Kicks",
     "hyjal-core-banish": "Core Banish",
-    "hyjal-archimonde-tear-clickers": "Archimonde Tear Clickers",
     "hyjal-rage-raid-healers": "Rage Raid Healers",
     "hyjal-anetheron-raid-healers": "Anetheron Raid Healers",
     "hyjal-kazrogal-raid-healers": "Kaz'rogal Raid Healers",
