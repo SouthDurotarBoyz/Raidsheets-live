@@ -1,11 +1,121 @@
 <div class="sheet">
-  <div class="boss-header"><div class="boss-zone">The Battle for Mount Hyjal</div><h1 class="boss-name">Rage Winterchill</h1></div>
-  <div class="setup-block"><div class="setup-grid setup-grid-5">
-    <div class="setup-col"><div class="setup-col-label">Tanks</div><div class="setup-line">Main tank → <span class="role unassigned" data-bind="hyjal-core-main-tank" data-default="Main tank">Main tank</span></div><div class="setup-line">Off tank → <span class="role unassigned" data-bind="hyjal-core-off-tank" data-default="Off tank">Off tank</span></div></div>
-    <div class="setup-col"><div class="setup-col-label">Healers</div><div class="setup-line"><span class="role unassigned" data-bind-group="hyjal-core-mt-healers" data-default="MT healers">MT healers</span></div><div class="setup-line"><span class="role unassigned" data-bind-group="hyjal-core-ot-healers" data-default="OT healers">OT healers</span></div><div class="setup-line"><span class="role unassigned" data-bind-group="hyjal-core-ot-2-healers" data-default="OT 2 healers">OT 2 healers</span></div><div class="setup-line"><span class="role unassigned" data-bind-group="hyjal-core-ot-3-healers" data-default="OT 3 healers">OT 3 healers</span></div><div class="setup-line"><span class="role unassigned" data-bind-group="hyjal-core-raid-healers" data-default="Raid healers">Raid healers</span></div></div>
-    <div class="setup-col setup-col-misdirect-wide"><div class="setup-col-label">Misdirects</div><div class="setup-line"><span class="role unassigned" data-bind-group="hyjal-core-mt-misdirect" data-default="Hunter">Hunter</span> → <span class="assignment-target" data-target-bind="hyjal-core-main-tank"></span></div><div class="setup-line"><span class="role unassigned" data-bind-group="hyjal-core-ot-misdirect" data-default="Hunter">Hunter</span> → <span class="assignment-target" data-target-bind="hyjal-core-off-tank"></span></div></div>
-    <div class="setup-col"><div class="setup-col-label">Utility</div><div class="setup-line">Kicks → <span class="role unassigned" data-bind-group="hyjal-core-kicks" data-default="Kickers">Kickers</span></div><div class="setup-line">Decurse → <span class="role unassigned" data-bind="hyjal-core-decurse" data-default="Player">Player</span></div><div class="setup-line">Magic dispel → <span class="role unassigned" data-bind="hyjal-core-magic-dispel" data-default="Player">Player</span></div><div class="setup-line">Frost Tomb healers → <span class="role unassigned" data-bind-group="hyjal-rage-frost-tomb-healers" data-default="Player">Player</span></div></div>
-  </div></div>
-  <div class="main-layout"><div class="sheet-content"><div class="phase-block"><div class="phase-bar">Strategy foundation</div><div class="mech"><div class="mech-body"><div class="mech-name">Boss guide coming later</div><div class="mech-desc">This assignment-ready foundation will be filled in by a later boss-specific strategy PR.</div></div></div></div></div><aside class="image-sidebar"><div class="image-placeholder">Encounter image placeholder</div><div class="image-placeholder">Positioning diagram placeholder</div></aside></div>
+  <div class="boss-header">
+    <div class="boss-zone">The Battle for Mount Hyjal</div>
+    <h1 class="boss-name">Rage Winterchill</h1>
+  </div>
+
+  <div class="setup-block">
+    <div class="setup-grid setup-grid-5">
+      <div class="setup-col setup-col-tanks">
+        <div class="setup-col-label">Tanks</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Main tank → <span class="role unassigned" data-bind="hyjal-core-main-tank" data-default="Main tank">Main tank</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span><span class="line-text">Off tank → <span class="role unassigned" data-bind="hyjal-core-off-tank" data-default="Off tank">Off tank</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Healers</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="hyjal-core-mt-healers" data-default="MT healers">MT healers</span> → <span class="assignment-target" data-target-bind="hyjal-core-main-tank"></span> <span class="role-label">(MAIN TANK)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="hyjal-core-ot-healers" data-default="OT healers">OT healers</span> → <span class="assignment-target" data-target-bind="hyjal-core-off-tank"></span> <span class="role-label">(OFF TANK)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healing icon"></span><span class="line-text">Raid healers → <span class="role unassigned" data-bind-group="hyjal-core-raid-healers" data-default="Raid healers">Raid healers</span></span></div>
+      </div>
+      <div class="setup-col setup-col-misdirect-wide">
+        <div class="setup-col-label">Misdirects</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="hyjal-core-mt-misdirect" data-default="Hunter">Hunter</span> → Main tank → <span class="assignment-target" data-target-bind="hyjal-core-main-tank"></span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="hyjal-core-ot-misdirect" data-default="Hunter">Hunter</span> → Off tank → <span class="assignment-target" data-target-bind="hyjal-core-off-tank"></span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Utility</div>
+        <div class="setup-line"><span class="line-text">Decurse → <span class="role unassigned" data-bind="hyjal-core-decurse" data-default="Player">Player</span></span></div>
+        <div class="setup-line"><span class="line-text">Magic dispel → <span class="role unassigned" data-bind="hyjal-core-magic-dispel" data-default="Player">Player</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Rage Assignments</div>
+        <div class="setup-line"><span class="line-text">Icebolt healers → <span class="role unassigned" data-bind-group="hyjal-rage-frost-tomb-healers" data-default="Icebolt healers">Icebolt healers</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-layout">
+    <div class="sheet-content">
+      <div class="header-row">
+        <div class="role-pill role-tank">Tanks</div>
+        <div class="role-pill role-healer">Healers</div>
+        <div class="role-pill role-dps">DPS</div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Phase 1 · Spread and react</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech">
+              <div class="mech-body">
+                <div class="mech-name">Hold Rage steady</div>
+                <div class="mech-desc">Set the boss in the center and avoid unnecessary movement. The off tank stays ready to stabilize Rage if the main tank is stunned by Icebolt.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical">
+              <div class="mech-body">
+                <div class="mech-name">React to Icebolt</div>
+                <div class="mech-desc">Assigned Icebolt healers immediately focus the stunned target through its heavy damage. Keep tank and raid coverage while everyone remains spread.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical">
+              <div class="mech-body">
+                <div class="mech-name">Spread and move</div>
+                <div class="mech-desc">Spread around the boss. Use a stun break or PvP trinket if Icebolt targets you, and leave Death &amp; Decay immediately.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Critical mechanics</div>
+        <div class="mech critical">
+          <div class="mech-body">
+            <div class="mech-name">Icebolt</div>
+            <div class="mech-desc">Stuns one player and deals heavy damage over a short duration. Assigned healers focus the target; stun breaks and PvP trinkets can end the stun early.</div>
+          </div>
+        </div>
+        <div class="mech critical">
+          <div class="mech-body">
+            <div class="mech-name">Death &amp; Decay</div>
+            <div class="mech-desc">Creates a large damaging ground effect. Everyone inside moves out immediately.</div>
+          </div>
+        </div>
+        <div class="mech">
+          <div class="mech-body">
+            <div class="mech-name">Frost Nova</div>
+            <div class="mech-desc">Roots players within 20 yards. It can be dispelled, but prioritize removing it when a rooted player must escape Death &amp; Decay.</div>
+          </div>
+        </div>
+        <div class="mech">
+          <div class="mech-body">
+            <div class="mech-name">Frost Armor</div>
+            <div class="mech-desc">Slows attackers who strike Rage. It can be dispelled, but is not a primary assignment.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="image-sidebar">
+      <div class="image-card">
+        <div class="image-card-label">Positioning image placeholder</div>
+        <div class="image-placeholder">Replace with Rage Winterchill positioning image when available.</div>
+      </div>
+      <div class="reminder-card">
+        <div class="reminder-card-label">Quick calls</div>
+        <ul class="reminder-list">
+          <li>Icebolt: heal target.</li>
+          <li>Death &amp; Decay: move.</li>
+          <li>Frost Nova: dispel only if needed.</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
   <div class="sheet-footer">Rage Winterchill · Mount Hyjal · raid sheet</div>
 </div>
