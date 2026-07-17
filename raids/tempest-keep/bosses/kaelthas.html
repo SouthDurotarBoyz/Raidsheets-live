@@ -8,7 +8,6 @@
     <div class="setup-grid setup-grid-5">
       <div class="setup-col">
         <div class="setup-heading setup-col-label">Tanks</div>
-        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Thaladred tank → <span class="role unassigned" data-bind="tk-kaelthas-thaladred-tank" data-default="Thaladred tank">Thaladred tank</span></span></div>
         <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span><span class="line-text">Sanguinar tank → <span class="role unassigned" data-bind="tk-kaelthas-sanguinar-tank" data-default="Sanguinar tank">Sanguinar tank</span></span></div>
         <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span><span class="line-text">Capernian tank → <span class="role unassigned" data-bind="tk-kaelthas-capernian-tank" data-default="Capernian tank">Capernian tank</span></span></div>
         <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/diamond.svg" alt="Diamond"></span><span class="line-text">Telonicus tank → <span class="role unassigned" data-bind="tk-kaelthas-telonicus-tank" data-default="Telonicus tank">Telonicus tank</span></span></div>
@@ -34,12 +33,9 @@
       </div>
       <div class="setup-col">
         <div class="setup-heading setup-col-label">Utility</div>
-        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_sword_2h_blood_c_01.jpg" alt="Weapon icon"></span><span class="line-text">Weapon tanks → <span class="role unassigned" data-bind-group="tk-kaelthas-weapon-tanks" data-default="Weapon tanks">Weapon tanks</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_weapon_bow_19.jpg" alt="Bow icon"></span><span class="line-text">Bow tanks → <span class="role unassigned" data-bind-group="tk-kaelthas-bow-tanks" data-default="Bow tanks">Bow tanks</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_axe_09.jpg" alt="Axe icon"></span><span class="line-text">Axe tank → <span class="role unassigned" data-bind="tk-kaelthas-axe-tank" data-default="Axe tank">Axe tank</span></span></div>
         <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadowworddominate.jpg" alt="Mind control icon"></span><span class="line-text">Mind control CC → <span class="role unassigned" data-bind-group="tk-kaelthas-mind-control-cc" data-default="Mind control CC">Mind control CC</span></span></div>
-        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_staff_13.jpg" alt="Legendary staff icon"></span><span class="line-text">Legendary staff → <span class="role unassigned" data-bind="tk-kaelthas-legendary-staff" data-default="Staff">Staff</span></span></div>
-        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_weapon_shortblade_15.jpg" alt="Legendary dagger icon"></span><span class="line-text">Legendary dagger → <span class="role unassigned" data-bind="tk-kaelthas-legendary-dagger" data-default="Dagger">Dagger</span></span></div>
-        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_weapon_bow_05.jpg" alt="Legendary bow icon"></span><span class="line-text">Legendary bow → <span class="role unassigned" data-bind="tk-kaelthas-legendary-bow" data-default="Bow">Bow</span></span></div>
-        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_shield_05.jpg" alt="Legendary shield icon"></span><span class="line-text">Legendary shield → <span class="role unassigned" data-bind="tk-kaelthas-legendary-shield" data-default="Shield">Shield</span></span></div>
       </div>
     </div>
   </div>
@@ -60,7 +56,7 @@
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_defensivestance.jpg" alt="Advisor tank assignments"></div>
               <div class="mech-body">
                 <div class="mech-name">Control assigned advisors</div>
-                <div class="mech-desc">Advisors activate one at a time. <span class="assignment-target" data-target-bind="tk-kaelthas-thaladred-tank"></span>, <span class="assignment-target" data-target-bind="tk-kaelthas-sanguinar-tank"></span>, <span class="assignment-target" data-target-bind="tk-kaelthas-capernian-tank"></span>, and <span class="assignment-target" data-target-bind="tk-kaelthas-telonicus-tank"></span> keep each advisor in the planned position.</div>
+                <div class="mech-desc">Advisors activate one at a time. <span class="assignment-target" data-target-bind="tk-kaelthas-sanguinar-tank"></span>, <span class="assignment-target" data-target-bind="tk-kaelthas-capernian-tank"></span>, and <span class="assignment-target" data-target-bind="tk-kaelthas-telonicus-tank"></span> keep their advisors in the planned positions.</div>
               </div>
             </div>
             <div class="mech critical">
@@ -114,7 +110,7 @@
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_sword_2h_blood_c_01.jpg" alt="Weapon pickup"></div>
               <div class="mech-body">
                 <div class="mech-name">Gather weapons fast</div>
-                <div class="mech-desc">Weapons spawn together. <span class="role unassigned" data-bind-group="tk-kaelthas-weapon-tanks" data-default="Weapon tanks">Weapon tanks</span> gather assigned weapons quickly and keep them stacked for clean killing.</div>
+                <div class="mech-desc">Weapons spawn together. <span class="role unassigned" data-bind-group="tk-kaelthas-bow-tanks" data-default="Bow tanks">Bow tanks</span> gather the bows while <span class="assignment-target" data-target-bind="tk-kaelthas-axe-tank"></span> controls the axe.</div>
               </div>
             </div>
             <div class="mech">
@@ -134,10 +130,10 @@
               </div>
             </div>
             <div class="mech">
-              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_staff_13.jpg" alt="Legendary staff"></div>
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_staff_13.jpg" alt="Weapon pickups"></div>
               <div class="mech-body">
-                <div class="mech-name">Protect legendary pickups</div>
-                <div class="mech-desc"><span class="role unassigned" data-bind="tk-kaelthas-legendary-staff" data-default="Staff">Staff</span> and <span class="role unassigned" data-bind="tk-kaelthas-legendary-shield" data-default="Shield">Shield</span> assignments matter for the next phases; keep assigned players alive while they collect weapons.</div>
+                <div class="mech-name">Protect weapon pickups</div>
+                <div class="mech-desc">Keep the raid stable while players collect the weapons they need for the next phases.</div>
               </div>
             </div>
           </div>
@@ -146,14 +142,14 @@
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_weapon_shortblade_15.jpg" alt="Legendary weapons"></div>
               <div class="mech-body">
                 <div class="mech-name">Kill weapons cleanly</div>
-                <div class="mech-desc">Raid kills weapons cleanly, then assigned players pick up legendary staff, dagger, bow, and shield after they die.</div>
+                <div class="mech-desc">Raid kills weapons cleanly, then players collect the weapons their roles need before the next transition.</div>
               </div>
             </div>
             <div class="mech">
-              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_weapon_bow_05.jpg" alt="Legendary bow and dagger"></div>
+              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_weapon_bow_05.jpg" alt="Weapon collection"></div>
               <div class="mech-body">
-                <div class="mech-name">Confirm your legendary</div>
-                <div class="mech-desc"><span class="role unassigned" data-bind="tk-kaelthas-legendary-dagger" data-default="Dagger">Dagger</span> and <span class="role unassigned" data-bind="tk-kaelthas-legendary-bow" data-default="Bow">Bow</span> users announce pickups before the raid transitions into advisor control.</div>
+                <div class="mech-name">Confirm weapon collection</div>
+                <div class="mech-desc">Players announce missed weapon pickups before the raid transitions into advisor control.</div>
               </div>
             </div>
           </div>

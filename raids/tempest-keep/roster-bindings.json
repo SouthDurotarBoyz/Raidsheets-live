@@ -60,10 +60,10 @@
       "minCount": 0,
       "defaultLabel": "Orb soaker"
     },
-    "tk-kaelthas-weapon-tanks": {
+    "tk-kaelthas-bow-tanks": {
       "defaultCount": 0,
       "minCount": 0,
-      "defaultLabel": "Weapon tank"
+      "defaultLabel": "Bow tank"
     },
     "tk-kaelthas-mind-control-cc": {
       "defaultCount": 0,
@@ -84,15 +84,11 @@
     "tk-alar-platform-1-tank": "Platform 1 tank",
     "tk-alar-platform-2-tank": "Platform 2 tank",
     "tk-alar-add-tank": "Add tank",
-    "tk-kaelthas-thaladred-tank": "Thaladred tank",
     "tk-kaelthas-sanguinar-tank": "Sanguinar tank",
     "tk-kaelthas-capernian-tank": "Capernian tank",
     "tk-kaelthas-telonicus-tank": "Telonicus tank",
-    "tk-kaelthas-phoenix-tank": "Phoenix tank",
-    "tk-kaelthas-legendary-staff": "Legendary staff",
-    "tk-kaelthas-legendary-dagger": "Legendary dagger",
-    "tk-kaelthas-legendary-bow": "Legendary bow",
-    "tk-kaelthas-legendary-shield": "Legendary shield"
+    "tk-kaelthas-axe-tank": "Axe tank",
+    "tk-kaelthas-phoenix-tank": "Phoenix tank"
   },
   "singleAliases": {},
   "groupAliases": {
@@ -128,7 +124,7 @@
     "tk-core-kicks": "Kicker",
     "tk-core-banish": "Banish",
     "tk-void-reaver-orb-soakers": "Orb soaker",
-    "tk-kaelthas-weapon-tanks": "Weapon tank",
+    "tk-kaelthas-bow-tanks": "Bow tanks",
     "tk-kaelthas-mind-control-cc": "Mind control CC",
     "tk-alar-raid-healers": "Raid healers",
     "tk-solarian-raid-healers": "Raid healers",
