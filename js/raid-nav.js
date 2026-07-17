@@ -14,8 +14,7 @@
     var allowedParams = {
       code: true,
       session: true,
-      edit: true,
-      key: true
+      edit: true
     };
 
     params.forEach(function(value, key) {
