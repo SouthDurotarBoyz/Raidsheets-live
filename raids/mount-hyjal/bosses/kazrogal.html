@@ -13,7 +13,6 @@
       <div class="setup-col">
         <div class="setup-col-label">Healers</div>
         <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healer icon"></span><span class="line-text"><span class="role unassigned" data-bind-group="hyjal-core-mt-healers" data-default="MT healers">MT healers</span> → <span class="assignment-target" data-target-bind="hyjal-core-main-tank"></span> <span class="role-label">(MAIN TANK)</span></span></div>
-        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_flashheal.jpg" alt="Mana-drain healing icon"></span><span class="line-text">Mana-drain healers → <span class="role unassigned" data-bind-group="hyjal-kazrogal-mana-drain-healers" data-default="Mana-drain healers">Mana-drain healers</span></span></div>
         <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healing icon"></span><span class="line-text">Raid healers → <span class="role unassigned" data-bind-group="hyjal-core-raid-healers" data-default="Raid healers">Raid healers</span></span></div>
       </div>
       <div class="setup-col setup-col-misdirect-wide">
@@ -22,15 +21,8 @@
       </div>
       <div class="setup-col">
         <div class="setup-col-label">Utility</div>
-        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_dispelmagic.jpg" alt="Dispel Magic icon"></span><span class="line-text">Magic dispel → <span class="role unassigned" data-bind="hyjal-core-magic-dispel" data-default="Player">Player</span> <span class="role-label">(CRIPPLE)</span></span></div>
         <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt="Curse of Elements icon"></span><span class="line-text">Curse of Elements → <span class="role unassigned" data-bind="hyjal-core-curse-of-elements" data-default="Player">Player</span></span></div>
         <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholystrength.jpg" alt="Curse of Recklessness icon"></span><span class="line-text">Curse of Recklessness → <span class="role unassigned" data-bind="hyjal-core-curse-of-recklessness" data-default="Player">Player</span></span></div>
-        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_curseoftounges.jpg" alt="Curse of Tongues icon"></span><span class="line-text">Curse of Tongues → <span class="role unassigned" data-bind="hyjal-core-curse-of-tongues" data-default="Player">Player</span></span></div>
-      </div>
-      <div class="setup-col">
-        <div class="setup-col-label">Kaz'rogal Assignments</div>
-        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_manaburn.jpg" alt="Mana-drain healing icon"></span><span class="line-text">Mana-drain healers → <span class="role unassigned" data-bind-group="hyjal-kazrogal-mana-drain-healers" data-default="Mana-drain healers">Mana-drain healers</span></span></div>
-        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_creature_cursed_02.jpg" alt="Mark warning icon"></span><span class="line-text">Mark warning → Check mana before it resolves</span></div>
       </div>
     </div>
   </div>
@@ -49,25 +41,17 @@
           <div class="col col-tank">
             <div class="mech">
               <div class="icon"><img src="assets/shared/markers/skull.svg" alt="Main tank"></div>
-              <div class="mech-body"><div class="mech-name">Tank in the Center</div><div class="mech-desc">Main tank keeps Kaz'rogal in the center and avoids unnecessary movement.</div></div>
+              <div class="mech-body"><div class="mech-name">Tank in front the Keep</div><div class="mech-desc">Main tank keeps Kaz'rogal faced away from the raid and avoids unnecessary movement.</div></div>
             </div>
             <div class="mech critical">
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_cleave.jpg" alt="Cleave"></div>
               <div class="mech-body"><div class="mech-name">Cleave and War Stomp</div><div class="mech-desc">Keep the boss faced away from the raid. War Stomp creates burst windows where healer reaction matters.</div></div>
-            </div>
-            <div class="mech">
-              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_cripple.jpg" alt="Cripple"></div>
-              <div class="mech-body"><div class="mech-name">Cripple cleanup</div><div class="mech-desc">Call for dispel support if Cripple creates movement or positioning issues.</div></div>
             </div>
           </div>
           <div class="col col-healer">
             <div class="mech critical">
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_manaburn.jpg" alt="Mark of Kaz'rogal"></div>
               <div class="mech-body"><div class="mech-name">Mark healing</div><div class="mech-desc">Watch mana users affected by Mark of Kaz'rogal and stabilize players before the explosion risk becomes lethal.</div></div>
-            </div>
-            <div class="mech">
-              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_flashheal.jpg" alt="Mana-drain healing"></div>
-              <div class="mech-body"><div class="mech-name">Mana-drain coverage</div><div class="mech-desc">Assigned mana-drain healers watch low-mana players and help cover damage during Mark cycles.</div></div>
             </div>
             <div class="mech">
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warstomp.jpg" alt="War Stomp"></div>
@@ -77,15 +61,11 @@
           <div class="col col-dps">
             <div class="mech">
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_rogue_sprint.jpg" alt="Spread"></div>
-              <div class="mech-body"><div class="mech-name">Spread Out</div><div class="mech-desc">Spread around Kaz'rogal to reduce stacked damage and make Mark explosions easier to control.</div></div>
+              <div class="mech-body"><div class="mech-name">Spread Out</div><div class="mech-desc">Spread around Kaz'rogal to reduce stacked damage and make explosions easier to control.</div></div>
             </div>
             <div class="mech critical">
               <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_potion_76.jpg" alt="Mana"></div>
-              <div class="mech-body"><div class="mech-name">Watch your mana</div><div class="mech-desc">Mana users must react to Mark of Kaz'rogal warnings and avoid being empty when the mark resolves.</div></div>
-            </div>
-            <div class="mech">
-              <div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_dualwield.jpg" alt="Boss damage"></div>
-              <div class="mech-body"><div class="mech-name">Focus Boss</div><div class="mech-desc">Maintain boss damage while surviving Mark and movement checks.</div></div>
+              <div class="mech-body"><div class="mech-name">Watch your mana</div><div class="mech-desc">Mana users must react to Mark of Kaz'rogal warnings and avoid being low on mana.</div></div>
             </div>
           </div>
         </div>
@@ -104,6 +84,7 @@
           <li>Mark of Kaz'rogal drains mana unchecked.</li>
           <li>Mana users explode in the raid.</li>
           <li>Tank or raid is not recovered after War Stomp.</li>
+          <li>Cleave kills tank or raid.</li>
         </ul>
       </div>
     </aside>
