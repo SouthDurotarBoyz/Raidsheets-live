@@ -30,6 +30,7 @@
     "tk-kaelthas-telonicus-tank": { "type": "single" },
     "tk-kaelthas-bow-tanks": { "type": "list" },
     "tk-kaelthas-axe-tank": { "type": "single" },
+    "tk-kaelthas-weapons-tank": { "type": "single" },
     "tk-kaelthas-phoenix-tank": { "type": "single" },
     "tk-kaelthas-mind-control-cc": { "type": "list" }
   }
