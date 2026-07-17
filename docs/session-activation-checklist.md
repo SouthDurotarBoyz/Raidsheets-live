@@ -44,6 +44,7 @@ https://api.raidsheets.com
 - [ ] `POST /api/sessions` with `raidId: "gruuls-lair"` succeeds.
 - [ ] `POST /api/sessions` with `raidId: "serpentshrine-cavern"` succeeds.
 - [ ] `POST /api/sessions` with `raidId: "tempest-keep"` succeeds.
+- [ ] `POST /api/sessions` with `raidId: "mount-hyjal"` succeeds.
 - [ ] `POST /api/sessions` with an invalid `raidId` returns `400`.
 
 ### Returned URL checks
@@ -77,6 +78,17 @@ For each created session, verify the response returns the correct `editUrl`, `vi
 - [ ] `viewUrls.solarian` points to `solarian.html?session=...`.
 - [ ] `viewUrls.kaelthas` points to `kaelthas.html?session=...`.
 
+#### Mount Hyjal (`mount-hyjal`)
+
+- [ ] `editUrl` points to `hyjal-roster.html?session=...&edit=...`.
+- [ ] `viewUrl` points to `rage-winterchill.html?session=...`.
+- [ ] `viewUrls.trash` points to `hyjal-trash.html?session=...`.
+- [ ] `viewUrls["rage-winterchill"]` points to `rage-winterchill.html?session=...`.
+- [ ] `viewUrls.anetheron` points to `anetheron.html?session=...`.
+- [ ] `viewUrls.kazrogal` points to `kazrogal.html?session=...`.
+- [ ] `viewUrls.azgalor` points to `azgalor.html?session=...`.
+- [ ] `viewUrls.archimonde` points to `archimonde.html?session=...`.
+
 ### Token and read safety checks
 
 - [ ] The raw edit token is present only inside `editUrl`.
@@ -100,7 +112,7 @@ Post-deploy smoke should explicitly verify that `?key=` returns `401` and `?edit
 
 ## Shared session page checks
 
-The current shared session shape supports Gruul's Lair, Serpentshrine Cavern, and Tempest Keep. These checks verify that each raid remains wired to the shared contract.
+The current shared session shape supports Gruul's Lair, Serpentshrine Cavern, Tempest Keep, and Mount Hyjal. These checks verify that each raid remains wired to the shared contract.
 
 ### Local roster mode
 
@@ -125,6 +137,13 @@ The current shared session shape supports Gruul's Lair, Serpentshrine Cavern, an
 - [ ] Open `tk-roster.html?session=...&edit=...` and save roster assignments.
 - [ ] Open `alar.html?session=...` and verify saved assignments load.
 - [ ] Open at least one more TK boss page with `?session=...` and verify saved assignments load.
+
+### Mount Hyjal
+
+- [ ] Open `hyjal-roster.html?session=...&edit=...` and save roster assignments.
+- [ ] Open `rage-winterchill.html?session=...` and verify saved assignments load.
+- [ ] Open `hyjal-trash.html?session=...` and verify saved assignments load.
+- [ ] Open at least one more Hyjal boss page with `?session=...` and verify saved assignments load.
 
 ## Current decision gates
 
