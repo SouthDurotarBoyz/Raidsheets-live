@@ -25,14 +25,49 @@
         container.innerHTML = html;
         prepareZoomableImages(container);
         return container;
+      })
+      .catch(function() {
+        renderLoadFallback(container);
+        return container;
       });
+  }
+
+  function renderLoadFallback(container) {
+    container.innerHTML =
+      '<div class="sheet boss-sheet-load-fallback">' +
+        '<div class="boss-header">' +
+          '<div class="boss-zone">Raid sheet</div>' +
+          '<h1 class="boss-name">Sheet failed to load</h1>' +
+        '</div>' +
+        '<div class="setup-block">' +
+          '<p>This sheet failed to load.</p>' +
+          '<button type="button" class="btn">Retry</button>' +
+        '</div>' +
+      '</div>';
+
+    var retryButton = container.querySelector('.boss-sheet-load-fallback .btn');
+    retryButton.addEventListener('click', function() {
+      loadContainer(container).then(function() {
+        if (container.querySelector('.boss-sheet-load-fallback')) return;
+        if (window.RaidRosterBindings && window.RaidRosterBindings.init) {
+          window.RaidRosterBindings.init();
+        }
+      });
+    });
   }
 
   function loadAll() {
     initBossImageLightbox();
 
     var containers = Array.prototype.slice.call(document.querySelectorAll('[data-boss-sheet-container]'));
-    return Promise.all(containers.map(loadContainer));
+    return Promise.all(containers.map(function(container) {
+      return loadContainer(container).catch(function() {
+        renderLoadFallback(container);
+        return container;
+      });
+    })).catch(function() {
+      return containers;
+    });
   }
 
   function prepareZoomableImages(root) {
