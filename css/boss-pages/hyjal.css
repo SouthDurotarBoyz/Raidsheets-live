@@ -2,23 +2,24 @@
 
 :root {
   --hyjal-page-bg: #071510;
-  --hyjal-sheet-bg: #292d29;
-  --hyjal-panel-bg: #343a34;
-  --hyjal-panel-bg-soft: #202720;
-  --hyjal-border: #536052;
-  --hyjal-border-soft: rgba(218, 229, 211, 0.16);
-  --hyjal-text: #f1efe8;
-  --hyjal-text-soft: #d3d7ce;
-  --hyjal-muted: #b4bcae;
-  --hyjal-assigned: #e4c88e;
-  --hyjal-tank-bg: #49371f;
-  --hyjal-tank-text: #f3d39c;
-  --hyjal-healer-bg: #263a20;
-  --hyjal-healer-text: #cbe7b0;
-  --hyjal-dps-bg: #482626;
-  --hyjal-dps-text: #f0b4b4;
-  --hyjal-phase-bg: #29452f;
-  --hyjal-phase-text: #cde6c3;
+  --hyjal-sheet-bg: #2B2B2B;
+  --hyjal-panel-bg: #383838;
+  --hyjal-panel-bg-soft: #242424;
+  --hyjal-border: #55524A;
+  --hyjal-border-soft: rgba(255, 255, 255, 0.14);
+  --hyjal-text: #F1EFE8;
+  --hyjal-text-soft: #D3D1C7;
+  --hyjal-muted: #B8B4A8;
+  --hyjal-assigned: #F3D39C;
+
+  --hyjal-tank-bg: #4A351C;
+  --hyjal-tank-text: #F3D39C;
+  --hyjal-healer-bg: #263A20;
+  --hyjal-healer-text: #CBE7B0;
+  --hyjal-dps-bg: #4A2424;
+  --hyjal-dps-text: #F0B4B4;
+  --hyjal-phase-bg: #20394E;
+  --hyjal-phase-text: #B9DAF5;
 }
 
 html {
@@ -27,65 +28,149 @@ html {
 }
 
 body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 12.5px;
+  line-height: 1.5;
   color: var(--hyjal-text);
   background:
-    radial-gradient(circle at 18% 8%, rgba(91, 132, 79, 0.22), transparent 34%),
-    linear-gradient(145deg, #071510 0%, #173326 48%, #20170f 100%);
+    radial-gradient(circle at 18% 8%, rgba(64, 96, 66, 0.18), transparent 34%),
+    linear-gradient(145deg, rgba(7, 15, 12, 0.96), rgba(18, 35, 27, 0.96) 52%, rgba(20, 16, 13, 0.98));
   background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.page-nav,
+.screen-only {
+  max-width: 1280px;
+  margin: 0 auto 16px;
+}
+
+.page-nav {
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+}
+
+.page-nav a {
+  text-decoration: none;
 }
 
 .sheet {
   background: var(--hyjal-sheet-bg);
   border-color: var(--hyjal-border);
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
   color: var(--hyjal-text);
 }
 
 .boss-header {
-  border-left: 4px solid #6f925f;
+  border-left: 4px solid #6F925F;
   padding-left: 12px;
 }
 
-.boss-name { color: var(--hyjal-text); }
+.boss-name {
+  color: var(--hyjal-text);
+}
 
 .boss-zone,
 .sheet-footer,
 .image-card-label,
-.image-card-caption { color: var(--hyjal-muted); }
-
-.setup-block {
-  background: rgba(52, 58, 52, 0.96);
-  border-color: var(--hyjal-border);
-  color: var(--hyjal-text-soft);
+.image-card-caption {
+  color: var(--hyjal-muted);
 }
 
-.setup-col { border-color: var(--hyjal-border-soft); }
+.setup-block {
+  background: var(--hyjal-panel-bg);
+  border: 1px solid var(--hyjal-border);
+  border-radius: 8px;
+  color: var(--hyjal-text-soft);
+  margin-bottom: 14px;
+  padding: 12px 16px;
+}
 
-.setup-col-label { color: var(--hyjal-text); }
+.setup-label {
+  margin-bottom: 8px;
+  color: var(--hyjal-text);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.setup-grid-5 {
+  color: var(--hyjal-text-soft);
+  font-size: 12px;
+  gap: 12px;
+}
+
+.setup-grid-5 .setup-col-misdirect-wide {
+  flex: 0 0 auto;
+}
+
+.setup-col-label,
+.setup-grid-5 b {
+  color: var(--hyjal-text);
+}
 
 .setup-block .role {
   color: var(--hyjal-assigned);
   font-weight: 500;
 }
 
-.setup-block .role.unassigned {
+.setup-block .assignment-target {
+  color: var(--hyjal-text-soft);
+  font-weight: 500;
+}
+
+.setup-col-label {
+  font-size: 10px;
+  margin-bottom: 6px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.setup-line {
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.setup-line span.line-text,
+.setup-line .line-text {
+  line-height: 1.45;
+}
+
+.setup-line .role-icon-inline {
+  background: rgba(244, 241, 232, 0.08);
+  border-color: var(--hyjal-border-soft);
+}
+
+.setup-line .role-icon-inline.raid-marker-inline {
+  background: transparent;
+  border-color: transparent;
+}
+
+.setup-block .role.unassigned,
+.role.unassigned {
   color: var(--hyjal-muted);
   font-style: italic;
   font-weight: 400;
 }
 
-.setup-block .assignment-target { color: var(--hyjal-text-soft); }
-
-.setup-block .role-label {
-  color: #d0d5cc;
+.setup-block .role-label,
+.setup-block .tank-paren,
+.role-label {
+  color: #D0D0D0;
   opacity: 0.78;
 }
 
 .role-pill {
+  font-size: 13px;
   padding: 8px;
   border: 1px solid var(--hyjal-border-soft);
   border-radius: 6px;
-  font-size: 13px;
   font-weight: 500;
   text-align: center;
 }
@@ -112,7 +197,7 @@ body {
   margin-bottom: 7px;
   padding: 8px 12px;
   background: var(--hyjal-phase-bg);
-  border: 1px solid rgba(143, 178, 125, 0.34);
+  border: 1px solid var(--hyjal-border-soft);
   border-radius: 6px;
   color: var(--hyjal-phase-text);
   font-size: 11px;
@@ -126,16 +211,25 @@ body {
   border-radius: 6px;
 }
 
-.mech-name {
+.mech-name,
+.role {
   color: var(--hyjal-text);
+}
+
+.mech-name {
   font-size: 12px;
   font-weight: 500;
   margin-bottom: 2px;
 }
 
+.mech-name.danger,
+.critical .mech-name {
+  color: #FFB3B3;
+}
+
 .mech-desc {
-  color: var(--hyjal-text-soft);
   font-size: 11.5px;
+  color: var(--hyjal-text-soft);
 }
 
 .image-card {
@@ -148,31 +242,39 @@ body {
   display: grid;
   place-items: center;
   padding: 20px;
-  border: 1px solid rgba(202, 220, 197, 0.28);
+  border: 1px solid var(--hyjal-border-soft);
   border-radius: 6px;
-  background: linear-gradient(145deg, rgba(86, 116, 83, 0.25), rgba(15, 24, 17, 0.72));
-  color: #e1ebdd;
+  background: linear-gradient(145deg, rgba(56, 72, 57, 0.32), rgba(20, 24, 21, 0.78));
+  color: var(--hyjal-text-soft);
   font-size: 12px;
   letter-spacing: 0.2px;
   text-align: center;
 }
 
-.image-card-caption { color: #c8d3c4; }
-
 .reminder-card {
-  background: #342824;
-  border-color: #755344;
+  background: #3A2424;
+  border-color: #7D3D3D;
 }
 
-.reminder-card-label { color: #e7bd91; }
+.reminder-card-label {
+  color: #FFB3B3;
+}
 
 .reminder-list,
-.reminder-list li { color: #ead7c8; }
+.reminder-list li {
+  color: #F0D0D0;
+}
 
-.sheet-footer { border-top-color: var(--hyjal-border); }
+.sheet-footer {
+  border-top-color: var(--hyjal-border);
+}
 
 @media print {
   * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-  body { background: white; }
-  .sheet { box-shadow: none; }
+  html,
+  body { background: white; background-image: none; }
+  body { padding: 0; }
+  .screen-only { display: none !important; }
+  .sheet { box-shadow: none; border: none; padding: 0; max-width: none; }
+  .phase-block, .setup-block, .header-row, .image-card, .reminder-card { page-break-inside: avoid; }
 }
