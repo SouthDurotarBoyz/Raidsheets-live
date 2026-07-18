@@ -486,11 +486,30 @@ body[data-boss-id="trash"] {
 }
 
 .trash-camp-button-icon {
+  display: inline-flex;
+  flex: 0 0 28px;
+  align-items: center;
+  justify-content: center;
   width: 28px;
   height: 28px;
   border: 1px solid var(--hyjal-border-soft);
   border-radius: 4px;
-  object-fit: cover;
+  background-color: var(--hyjal-phase-bg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #FFFFFF;
+  font-size: 11px;
+  line-height: 1;
+  text-shadow: 0 1px 2px #000000, 0 0 3px #000000;
+}
+
+.trash-camp-button-icon-alliance {
+  background-image: url("https://wow.zamimg.com/images/wow/icons/large/achievement_boss_zuldazar_jaina.jpg");
+}
+
+.trash-camp-button-icon-horde {
+  background-image: url("https://wow.zamimg.com/images/wow/icons/large/achievement_leader_thrall.jpg");
 }
 
 .trash-camp-radio:focus-visible + .trash-camp-button {
