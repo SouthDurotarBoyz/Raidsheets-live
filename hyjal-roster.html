@@ -300,16 +300,14 @@ window.RaidConfig = { raidId: 'mount-hyjal' };
     'hyjal-core-ot-misdirect': { label: 'OT misdirect', placeholder: 'Hunter', defaultLabel: 'Hunter', icon: 'ability_hunter_misdirection', targetMarker: 'cross', targetText: 'off tank', suppressRowLabel: true },
     'hyjal-core-ot-2-misdirect': { label: 'OT 2 misdirect', placeholder: 'Hunter', defaultLabel: 'Hunter', icon: 'ability_hunter_misdirection', targetMarker: 'square', targetText: 'off tank 2', suppressRowLabel: true },
     'hyjal-core-ot-3-misdirect': { label: 'OT 3 misdirect', placeholder: 'Hunter', defaultLabel: 'Hunter', icon: 'ability_hunter_misdirection', targetMarker: 'diamond', targetText: 'off tank 3', suppressRowLabel: true },
-    'hyjal-core-kicks': { label: 'Necromancer/Banshee kicks', placeholder: 'Player', defaultLabel: 'Kicker', icon: 'ability_kick' },
-    'hyjal-core-triangle-banish': { label: 'Triangle Banish', placeholder: 'Warlock', defaultLabel: 'Warlock', marker: 'triangle', markerTitle: 'Triangle' },
-    'hyjal-core-diamond-banish': { label: 'Diamond Banish', placeholder: 'Warlock', defaultLabel: 'Warlock', marker: 'diamond', markerTitle: 'Diamond' },
-    'hyjal-core-circle-banish': { label: 'Circle Banish', placeholder: 'Warlock', defaultLabel: 'Warlock', marker: 'circle', markerTitle: 'Circle' },
+    'hyjal-core-kicks': { label: 'Kicks', placeholder: 'Player', defaultLabel: 'Kicker', icon: 'ability_kick', forceNumbering: true, defaultCount: 3, minCount: 0 },
+    'hyjal-core-banish': { label: 'Banish', placeholder: 'Warlock', defaultLabel: 'Banish', icon: 'spell_shadow_enslavedemon', forceNumbering: true, defaultCount: 3, minCount: 0 },
     'hyjal-core-curse-of-elements': { label: 'Elements', placeholder: 'Warlock', icon: 'spell_shadow_chilltouch' },
     'hyjal-core-curse-of-recklessness': { label: 'Recklessness', placeholder: 'Warlock', icon: 'spell_shadow_unholystrength' },
     'hyjal-core-curse-of-tongues': { label: 'Tongues', placeholder: 'Warlock', icon: 'spell_shadow_curseoftounges' },
     'hyjal-core-decurse': { label: 'Decurse', placeholder: 'Player', defaultLabel: 'Player', icon: 'spell_nature_removecurse' },
     'hyjal-core-magic-dispel': { label: 'Magic dispel', placeholder: 'Player', icon: 'spell_holy_dispelmagic' },
-    'hyjal-archimonde-fear-ward': { label: 'Fear Ward', placeholder: 'Player', icon: 'spell_holy_excorcism' }
+    'hyjal-archimonde-fear-ward': { label: 'Fear Ward', placeholder: 'Player', defaultLabel: 'Fear Ward', icon: 'spell_holy_excorcism', forceNumbering: true, defaultCount: 1, minCount: 0 }
   };
 
   const ROSTER_LAYOUT = [
@@ -317,7 +315,7 @@ window.RaidConfig = { raidId: 'mount-hyjal' };
       { title: 'Tanks', fields: ['hyjal-core-main-tank', 'hyjal-core-off-tank', 'hyjal-core-off-tank-2', 'hyjal-core-off-tank-3'] },
       { title: 'Healers', fields: ['hyjal-core-mt-healers', 'hyjal-core-ot-healers', 'hyjal-core-ot-2-healers', 'hyjal-core-ot-3-healers', 'hyjal-core-raid-healers'] },
       { title: 'Misdirect', fields: ['hyjal-core-mt-misdirect', 'hyjal-core-ot-misdirect', 'hyjal-core-ot-2-misdirect', 'hyjal-core-ot-3-misdirect'] },
-      { title: 'Utility', fields: ['hyjal-core-curse-of-elements', 'hyjal-core-curse-of-recklessness', 'hyjal-core-curse-of-tongues', 'hyjal-core-kicks', 'hyjal-core-triangle-banish', 'hyjal-core-diamond-banish', 'hyjal-core-circle-banish', 'hyjal-core-decurse', 'hyjal-core-magic-dispel'] }
+      { title: 'Utility', fields: ['hyjal-core-curse-of-elements', 'hyjal-core-curse-of-recklessness', 'hyjal-core-curse-of-tongues', 'hyjal-core-kicks', 'hyjal-core-banish', 'hyjal-core-decurse', 'hyjal-core-magic-dispel'] }
     ] },
     { title: 'Archimonde', fields: ['hyjal-archimonde-fear-ward'] }
   ];

@@ -30,7 +30,7 @@
       "type": "single"
     },
     "hyjal-archimonde-fear-ward": {
-      "type": "single"
+      "type": "list"
     },
     "hyjal-core-mt-healers": {
       "type": "list"
@@ -62,13 +62,7 @@
     "hyjal-core-kicks": {
       "type": "list"
     },
-    "hyjal-core-triangle-banish": {
-      "type": "list"
-    },
-    "hyjal-core-diamond-banish": {
-      "type": "list"
-    },
-    "hyjal-core-circle-banish": {
+    "hyjal-core-banish": {
       "type": "list"
     }
   }
