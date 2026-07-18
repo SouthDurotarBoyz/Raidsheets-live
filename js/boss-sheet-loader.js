@@ -10,29 +10,74 @@
     lastTrigger: null
   };
 
+  var fragmentFetchTimeout = 10000;
+
+  function isContainerMissingSheet(container) {
+    return !container.innerHTML.trim() || !container.querySelector('.sheet');
+  }
+
+  function isContainerFallback(container) {
+    return !!container.querySelector('.boss-sheet-load-fallback');
+  }
+
+  function shouldRecoverContainer(container) {
+    return container.hasAttribute('data-boss-partial') &&
+      (isContainerMissingSheet(container) || isContainerFallback(container));
+  }
+
   function loadContainer(container) {
     initBossImageLightbox();
 
+    var loadId = (container.__bossSheetLoadId || 0) + 1;
+    container.__bossSheetLoadId = loadId;
     var partial = container.getAttribute('data-boss-partial');
-    if (!partial) return Promise.resolve(container);
+    if (!partial) {
+      if (isContainerMissingSheet(container)) renderLoadFallback(container);
+      container.__bossSheetLoadPromise = Promise.resolve(container);
+      return container.__bossSheetLoadPromise;
+    }
 
-    return fetch(partial, { credentials: 'same-origin' })
+    var fetchOptions = { credentials: 'same-origin' };
+    var controller = null;
+    var timeoutId = null;
+    if (typeof window.AbortController === 'function') {
+      controller = new window.AbortController();
+      fetchOptions.signal = controller.signal;
+      timeoutId = window.setTimeout(function() {
+        controller.abort();
+      }, fragmentFetchTimeout);
+    }
+
+    var loadPromise = Promise.resolve().then(function() {
+      return fetch(partial, fetchOptions);
+    })
       .then(function(response) {
         if (!response.ok) throw new Error('Failed to load boss sheet: ' + partial);
         return response.text();
       })
       .then(function(html) {
+        if (container.__bossSheetLoadId !== loadId) return container;
         container.innerHTML = html;
+        if (isContainerMissingSheet(container)) {
+          throw new Error('Boss sheet fragment was empty: ' + partial);
+        }
         prepareZoomableImages(container);
         return container;
       })
-      .catch(function() {
-        renderLoadFallback(container);
+      .catch(function(error) {
+        if (container.__bossSheetLoadId === loadId) renderLoadFallback(container, error);
         return container;
+      })
+      .then(function(result) {
+        if (timeoutId !== null) window.clearTimeout(timeoutId);
+        return result;
       });
+
+    container.__bossSheetLoadPromise = loadPromise;
+    return loadPromise;
   }
 
-  function renderLoadFallback(container) {
+  function renderLoadFallback(container, error) {
     container.innerHTML =
       '<div class="sheet boss-sheet-load-fallback">' +
         '<div class="boss-header">' +
@@ -61,14 +106,34 @@
 
     var containers = Array.prototype.slice.call(document.querySelectorAll('[data-boss-sheet-container]'));
     return Promise.all(containers.map(function(container) {
-      return loadContainer(container).catch(function() {
-        renderLoadFallback(container);
+      return Promise.resolve().then(function() {
+        return loadContainer(container);
+      }).catch(function() {
         return container;
       });
-    })).catch(function() {
+    })).then(function() {
+      return containers;
+    }, function() {
       return containers;
     });
   }
+
+  window.addEventListener('pageshow', function() {
+    var containers = Array.prototype.slice.call(document.querySelectorAll('[data-boss-sheet-container]'));
+    var recoveries = containers.filter(shouldRecoverContainer).map(function(container) {
+      return Promise.resolve().then(function() {
+        return loadContainer(container);
+      }).catch(function() {
+        return container;
+      });
+    });
+
+    Promise.all(recoveries).then(function() {
+      if (window.RaidRosterBindings && window.RaidRosterBindings.init) {
+        window.RaidRosterBindings.init();
+      }
+    });
+  });
 
   function prepareZoomableImages(root) {
     var scope = root || document;
