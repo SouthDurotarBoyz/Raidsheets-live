@@ -300,38 +300,6 @@ body[data-boss-id="trash"] {
   width: 100%;
 }
 
-.trash-priority {
-  margin-bottom: 14px;
-}
-
-.trash-priority-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 6px 18px;
-  margin: 0;
-  padding: 0 0 0 30px;
-}
-
-.trash-priority-list li {
-  color: var(--hyjal-phase-text);
-  padding-left: 2px;
-}
-
-.trash-priority-list strong,
-.trash-priority-list span {
-  display: block;
-}
-
-.trash-priority-list strong {
-  color: var(--hyjal-text);
-  font-size: 12px;
-}
-
-.trash-priority-list span {
-  color: var(--hyjal-text-soft);
-  font-size: 11px;
-}
-
 .trash-mob-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -348,8 +316,15 @@ body[data-boss-id="trash"] {
   break-inside: avoid;
 }
 
-.trash-mob-card-critical { border-color: #9B4E4E; }
-.trash-mob-card-high { border-color: #80683F; }
+.trash-guide .trash-priority-1 { border-color: #b94f4f; box-shadow: 0 0 0 1px rgba(185, 79, 79, 0.32); }
+.trash-guide .trash-priority-2 { border-color: #b96845; box-shadow: 0 0 0 1px rgba(185, 104, 69, 0.28); }
+.trash-guide .trash-priority-3 { border-color: #b97c43; box-shadow: 0 0 0 1px rgba(185, 124, 67, 0.26); }
+.trash-guide .trash-priority-4 { border-color: #b99145; box-shadow: 0 0 0 1px rgba(185, 145, 69, 0.24); }
+.trash-guide .trash-priority-5 { border-color: #ad9f4b; box-shadow: 0 0 0 1px rgba(173, 159, 75, 0.22); }
+.trash-guide .trash-priority-6 { border-color: #91a34f; box-shadow: 0 0 0 1px rgba(145, 163, 79, 0.22); }
+.trash-guide .trash-priority-7 { border-color: #6f9d58; box-shadow: 0 0 0 1px rgba(111, 157, 88, 0.22); }
+.trash-guide .trash-priority-8 { border-color: #668d5b; box-shadow: 0 0 0 1px rgba(102, 141, 91, 0.20); }
+.trash-guide .trash-priority-9 { border-color: #5c7956; box-shadow: 0 0 0 1px rgba(92, 121, 86, 0.18); }
 
 .trash-mob-portrait {
   display: grid;
@@ -496,6 +471,9 @@ body[data-boss-id="trash"] {
 }
 
 .trash-camp-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   padding: 7px 14px;
   border: 1px solid var(--hyjal-border);
   border-radius: 6px;
@@ -505,6 +483,14 @@ body[data-boss-id="trash"] {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.35px;
+}
+
+.trash-camp-button-icon {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--hyjal-border-soft);
+  border-radius: 4px;
+  object-fit: cover;
 }
 
 .trash-camp-radio:focus-visible + .trash-camp-button {
