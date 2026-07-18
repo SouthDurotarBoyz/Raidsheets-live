@@ -1,0 +1,54 @@
+<div class="sheet">
+  <div class="boss-header"><div class="boss-zone">RAID_NAME</div><h1 class="boss-name">TRASH_PAGE_NAME</h1></div>
+  <div class="setup-block">
+    <!-- Generic editable lists belong in roster-schema.json and the roster UI: Kicker 1–3, Banish 1–3, and similar slots. Marker-specific display keys below belong in roster-bindings.json derivedBindings (group-slot), not the schema unless directly editable. -->
+    <div class="setup-grid setup-grid-5">
+      <div class="setup-col setup-col-tanks"><div class="setup-col-label">Tanks</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Main tank → <span class="role unassigned" data-bind="RAID_PREFIX-core-main-tank" data-default="Main tank">Main tank</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span><span class="line-text">Off tank → <span class="role unassigned" data-bind="RAID_PREFIX-core-off-tank" data-default="Off tank">Off tank</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span><span class="line-text">Off tank 2 → <span class="role unassigned" data-bind="RAID_PREFIX-core-off-tank-2" data-default="Off tank 2" data-hide-empty-row="true">Off tank 2</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/diamond.svg" alt="Diamond"></span><span class="line-text">Off tank 3 → <span class="role unassigned" data-bind="RAID_PREFIX-core-off-tank-3" data-default="Off tank 3" data-hide-empty-row="true">Off tank 3</span></span></div>
+      </div>
+      <div class="setup-col"><div class="setup-col-label">Healers</div>
+        <div class="setup-line"><span class="line-text">MT healers → <span class="role unassigned" data-bind-group="RAID_PREFIX-core-mt-healers" data-default="MT healers">MT healers</span> → <span class="assignment-target" data-target-bind="RAID_PREFIX-core-main-tank">Main tank</span></span></div>
+        <div class="setup-line"><span class="line-text">OT healers → <span class="role unassigned" data-bind-group="RAID_PREFIX-core-ot-healers" data-default="OT healers">OT healers</span> → <span class="assignment-target" data-target-bind="RAID_PREFIX-core-off-tank">Off tank</span></span></div>
+        <div class="setup-line"><span class="line-text">Raid healers → <span class="role unassigned" data-bind-group="RAID_PREFIX-core-raid-healers" data-default="Raid healers">Raid healers</span></span></div>
+      </div>
+      <div class="setup-col setup-col-misdirect-wide"><div class="setup-col-label">Misdirects</div>
+        <div class="setup-line"><span class="line-text">MT → <span class="role unassigned" data-bind-group="RAID_PREFIX-core-mt-misdirect" data-default="Hunter" data-hide-empty-row="true">Hunter</span> → <span class="assignment-target" data-target-bind="RAID_PREFIX-core-main-tank">Main tank</span></span></div>
+        <div class="setup-line"><span class="line-text">OT → <span class="role unassigned" data-bind-group="RAID_PREFIX-core-ot-misdirect" data-default="Hunter" data-hide-empty-row="true">Hunter</span> → <span class="assignment-target" data-target-bind="RAID_PREFIX-core-off-tank">Off tank</span></span></div>
+      </div>
+      <div class="setup-col"><div class="setup-col-label">Warlocks</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/triangle.svg" alt="Triangle"></span><span class="line-text">Banish → <span class="role unassigned" data-bind-group="RAID_PREFIX-trash-triangle-banish" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/diamond.svg" alt="Diamond"></span><span class="line-text">Banish → <span class="role unassigned" data-bind-group="RAID_PREFIX-trash-diamond-banish" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/circle.svg" alt="Circle"></span><span class="line-text">Banish → <span class="role unassigned" data-bind-group="RAID_PREFIX-trash-circle-banish" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="line-text">Curse of Elements → <span class="role unassigned" data-bind="RAID_PREFIX-core-curse-of-elements" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="line-text">Curse of Recklessness → <span class="role unassigned" data-bind="RAID_PREFIX-core-curse-of-recklessness" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="line-text">Curse of Tongues → <span class="role unassigned" data-bind="RAID_PREFIX-core-curse-of-tongues" data-default="Warlock">Warlock</span></span></div>
+      </div>
+      <div class="setup-col setup-col-utility"><div class="setup-col-label">Utility</div>
+        <div class="setup-line"><span class="line-text">Decurse → <span class="role unassigned" data-bind-group="RAID_PREFIX-core-decurse" data-default="Players">Players</span></span></div>
+        <div class="setup-line"><span class="line-text">Magic dispel → <span class="role unassigned" data-bind="RAID_PREFIX-core-magic-dispel" data-default="Player">Player</span></span></div>
+        <div class="setup-line"><span class="line-text">TRASH_KICKS_LABEL → <span class="role unassigned" data-bind-group="RAID_PREFIX-core-kicks" data-default="Kickers">Kickers</span></span></div>
+      </div>
+    </div>
+  </div>
+  <!-- Camp A Trash and Camp B Trash are generic examples; keep CAMP_A_NAME/CAMP_B_NAME for a reusable fragment. CSS switches panels from the checked radio without JavaScript. -->
+  <main class="main-layout trash-guide" aria-label="TRASH_PAGE_NAME field guide"><div class="sheet-content"><div class="trash-camp-guide">
+    <div class="trash-camp-selector" role="group" aria-label="Choose a trash camp">
+      <input class="trash-camp-radio" type="radio" name="trash-camp" id="trash-camp-a" checked><label class="btn trash-camp-button" for="trash-camp-a"><span>CAMP_A_NAME Trash</span></label>
+      <input class="trash-camp-radio" type="radio" name="trash-camp" id="trash-camp-b"><label class="btn trash-camp-button" for="trash-camp-b"><span>CAMP_B_NAME Trash</span></label>
+    </div>
+    <div class="trash-camp-panels">
+      <section class="trash-camp-panel trash-camp-panel-a" aria-labelledby="camp-a-heading"><div class="phase-bar" id="camp-a-heading">CAMP_A_NAME Trash</div><div class="trash-mob-grid">
+        <article class="trash-mob-card trash-priority-1"><div class="trash-mob-portrait" aria-label="MOB_A_1 portrait placeholder"></div><div class="trash-mob-body"><header><h2 class="trash-mob-name">MOB_A_1</h2><span class="trash-kill-priority">Kill target 1</span></header><ul class="trash-ability-list"><li class="mech"><span class="mech-name">ABILITY_NAME</span><span class="trash-tag">Interruptible</span><span class="mech-desc">Short player-facing effect.</span></li></ul><p class="trash-handling"><span class="role-label">How to handle</span> Kill first; HANDLE_THE_THREAT.</p></div></article>
+        <article class="trash-mob-card trash-priority-2"><div class="trash-mob-portrait" aria-label="MOB_A_2 portrait placeholder"></div><div class="trash-mob-body"><header><h2 class="trash-mob-name">MOB_A_2</h2><span class="trash-kill-priority">Kill target 2</span></header><ul class="trash-ability-list"><li class="mech"><span class="mech-name">ABILITY_NAME</span><span class="mech-desc">Short player-facing effect.</span></li></ul><p class="trash-handling"><span class="role-label">How to handle</span> HANDLE_THE_THREAT.</p></div></article>
+      </div></section>
+      <section class="trash-camp-panel trash-camp-panel-b" aria-labelledby="camp-b-heading"><div class="phase-bar" id="camp-b-heading">CAMP_B_NAME Trash</div><div class="trash-mob-grid">
+        <article class="trash-mob-card trash-priority-1"><div class="trash-mob-portrait" aria-label="MOB_B_1 portrait placeholder"></div><div class="trash-mob-body"><header><h2 class="trash-mob-name">MOB_B_1</h2><span class="trash-kill-priority">Kill target 1</span></header><ul class="trash-ability-list"><li class="mech"><span class="mech-name">ABILITY_NAME</span><span class="trash-tag">Control</span><span class="mech-desc">Short player-facing effect.</span></li></ul><p class="trash-handling"><span class="role-label">How to handle</span> Kill first; HANDLE_THE_THREAT.</p></div></article>
+      </div></section>
+    </div>
+  </div></div></main>
+  <!-- To use a real portrait, replace the placeholder with <img class="trash-mob-img" src="assets/<raid-asset-folder>/trash/<mob-name>.webp" alt="Useful mob name"> only after the local file exists. Never use copied guide images or broken paths. -->
+  <div class="sheet-footer">TRASH_PAGE_NAME · RAID_NAME · raid sheet</div>
+</div>
