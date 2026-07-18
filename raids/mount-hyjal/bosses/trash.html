@@ -23,7 +23,7 @@
         <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healer icon"></span><span class="line-text">Raid healers → <span class="role unassigned" data-bind-group="hyjal-core-raid-healers" data-default="Raid healers">Raid healers</span></span></div>
       </div>
 
-      <div class="setup-col setup-col-misdirect-wide">
+      <div class="setup-col setup-col-misdirect-wide trash-misdirect-col">
         <div class="setup-col-label">Misdirects</div>
         <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text">MT misdirect → <span class="role unassigned" data-bind-group="hyjal-core-mt-misdirect" data-default="Hunter" data-hide-empty-row="true">Hunter</span> → <span class="assignment-target" data-target-bind="hyjal-core-main-tank">Main tank</span></span></div>
         <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text">OT misdirect → <span class="role unassigned" data-bind-group="hyjal-core-ot-misdirect" data-default="Hunter" data-hide-empty-row="true">Hunter</span> → <span class="assignment-target" data-target-bind="hyjal-core-off-tank">Off tank</span></span></div>
@@ -31,24 +31,21 @@
         <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection icon"></span><span class="line-text">OT 3 misdirect → <span class="role unassigned" data-bind-group="hyjal-core-ot-3-misdirect" data-default="Hunter" data-hide-empty-row="true">Hunter</span> → <span class="assignment-target" data-target-bind="hyjal-core-off-tank-3">Off tank 3</span></span></div>
       </div>
 
-      <div class="setup-col setup-col-trash-split">
-        <div class="trash-setup-split">
-          <div class="trash-setup-box">
-            <div class="setup-col-label">Warlocks</div>
-            <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/triangle.svg" alt="Triangle"></span><span class="line-text">Banish → <span class="role unassigned" data-bind="hyjal-trash-triangle-banish" data-default="Warlock">Warlock</span></span></div>
-            <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/diamond.svg" alt="Diamond"></span><span class="line-text">Banish → <span class="role unassigned" data-bind="hyjal-trash-diamond-banish" data-default="Warlock">Warlock</span></span></div>
-            <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/circle.svg" alt="Circle"></span><span class="line-text">Banish → <span class="role unassigned" data-bind="hyjal-trash-circle-banish" data-default="Warlock">Warlock</span></span></div>
-            <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt="Curse of Elements icon"></span><span class="line-text">Curse of Elements → <span class="role unassigned" data-bind="hyjal-core-curse-of-elements" data-default="Warlock">Warlock</span></span></div>
-            <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholystrength.jpg" alt="Curse of Recklessness icon"></span><span class="line-text">Curse of Recklessness → <span class="role unassigned" data-bind="hyjal-core-curse-of-recklessness" data-default="Warlock">Warlock</span></span></div>
-            <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_curseoftounges.jpg" alt="Curse of Tongues icon"></span><span class="line-text">Curse of Tongues → <span class="role unassigned" data-bind="hyjal-core-curse-of-tongues" data-default="Warlock">Warlock</span></span></div>
-          </div>
-          <div class="trash-setup-box">
-            <div class="setup-col-label">Utility</div>
-            <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_removecurse.jpg" alt="Decurse icon"></span><span class="line-text">Decurse → <span class="role unassigned" data-bind-group="hyjal-core-decurse" data-default="Players">Players</span></span></div>
-            <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_dispelmagic.jpg" alt="Magic dispel icon"></span><span class="line-text">Magic dispel → <span class="role unassigned" data-bind="hyjal-core-magic-dispel" data-default="Player">Player</span></span></div>
-            <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_kick.jpg" alt="Interrupt icon"></span><span class="line-text">Necromancer/Banshee kicks → <span class="role unassigned" data-bind-group="hyjal-core-kicks" data-default="Kickers">Kickers</span></span></div>
-          </div>
-        </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Warlocks</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/triangle.svg" alt="Triangle"></span><span class="line-text">Banish → <span class="role unassigned" data-bind="hyjal-trash-triangle-banish" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/diamond.svg" alt="Diamond"></span><span class="line-text">Banish → <span class="role unassigned" data-bind="hyjal-trash-diamond-banish" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/circle.svg" alt="Circle"></span><span class="line-text">Banish → <span class="role unassigned" data-bind="hyjal-trash-circle-banish" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt="Curse of Elements icon"></span><span class="line-text">Curse of Elements → <span class="role unassigned" data-bind="hyjal-core-curse-of-elements" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholystrength.jpg" alt="Curse of Recklessness icon"></span><span class="line-text">Curse of Recklessness → <span class="role unassigned" data-bind="hyjal-core-curse-of-recklessness" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_curseoftounges.jpg" alt="Curse of Tongues icon"></span><span class="line-text">Curse of Tongues → <span class="role unassigned" data-bind="hyjal-core-curse-of-tongues" data-default="Warlock">Warlock</span></span></div>
+      </div>
+
+      <div class="setup-col setup-col-utility">
+        <div class="setup-col-label">Utility</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_removecurse.jpg" alt="Decurse icon"></span><span class="line-text">Decurse → <span class="role unassigned" data-bind-group="hyjal-core-decurse" data-default="Players">Players</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_dispelmagic.jpg" alt="Magic dispel icon"></span><span class="line-text">Magic dispel → <span class="role unassigned" data-bind="hyjal-core-magic-dispel" data-default="Player">Player</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_kick.jpg" alt="Interrupt icon"></span><span class="line-text">Necromancer/Banshee kicks → <span class="role unassigned" data-bind-group="hyjal-core-kicks" data-default="Kickers">Kickers</span></span></div>
       </div>
     </div>
   </div>
