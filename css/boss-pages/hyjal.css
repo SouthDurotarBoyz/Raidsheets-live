@@ -511,10 +511,6 @@ body[data-boss-id="trash"] {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: #FFFFFF;
-  font-size: 11px;
-  line-height: 1;
-  text-shadow: 0 1px 2px #000000, 0 0 3px #000000;
 }
 
 .trash-camp-button-icon-alliance {
