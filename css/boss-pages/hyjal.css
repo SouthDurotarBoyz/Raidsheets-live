@@ -130,6 +130,47 @@ body[data-boss-id="trash"] {
   flex: 0 0 auto;
 }
 
+.setup-grid .setup-col-trash-split {
+  flex: 1 1 420px;
+  min-width: 0;
+}
+
+.trash-setup-split {
+  display: flex;
+  gap: 10px;
+}
+
+.trash-setup-box {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 8px;
+  border: 1px solid var(--hyjal-border-soft);
+  border-radius: 6px;
+  background: var(--hyjal-panel-bg-soft);
+}
+
+.trash-setup-box .setup-line {
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.trash-setup-box .line-text,
+.trash-setup-box .role {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+@media (max-width: 760px) {
+  .trash-setup-split {
+    flex-wrap: wrap;
+  }
+
+  .trash-setup-box {
+    flex-basis: 200px;
+  }
+}
+
 .setup-col-label,
 .setup-grid b {
   color: var(--hyjal-text);
