@@ -55,20 +55,15 @@
       "minCount": 0,
       "defaultLabel": "Player"
     },
-    "hyjal-core-triangle-banish": {
-      "defaultCount": 0,
+    "hyjal-core-banish": {
+      "defaultCount": 3,
       "minCount": 0,
-      "defaultLabel": "Warlock"
+      "defaultLabel": "Banish"
     },
-    "hyjal-core-diamond-banish": {
-      "defaultCount": 0,
+    "hyjal-archimonde-fear-ward": {
+      "defaultCount": 1,
       "minCount": 0,
-      "defaultLabel": "Warlock"
-    },
-    "hyjal-core-circle-banish": {
-      "defaultCount": 0,
-      "minCount": 0,
-      "defaultLabel": "Warlock"
+      "defaultLabel": "Fear Ward"
     }
   },
   "groupAliases": {
@@ -111,8 +106,7 @@
     "hyjal-core-curse-of-elements": "Warlock",
     "hyjal-core-curse-of-recklessness": "Warlock",
     "hyjal-core-curse-of-tongues": "Warlock",
-    "hyjal-core-magic-dispel": "Player",
-    "hyjal-archimonde-fear-ward": "Fear Ward"
+    "hyjal-core-magic-dispel": "Player"
   },
   "groupLabels": {
     "hyjal-core-mt-healers": "MT healers",
@@ -126,15 +120,33 @@
     "hyjal-core-ot-3-misdirect": "OT 3 misdirect",
     "hyjal-core-kicks": "Kicks",
     "hyjal-core-decurse": "Decurse",
-    "hyjal-core-triangle-banish": "Triangle Banish",
-    "hyjal-core-diamond-banish": "Diamond Banish",
-    "hyjal-core-circle-banish": "Circle Banish",
     "hyjal-rage-winterchill-raid-healers": "Rage Winterchill raid healers",
     "hyjal-anetheron-raid-healers": "Anetheron raid healers",
     "hyjal-kazrogal-raid-healers": "Kaz'rogal raid healers",
     "hyjal-azgalor-raid-healers": "Azgalor raid healers",
     "hyjal-archimonde-main-tank-healers": "Archimonde main tank healers",
-    "hyjal-archimonde-raid-healers": "Archimonde raid healers"
+    "hyjal-archimonde-raid-healers": "Archimonde raid healers",
+    "hyjal-core-banish": "Banish",
+    "hyjal-archimonde-fear-ward": "Fear Ward"
   },
-  "derivedBindings": {}
+  "derivedBindings": {
+    "hyjal-trash-triangle-banish": {
+      "type": "group-slot",
+      "group": "hyjal-core-banish",
+      "index": 0,
+      "fallback": "Warlock"
+    },
+    "hyjal-trash-diamond-banish": {
+      "type": "group-slot",
+      "group": "hyjal-core-banish",
+      "index": 1,
+      "fallback": "Warlock"
+    },
+    "hyjal-trash-circle-banish": {
+      "type": "group-slot",
+      "group": "hyjal-core-banish",
+      "index": 2,
+      "fallback": "Warlock"
+    }
+  }
 }
