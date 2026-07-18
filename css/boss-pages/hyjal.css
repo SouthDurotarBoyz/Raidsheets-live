@@ -478,3 +478,56 @@ body[data-boss-id="trash"] {
   .phase-block, .setup-block, .header-row, .image-card, .reminder-card { page-break-inside: avoid; }
   .trash-mob-card { break-inside: avoid; page-break-inside: avoid; }
 }
+
+/* No-JS camp selector; kept local to the trash guide. */
+.trash-camp-selector {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.trash-camp-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.trash-camp-button {
+  padding: 7px 14px;
+  border: 1px solid var(--hyjal-border);
+  border-radius: 6px;
+  background: var(--hyjal-panel-bg-soft);
+  color: var(--hyjal-text-soft);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.35px;
+}
+
+.trash-camp-radio:focus-visible + .trash-camp-button {
+  outline: 2px solid var(--hyjal-phase-text);
+  outline-offset: 2px;
+}
+
+#hyjal-trash-alliance:checked + .trash-camp-button,
+#hyjal-trash-horde:checked + .trash-camp-button {
+  border-color: #7FA06F;
+  background: var(--hyjal-phase-bg);
+  color: var(--hyjal-phase-text);
+}
+
+.trash-camp-panel {
+  display: none;
+}
+
+.trash-camp-guide:has(#hyjal-trash-alliance:checked) .trash-camp-panel-alliance,
+.trash-camp-guide:has(#hyjal-trash-horde:checked) .trash-camp-panel-horde {
+  display: block;
+}
+
+@media print {
+  .trash-camp-selector { display: none; }
+}
