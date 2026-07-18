@@ -1,286 +1,76 @@
 # Boss Sheet Template Guide
 
-Use this guide to create new boss pages that match the current metadata-driven shell plus content-fragment architecture.
+Use the reusable fragments to create **new** raid sheets in the clean Mount Hyjal style. Template work must not modify live boss sheets; make live-sheet updates in a separate PR. The live files under `raids/mount-hyjal/bosses/` and `css/boss-pages/hyjal.css` are style and architecture references only, not files to edit for a template-only change.
 
-## 1) Create the two required files
+## Boss pages
 
-New boss pages require two files:
+Copy `templates/boss-shell-template.html` for the public shell and `templates/boss-sheet-template.html` for its fragment. The shell owns identity, navigation, loading, roster wiring, and its existing script stack. The fragment remains exactly one `<div class="sheet">` root and contains no document tags, navigation, loader, scripts, styles, roster controls, or inline event handlers.
 
-- A top-level shell page copied from `templates/boss-shell-template.html`
-- A content fragment copied from `templates/boss-sheet-template.html`
+The clean boss layout is:
 
-Example:
+1. `boss-header` with `boss-zone` and `boss-name`.
+2. A compact `setup-block` with ordinary `setup-col` boxes.
+3. `main-layout`, `sheet-content`, and a right-side `image-sidebar`.
+4. Role-column `phase-block` cards and a `sheet-footer`.
 
-```bash
-cp templates/boss-shell-template.html high-king-maulgar.html
-cp templates/boss-sheet-template.html raids/gruuls-lair/bosses/high-king-maulgar.html
-```
+Use `setup-grid setup-grid-4` for the normal four columns, or `setup-grid setup-grid-5` only when an encounter genuinely needs the optional Kicks column. Keep columns in this order: **Tanks**, **Healers**, **Misdirects**, **Utility**, then **Kicks** when required. Utility and Misdirects are normal setup boxes. Do not add prose-heavy notes, empty decorative boxes, or nested custom boxes for ordinary assignments. Kicks are optional, not a default requirement.
 
-Keep public URLs immutable. If a boss page already has a public top-level filename, update that existing shell only when needed. Do not rename public pages or move existing public URLs.
+### Concise setup rows
 
-## 2) Configure the boss shell page
+Use `setup-col-label`, `setup-line`, `role-icon-inline`, `raid-marker-inline`, and `line-text`. A direct player assignment is `class="role unassigned"`; a contextual tank reference is `class="assignment-target"` with `data-target-bind`; use `role-label` for compact context such as `(MAIN TANK)`.
 
-The shell owns page identity, navigation, loading, scripts, and session wiring. Copy `templates/boss-shell-template.html` and replace these placeholders:
+- Tanks use marker icons and direct keys: `RAID_PREFIX-core-main-tank`, `RAID_PREFIX-core-off-tank`, plus `RAID_PREFIX-core-off-tank-2` and `RAID_PREFIX-core-off-tank-3` only when needed. Do not repeat marker names as visible text when the icon already says it.
+- Healers use group bindings such as `RAID_PREFIX-core-mt-healers`, `RAID_PREFIX-core-ot-healers`, and optional `RAID_PREFIX-core-ot-2-healers` / `RAID_PREFIX-core-ot-3-healers`, followed by the tank target with `data-target-bind`. Use `RAID_PREFIX-core-raid-healers` for reusable raid healing or `RAID_PREFIX-BOSS_ID-raid-healers` when it is boss specific. An editable boss-specific raid-healer field requires roster schema, roster bindings, and roster-editor support.
+- Misdirects put the hunter group first, then a marker and target: `RAID_PREFIX-core-mt-misdirect`, `RAID_PREFIX-core-ot-misdirect`, and optional `RAID_PREFIX-core-ot-2-misdirect` / `RAID_PREFIX-core-ot-3-misdirect`. Do not casually rename these keys or create marker-specific roster fields when a generic assignment group works.
+- Utility uses concise rows for `RAID_PREFIX-core-curse-of-elements`, `RAID_PREFIX-core-curse-of-recklessness`, and only when needed `RAID_PREFIX-core-curse-of-tongues`, `RAID_PREFIX-core-decurse`, and `RAID_PREFIX-core-magic-dispel`.
+- If the boss needs interrupts, add Kicks with boss-specific `RAID_PREFIX-BOSS_ID-kick-1` and `RAID_PREFIX-BOSS_ID-kick-2` bindings. Use labels such as `Kick 1 → Kicker 1`; do not imply every boss needs them.
 
-- `RAID_ID`, such as `tempest-keep`
-- `RAID_STYLESHEET`, such as `css/boss-pages/tk.css`
-- `BOSS_ID`, such as `alar`
-- `BOSS_NAME`, such as `Al'ar`
-- `ROSTER_PAGE`, such as `tk-roster.html`
-- `BOSS_PARTIAL_PATH`, such as `raids/tempest-keep/bosses/alar.html`
+Every editable binding must be registered in the appropriate roster architecture. `data-bind` is for a single slot; `data-bind-group` is for a group; `data-target-bind` displays an existing target assignment and does not create a second editable slot. Keep `data-default` fallback text on bound values.
 
-The shell must keep the current boss architecture markup:
+### Mechanics and sidebar
 
-- `<body data-page-role="boss-view" data-raid-id="RAID_ID" data-boss-id="BOSS_ID">`
-- Home link with `data-soft-reserve-anchor`
-- Roster link with `data-roster-link`
-- Boss tabs container with `data-boss-tabs`
-- Raid-specific CSS file after `css/boss-sheet.css`
-- Boss sheet container with `data-boss-sheet-container` and `data-boss-partial`
-- Script stack in this order: `js/raid-nav.js`, `js/roster-storage.js`, `js/soft-reserve-link.js`, `js/session-client.js`, `js/roster-bindings.js`, `js/boss-sheet-loader.js`
-- Inline init IIFE that imports roster data from the hash, loads the fragment, initializes roster bindings, and reloads on roster storage changes
+Use `header-row`, `role-pill role-tank`, `role-pill role-healer`, and `role-pill role-dps`, then `phase-block`, `phase-bar`, `col-grid`, and `col col-tank` / `col-healer` / `col-dps`. Cards use `mech`, optionally `critical`, with `icon`, `mech-body`, `mech-name`, and `mech-desc`.
 
-Keep the top navigation bar minimal:
+Write short, action-oriented player copy. Tank cards cover position, swaps, and target control; healer cards cover tank coverage, raid damage, and dispels; DPS cards cover target priority, interrupts, movement, and adds. Use placeholders such as `BOSS_MECHANIC`, `TANK_MECHANIC`, `RAID_DAMAGE`, `ADD_PHASE`, `MOVEMENT_MECHANIC`, and `WIPE_CAUSE` while drafting rather than generic documentation prose.
 
-- Put the `Home` button on the left side of the `page-nav` bar. Keep its route unchanged, usually `index.html`.
-- Put the `Roster` button and the `data-boss-tabs` boss tab container together on the right side.
-- Do not include descriptive sheet-status text such as `sheet reads saved roster assignments` in the nav bar.
-- Do not move or rename `data-boss-tabs`; shared navigation code depends on that container.
+Keep the `image-sidebar`, an `image-card` placeholder when there is no asset, and a `reminder-card` for wipe causes. Never insert a fake or broken image path. A real local image may use `assets/<raid-asset-folder>/bosses/<boss-id>/<image-name>.webp` only after the file exists, with useful alt text. Do not use base64 images or copied guide/PDF images.
 
-`raid-nav.js` resolves the roster route from `raid.json` `rosterPage` and targets `[data-roster-link]`. The shell should still include the `ROSTER_PAGE` fallback href so the link works before metadata enhancement.
+## Trash pages
 
-Do not add page-specific boss content to the shell.
+Use `templates/trash-sheet-template.html` when trash needs assignments plus a field guide. A trash page may have a wider setup block and camp panels, but it still uses normal `setup-col` boxes: `setup-col-tanks`, Healers, `setup-col-misdirect-wide`, Warlocks or Control, and `setup-col-utility`. Do not use nested assignment boxes.
 
-## 3) Keep the boss fragment content-only
+The trash setup template models main/off tanks, healer groups, optional misdirects, warlock control and curses, and utility. Add `data-hide-empty-row="true"` **to the bound span** for genuinely optional extra tanks or misdirects. Do not use decorative empty boxes. Avoid fragile whole-column hiding unless it is carefully scoped and tested; if an entire column is optional, document its CSS approach and browser support before relying on it.
 
-Boss fragments must remain content-only. Your boss fragment must contain exactly one root node:
+### Generic roster fields and derived display rows
 
-- `<div class="sheet"> ... </div>`
+Keep roster-editor labels generic when the job is generic: `Kicker 1`, `Kicker 2`, `Kicker 3`; `Banish 1`, `Banish 2`, `Banish 3`; and `Fear Ward 1`, `Fear Ward 2` when applicable. The sheet may use encounter-specific display labels, for example `Necromancer/Banshee kicks` or a marker icon followed by `Banish`. Do not leak display labels back into generic roster fields.
 
-Do not add any of the following to boss fragments:
+One editable `RAID_PREFIX-core-banish` list can drive marker-specific display rows:
 
-- `<!DOCTYPE html>`
-- `<html>`, `<head>`, `<body>`
-- `<script>`
-- `<style>`
-- Page nav/header controls
-- Roster editor controls
-- Loader containers
+- `RAID_PREFIX-trash-triangle-banish`
+- `RAID_PREFIX-trash-diamond-banish`
+- `RAID_PREFIX-trash-circle-banish`
 
-The shell, not the fragment, carries raid identity, page role, boss identity, nav, roster link, boss tabs, partial loading, scripts, and session wiring. Styling comes from `css/boss-sheet.css` plus the raid-specific shell stylesheet. Boss fragments should only provide sheet content.
+Define those display keys in `roster-bindings.json` `derivedBindings` using `group-slot`. Keep the editable generic list in `roster-schema.json` and the roster UI. Do **not** add derived marker display keys to `roster-schema.json` unless a real editing need makes them directly editable. This prevents marker-specific roster clutter. Apply the same model to generic kick lists that a trash sheet labels specifically.
 
-## 4) Replace content placeholders
+### No-JS camp selector and NPC cards
 
-Update all placeholders in the copied fragment:
+Use radio inputs and labels styled as `trash-camp-button` controls inside `trash-camp-selector`; the first camp is checked by default. Raid-specific CSS shows the matching `trash-camp-panel` and hides the other panel. Do not add JavaScript or inline handlers. Use generic `CAMP_A_NAME` and `CAMP_B_NAME` placeholders unless documenting a labeled Hyjal example. Camp-specific NPCs belong only in the relevant panel.
 
-- `RAID_NAME`
-- `BOSS_NAME`
-- Phase titles, such as `PHASE_1_TITLE` and `PHASE_2_TITLE`
-- Setup assignment columns and lines
-- Mechanic names and descriptions
-- Icon URLs, such as `ICON_URL_*`
-- Sidebar image cards, using clean placeholder cards until real assets exist
-- Wipe causes, such as `WIPE_CAUSE_*`
-- Binding key placeholders, such as `<raid-prefix>-core-main-tank` and `<raid-prefix>-<boss-id>-raid-healers`
+Structure the guide as `trash-guide` → `trash-camp-guide` → panels → `phase-bar` and `trash-mob-grid`. Each `trash-mob-card` is ordered by kill priority and receives a `trash-priority-N` class, with border/outline color descending from red toward green. Include `trash-mob-portrait`, optional real `trash-mob-img`, `trash-mob-body`, `trash-mob-name`, visible `trash-kill-priority` text such as `Kill target 1`, `trash-ability-list`, `trash-tag`, and integrated `trash-handling` notes. Card order and the label communicate priority; do not add a separate kill-priority block. Do not include spell IDs.
 
-## 5) Preserve reusable class structure
+Use a styled portrait placeholder when a local file does not exist. When it does exist, use `assets/<raid-asset-folder>/trash/<mob-name>.webp` and useful alt text. Never use broken image paths, remote image fallbacks, base64, or copied guide/PDF images. Camp selector labels may use icons, but prefer local assets or CSS-backed spans; visible text must stand on its own if an icon fails, and do not overlay fallback letters unless intentional.
 
-Keep the class structure used by `css/boss-sheet.css` so layout remains consistent. Boss sheets normally include `boss-header`, `setup-block`, `main-layout`, `sheet-content`, the right-side `image-sidebar`, image placeholder cards, a wipe causes `reminder-card`, and `sheet-footer`. Codex should not omit the sidebar when creating new boss foundations from the template.
+### Trash CSS ownership
 
-## 6) Use roster binding attributes and registered keys
+Put trash styling in the raid-specific stylesheet, scoped to the page or trash classes. Define styles for `trash-guide`, `trash-camp-selector`, `trash-camp-button`, `trash-camp-panel`, `trash-mob-grid`, `trash-mob-card`, `trash-priority-N`, `trash-mob-portrait`, and `trash-mob-img`; include `setup-col-utility` wrapping if needed. Do not edit shared boss CSS unless a class is truly reusable across raids.
 
-Use these attributes for roster-driven values:
+## Validation and protection
 
-- `data-bind="..."` for single-slot values
-- `data-bind-group="..."` for grouped values
-- `data-target-bind="..."` for tank or target contextual displays
-- `data-default="..."` for fallback text
-
-Use this binding namespace convention:
-
-- Raid-level reusable keys should use `<raid-prefix>-core-*`
-- Boss-specific keys should use `<raid-prefix>-<boss-id>-*`
-
-Examples:
-
-- `tk-core-main-tank`
-- `tk-core-raid-healers`
-- `tk-alar-raid-healers`
-
-Any new binding key used in a fragment must be registered in the raid roster architecture as appropriate:
-
-- Add it to `roster-bindings.json` under `singleDefaults`, `groupDefs`, aliases, derived bindings, or labels as needed.
-- Add it to `roster-schema.json` and the roster editor form when the key needs a user-editable roster slot.
-
-Do not imply or assume that adding only `raid.json` is enough for roster-bound assignments. `raid.json` registers boss metadata and routes. Roster-bound assignments need binding config, schema, and editor support when editable.
-
-## 7) Setup markup rules
-
-When writing boss setup fragments, output final player-visible markup only:
-
-- The top assignment block should use `setup-block`, `setup-grid`, `setup-col`, `setup-col-label`, `setup-line`, and `line-text`.
-- Use `setup-grid` as the required setup assignment grid class. Existing density/helper classes such as `setup-grid-4` or `setup-grid-5` may remain on legacy or live fragments when already present.
-- Raid-specific CSS should target `.setup-grid` for shared setup theming instead of only targeting one density helper class.
-- Do not create new raid-specific styling that only works for one setup-grid density class unless the exception is intentional and documented.
-- Prefer `setup-col-label` for column headings. Do not use `setup-heading` in new template examples unless a backward-compatible exception requires it.
-- Add `setup-col-tanks` to the Tanks setup column so tank assignment targets can be styled distinctly.
-- Do not add top assignment/setup prose above the setup grid.
-- Assignment sections should begin directly with setup columns.
-- Fight instructions belong in phase blocks, reminder cards, image captions, or a short `setup-note` only when a live sheet already uses that pattern.
-- Top setup assignment rows use arrow formatting (`→`), not colon formatting.
-- The top assignment block should include these standard columns in this order: `Tanks`, `Healers`, `Misdirects`, `Utility`, then `Kicks` only if the boss uses kicks.
-- Treat `Utility` as the standard top-row utility assignment column aligned with `Tanks`, `Healers`, and `Misdirects`.
-- Utility curse rows may use either short labels (`Elements`, `Recklessness`, `Tongues`) or full labels (`Curse of Elements`, `Curse of Recklessness`, `Curse of Tongues`), but labels must be consistent within a raid.
-- Utility binding keys must be namespaced and registered, such as `<raid-prefix>-core-curse-of-elements`.
-- The top assignment block should not include `Notes` or `Interrupts / Utility`.
-- Notes belong in normal lower content and mechanics areas when needed.
-- Use the optional `Kicks` column only for boss kick assignments.
-- Normal kick rows should use `Kick 1 → Kicker`.
-- Marker/channeler-style kick rows should use `Marker Icon Marker Icon Channeler → Kicker`.
-- Keep marker/channeler kick wording generic so it can be adapted per boss.
-- Do not write marker names as visible text when a marker icon is expected, for example avoid visible strings like `Skull marker`.
-- Do not paste prose instructions like `Skull marker - Tank` directly into HTML output.
-- Use concrete icon markup for raid markers, such as `<span class="role-icon-inline raid-marker-inline"><img ... alt="Skull"></span>`.
-- Use raid marker icons from `assets/shared/markers/*`, for example `assets/shared/markers/skull.svg`, `moon.svg`, `cross.svg`, `square.svg`, and `diamond.svg`.
-- Use `data-target-bind` for target references instead of adding a second visible `data-bind` for the same target value.
-- Assigned player names should use `.role` when assigning a person directly and `.assignment-target` when showing a contextual target from another assignment.
-- Assigned player names are emphasized, contextual target names stay softer unless they are inside the Tanks column, and unassigned placeholders remain muted/italic.
-
-Standard row patterns:
-
-- Tank rows: `Marker Icon Role Label → Tank Name`.
-  - Put the assigned tank name inside `class="role unassigned"` with `data-bind`, such as `data-bind="RAID_PREFIX-core-main-tank"`.
-- Healer rows: `Healer Assignment → Target Tank (Role Label)`.
-  - Healer assignments that are roster list groups usually use `data-bind-group`, not `data-bind`.
-  - Use live group keys such as `<raid-prefix>-core-mt-healers` and `<raid-prefix>-core-ot-healers` for tank healer groups.
-  - Use `class="assignment-target"` with `data-target-bind` for the contextual tank target.
-  - Use `class="role-label"` for the smaller gray assignment label, such as `(Main Tank)` or `(Off Tank)`.
-  - Remove repeated healer spell icons from tank-healer rows.
-  - Keep raid healers underneath tank healer rows when applicable, using `data-bind-group="RAID_PREFIX-core-raid-healers"` for reusable raid healers or `data-bind-group="RAID_PREFIX-BOSS_ID-raid-healers"` for boss-specific raid healers.
-  - The Raid Healers row may keep the raid-healing icon and should use `Raid → Raid Healers` arrow formatting.
-- Misdirect rows: `Hunter → Marker Icon Boss/Add Name → Target Tank`.
-  - Use `data-bind-group` for hunter assignment groups and `data-target-bind` for target tank names.
-  - Use the live core group keys `<raid-prefix>-core-mt-misdirect`, `<raid-prefix>-core-ot-misdirect`, `<raid-prefix>-core-ot-2-misdirect`, and `<raid-prefix>-core-ot-3-misdirect`.
-  - Misdirect rows may use the Misdirection icon before the Hunter assignment group when that matches the live raid visual style.
-  - Preserve `data-bind-group` and `data-target-bind`. Do not change misdirect assignment behavior just to change visual row order.
-- Utility rows may use short labels (`Elements → Warlock`, `Recklessness → Warlock`, and `Tongues → Warlock`) or full labels (`Curse of Elements → Warlock`, `Curse of Recklessness → Warlock`, and `Curse of Tongues → Warlock`), but the selected style must be consistent within a raid.
-  - Use namespaced `data-bind` keys such as `<raid-prefix>-core-curse-of-elements`, `<raid-prefix>-core-curse-of-recklessness`, and `<raid-prefix>-core-curse-of-tongues`, and register them before relying on roster data.
-- Kick rows: `Kick 1 → Kicker` or `Marker Icon Marker Icon Channeler → Kicker`.
-  - Use boss-specific namespaced `data-bind` keys, such as `<raid-prefix>-<boss-id>-kick-1`.
-
-Do not use `assets/icons` paths for raid markers or placeholder icons. Do not inline SVG blobs, such as `data:image/svg`. Do not reference nonexistent image files.
-
-## 8) Support assignment-only trash pages
-
-An assignment-only trash page may intentionally contain only `boss-header`, `setup-block`, and `sheet-footer`. It may omit `main-layout`, phase blocks, sidebar images, and wipe cards. This is a documented exception to the normal boss sheet structure, not an incomplete boss page.
-
-Assignment-only trash pages still require the normal boss shell, raid metadata, and roster binding architecture.
-
-## 9) Use derived bindings for display-only rows
-
-Use a `group-slot` derived binding for a marker-specific row backed by one editable roster list. Use `group-slot-modulo` to split one roster list into repeating display teams. Derived display keys should not be added to `roster-schema.json` unless they are directly editable.
-
-For example, one editable `tk-trash-sheep` list can drive the derived display keys `tk-trash-square-sheep`, `tk-trash-moon-sheep`, `tk-trash-circle-sheep`, and `tk-trash-star-sheep`.
-
-Roster-page local slot metadata, including minimum and maximum slot counts and per-slot marker labels, is acceptable when one editable list needs marker-specific UI rows. That metadata must not create separate schema fields for derived display rows.
-
-When validating binding configuration, confirm that `singleDefaults` and `groupDefs` do not retain stale keys that are absent from the schema, aliases, derived bindings, and live fragments.
-
-Run the dependency-free roster binding validator after adding or changing roster-bound assignments:
+Template changes must not modify live boss sheets, raid metadata, roster schemas, bindings, shared scripts, CSS, or assets. Live changes belong in separate PRs. Before submitting a live implementation that adds bindings, run:
 
 ```bash
 node scripts/validate-roster-bindings.mjs
 ```
 
-The validator catches fragment binding keys that are missing from the raid schema or binding config, along with aliases and derived binding references that point to missing fields or groups. Review warnings for potentially stale configuration; validation failures must block the PR.
-
-## 10) Sidebar image placeholders and wipe reminders
-
-Every boss sheet should include the right-side `image-sidebar` inside `main-layout`, next to `sheet-content`, unless there is a documented exception. Codex should not omit this sidebar when creating new boss foundations from the template.
-
-Draft boss fragments should use clean `image-card` placeholder cards until real positioning assets exist. Do not reference nonexistent image files. Broken placeholder paths produce browser broken-image icons and make draft sheets look unfinished.
-
-- Placeholder cards can use boss-specific labels/captions, or this generic visible copy:
-  - `Positioning image placeholder`
-  - `Replace this with the real positioning asset when available.`
-- When a real asset exists, use the standard static-asset path with the shared positioning image class:
-
-  ```html
-  <img class="positioning-img" src="assets/<raid-asset-folder>/bosses/<boss-id>/<image-name>.webp" alt="Useful alt text">
-  ```
-
-- `positioning-img` enables the shared click-to-enlarge lightbox behavior. Do not add inline `onclick` handlers.
-- Every positioning image needs useful alt text that describes the diagram or screenshot.
-- Every real `image-card` should include `image-card-label`, `img.positioning-img`, and `image-card-caption`.
-- Use lowercase kebab-case filenames.
-- Prefer `.webp` for compressed sheet images unless PNG transparency is required.
-- Do not inline `data:image` or other base64 images.
-- Do not store raid marker icons in boss image folders. Raid markers belong in `assets/shared/markers/`.
-- Every boss sheet should include a wipe causes `reminder-card` in the sidebar. Use `reminder-card-label` for the heading and `reminder-list` for player-facing wipe causes.
-
-## 11) Register raid metadata without changing public URLs
-
-Add the new boss entry to the appropriate raid config when creating a new live boss:
-
-- `raids/<raid-id>/raid.json`
-
-Make sure id, label, and file path match your new boss fragment. This metadata is for boss navigation and fragment routing. It does not replace roster binding registration.
-
-Keep public URLs immutable. Do not rename existing page filenames, change existing public routes, or move existing boss fragments unless a separate migration explicitly calls for it.
-
-## 12) Add raid-specific images
-
-Store boss diagrams/screenshots under the current generic static-asset convention:
-
-- `assets/<raid-asset-folder>/bosses/<boss-id>/`
-
-Reference those files from `image-card` sections with `img.positioning-img`, useful alt text, and lowercase kebab-case filenames. Keep the path generic to the raid asset folder. Do not point boss fragments at nonexistent files.
-
-## 13) Validate both render contexts
-
-Test in both contexts:
-
-1. Public sheet view, which is the final player-facing boss page rendering
-2. Editor/preview view, which covers assignment editing and bind propagation
-
-Confirm:
-
-- Bindings render correctly when roster values exist
-- `data-default` text appears when values are missing
-- Phase columns align correctly
-- Real sidebar images load, or placeholder cards are used when assets are not available
-- No nav, loader, script, or style markup was added to the boss content file
-
-## New raid registration checklist
-
-A new raid is not fully registered until all of the following exist:
-
-- `raids/<raid-id>/raid.json`
-- Root boss shell pages
-- Boss fragments under `raids/<raid-id>/bosses/`
-- A roster page
-- `raids/<raid-id>/roster-schema.json`
-- `raids/<raid-id>/roster-bindings.json`
-- An `index.html` raid card
-- A `worker/src/index.js` `RAID_CONFIGS` entry
-- Worker tests updated for the new raid
-- Cloudflare Workers Builds deployed from `main` after merge
-
-The Worker rejects session creation for any `raidId` not present in `RAID_CONFIGS`. The Worker entry must include `rosterPage`, `defaultViewPage`, and `bossViewPages`; frontend `raid.json` is not enough for session-backed sharing. Do not add a Worker raid entry until the matching public pages exist.
-
-## Naming decisions before generation
-
-Choose names before generating boss pages because public URLs and binding keys should not be renamed casually after launch. For Hyjal, use:
-
-- Raid id: `mount-hyjal`
-- Binding prefix: `hyjal`
-- Roster page: `hyjal-roster.html`
-- Stylesheet: `css/boss-pages/hyjal.css`
-- Asset folder: `assets/hyjal/`
-- Raid folder: `raids/mount-hyjal/`
-
-## Roster page source of truth
-
-`templates/raid-roster-template.html` is local-only unless it is explicitly upgraded. For a new session-backed raid, copy the newest live session-backed roster page, currently `tk-roster.html` or `ssc-roster.html`, and adapt the raid id, schema path, guide page, `FIELD_META`, and `ROSTER_LAYOUT`.
-
-Do not use `templates/raid-roster-template.html` for a raid that must support shared session links on day one. If the template is used, the PR must explicitly say the roster is local-only.
+Also run `git diff --check`, inspect the changed-file list, and test the fragment through its existing shell in both public and roster-editor contexts. Keep public URLs unchanged.
