@@ -309,6 +309,59 @@
     return session.raidId === payload.raidId;
   }
 
+  function getSessionCacheIdentity(session){
+    if (!session) return '';
+    return session.publicCode || session.sessionId || '';
+  }
+
+  function getSessionRosterCacheKey(session){
+    var identity = getSessionCacheIdentity(session);
+    return identity ? 'raidsheets:roster-cache:' + identity : '';
+  }
+
+  function writeCachedSessionPayload(session, payload){
+    var key = getSessionRosterCacheKey(session);
+    if (!key) return;
+
+    try {
+      global.sessionStorage.setItem(key, JSON.stringify({
+        storedAt: Date.now(),
+        payload: payload
+      }));
+    } catch (err) {
+      // Storage may be unavailable or full; roster loading should still succeed.
+    }
+  }
+
+  function readCachedSessionPayload(session){
+    var key = getSessionRosterCacheKey(session);
+    if (!key) return null;
+
+    try {
+      var cached = JSON.parse(global.sessionStorage.getItem(key));
+      return cached && cached.payload ? cached.payload : null;
+    } catch (err) {
+      return null;
+    }
+  }
+
+  function clearCachedSessionPayload(session){
+    var key = getSessionRosterCacheKey(session);
+    if (!key) return;
+
+    try {
+      global.sessionStorage.removeItem(key);
+    } catch (err) {
+      // Storage may be unavailable; there is nothing else to clear.
+    }
+  }
+
+  function delay(ms){
+    return new Promise(function(resolve){
+      global.setTimeout(resolve, ms);
+    });
+  }
+
   function loadSessionPayload(session){
     var endpoint = session.publicCode && !session.sessionId
       ? '/api/codes/' + encodeURIComponent(session.publicCode)
@@ -320,8 +373,7 @@
     }).then(function(res){
       if (res.ok) return res.json();
       return parseErrorJson(res).then(function(payload){
-        if (res.status === 410) throw createSessionHttpError(res, payload);
-        throw new Error('Failed to load session roster');
+        throw createSessionHttpError(res, payload);
       });
     });
   }
@@ -468,17 +520,40 @@
       return ensureStorage().loadRoster();
     }
 
-    return loadSessionPayload(session).then(function(payload){
+    function usePayload(payload){
       if (!isSessionRaidMatch(session, payload)) {
         console.error('[RaidSessionClient] Session raid does not match current page raid.');
         return emptyRoster();
       }
 
+      writeCachedSessionPayload(session, payload);
       return safeRoster(getPayloadRoster(payload));
-    }).catch(function(err){
-      if (handleSessionExpired(err)) throw err;
-      console.error('[RaidSessionClient] Unable to load session roster.', err && err.message ? err.message : err);
-      return emptyRoster();
+    }
+
+    function handleExpiredFetch(error){
+      if (!isSessionExpiredError(error)) return false;
+      clearCachedSessionPayload(session);
+      handleSessionExpired(error);
+      return true;
+    }
+
+    return loadSessionPayload(session).then(usePayload).catch(function(firstError){
+      if (handleExpiredFetch(firstError)) throw firstError;
+
+      return delay(1500).then(function(){
+        return loadSessionPayload(session).then(usePayload).catch(function(retryError){
+          if (handleExpiredFetch(retryError)) throw retryError;
+
+          var cachedPayload = readCachedSessionPayload(session);
+          if (cachedPayload && isSessionRaidMatch(session, cachedPayload)) {
+            console.warn('[RaidSessionClient] Using cached roster after failed session fetch.');
+            return safeRoster(getPayloadRoster(cachedPayload));
+          }
+
+          console.error('[RaidSessionClient] Unable to load session roster.', retryError && retryError.message ? retryError.message : retryError);
+          return emptyRoster();
+        });
+      });
     });
   }
 
