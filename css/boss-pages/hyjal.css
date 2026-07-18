@@ -291,6 +291,183 @@ body[data-boss-id="trash"] {
   border-top-color: var(--hyjal-border);
 }
 
+/* Trash guide cards are scoped so the other Hyjal sheets retain their layout. */
+.trash-guide {
+  display: block;
+}
+
+.trash-guide .sheet-content {
+  width: 100%;
+}
+
+.trash-priority {
+  margin-bottom: 14px;
+}
+
+.trash-priority-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 18px;
+  margin: 0;
+  padding: 0 0 0 30px;
+}
+
+.trash-priority-list li {
+  color: var(--hyjal-phase-text);
+  padding-left: 2px;
+}
+
+.trash-priority-list strong,
+.trash-priority-list span {
+  display: block;
+}
+
+.trash-priority-list strong {
+  color: var(--hyjal-text);
+  font-size: 12px;
+}
+
+.trash-priority-list span {
+  color: var(--hyjal-text-soft);
+  font-size: 11px;
+}
+
+.trash-mob-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.trash-mob-card {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  overflow: hidden;
+  background: var(--hyjal-panel-bg-soft);
+  border: 1px solid var(--hyjal-border);
+  border-radius: 7px;
+  break-inside: avoid;
+}
+
+.trash-mob-card-critical { border-color: #9B4E4E; }
+.trash-mob-card-high { border-color: #80683F; }
+
+.trash-mob-portrait {
+  display: grid;
+  min-height: 150px;
+  place-items: center;
+  padding: 10px;
+  background:
+    radial-gradient(circle at 50% 32%, rgba(125, 157, 113, 0.28), transparent 32%),
+    linear-gradient(155deg, #263329, #151A17);
+  border-right: 1px solid var(--hyjal-border-soft);
+  color: var(--hyjal-text-soft);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  line-height: 1.35;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.trash-mob-portrait span {
+  padding: 8px 4px;
+  border-block: 1px solid rgba(185, 218, 245, 0.28);
+}
+
+.trash-mob-body {
+  min-width: 0;
+  padding: 9px 10px;
+}
+
+.trash-mob-body header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--hyjal-border-soft);
+}
+
+.trash-mob-name {
+  margin: 0;
+  color: var(--hyjal-text);
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.trash-kill-priority {
+  flex: 0 0 auto;
+  color: #F2C98B;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.35px;
+  text-transform: uppercase;
+}
+
+.trash-ability-list {
+  margin: 7px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trash-ability-list .mech {
+  margin: 0 0 5px;
+  padding: 0;
+}
+
+.trash-ability-list .mech-name {
+  display: inline;
+  margin-right: 4px;
+}
+
+.trash-ability-list .mech-name::after {
+  content: " —";
+  color: var(--hyjal-muted);
+}
+
+.trash-ability-list .mech-desc {
+  display: inline;
+}
+
+.trash-tag {
+  display: inline-block;
+  margin: 0 3px 2px 0;
+  padding: 1px 5px;
+  border: 1px solid rgba(185, 218, 245, 0.34);
+  border-radius: 999px;
+  background: rgba(32, 57, 78, 0.72);
+  color: var(--hyjal-phase-text);
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.45;
+  white-space: nowrap;
+}
+
+.trash-card-tags {
+  margin-top: 6px;
+}
+
+.trash-handling {
+  margin: 7px 0 0;
+  padding: 6px 8px;
+  background: rgba(77, 91, 67, 0.22);
+  border-left: 2px solid #6F925F;
+  color: var(--hyjal-text-soft);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.trash-handling .role-label {
+  display: block;
+  margin-bottom: 1px;
+  color: #CBE7B0;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  opacity: 1;
+  text-transform: uppercase;
+}
+
 @media print {
   * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
   html,
@@ -299,4 +476,5 @@ body[data-boss-id="trash"] {
   .screen-only { display: none !important; }
   .sheet { box-shadow: none; border: none; padding: 0; max-width: none; }
   .phase-block, .setup-block, .header-row, .image-card, .reminder-card { page-break-inside: avoid; }
+  .trash-mob-card { break-inside: avoid; page-break-inside: avoid; }
 }
