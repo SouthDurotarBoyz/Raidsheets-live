@@ -24,7 +24,7 @@
       "type": "single"
     },
     "hyjal-core-decurse": {
-      "type": "single"
+      "type": "list"
     },
     "hyjal-core-magic-dispel": {
       "type": "single"
@@ -62,7 +62,13 @@
     "hyjal-core-kicks": {
       "type": "list"
     },
-    "hyjal-core-banish": {
+    "hyjal-core-triangle-banish": {
+      "type": "list"
+    },
+    "hyjal-core-diamond-banish": {
+      "type": "list"
+    },
+    "hyjal-core-circle-banish": {
       "type": "list"
     }
   }

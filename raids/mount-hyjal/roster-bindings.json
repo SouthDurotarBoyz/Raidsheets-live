@@ -50,10 +50,25 @@
       "minCount": 0,
       "defaultLabel": "Kicker"
     },
-    "hyjal-core-banish": {
+    "hyjal-core-decurse": {
       "defaultCount": 0,
       "minCount": 0,
-      "defaultLabel": "Banish"
+      "defaultLabel": "Player"
+    },
+    "hyjal-core-triangle-banish": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Warlock"
+    },
+    "hyjal-core-diamond-banish": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Warlock"
+    },
+    "hyjal-core-circle-banish": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Warlock"
     }
   },
   "groupAliases": {
@@ -96,7 +111,6 @@
     "hyjal-core-curse-of-elements": "Warlock",
     "hyjal-core-curse-of-recklessness": "Warlock",
     "hyjal-core-curse-of-tongues": "Warlock",
-    "hyjal-core-decurse": "Player",
     "hyjal-core-magic-dispel": "Player",
     "hyjal-archimonde-fear-ward": "Fear Ward"
   },
@@ -111,7 +125,10 @@
     "hyjal-core-ot-2-misdirect": "OT 2 misdirect",
     "hyjal-core-ot-3-misdirect": "OT 3 misdirect",
     "hyjal-core-kicks": "Kicks",
-    "hyjal-core-banish": "Banish",
+    "hyjal-core-decurse": "Decurse",
+    "hyjal-core-triangle-banish": "Triangle Banish",
+    "hyjal-core-diamond-banish": "Diamond Banish",
+    "hyjal-core-circle-banish": "Circle Banish",
     "hyjal-rage-winterchill-raid-healers": "Rage Winterchill raid healers",
     "hyjal-anetheron-raid-healers": "Anetheron raid healers",
     "hyjal-kazrogal-raid-healers": "Kaz'rogal raid healers",
