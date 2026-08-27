@@ -1,13 +1,118 @@
 <div class="sheet">
-  <div class="boss-header"><div class="boss-zone">Black Temple</div><h1 class="boss-name">High Warlord Naj'entus</h1></div>
+  <div class="boss-header">
+    <div class="boss-zone">Black Temple</div>
+    <h1 class="boss-name">High Warlord Naj'entus</h1>
+  </div>
+
   <div class="setup-block">
     <div class="setup-grid setup-grid-4">
-      <div class="setup-col setup-col-tanks"><div class="setup-col-label">Tanks</div><div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Main tank → <span class="role unassigned" data-bind="bt-core-main-tank" data-default="Main tank">Main tank</span></span></div></div>
-      <div class="setup-col"><div class="setup-col-label">Healers</div><div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-mt-healers" data-default="MT healers">MT healers</span> → <span class="assignment-target" data-target-bind="bt-core-main-tank">Main tank</span> <span class="role-label">(MAIN TANK)</span></span></div><div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-raid-healers" data-default="Raid healers">Raid healers</span> → raid <span class="role-label">(RAID)</span></span></div></div>
-      <div class="setup-col setup-col-misdirect-wide"><div class="setup-col-label">Misdirects</div><div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-mt-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> High Warlord Naj'entus → <span class="assignment-target" data-target-bind="bt-core-main-tank">Main tank</span></span></div></div>
-      <div class="setup-col"><div class="setup-col-label">Utility</div><div class="setup-line"><span class="line-text">Assignments → <span class="role unassigned">Boss-specific assignments will be added only where required.</span></span></div></div>
+      <div class="setup-col setup-col-tanks">
+        <div class="setup-col-label">Tanks</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Main tank → <span class="role unassigned" data-bind="bt-core-main-tank" data-default="Main tank">Main tank</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Healers</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Greater Heal"></span><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-mt-healers" data-default="MT healers">MT healers</span> → <span class="assignment-target" data-target-bind="bt-core-main-tank">Main tank</span> <span class="role-label">(MAIN TANK)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Prayer of Healing"></span><span class="line-text">Raid healers → <span class="role unassigned" data-bind-group="bt-core-raid-healers" data-default="Raid healers">Raid healers</span></span></div>
+      </div>
+      <div class="setup-col setup-col-misdirect-wide">
+        <div class="setup-col-label">Misdirects</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection"></span><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-mt-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> High Warlord Naj'entus → <span class="assignment-target" data-target-bind="bt-core-main-tank">Main tank</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Utility</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt="Curse of Elements"></span><span class="line-text">Curse of Elements → <span class="role unassigned" data-bind="bt-core-curse-of-elements" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholystrength.jpg" alt="Curse of Recklessness"></span><span class="line-text">Curse of Recklessness → <span class="role unassigned" data-bind="bt-core-curse-of-recklessness" data-default="Warlock">Warlock</span></span></div>
+      </div>
     </div>
   </div>
-  <div class="main-layout"><div class="sheet-content"><div class="header-row"><div class="role-pill role-tank">Tanks</div><div class="role-pill role-healer">Healers</div><div class="role-pill role-dps">DPS</div></div><div class="phase-block"><div class="phase-bar">Encounter foundation</div><div class="col-grid"><div class="col col-tank"><div class="mech"><div class="mech-body"><div class="mech-name">Tanks</div><div class="mech-desc">Encounter strategy will be added in the encounter PR.</div></div></div></div><div class="col col-healer"><div class="mech"><div class="mech-body"><div class="mech-name">Healers</div><div class="mech-desc">Encounter strategy will be added in the encounter PR.</div></div></div></div><div class="col col-dps"><div class="mech"><div class="mech-body"><div class="mech-name">DPS</div><div class="mech-desc">Encounter strategy will be added in the encounter PR.</div></div></div></div></div></div></div><aside class="image-sidebar"><div class="image-card image-placeholder"><div class="image-card-label">Positioning image placeholder</div><div class="image-card-caption">A local encounter image will be added with the strategy.</div></div><div class="reminder-card"><div class="reminder-card-label">Wipe Causes</div><p>Encounter-specific wipe causes will be added in the encounter PR.</p></div></aside></div>
+
+  <div class="main-layout">
+    <div class="sheet-content">
+      <div class="header-row"><div class="role-pill role-tank">Tanks</div><div class="role-pill role-healer">Healers</div><div class="role-pill role-dps">DPS</div></div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Pre-Pull · Spread Out · Survive Needle Spine</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech"><div class="mech-body"><div class="mech-name">Tank Naj'entus Still</div><div class="mech-desc">Main tank holds Naj'entus in place and keeps him stable for the entire fight. No tank swap is required.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Raid Spread</div><div class="mech-desc">Do not drag the boss through the raid. Give melee room to spread around the boss.</div></div></div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healing"></div><div class="mech-body"><div class="mech-name">Keep Everyone Healthy</div><div class="mech-desc">Needle Spine hits players constantly. Keep the raid healthy enough to survive a follow-up Impaling Spine or Tidal Burst.</div></div></div>
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_spear_02.jpg" alt="Needle Spine"></div><div class="mech-body"><div class="mech-name">Spread 6+ Yards</div><div class="mech-desc">Needle Spine splashes players near its target. Healers spread around the room while remaining in range of the raid.</div></div></div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_spear_02.jpg" alt="Needle Spine"></div><div class="mech-body"><div class="mech-name">Spread 6+ Yards</div><div class="mech-desc">Spread around Naj'entus so Needle Spine does not splash multiple raiders. Melee spread around the back and sides.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Full Damage</div><div class="mech-desc">Stay on Naj'entus whenever Tidal Shield is not active.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Impaling Spine · Free the Target Immediately</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_spear_02.jpg" alt="Impaling Spine"></div><div class="mech-body"><div class="mech-name">Main Tank Cannot Be Impaled</div><div class="mech-desc">Impaling Spine targets other raiders, so keep Naj'entus stable while the raid handles the Spine.</div></div></div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healing"></div><div class="mech-body"><div class="mech-name">Heal the Impaled Player</div><div class="mech-desc">Impaling Spine hits hard, stuns the target, and continues dealing damage until another player removes the Spine. Heal the target immediately.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Keep Moving Players Alive</div><div class="mech-desc">A nearby raider must move to the impaled player and click the Spine. Cover both the target and raid damage while the Spine is removed.</div></div></div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_spear_02.jpg" alt="Impaling Spine"></div><div class="mech-body"><div class="mech-name">Click the Spine</div><div class="mech-desc">If a nearby player is impaled, immediately move to them and click the Spine sticking out of the player. This frees them and gives you a Naj'entus Spine.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Keep the Spine</div><div class="mech-desc">The player who removes the Spine receives a Naj'entus Spine. Save it for the next Tidal Shield.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block phase-block-tidal">
+        <div class="phase-bar">Tidal Shield · TOP RAID · Throw Spine</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostarmor02.jpg" alt="Tidal Shield"></div><div class="mech-body"><div class="mech-name">Shield = Stop Damage</div><div class="mech-desc">Naj'entus becomes immune while Tidal Shield is active and heals while the shield remains. Hold the boss steady.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Prepare for Tidal Burst</div><div class="mech-desc">The main tank also takes the raid-wide burst when the shield breaks. Use a defensive if needed and make sure you are healthy first.</div></div></div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healing"></div><div class="mech-body"><div class="mech-name">TOP THE RAID FIRST</div><div class="mech-desc">Do not break Tidal Shield until the entire raid is healed. Breaking it causes roughly 8,500 Frost damage to everyone.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">Heal Immediately After Burst</div><div class="mech-desc">Tidal Burst drops the entire raid at once. Begin raid healing immediately after the shield breaks.</div></div></div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostarmor02.jpg" alt="Tidal Shield"></div><div class="mech-body"><div class="mech-name">DO NOT THROW EARLY</div><div class="mech-desc">If you have a Naj'entus Spine, wait for the raid lead or healer call before throwing it. Breaking the shield too early can kill the raid.</div></div></div>
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_spear_02.jpg" alt="Naj'entus Spine"></div><div class="mech-body"><div class="mech-name">Throw Spine at Naj'entus</div><div class="mech-desc">Once the raid is topped, a player holding a Naj'entus Spine throws it at the boss to break Tidal Shield. Resume full damage immediately.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block phase-block-repeat">
+        <div class="phase-bar">Repeat Until Dead · Beat the 8-Minute Berserk</div>
+        <div class="col-grid">
+          <div class="col col-tank"><div class="mech"><div class="mech-body"><div class="mech-name">Hold Naj'entus Still</div></div></div></div>
+          <div class="col col-healer"><div class="mech"><div class="mech-body"><div class="mech-name">Recover the Raid</div><div class="mech-desc">Top everyone before the next Needle Spine / Impaling Spine sequence.</div></div></div></div>
+          <div class="col col-dps"><div class="mech"><div class="mech-body"><div class="mech-name">Repeat the Cycle</div><div class="mech-desc">Collect Spines and break shields until Naj'entus dies.</div></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="image-sidebar">
+      <div class="image-card image-placeholder">
+        <div class="image-card-label">Naj'entus Positioning</div>
+        <div class="image-card-caption">Naj'entus positioning image will be added when the local asset is available.</div>
+      </div>
+      <div class="reminder-card">
+        <div class="reminder-card-label">Wipe Causes</div>
+        <ul class="reminder-list">
+          <li>Tidal Shield is broken before the raid is fully healed.</li>
+          <li>Impaling Spine is not removed quickly and the impaled player dies.</li>
+          <li>Players stack together and Needle Spine splashes multiple raiders.</li>
+          <li>Raid enters a Tidal Burst with players already damaged from Needle Spine.</li>
+          <li>No player saves a Naj'entus Spine for the next Tidal Shield.</li>
+          <li>Player with the Spine is too far away or fails to throw it while Naj'entus heals behind Tidal Shield.</li>
+          <li>Healers do not immediately recover the raid after Tidal Burst.</li>
+          <li>Raid damage is too low and Naj'entus reaches Berserk.</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
   <div class="sheet-footer">High Warlord Naj'entus · Black Temple · raid sheet</div>
 </div>

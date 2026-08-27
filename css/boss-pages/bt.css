@@ -225,6 +225,18 @@ body[data-boss-id="trash"] .setup-col-utility .role {
   letter-spacing: 0.6px;
 }
 
+body[data-boss-id="najentus"] .phase-block-tidal .phase-bar {
+  background: linear-gradient(90deg, #4b234d, #293c52 58%, #315443);
+  border-color: rgba(198, 147, 205, 0.62);
+  box-shadow: 0 0 0 1px rgba(112, 168, 121, 0.2), 0 5px 14px rgba(0, 0, 0, 0.2);
+  color: #f4e7f5;
+  font-weight: 700;
+}
+
+body[data-boss-id="najentus"] .phase-block-repeat .col {
+  padding-block: 7px;
+}
+
 .col {
   padding: 10px;
   border: 0.5px solid var(--bt-border-soft);
