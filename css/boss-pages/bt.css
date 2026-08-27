@@ -61,6 +61,20 @@ body {
   text-decoration: none;
 }
 
+.boss-tabs {
+  align-items: stretch;
+}
+
+.boss-tabs .boss-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  padding: 6px 10px;
+  line-height: 1.2;
+  text-align: center;
+}
+
 .sheet {
   background: var(--bt-sheet-bg);
   border-color: var(--bt-border);
@@ -223,14 +237,6 @@ body[data-boss-id="trash"] .setup-col-utility .role {
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.6px;
-}
-
-body[data-boss-id="najentus"] .phase-block-tidal .phase-bar {
-  background: linear-gradient(90deg, #4b234d, #293c52 58%, #315443);
-  border-color: rgba(198, 147, 205, 0.62);
-  box-shadow: 0 0 0 1px rgba(112, 168, 121, 0.2), 0 5px 14px rgba(0, 0, 0, 0.2);
-  color: #f4e7f5;
-  font-weight: 700;
 }
 
 body[data-boss-id="najentus"] .phase-block-repeat .col {
