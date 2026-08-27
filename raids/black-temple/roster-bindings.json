@@ -1,0 +1,91 @@
+{
+  "groupDefs": {
+    "bt-core-mt-healers": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "MT healer"
+    },
+    "bt-core-ot-healers": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "OT healer"
+    },
+    "bt-core-ot-2-healers": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "OT 2 healer"
+    },
+    "bt-core-ot-3-healers": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "OT 3 healer"
+    },
+    "bt-core-raid-healers": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Raid healer"
+    },
+    "bt-core-mt-misdirect": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Hunter"
+    },
+    "bt-core-ot-misdirect": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Hunter"
+    },
+    "bt-core-ot-2-misdirect": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Hunter"
+    },
+    "bt-core-ot-3-misdirect": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Hunter"
+    },
+    "bt-core-kicks": {
+      "defaultCount": 3,
+      "minCount": 0,
+      "defaultLabel": "Kicker"
+    },
+    "bt-core-decurse": {
+      "defaultCount": 0,
+      "minCount": 0,
+      "defaultLabel": "Player"
+    },
+    "bt-core-banish": {
+      "defaultCount": 3,
+      "minCount": 0,
+      "defaultLabel": "Banish"
+    }
+  },
+  "groupAliases": {},
+  "singleDefaults": {
+    "bt-core-main-tank": "Main tank",
+    "bt-core-off-tank": "Off tank",
+    "bt-core-off-tank-2": "Off tank 2",
+    "bt-core-off-tank-3": "Off tank 3",
+    "bt-core-curse-of-elements": "Warlock",
+    "bt-core-curse-of-recklessness": "Warlock",
+    "bt-core-curse-of-tongues": "Warlock",
+    "bt-core-magic-dispel": "Player"
+  },
+  "groupLabels": {
+    "bt-core-mt-healers": "MT healers",
+    "bt-core-ot-healers": "OT healers",
+    "bt-core-ot-2-healers": "OT 2 healers",
+    "bt-core-ot-3-healers": "OT 3 healers",
+    "bt-core-raid-healers": "Raid healers",
+    "bt-core-mt-misdirect": "MT misdirect",
+    "bt-core-ot-misdirect": "OT misdirect",
+    "bt-core-ot-2-misdirect": "OT 2 misdirect",
+    "bt-core-ot-3-misdirect": "OT 3 misdirect",
+    "bt-core-kicks": "Kicks",
+    "bt-core-banish": "Banish",
+    "bt-core-decurse": "Decurse",
+    "bt-core-magic-dispel": "Magic dispel"
+  },
+  "derivedBindings": {}
+}

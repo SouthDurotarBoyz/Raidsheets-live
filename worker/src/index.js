@@ -399,6 +399,22 @@ const RAID_CONFIGS = {
       azgalor: 'azgalor.html',
       archimonde: 'archimonde.html'
     }
+  },
+  'black-temple': {
+    rosterPage: 'bt-roster.html',
+    defaultViewPage: 'bt-najentus.html',
+    bossViewPages: {
+      trash: 'bt-trash.html',
+      najentus: 'bt-najentus.html',
+      supremus: 'bt-supremus.html',
+      'shade-of-akama': 'bt-shade-of-akama.html',
+      'teron-gorefiend': 'bt-teron-gorefiend.html',
+      'gurtogg-bloodboil': 'bt-gurtogg-bloodboil.html',
+      'reliquary-of-souls': 'bt-reliquary-of-souls.html',
+      'mother-shahraz': 'bt-mother-shahraz.html',
+      'illidari-council': 'bt-illidari-council.html',
+      illidan: 'bt-illidan.html'
+    }
   }
 };
 

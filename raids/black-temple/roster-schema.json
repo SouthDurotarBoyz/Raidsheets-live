@@ -1,0 +1,66 @@
+{
+  "raidId": "black-temple",
+  "version": 1,
+  "fields": {
+    "bt-core-main-tank": {
+      "type": "single"
+    },
+    "bt-core-off-tank": {
+      "type": "single"
+    },
+    "bt-core-off-tank-2": {
+      "type": "single"
+    },
+    "bt-core-off-tank-3": {
+      "type": "single"
+    },
+    "bt-core-curse-of-elements": {
+      "type": "single"
+    },
+    "bt-core-curse-of-recklessness": {
+      "type": "single"
+    },
+    "bt-core-curse-of-tongues": {
+      "type": "single"
+    },
+    "bt-core-magic-dispel": {
+      "type": "single"
+    },
+    "bt-core-mt-healers": {
+      "type": "list"
+    },
+    "bt-core-ot-healers": {
+      "type": "list"
+    },
+    "bt-core-ot-2-healers": {
+      "type": "list"
+    },
+    "bt-core-ot-3-healers": {
+      "type": "list"
+    },
+    "bt-core-raid-healers": {
+      "type": "list"
+    },
+    "bt-core-mt-misdirect": {
+      "type": "list"
+    },
+    "bt-core-ot-misdirect": {
+      "type": "list"
+    },
+    "bt-core-ot-2-misdirect": {
+      "type": "list"
+    },
+    "bt-core-ot-3-misdirect": {
+      "type": "list"
+    },
+    "bt-core-kicks": {
+      "type": "list"
+    },
+    "bt-core-decurse": {
+      "type": "list"
+    },
+    "bt-core-banish": {
+      "type": "list"
+    }
+  }
+}
