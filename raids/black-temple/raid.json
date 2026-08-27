@@ -1,0 +1,70 @@
+{
+  "id": "black-temple",
+  "name": "Black Temple",
+  "displayName": "Black Temple",
+  "firstBossId": "najentus",
+  "rosterPage": "bt-roster.html",
+  "guidePage": "bt-najentus.html",
+  "bosses": [
+    {
+      "id": "trash",
+      "name": "Trash",
+      "shortName": "Trash",
+      "page": "bt-trash.html"
+    },
+    {
+      "id": "najentus",
+      "name": "High Warlord Naj'entus",
+      "shortName": "High Warlord Naj'entus",
+      "page": "bt-najentus.html"
+    },
+    {
+      "id": "supremus",
+      "name": "Supremus",
+      "shortName": "Supremus",
+      "page": "bt-supremus.html"
+    },
+    {
+      "id": "shade-of-akama",
+      "name": "Shade of Akama",
+      "shortName": "Shade of Akama",
+      "page": "bt-shade-of-akama.html"
+    },
+    {
+      "id": "teron-gorefiend",
+      "name": "Teron Gorefiend",
+      "shortName": "Teron Gorefiend",
+      "page": "bt-teron-gorefiend.html"
+    },
+    {
+      "id": "gurtogg-bloodboil",
+      "name": "Gurtogg Bloodboil",
+      "shortName": "Gurtogg Bloodboil",
+      "page": "bt-gurtogg-bloodboil.html"
+    },
+    {
+      "id": "reliquary-of-souls",
+      "name": "Reliquary of Souls",
+      "shortName": "Reliquary of Souls",
+      "page": "bt-reliquary-of-souls.html"
+    },
+    {
+      "id": "mother-shahraz",
+      "name": "Mother Shahraz",
+      "shortName": "Mother Shahraz",
+      "page": "bt-mother-shahraz.html"
+    },
+    {
+      "id": "illidari-council",
+      "name": "The Illidari Council",
+      "shortName": "The Illidari Council",
+      "page": "bt-illidari-council.html"
+    },
+    {
+      "id": "illidan",
+      "name": "Illidan Stormrage",
+      "shortName": "Illidan Stormrage",
+      "page": "bt-illidan.html"
+    }
+  ]
+}
