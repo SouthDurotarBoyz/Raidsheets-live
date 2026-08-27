@@ -15,7 +15,7 @@
     {
       "id": "najentus",
       "name": "High Warlord Naj'entus",
-      "shortName": "High Warlord Naj'entus",
+      "shortName": "Naj'entus",
       "page": "bt-najentus.html"
     },
     {
@@ -27,43 +27,43 @@
     {
       "id": "shade-of-akama",
       "name": "Shade of Akama",
-      "shortName": "Shade of Akama",
+      "shortName": "Akama",
       "page": "bt-shade-of-akama.html"
     },
     {
       "id": "teron-gorefiend",
       "name": "Teron Gorefiend",
-      "shortName": "Teron Gorefiend",
+      "shortName": "Gorefiend",
       "page": "bt-teron-gorefiend.html"
     },
     {
       "id": "gurtogg-bloodboil",
       "name": "Gurtogg Bloodboil",
-      "shortName": "Gurtogg Bloodboil",
+      "shortName": "Bloodboil",
       "page": "bt-gurtogg-bloodboil.html"
     },
     {
       "id": "reliquary-of-souls",
       "name": "Reliquary of Souls",
-      "shortName": "Reliquary of Souls",
+      "shortName": "Reliquary",
       "page": "bt-reliquary-of-souls.html"
     },
     {
       "id": "mother-shahraz",
       "name": "Mother Shahraz",
-      "shortName": "Mother Shahraz",
+      "shortName": "Shahraz",
       "page": "bt-mother-shahraz.html"
     },
     {
       "id": "illidari-council",
       "name": "The Illidari Council",
-      "shortName": "The Illidari Council",
+      "shortName": "Council",
       "page": "bt-illidari-council.html"
     },
     {
       "id": "illidan",
       "name": "Illidan Stormrage",
-      "shortName": "Illidan Stormrage",
+      "shortName": "Illidan",
       "page": "bt-illidan.html"
     }
   ]
