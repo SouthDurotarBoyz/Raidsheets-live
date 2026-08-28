@@ -28,6 +28,7 @@
         <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_dispelmagic.jpg" alt="Magic dispel"></span><span class="line-text">Magic dispel → <span class="role unassigned" data-bind="bt-core-magic-dispel" data-default="Player">Player</span></span></div>
         <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt="Curse of Elements"></span><span class="line-text">Curse of Elements → <span class="role unassigned" data-bind="bt-core-curse-of-elements" data-default="Warlock">Warlock</span></span></div>
         <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholystrength.jpg" alt="Curse of Recklessness"></span><span class="line-text">Curse of Recklessness → <span class="role unassigned" data-bind="bt-core-curse-of-recklessness" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_curseoftounges.jpg" alt="Curse of Tongues"></span><span class="line-text">Curse of Tongues → <span class="role unassigned" data-bind="bt-core-curse-of-tongues" data-default="Warlock">Warlock</span></span></div>
       </div>
     </div>
   </div>
@@ -37,82 +38,85 @@
       <div class="header-row"><div class="role-pill role-tank">Tanks</div><div class="role-pill role-healer">Healers</div><div class="role-pill role-dps">DPS</div></div>
 
       <div class="phase-block">
-        <div class="phase-bar">Essence of Suffering · NO NORMAL HEALING · Rotate Fixate</div>
+        <div class="phase-bar">Essence of Suffering · Fixate Every 5s · Closest Player Controls Boss · NO HEALING</div>
         <div class="col-grid">
           <div class="col col-tank">
-            <div class="mech critical"><div class="mech-body"><div class="mech-name">CLOSEST PLAYER GETS FIXATE</div><div class="mech-desc">Essence of Suffering repeatedly Fixates the closest player. Tanks control the mechanic by deliberately taking turns being closest to the boss.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">CLOSEST PLAYER = FIXATE</div><div class="mech-desc">Every 5 seconds, Essence of Suffering chooses the closest player as its new Fixate target. There is no normal threat table in this phase.</div></div></div>
             <div class="mech critical"><div class="mech-body"><div class="mech-name">ROTATE TANKS</div><div class="mech-desc">Tank 1 starts closest. When the active tank needs relief, Tank 2 moves closer and takes the next Fixate while the previous tank backs away.</div></div></div>
-            <div class="mech"><div class="mech-body"><div class="mech-name">Use Personal Survival</div><div class="mech-desc">Normal healing is unavailable during this phase. Use mitigation and personal survival tools while controlling Fixate.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">HIGH AVOIDANCE MATTERS</div><div class="mech-desc">With healing disabled, survival depends on avoidance, mitigation, defensive cooldowns, and rotating Fixate cleanly.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">ENRAGE ~45s · 15s</div><div class="mech-desc">Enrage occurs roughly 45 seconds into the phase and lasts 15 seconds. During Enrage, use a high-avoidance Fixate target such as a Rogue with Evasion or Hunter with Deterrence. Otherwise use a tank defensive.</div></div></div>
           </div>
           <div class="col col-healer">
-            <div class="mech critical"><div class="mech-body"><div class="mech-name">YOU CANNOT HEAL NORMALLY</div><div class="mech-desc">Aura of Suffering prevents normal healing. Do not waste the phase repeatedly attempting conventional heals that cannot restore the raid.</div></div></div>
-            <div class="mech critical"><div class="mech-body"><div class="mech-name">SURVIVAL TOOLS MATTER</div><div class="mech-desc">Use shields, absorbs, Healthstones, potions, mitigation, and any applicable nonstandard survival tools. Keep yourself alive for later phases.</div></div></div>
-            <div class="mech"><div class="mech-body"><div class="mech-name">Prepare for Phase 2</div><div class="mech-desc">Preserve positioning and be ready to immediately resume active healing once Essence of Suffering dies.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">NO HEALING OR HEALTH REGEN</div><div class="mech-desc">Aura of Suffering reduces healing and health regeneration by 100%, removes Armor, and reduces Defense skill by 500.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">HEALERS DPS</div><div class="mech-desc">With healing disabled, contribute damage to Essence of Suffering. Do not conserve mana; the intermission restores health and mana.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">DISPEL SOUL DRAIN</div><div class="mech-desc">Soul Drain targets random players, deals damage, and drains mana. It is a Magic debuff and should be removed immediately.</div></div></div>
           </div>
           <div class="col col-dps">
-            <div class="mech critical"><div class="mech-body"><div class="mech-name">BURN SUFFERING</div><div class="mech-desc">Essence of Suffering has extremely weak defenses. Deal maximum damage while staying behind the tanks and never becoming the closest player.</div></div></div>
-            <div class="mech critical"><div class="mech-body"><div class="mech-name">TRANQ ENRAGE</div><div class="mech-desc">Hunters remove Enrage immediately with Tranquilizing Shot. Do not allow an enraged Essence to remain on the active Fixate tank.</div></div></div>
-            <div class="mech"><div class="mech-body"><div class="mech-name">Do Not Steal Fixate</div><div class="mech-desc">Never move closer to the boss than the active tank. The closest player can become the Fixate target.</div></div></div>
-            <div class="mech"><div class="mech-body"><div class="mech-name">Manage Soul Drain</div><div class="mech-desc">Soul Drain damages players and drains mana. Continue the burn while using personal survival tools as needed.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">NO THREAT TABLE</div><div class="mech-desc">You cannot pull threat during Essence of Suffering. Stay behind the assigned Fixate player and maximize damage.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">NO ARMOR DEBUFFS NEEDED</div><div class="mech-desc">Essence of Suffering has 0 Armor. Expose Armor, Curse of Recklessness, and non-Improved Faerie Fire provide no armor-reduction benefit here.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">DO NOT STEAL FIXATE</div><div class="mech-desc">Never move closer to the boss than the assigned Fixate player.</div></div></div>
           </div>
         </div>
       </div>
 
       <div class="phase-block phase-block-repeat">
-        <div class="phase-bar">Enslaved Souls · AoE Them Down · Recover Resources</div>
+        <div class="phase-bar">Enslaved Souls · Kill Weak Ghosts · Recover Health and Mana</div>
         <div class="col-grid">
-          <div class="col col-tank"><div class="mech"><div class="mech-body"><div class="mech-name">Gather the Souls</div><div class="mech-desc">Control the Enslaved Souls so the raid can kill them efficiently.</div></div></div></div>
-          <div class="col col-healer"><div class="mech critical"><div class="mech-body"><div class="mech-name">RECOVER</div><div class="mech-desc">Healing is available again. Stabilize the raid and use the intermission to prepare for Essence of Desire.</div></div></div></div>
-          <div class="col col-dps"><div class="mech critical"><div class="mech-body"><div class="mech-name">KILL THE SOULS</div><div class="mech-desc">AoE the Enslaved Souls quickly. Their deaths help restore raid resources before the next Essence.</div></div></div></div>
+          <div class="col col-tank"><div class="mech"><div class="mech-body"><div class="mech-name">GATHER THE SOULS</div><div class="mech-desc">Control the weak Enslaved Souls so the raid can kill them efficiently.</div></div></div></div>
+          <div class="col col-healer"><div class="mech critical"><div class="mech-body"><div class="mech-name">KILL SOULS = RAID RECOVERS</div><div class="mech-desc">Each Enslaved Soul killed restores health and mana to the entire raid. Finish the intermission recovered before Essence of Desire.</div></div></div></div>
+          <div class="col col-dps"><div class="mech critical"><div class="mech-body"><div class="mech-name">KILL THE SOULS</div><div class="mech-desc">AoE the weak ghosts quickly; every death restores health and mana to the entire raid.</div></div></div></div>
         </div>
       </div>
 
       <div class="phase-block">
-        <div class="phase-bar">Essence of Desire · REFLECTED DAMAGE · Interrupt Everything</div>
+        <div class="phase-bar">Essence of Desire · 50% DAMAGE REFLECT · Spirit Shock Every 5s · Remove Rune Shield</div>
         <div class="col-grid">
           <div class="col col-tank">
-            <div class="mech"><div class="mech-body"><div class="mech-name">Hold Desire Stable</div><div class="mech-desc">Keep Essence of Desire facing predictably and maintain control while the raid manages interrupts and reflected damage.</div></div></div>
-            <div class="mech"><div class="mech-body"><div class="mech-name">Watch Your Own Damage</div><div class="mech-desc">Tanks are also affected by the phase's unusual damage mechanics. Do not ignore your own health while maintaining threat.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">SPELL REFLECT DEADEN</div><div class="mech-desc">Deaden doubles damage taken for 10 seconds. A Warrior Main Tank should Spell Reflect it when possible, putting the effect on Essence of Desire instead.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">HOLD DESIRE STABLE</div><div class="mech-desc">Maintain control while the raid handles every Spirit Shock and reflected damage.</div></div></div>
           </div>
           <div class="col col-healer">
-            <div class="mech critical"><div class="mech-body"><div class="mech-name">HEAL REFLECTED DAMAGE</div><div class="mech-desc">Aura of Desire reflects a portion of player damage back to the attacker. Expect constant raid-wide self-inflicted damage as DPS attacks.</div></div></div>
-            <div class="mech critical"><div class="mech-body"><div class="mech-name">Watch High-Damage Players</div><div class="mech-desc">Players dealing large bursts can take large reflected hits. Keep them healthy enough that their next attack does not kill them.</div></div></div>
-            <div class="mech"><div class="mech-body"><div class="mech-name">Mana Behaves Differently</div><div class="mech-desc">Use the phase's unusual mana environment aggressively while maintaining enough control to enter Phase 3 prepared.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">HEALING DOUBLED · MAX MANA SHRINKS</div><div class="mech-desc">Aura of Desire doubles healing output but gradually reduces maximum mana. Spend mana carefully; the next intermission restores it.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">DISPEL / SPELLSTEAL RUNE SHIELD</div><div class="mech-desc">Rune Shield absorbs damage and prevents Spirit Shock from being interrupted. Remove it immediately with Dispel Magic or Spellsteal.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">WATCH HIGH-DAMAGE PLAYERS</div><div class="mech-desc">Keep attackers healthy enough to survive the damage reflected by their next attack.</div></div></div>
           </div>
           <div class="col col-dps">
-            <div class="mech critical"><div class="mech-body"><div class="mech-name">YOUR DAMAGE HURTS YOU</div><div class="mech-desc">Aura of Desire reflects damage back to you. Watch your health and stop attacking briefly if another hit would kill you.</div></div></div>
-            <div class="mech critical"><div class="mech-body"><div class="mech-name">INTERRUPT SPIRIT SHOCK</div><div class="mech-desc">Assigned kickers must stop Spirit Shock. Keep the interrupt rotation clean and do not overlap every kick.</div></div></div>
-            <div class="mech critical"><div class="mech-body"><div class="mech-name">INTERRUPT DEADEN</div><div class="mech-desc">Do not allow Deaden to remain uncontrolled. Assigned interrupt players should handle it immediately according to the raid's kick rotation.</div></div></div>
-            <div class="mech critical"><div class="mech-body"><div class="mech-name">REMOVE RUNE SHIELD</div><div class="mech-desc">Rune Shield protects the Essence. The assigned Magic Dispel player removes the shield quickly so normal damage can resume.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">50% OF YOUR DAMAGE HITS YOU</div><div class="mech-desc">Damage dealers take self-damage equal to 50% of the damage they deal to Essence of Desire. Avoid lethal burst spikes.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">SPIRIT SHOCK EVERY ~5s</div><div class="mech-desc">Spirit Shock deals massive damage and disorients the Main Tank. Every cast must be interrupted. Use a clean two-player kick rotation so every Spirit Shock is covered; Curse of Tongues makes interrupts safer.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">REFLECTED DEADEN = HUGE BURN</div><div class="mech-desc">When Deaden is reflected onto the boss, Essence takes double damage for 10 seconds—but Aura of Desire also means DPS takes much more reflected self-damage. Do not kill yourself.</div></div></div>
           </div>
         </div>
       </div>
 
       <div class="phase-block phase-block-repeat">
-        <div class="phase-bar">Enslaved Souls · Kill Fast · Prepare for Final Burn</div>
+        <div class="phase-bar">Enslaved Souls · Kill Weak Ghosts · Enter Phase 3 Full</div>
         <div class="col-grid">
-          <div class="col col-tank"><div class="mech"><div class="mech-body"><div class="mech-name">Gather the Souls</div></div></div></div>
-          <div class="col col-healer"><div class="mech"><div class="mech-body"><div class="mech-name">Top the Raid</div><div class="mech-desc">Prepare for escalating Phase 3 damage.</div></div></div></div>
-          <div class="col col-dps"><div class="mech"><div class="mech-body"><div class="mech-name">AoE Souls</div><div class="mech-desc">Kill them quickly and prepare offensive cooldowns.</div></div></div></div>
+          <div class="col col-tank"><div class="mech"><div class="mech-body"><div class="mech-name">GATHER THE SOULS</div><div class="mech-desc">Control the weak ghosts for a fast recovery.</div></div></div></div>
+          <div class="col col-healer"><div class="mech critical"><div class="mech-body"><div class="mech-name">ENTER PHASE 3 FULL</div><div class="mech-desc">Every Soul kill restores raid health and mana. Do not begin Essence of Anger depleted.</div></div></div></div>
+          <div class="col col-dps"><div class="mech"><div class="mech-body"><div class="mech-name">AOE SOULS</div><div class="mech-desc">Kill every Soul quickly and prepare offensive cooldowns.</div></div></div></div>
         </div>
       </div>
 
       <div class="phase-block">
-        <div class="phase-bar">Essence of Anger · BLOODLUST · Kill Before Raid Collapses</div>
+        <div class="phase-bar">Essence of Anger · ONE ACTIVE TANK · Seethe Threat · Soul Scream · FINAL BURN</div>
         <div class="col-grid">
           <div class="col col-tank">
-            <div class="mech critical"><div class="mech-body"><div class="mech-name">FACE ANGER AWAY</div><div class="mech-desc">Keep Essence of Anger facing away from the raid. Soul Scream is a dangerous frontal mechanic and should only threaten the tank.</div></div></div>
-            <div class="mech critical"><div class="mech-body"><div class="mech-name">SURVIVE ESCALATING DAMAGE</div><div class="mech-desc">Aura of Anger continuously makes the phase more dangerous. Use defensive cooldowns as incoming damage ramps.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">ONE ACTIVE TANK</div><div class="mech-desc">Avoid unnecessary Taunts during Essence of Anger. Use one active tank unless deliberately executing the planned Seethe opener.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">TAUNT = SEETHE</div><div class="mech-desc">Any Taunt gives everyone except the taunter +200% threat generation for 10 seconds and gives Essence of Anger +100% attack speed for 10 seconds.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">OPTIONAL OPENER: OT TAUNT ONCE</div><div class="mech-desc">An off-tank can Taunt once at the start so the Main Tank gains Seethe and builds a large threat lead for roughly 5–10 seconds. The raid waits for the 10-second threat buff to fade before full DPS; do not repeat the swap.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">FACE ANGER AWAY</div><div class="mech-desc">Soul Scream is a frontal cone. Keep Essence of Anger facing away from the raid.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">LOW RESOURCE FOR SOUL SCREAM</div><div class="mech-desc">Soul Scream is a frontal that burns mana or rage. Keep your resource low before it lands to reduce the resulting damage.</div></div></div>
           </div>
           <div class="col col-healer">
-            <div class="mech critical"><div class="mech-body"><div class="mech-name">DAMAGE ONLY GETS WORSE</div><div class="mech-desc">Aura of Anger continuously increases the encounter's damage pressure. Heal aggressively; this phase is a race, not a conservation phase.</div></div></div>
-            <div class="mech critical"><div class="mech-body"><div class="mech-name">WATCH SPITE TARGETS</div><div class="mech-desc">Players affected by Spite enter a dangerous delayed-damage window. Keep them healthy and be ready for the effect to resolve.</div></div></div>
-            <div class="mech"><div class="mech-body"><div class="mech-name">Use Healing Cooldowns</div><div class="mech-desc">Use major raid and tank healing cooldowns during the final burn rather than saving them.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">DAMAGE RAMPS BOTH WAYS</div><div class="mech-desc">Aura of Anger steadily increases raid-wide Shadow damage while also increasing the raid's damage output. This becomes a race to finish the Essence.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">SPITE · IMMUNE 6s → ~7,444 NATURE</div><div class="mech-desc">Spite makes the target immune to damage for 6 seconds, then hits them for about 7,444 Nature damage. Top them before the immunity ends.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">NATURE PROTECTION HELPS</div><div class="mech-desc">A Major Nature Protection Potion can help absorb the Spite spike.</div></div></div>
           </div>
           <div class="col col-dps">
-            <div class="mech critical"><div class="mech-body"><div class="mech-name">BLOODLUST + ALL COOLDOWNS</div><div class="mech-desc">Use Bloodlust/Heroism and offensive cooldowns on Essence of Anger. Kill it before the escalating aura overwhelms the raid.</div></div></div>
-            <div class="mech critical"><div class="mech-body"><div class="mech-name">STAY OUT OF FRONT</div><div class="mech-desc">Only the tank belongs in front of Essence of Anger. Do not take Soul Scream with the tank.</div></div></div>
-            <div class="mech"><div class="mech-body"><div class="mech-name">Burn Through the Ramp</div><div class="mech-desc">Damage pressure continually increases. This is the final phase; maximize damage while handling Spite correctly.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">TRANQ BOSS SEETHE</div><div class="mech-desc">Hunters should use Tranquilizing Shot on the boss's +100% attack-speed Seethe buff after a Taunt.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">BLOODLUST + ALL COOLDOWNS</div><div class="mech-desc">Aura of Anger steadily ramps incoming damage, so this is the final DPS race. Use Bloodlust/Heroism and offensive cooldowns as the raid's strategy.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">STAY OUT OF FRONT</div><div class="mech-desc">Only the tank belongs in front. Do not take Soul Scream with the tank.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">WATCH SEETHE THREAT</div><div class="mech-desc">Do not pull threat while affected by +200% threat generation. Wait out the planned opener before full damage.</div></div></div>
           </div>
         </div>
       </div>
@@ -120,9 +124,9 @@
       <div class="phase-block phase-block-repeat">
         <div class="phase-bar">Essence of Anger Dies · Encounter Over</div>
         <div class="col-grid">
-          <div class="col col-tank"><div class="mech"><div class="mech-body"><div class="mech-name">Keep Anger Controlled</div><div class="mech-desc">Maintain control through the final burn.</div></div></div></div>
-          <div class="col col-healer"><div class="mech"><div class="mech-body"><div class="mech-name">Do Not Conserve Cooldowns</div></div></div></div>
-          <div class="col col-dps"><div class="mech"><div class="mech-body"><div class="mech-name">Do Not Stop</div><div class="mech-desc">Keep attacking until the Essence dies.</div></div></div></div>
+          <div class="col col-tank"><div class="mech"><div class="mech-body"><div class="mech-name">KEEP ANGER CONTROLLED</div><div class="mech-desc">Maintain control through the final burn.</div></div></div></div>
+          <div class="col col-healer"><div class="mech"><div class="mech-body"><div class="mech-name">DO NOT CONSERVE COOLDOWNS</div></div></div></div>
+          <div class="col col-dps"><div class="mech"><div class="mech-body"><div class="mech-name">DO NOT STOP</div><div class="mech-desc">Keep attacking until the Essence dies.</div></div></div></div>
         </div>
       </div>
     </div>
@@ -135,27 +139,28 @@
       </div>
       <div class="reminder-card">
         <div class="reminder-card-label">Three Rules</div>
-        <p><strong>Suffering:</strong> Closest player controls Fixate. No normal healing.</p>
-        <p><strong>Desire:</strong> Interrupt. Watch reflected damage.</p>
-        <p><strong>Anger:</strong> Bloodlust. Burn.</p>
+        <p><strong>Suffering:</strong> Closest player controls Fixate every 5s. No healing.</p>
+        <p><strong>Desire:</strong> Kick every Spirit Shock. Spell Reflect Deaden. Remove Rune Shield.</p>
+        <p><strong>Anger:</strong> Avoid unnecessary Taunts. Watch Seethe, Soul Scream, and Spite.</p>
       </div>
       <div class="reminder-card">
         <div class="reminder-card-label">Wipe Causes</div>
         <ul class="reminder-list">
-          <li>A non-tank stands closest to Essence of Suffering and receives Fixate.</li>
-          <li>Tanks fail to rotate Fixate and the active tank dies during the no-healing phase.</li>
-          <li>Hunter fails to remove Enrage from Essence of Suffering.</li>
-          <li>Players waste Phase 1 trying to use normal healing instead of survival tools.</li>
-          <li>Raid fails to kill Enslaved Souls efficiently and enters the next phase without recovering.</li>
-          <li>Spirit Shock casts go through during Essence of Desire.</li>
-          <li>Interrupt rotation fails on Deaden.</li>
-          <li>Rune Shield remains active too long.</li>
-          <li>DPS kills themselves by attacking through low health during reflected-damage Phase 2.</li>
-          <li>Raid enters Essence of Anger without recovering during the intermission.</li>
-          <li>Essence of Anger faces the raid and Soul Scream hits non-tanks.</li>
-          <li>Spite targets are not prepared for the delayed damage.</li>
-          <li>Raid holds Bloodlust or offensive cooldowns too long in the final phase.</li>
-          <li>Aura of Anger ramps until healers can no longer keep the raid alive.</li>
+          <li>The Fixate rotation fails or a player stands closer than the assigned target during Essence of Suffering.</li>
+          <li>Soul Drain is not dispelled immediately.</li>
+          <li>The raid wastes Phase 1 trying to heal instead of dealing damage and surviving.</li>
+          <li>Enrage begins without an avoidance or defensive Fixate plan.</li>
+          <li>The raid fails to recover health and mana from Enslaved Souls.</li>
+          <li>Spirit Shock is not interrupted.</li>
+          <li>Rune Shield remains active and makes Spirit Shock uninterruptible.</li>
+          <li>Deaden is mishandled or the Warrior misses a planned Spell Reflect.</li>
+          <li>DPS kills themselves through Aura of Desire's 50% reflection.</li>
+          <li>An unnecessary Taunt triggers dangerous Seethe threat.</li>
+          <li>The boss's Seethe attack-speed buff is not removed with Tranquilizing Shot.</li>
+          <li>DPS pulls threat while affected by +200% Seethe.</li>
+          <li>Soul Scream hits the raid or the tank carries too much rage or mana into it.</li>
+          <li>A Spite target is not topped before the delayed Nature hit.</li>
+          <li>Aura of Anger outscales healing before the boss dies.</li>
         </ul>
       </div>
     </aside>
