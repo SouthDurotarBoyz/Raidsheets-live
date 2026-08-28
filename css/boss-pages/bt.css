@@ -47,6 +47,42 @@ body {
   padding: 20px;
 }
 
+body[data-boss-id="najentus"] {
+  --bt-boss-background-image: url("../../assets/bt/backgrounds/najentus.webp");
+}
+
+body[data-boss-id="supremus"] {
+  --bt-boss-background-image: url("../../assets/bt/backgrounds/supremus.webp");
+}
+
+body[data-boss-id="shade-of-akama"] {
+  --bt-boss-background-image: url("../../assets/bt/backgrounds/akama.webp");
+}
+
+body[data-boss-id="teron-gorefiend"] {
+  --bt-boss-background-image: url("../../assets/bt/backgrounds/gorefiend.webp");
+}
+
+body[data-boss-id="gurtogg-bloodboil"] {
+  --bt-boss-background-image: url("../../assets/bt/backgrounds/bloodboil.webp");
+}
+
+body[data-boss-id="reliquary-of-souls"] {
+  --bt-boss-background-image: url("../../assets/bt/backgrounds/reliquary.webp");
+}
+
+body[data-boss-id="mother-shahraz"] {
+  --bt-boss-background-image: url("../../assets/bt/backgrounds/shahraz.webp");
+}
+
+body[data-boss-id="illidari-council"] {
+  --bt-boss-background-image: url("../../assets/bt/backgrounds/council.webp");
+}
+
+body[data-boss-id="illidan"] {
+  --bt-boss-background-image: url("../../assets/bt/backgrounds/illidian.webp");
+}
+
 .page-nav,
 .screen-only {
   max-width: 1280px;

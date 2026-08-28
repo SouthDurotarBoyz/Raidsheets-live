@@ -10,60 +10,70 @@
       "id": "trash",
       "name": "Trash",
       "shortName": "Trash",
+      "icon": "assets/bt/icons/trash.jpg",
       "page": "bt-trash.html"
     },
     {
       "id": "najentus",
       "name": "High Warlord Naj'entus",
       "shortName": "Naj'entus",
+      "icon": "assets/bt/icons/najentus.jpg",
       "page": "bt-najentus.html"
     },
     {
       "id": "supremus",
       "name": "Supremus",
       "shortName": "Supremus",
+      "icon": "assets/bt/icons/supremus.jpg",
       "page": "bt-supremus.html"
     },
     {
       "id": "shade-of-akama",
       "name": "Shade of Akama",
       "shortName": "Akama",
+      "icon": "assets/bt/icons/akama.jpg",
       "page": "bt-shade-of-akama.html"
     },
     {
       "id": "teron-gorefiend",
       "name": "Teron Gorefiend",
       "shortName": "Gorefiend",
+      "icon": "assets/bt/icons/gorefiend.jpg",
       "page": "bt-teron-gorefiend.html"
     },
     {
       "id": "gurtogg-bloodboil",
       "name": "Gurtogg Bloodboil",
       "shortName": "Bloodboil",
+      "icon": "assets/bt/icons/bloodboil.jpg",
       "page": "bt-gurtogg-bloodboil.html"
     },
     {
       "id": "reliquary-of-souls",
       "name": "Reliquary of Souls",
       "shortName": "Reliquary",
+      "icon": "assets/bt/icons/reliquary.jpg",
       "page": "bt-reliquary-of-souls.html"
     },
     {
       "id": "mother-shahraz",
       "name": "Mother Shahraz",
       "shortName": "Shahraz",
+      "icon": "assets/bt/icons/shahraz.jpg",
       "page": "bt-mother-shahraz.html"
     },
     {
       "id": "illidari-council",
       "name": "The Illidari Council",
       "shortName": "Council",
+      "icon": "assets/bt/icons/council.jpg",
       "page": "bt-illidari-council.html"
     },
     {
       "id": "illidan",
       "name": "Illidan Stormrage",
       "shortName": "Illidan",
+      "icon": "assets/bt/icons/illidian.jpg",
       "page": "bt-illidan.html"
     }
   ]
