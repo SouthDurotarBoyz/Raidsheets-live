@@ -1,13 +1,149 @@
 <div class="sheet">
   <div class="boss-header"><div class="boss-zone">Black Temple</div><h1 class="boss-name">Mother Shahraz</h1></div>
+
   <div class="setup-block">
     <div class="setup-grid setup-grid-4">
-      <div class="setup-col setup-col-tanks"><div class="setup-col-label">Tanks</div><div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Main tank → <span class="role unassigned" data-bind="bt-core-main-tank" data-default="Main tank">Main tank</span></span></div></div>
-      <div class="setup-col"><div class="setup-col-label">Healers</div><div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-mt-healers" data-default="MT healers">MT healers</span> → <span class="assignment-target" data-target-bind="bt-core-main-tank">Main tank</span> <span class="role-label">(MAIN TANK)</span></span></div><div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-raid-healers" data-default="Raid healers">Raid healers</span> → raid <span class="role-label">(RAID)</span></span></div></div>
-      <div class="setup-col setup-col-misdirect-wide"><div class="setup-col-label">Misdirects</div><div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-mt-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Mother Shahraz → <span class="assignment-target" data-target-bind="bt-core-main-tank">Main tank</span></span></div></div>
-      <div class="setup-col"><div class="setup-col-label">Utility</div><div class="setup-line"><span class="line-text">Assignments → <span class="role unassigned">Boss-specific assignments will be added only where required.</span></span></div></div>
+      <div class="setup-col setup-col-tanks">
+        <div class="setup-col-label">Tanks</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Tank 1 → <span class="role unassigned" data-bind="bt-core-main-tank" data-default="Tank 1">Tank 1</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span><span class="line-text">Tank 2 → <span class="role unassigned" data-bind="bt-core-off-tank" data-default="Tank 2">Tank 2</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span><span class="line-text">Tank 3 → <span class="role unassigned" data-bind="bt-core-off-tank-2" data-default="Tank 3">Tank 3</span></span></div>
+        <div class="setup-line"><span class="line-text">All 3 stack in front to split Saber Lash.</span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Healers</div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-mt-healers" data-default="MT healers">MT healers</span> → <span class="assignment-target" data-target-bind="bt-core-main-tank">Tank 1</span> <span class="role-label">(TANK 1)</span></span></div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-ot-healers" data-default="OT healers">OT healers</span> → <span class="assignment-target" data-target-bind="bt-core-off-tank">Tank 2</span> <span class="role-label">(TANK 2)</span></span></div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-ot-2-healers" data-default="OT 2 healers">OT 2 healers</span> → <span class="assignment-target" data-target-bind="bt-core-off-tank-2">Tank 3</span> <span class="role-label">(TANK 3)</span></span></div>
+        <div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-raid-healers" data-default="Raid healers">Raid healers</span> → raid <span class="role-label">(RAID)</span></span></div>
+      </div>
+      <div class="setup-col setup-col-misdirect-wide">
+        <div class="setup-col-label">Misdirects</div>
+        <div class="setup-line" data-hide-empty-row="true"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection"></span><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-mt-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Mother Shahraz → <span class="assignment-target" data-target-bind="bt-core-main-tank">Tank 1</span></span></div>
+        <div class="setup-line" data-hide-empty-row="true"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection"></span><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-ot-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span> Saber Lash group → <span class="assignment-target" data-target-bind="bt-core-off-tank">Tank 2</span></span></div>
+        <div class="setup-line" data-hide-empty-row="true"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection"></span><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-ot-2-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span> Saber Lash group → <span class="assignment-target" data-target-bind="bt-core-off-tank-2">Tank 3</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Utility</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt="Curse of Elements"></span><span class="line-text">Curse of Elements → <span class="role unassigned" data-bind="bt-core-curse-of-elements" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholystrength.jpg" alt="Curse of Recklessness"></span><span class="line-text">Curse of Recklessness → <span class="role unassigned" data-bind="bt-core-curse-of-recklessness" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="line-text">Non-tanks → Shadow Resistance recommended</span></div>
+      </div>
     </div>
   </div>
-  <div class="main-layout"><div class="sheet-content"><div class="header-row"><div class="role-pill role-tank">Tanks</div><div class="role-pill role-healer">Healers</div><div class="role-pill role-dps">DPS</div></div><div class="phase-block"><div class="phase-bar">Encounter foundation</div><div class="col-grid"><div class="col col-tank"><div class="mech"><div class="mech-body"><div class="mech-name">Tanks</div><div class="mech-desc">Encounter strategy will be added in the encounter PR.</div></div></div></div><div class="col col-healer"><div class="mech"><div class="mech-body"><div class="mech-name">Healers</div><div class="mech-desc">Encounter strategy will be added in the encounter PR.</div></div></div></div><div class="col col-dps"><div class="mech"><div class="mech-body"><div class="mech-name">DPS</div><div class="mech-desc">Encounter strategy will be added in the encounter PR.</div></div></div></div></div></div></div><aside class="image-sidebar"><div class="image-card image-placeholder"><div class="image-card-label">Positioning image placeholder</div><div class="image-card-caption">A local encounter image will be added with the strategy.</div></div><div class="reminder-card"><div class="reminder-card-label">Wipe Causes</div><p>Encounter-specific wipe causes will be added in the encounter PR.</p></div></aside></div>
+
+  <div class="main-layout">
+    <div class="sheet-content">
+      <div class="header-row"><div class="role-pill role-tank">Tanks</div><div class="role-pill role-healer">Healers</div><div class="role-pill role-dps">DPS</div></div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Positioning · 3 Tanks in Front · Raid Behind · Ranged 18y+</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">ALL 3 TANKS STACK IN FRONT</div><div class="mech-desc">Tank 1, Tank 2, and Tank 3 stand together directly in front of Mother Shahraz so Saber Lash is split between all three.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">DO NOT SEPARATE THE TANKS</div><div class="mech-desc">Saber Lash can kill a tank if its damage is not properly shared. Maintain the three-player tank stack throughout the fight.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Hold Mother Still</div><div class="mech-desc">Keep Mother facing the tank group and away from the raid. Stable positioning makes every other mechanic easier.</div></div></div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">STAY MORE THAN 18 YARDS AWAY</div><div class="mech-desc">Silencing Shriek silences players near Mother for 10 seconds. Healers remain at range so the healing team is not simultaneously shut down.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Cover All 3 Tanks</div><div class="mech-desc">Saber Lash repeatedly hits the tank group. Maintain the assigned tank healing while raid healers cover beam and Fatal Attraction damage.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Use Stable Ranged Positioning</div><div class="mech-desc">Stay at range behind Mother and use safe room geometry where practical so Sinister Beam knockbacks do not throw you into dangerous positions.</div></div></div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">ONLY TANKS IN FRONT</div><div class="mech-desc">Melee attacks from behind Mother. Never join the three tanks in front or interfere with Saber Lash positioning.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Casters Stay 18y+</div><div class="mech-desc">Ranged casters remain outside Silencing Shriek range so they are not locked out for 10 seconds.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Full Damage</div><div class="mech-desc">Maintain damage while preserving the encounter's strict tank and ranged positioning.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Fatal Attraction · 3 Players Teleported · RUN APART NOW</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech"><div class="mech-body"><div class="mech-name">DO NOT MOVE MOTHER</div><div class="mech-desc">Fatal Attraction targets non-tanks. Keep Mother stable while the affected players handle the mechanic away from the boss.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Keep Saber Lash Stack</div><div class="mech-desc">Do not break the three-tank formation because Fatal Attraction occurred elsewhere in the room.</div></div></div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">FATAL ATTRACTION = HEAL FAST</div><div class="mech-desc">Three players are teleported together and take repeated Shadow damage while linked. Immediately stabilize them while they separate.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">DO NOT CHASE INTO THE STACK</div><div class="mech-desc">Heal affected players from safe range when possible. The solution is for the three linked players to separate, not for more players to gather around them.</div></div></div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">IF LINKED — RUN AWAY FROM EACH OTHER</div><div class="mech-desc">Fatal Attraction teleports three players together. Immediately choose different directions and create distance from BOTH other linked players.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">BREAK THE PURPLE BEAMS</div><div class="mech-desc">The links end once the affected players separate far enough, roughly 25 yards. Do not stop after moving only a few steps.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Return After Links Break</div><div class="mech-desc">Once Fatal Attraction ends, return to normal raid positioning and resume damage.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Shadow Beams · Raid Damage + Knockback + DoT + Mana Burn</div>
+        <div class="col-grid">
+          <div class="col col-tank"><div class="mech"><div class="mech-body"><div class="mech-name">Tanks Are Protected</div><div class="mech-desc">Saber Lash grants the tank group protection from Mother's Shadow beam mechanics. Continue holding the boss rather than reacting to every beam; tanks do not need the non-tank Shadow Resistance setup.</div></div></div></div>
+          <div class="col col-healer">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">EXPECT CONSTANT RAID DAMAGE</div><div class="mech-desc">Mother fires several Shadow beam effects into the raid. Be ready for direct damage, damage-over-time effects, knockbacks, and mana loss.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Prioritize Fatal Attraction Damage</div><div class="mech-desc">Normal beam damage is frequent, but Fatal Attraction players can lose health extremely quickly while still linked.</div></div></div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech"><div class="mech-body"><div class="mech-name">Shadow Resistance Reduces Risk</div><div class="mech-desc">For the traditional safer setup, non-tanks commonly use substantial Shadow Resistance—roughly 174 from gear plus raid Shadow Protection—to reduce damage from Mother's Shadow abilities. This is a recommendation, not an absolute gear gate.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Recover From Knockbacks</div><div class="mech-desc">Sinister Beam can knock players backward. Return to safe positioning without moving into the tank side or within Silencing Shriek range.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Manage Your Mana</div><div class="mech-desc">Wicked Beam can burn mana. Mana users should use normal recovery tools as needed rather than allowing themselves to become completely dry.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Silencing Shriek + Prismatic Aura · Stay at Range · Adapt Damage</div>
+        <div class="col-grid">
+          <div class="col col-tank"><div class="mech"><div class="mech-body"><div class="mech-name">Keep Mother Facing Away</div><div class="mech-desc">Maintain the same three-tank position. The ranged mechanics do not change the tank formation.</div></div></div></div>
+          <div class="col col-healer">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">18 YARDS MEANS SILENCE</div><div class="mech-desc">Do not drift toward Mother. A healer caught by Silencing Shriek can be unable to cast for 10 seconds during heavy raid damage.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Maintain Raid Coverage</div><div class="mech-desc">Keep ranged and Fatal Attraction players in healing range without moving into Mother's silence radius.</div></div></div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech"><div class="mech-body"><div class="mech-name">Watch Prismatic Aura</div><div class="mech-desc">Prismatic Aura changes which magical damage schools are weakened or empowered. Classes with multiple viable schools should avoid heavily reduced damage when practical.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Do Not Sacrifice Positioning for DPS</div><div class="mech-desc">Fatal Attraction, Silencing Shriek, and safe beam positioning take priority over squeezing in one extra cast.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block phase-block-repeat">
+        <div class="phase-bar">Repeat · Break Every Fatal Attraction · Kill Mother Shahraz</div>
+        <div class="col-grid">
+          <div class="col col-tank"><div class="mech"><div class="mech-body"><div class="mech-name">Stay stacked and split every Saber Lash.</div></div></div></div>
+          <div class="col col-healer"><div class="mech"><div class="mech-body"><div class="mech-name">Remain 18y+ and keep Fatal Attraction targets alive.</div></div></div></div>
+          <div class="col col-dps"><div class="mech"><div class="mech-body"><div class="mech-name">Run apart instantly if linked, then return and burn.</div></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="image-sidebar">
+      <div class="image-card image-placeholder">
+        <div class="image-card-label">Mother Shahraz Positioning</div>
+        <div class="image-card-caption">Mother Shahraz positioning image will be added when the local asset is available. Future diagram: three tanks stacked in front with Mother facing them; melee behind; ranged and healers more than 18 yards away; Fatal Attraction players spreading in three separate directions.</div>
+      </div>
+      <div class="reminder-card">
+        <div class="reminder-card-label">FATAL ATTRACTION = THREE PLAYERS RUN APART</div>
+        <ol class="reminder-list"><li>3 players teleported.</li><li>RUN APART.</li><li>Break all links.</li><li>Return to raid.</li></ol>
+      </div>
+      <div class="reminder-card">
+        <div class="reminder-card-label">Wipe Causes</div>
+        <ul class="reminder-list">
+          <li>One of the three Saber Lash tanks is out of position and the remaining tanks take too much damage.</li>
+          <li>A non-tank stands in front of Mother and interferes with Saber Lash positioning.</li>
+          <li>Mother is turned toward the raid.</li>
+          <li>Fatal Attraction players remain together after being teleported.</li>
+          <li>Two Fatal Attraction players run in the same direction and fail to break their link.</li>
+          <li>Fatal Attraction players stop moving before reaching enough separation.</li>
+          <li>Healers stand within 18 yards and are silenced by Silencing Shriek.</li>
+          <li>Ranged players drift too close to Mother during movement.</li>
+          <li>Fatal Attraction targets are not healed while attempting to separate.</li>
+          <li>Players fail to recover safely after Sinister Beam knockbacks.</li>
+          <li>Raid takes excessive Shadow damage because survivability/Shadow Resistance preparation is inadequate.</li>
+          <li>Players prioritize DPS over immediately handling Fatal Attraction.</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
   <div class="sheet-footer">Mother Shahraz · Black Temple · raid sheet</div>
 </div>
