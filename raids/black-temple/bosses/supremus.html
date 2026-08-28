@@ -1,13 +1,129 @@
 <div class="sheet">
-  <div class="boss-header"><div class="boss-zone">Black Temple</div><h1 class="boss-name">Supremus</h1></div>
+  <div class="boss-header">
+    <div class="boss-zone">Black Temple</div>
+    <h1 class="boss-name">Supremus</h1>
+  </div>
+
   <div class="setup-block">
     <div class="setup-grid setup-grid-4">
-      <div class="setup-col setup-col-tanks"><div class="setup-col-label">Tanks</div><div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Main tank → <span class="role unassigned" data-bind="bt-core-main-tank" data-default="Main tank">Main tank</span></span></div></div>
-      <div class="setup-col"><div class="setup-col-label">Healers</div><div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-mt-healers" data-default="MT healers">MT healers</span> → <span class="assignment-target" data-target-bind="bt-core-main-tank">Main tank</span> <span class="role-label">(MAIN TANK)</span></span></div><div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-raid-healers" data-default="Raid healers">Raid healers</span> → raid <span class="role-label">(RAID)</span></span></div></div>
-      <div class="setup-col setup-col-misdirect-wide"><div class="setup-col-label">Misdirects</div><div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-mt-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Supremus → <span class="assignment-target" data-target-bind="bt-core-main-tank">Main tank</span></span></div></div>
-      <div class="setup-col"><div class="setup-col-label">Utility</div><div class="setup-line"><span class="line-text">Assignments → <span class="role unassigned">Boss-specific assignments will be added only where required.</span></span></div></div>
+      <div class="setup-col setup-col-tanks">
+        <div class="setup-col-label">Tanks</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Main tank → <span class="role unassigned" data-bind="bt-core-main-tank" data-default="Main tank">Main tank</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span><span class="line-text">Hateful Strike tank → <span class="role unassigned" data-bind="bt-core-off-tank" data-default="Hateful Strike tank">Hateful Strike tank</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Healers</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Greater Heal"></span><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-mt-healers" data-default="MT healers">MT healers</span> → <span class="assignment-target" data-target-bind="bt-core-main-tank">Main tank</span> <span class="role-label">(MAIN TANK)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Greater Heal"></span><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-ot-healers" data-default="Hateful tank healers">Hateful tank healers</span> → <span class="assignment-target" data-target-bind="bt-core-off-tank">Hateful Strike tank</span> <span class="role-label">(HATEFUL TANK)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Prayer of Healing"></span><span class="line-text">Raid healers → <span class="role unassigned" data-bind-group="bt-core-raid-healers" data-default="Raid healers">Raid healers</span></span></div>
+      </div>
+      <div class="setup-col setup-col-misdirect-wide">
+        <div class="setup-col-label">Misdirects</div>
+        <div class="setup-line" data-hide-empty-row="true"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection"></span><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-mt-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Supremus → <span class="assignment-target" data-target-bind="bt-core-main-tank">Main tank</span></span></div>
+        <div class="setup-line" data-hide-empty-row="true"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection"></span><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-ot-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span> Hateful Strike tank → <span class="assignment-target" data-target-bind="bt-core-off-tank">Hateful Strike tank</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Utility</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt="Curse of Elements"></span><span class="line-text">Curse of Elements → <span class="role unassigned" data-bind="bt-core-curse-of-elements" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholystrength.jpg" alt="Curse of Recklessness"></span><span class="line-text">Curse of Recklessness → <span class="role unassigned" data-bind="bt-core-curse-of-recklessness" data-default="Warlock">Warlock</span></span></div>
+      </div>
     </div>
   </div>
-  <div class="main-layout"><div class="sheet-content"><div class="header-row"><div class="role-pill role-tank">Tanks</div><div class="role-pill role-healer">Healers</div><div class="role-pill role-dps">DPS</div></div><div class="phase-block"><div class="phase-bar">Encounter foundation</div><div class="col-grid"><div class="col col-tank"><div class="mech"><div class="mech-body"><div class="mech-name">Tanks</div><div class="mech-desc">Encounter strategy will be added in the encounter PR.</div></div></div></div><div class="col col-healer"><div class="mech"><div class="mech-body"><div class="mech-name">Healers</div><div class="mech-desc">Encounter strategy will be added in the encounter PR.</div></div></div></div><div class="col col-dps"><div class="mech"><div class="mech-body"><div class="mech-name">DPS</div><div class="mech-desc">Encounter strategy will be added in the encounter PR.</div></div></div></div></div></div></div><aside class="image-sidebar"><div class="image-card image-placeholder"><div class="image-card-label">Positioning image placeholder</div><div class="image-card-caption">A local encounter image will be added with the strategy.</div></div><div class="reminder-card"><div class="reminder-card-label">Wipe Causes</div><p>Encounter-specific wipe causes will be added in the encounter PR.</p></div></aside></div>
+
+  <div class="main-layout">
+    <div class="sheet-content">
+      <div class="header-row"><div class="role-pill role-tank">Tanks</div><div class="role-pill role-healer">Healers</div><div class="role-pill role-dps">DPS</div></div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Phase 1 · Main Tank + Hateful Strike Tank · Avoid Molten Flame</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_savageblow.jpg" alt="Hateful Strike"></div><div class="mech-body"><div class="mech-name">Main Tank Holds Supremus</div><div class="mech-desc">Main tank keeps Supremus stable while the second tank stands in melee range to absorb Hateful Strike.</div></div></div>
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_savageblow.jpg" alt="Hateful Strike"></div><div class="mech-body"><div class="mech-name">Hateful Strike Tank Stays Topped</div><div class="mech-desc">The Hateful Strike tank must remain healthy and eligible for Hateful Strike. Stay in melee range and maintain threat behind the main tank.</div></div></div>
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_incinerate.jpg" alt="Molten Flame"></div><div class="mech-body"><div class="mech-name">Move Out of Blue Fire</div><div class="mech-desc">Molten Flame spreads across the ground. Move Supremus only as much as necessary to keep tanks and melee out of the moving blue fire.</div></div></div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Healing"></div><div class="mech-body"><div class="mech-name">Keep Both Tanks Topped</div><div class="mech-desc">Supremus hits the main tank while Hateful Strike repeatedly slams the second tank. Both tanks require heavy dedicated healing.</div></div></div>
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_savageblow.jpg" alt="Hateful Strike"></div><div class="mech-body"><div class="mech-name">Hateful Tank Health Matters</div><div class="mech-desc">Supremus checks threatening melee-range players, excludes the current main tank, and favors the eligible player with the highest current health. Keep the Hateful Strike tank topped so an eligible melee DPS does not take the strike and die.</div></div></div>
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_incinerate.jpg" alt="Molten Flame"></div><div class="mech-body"><div class="mech-name">Avoid Molten Flame</div><div class="mech-desc">Blue fire is avoidable damage. Move immediately while keeping both tanks in healing range.</div></div></div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_warrior_savageblow.jpg" alt="Hateful Strike"></div><div class="mech-body"><div class="mech-name">Do Not Beat the Hateful Tank</div><div class="mech-desc">Melee must let the tanks establish position and threat before entering. Do not create a situation where a melee player becomes the Hateful Strike target.</div></div></div>
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_incinerate.jpg" alt="Molten Flame"></div><div class="mech-body"><div class="mech-name">Move Out of Molten Flame</div><div class="mech-desc">Blue fire moves across the floor toward raid members. Step out immediately and do not drag it through stacked players.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Full Damage</div><div class="mech-desc">Burn Supremus during Phase 1 while maintaining safe positioning.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Phase 2 · Fixate · RUN FROM SUPREMUS · Avoid Volcanoes</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_snipershot.jpg" alt="Fixate"></div><div class="mech-body"><div class="mech-name">No Normal Tanking During Fixate</div><div class="mech-desc">Supremus ignores normal threat while pursuing Fixate targets. Tanks spread with the raid and stay ready for the next Phase 1 pickup.</div></div></div>
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_snipershot.jpg" alt="Fixate"></div><div class="mech-body"><div class="mech-name">Do Not Stand Close Before Retargets</div><div class="mech-desc">Supremus changes Fixate targets repeatedly. Stay clear enough that a new Fixate does not immediately put you in lethal melee range.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Prepare for Threat Reset</div><div class="mech-desc">Phase 2 ends with a complete threat wipe. Move into position to pick Supremus up as Phase 1 begins.</div></div></div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_snipershot.jpg" alt="Fixate"></div><div class="mech-body"><div class="mech-name">Watch the Fixate Target</div><div class="mech-desc">Supremus chases random raid members. Keep the fixated player alive while they run, but do not stand near Supremus to heal them.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Spread Across the Room</div><div class="mech-desc">Phase 2 uses the full room. Maintain healing coverage while avoiding Supremus and volcanic geysers.</div></div></div>
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_volcano.jpg" alt="Volcanic Geyser"></div><div class="mech-body"><div class="mech-name">Avoid Volcanoes</div><div class="mech-desc">Volcanic Geysers deal heavy Fire damage around them. Move away immediately.</div></div></div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_snipershot.jpg" alt="Fixate"></div><div class="mech-body"><div class="mech-name">IF FIXATED — RUN</div><div class="mech-desc">When Supremus targets you, stop whatever you are doing and kite him away. Do not try to tank a melee hit.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Damage While Safe</div><div class="mech-desc">Players who are not fixated can continue attacking, but stay aware that Supremus will change targets again.</div></div></div>
+            <div class="mech critical"><div class="icon"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_volcano.jpg" alt="Volcanic Geyser"></div><div class="mech-body"><div class="mech-name">Avoid Volcanoes</div><div class="mech-desc">Stay away from volcanic geysers while moving around the room.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Phase 2 → Phase 1 · COMPLETE THREAT RESET · Tanks First</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">Pick Supremus Up Immediately</div><div class="mech-desc">Threat resets when Phase 2 ends. Any tank in position should establish control immediately, then settle back into the normal main tank / Hateful Strike tank setup.</div></div></div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">Do Not Rip Threat</div><div class="mech-desc">The threat reset can make large heals or active healing effects dangerous during the transition. Give the tanks a moment to establish control.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Re-lock Tank Assignments</div><div class="mech-desc">Once Supremus is controlled, return immediately to main tank and Hateful Strike tank healing.</div></div></div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">STOP FOR TANKS</div><div class="mech-desc">Do not launch spells, refresh damage-over-time effects, or immediately resume melee as Phase 1 begins. Give tanks time to rebuild threat.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Resume Phase 1</div><div class="mech-desc">Once tanks have control, return to full damage and repeat the cycle.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block phase-block-repeat">
+        <div class="phase-bar">Repeat Until Dead</div>
+        <div class="col-grid">
+          <div class="col col-tank"><div class="mech"><div class="mech-body"><div class="mech-name">Repeat Positioning</div><div class="mech-desc">Repeat main tank + Hateful Strike tank positioning.</div></div></div></div>
+          <div class="col col-healer"><div class="mech"><div class="mech-body"><div class="mech-name">Keep Both Tanks Healthy</div><div class="mech-desc">Keep both tanks healthy and survive movement phases.</div></div></div></div>
+          <div class="col col-dps"><div class="mech"><div class="mech-body"><div class="mech-name">Respect Every Reset</div><div class="mech-desc">Burn in Phase 1, kite safely in Phase 2, and respect every threat reset.</div></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="image-sidebar">
+      <div class="image-card image-placeholder">
+        <div class="image-card-label">Supremus Positioning</div>
+        <div class="image-card-caption">Supremus positioning image will be added when the local asset is available.</div>
+      </div>
+      <div class="reminder-card">
+        <div class="reminder-card-label">Wipe Causes</div>
+        <ul class="reminder-list">
+          <li>Hateful Strike tank is not kept topped and a melee DPS takes Hateful Strike.</li>
+          <li>Melee enters before tanks are established and gets killed by Hateful Strike.</li>
+          <li>Main tank or Hateful Strike tank stands in Molten Flame.</li>
+          <li>Players remain in moving blue fire instead of immediately repositioning.</li>
+          <li>Fixated player tries to tank Supremus instead of running.</li>
+          <li>Raiders run through volcanic geysers during Phase 2.</li>
+          <li>Raid bunches up around Supremus during the Fixate phase.</li>
+          <li>DPS attacks immediately after the Phase 2 threat reset and pulls Supremus.</li>
+          <li>Healers generate threat during the transition before a tank has control.</li>
+          <li>Tanks are too far away when Phase 1 resumes and Supremus reaches the raid.</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
   <div class="sheet-footer">Supremus · Black Temple · raid sheet</div>
 </div>
