@@ -1,13 +1,163 @@
 <div class="sheet">
-  <div class="boss-header"><div class="boss-zone">Black Temple</div><h1 class="boss-name">Reliquary of Souls</h1></div>
+  <div class="boss-header">
+    <div class="boss-zone">Black Temple</div>
+    <h1 class="boss-name">Reliquary of Souls</h1>
+  </div>
+
   <div class="setup-block">
     <div class="setup-grid setup-grid-4">
-      <div class="setup-col setup-col-tanks"><div class="setup-col-label">Tanks</div><div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Main tank → <span class="role unassigned" data-bind="bt-core-main-tank" data-default="Main tank">Main tank</span></span></div></div>
-      <div class="setup-col"><div class="setup-col-label">Healers</div><div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-mt-healers" data-default="MT healers">MT healers</span> → <span class="assignment-target" data-target-bind="bt-core-main-tank">Main tank</span> <span class="role-label">(MAIN TANK)</span></span></div><div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-raid-healers" data-default="Raid healers">Raid healers</span> → raid <span class="role-label">(RAID)</span></span></div></div>
-      <div class="setup-col setup-col-misdirect-wide"><div class="setup-col-label">Misdirects</div><div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-mt-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Reliquary of Souls → <span class="assignment-target" data-target-bind="bt-core-main-tank">Main tank</span></span></div></div>
-      <div class="setup-col"><div class="setup-col-label">Utility</div><div class="setup-line"><span class="line-text">Assignments → <span class="role unassigned">Boss-specific assignments will be added only where required.</span></span></div></div>
+      <div class="setup-col setup-col-tanks">
+        <div class="setup-col-label">Tanks</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Tank 1 → <span class="role unassigned" data-bind="bt-core-main-tank" data-default="Tank 1">Tank 1</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span><span class="line-text">Tank 2 → <span class="role unassigned" data-bind="bt-core-off-tank" data-default="Tank 2">Tank 2</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Healers</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Tank healing"></span><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-mt-healers" data-default="MT healers">MT healers</span> → <span class="assignment-target" data-target-bind="bt-core-main-tank">Tank 1</span> <span class="role-label">(TANK 1)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Tank healing"></span><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-ot-healers" data-default="OT healers">OT healers</span> → <span class="assignment-target" data-target-bind="bt-core-off-tank">Tank 2</span> <span class="role-label">(TANK 2)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Raid healing"></span><span class="line-text">Raid healers → <span class="role unassigned" data-bind-group="bt-core-raid-healers" data-default="Raid healers">Raid healers</span></span></div>
+      </div>
+      <div class="setup-col setup-col-misdirect-wide">
+        <div class="setup-col-label">Misdirects</div>
+        <div class="setup-line" data-hide-empty-row="true"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection"></span><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-mt-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Essence → <span class="assignment-target" data-target-bind="bt-core-main-tank">Tank 1</span></span></div>
+        <div class="setup-line" data-hide-empty-row="true"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection"></span><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-ot-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span> Essence → <span class="assignment-target" data-target-bind="bt-core-off-tank">Tank 2</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Utility</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_kick.jpg" alt="Kick"></span><span class="line-text">Kicks → <span class="role unassigned" data-bind-group="bt-core-kicks" data-default="Kickers">Kickers</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_dispelmagic.jpg" alt="Magic dispel"></span><span class="line-text">Magic dispel → <span class="role unassigned" data-bind="bt-core-magic-dispel" data-default="Player">Player</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt="Curse of Elements"></span><span class="line-text">Curse of Elements → <span class="role unassigned" data-bind="bt-core-curse-of-elements" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholystrength.jpg" alt="Curse of Recklessness"></span><span class="line-text">Curse of Recklessness → <span class="role unassigned" data-bind="bt-core-curse-of-recklessness" data-default="Warlock">Warlock</span></span></div>
+      </div>
     </div>
   </div>
-  <div class="main-layout"><div class="sheet-content"><div class="header-row"><div class="role-pill role-tank">Tanks</div><div class="role-pill role-healer">Healers</div><div class="role-pill role-dps">DPS</div></div><div class="phase-block"><div class="phase-bar">Encounter foundation</div><div class="col-grid"><div class="col col-tank"><div class="mech"><div class="mech-body"><div class="mech-name">Tanks</div><div class="mech-desc">Encounter strategy will be added in the encounter PR.</div></div></div></div><div class="col col-healer"><div class="mech"><div class="mech-body"><div class="mech-name">Healers</div><div class="mech-desc">Encounter strategy will be added in the encounter PR.</div></div></div></div><div class="col col-dps"><div class="mech"><div class="mech-body"><div class="mech-name">DPS</div><div class="mech-desc">Encounter strategy will be added in the encounter PR.</div></div></div></div></div></div></div><aside class="image-sidebar"><div class="image-card image-placeholder"><div class="image-card-label">Positioning image placeholder</div><div class="image-card-caption">A local encounter image will be added with the strategy.</div></div><div class="reminder-card"><div class="reminder-card-label">Wipe Causes</div><p>Encounter-specific wipe causes will be added in the encounter PR.</p></div></aside></div>
+
+  <div class="main-layout">
+    <div class="sheet-content">
+      <div class="header-row"><div class="role-pill role-tank">Tanks</div><div class="role-pill role-healer">Healers</div><div class="role-pill role-dps">DPS</div></div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Essence of Suffering · NO NORMAL HEALING · Rotate Fixate</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">CLOSEST PLAYER GETS FIXATE</div><div class="mech-desc">Essence of Suffering repeatedly Fixates the closest player. Tanks control the mechanic by deliberately taking turns being closest to the boss.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">ROTATE TANKS</div><div class="mech-desc">Tank 1 starts closest. When the active tank needs relief, Tank 2 moves closer and takes the next Fixate while the previous tank backs away.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Use Personal Survival</div><div class="mech-desc">Normal healing is unavailable during this phase. Use mitigation and personal survival tools while controlling Fixate.</div></div></div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">YOU CANNOT HEAL NORMALLY</div><div class="mech-desc">Aura of Suffering prevents normal healing. Do not waste the phase repeatedly attempting conventional heals that cannot restore the raid.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">SURVIVAL TOOLS MATTER</div><div class="mech-desc">Use shields, absorbs, Healthstones, potions, mitigation, and any applicable nonstandard survival tools. Keep yourself alive for later phases.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Prepare for Phase 2</div><div class="mech-desc">Preserve positioning and be ready to immediately resume active healing once Essence of Suffering dies.</div></div></div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">BURN SUFFERING</div><div class="mech-desc">Essence of Suffering has extremely weak defenses. Deal maximum damage while staying behind the tanks and never becoming the closest player.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">TRANQ ENRAGE</div><div class="mech-desc">Hunters remove Enrage immediately with Tranquilizing Shot. Do not allow an enraged Essence to remain on the active Fixate tank.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Do Not Steal Fixate</div><div class="mech-desc">Never move closer to the boss than the active tank. The closest player can become the Fixate target.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Manage Soul Drain</div><div class="mech-desc">Soul Drain damages players and drains mana. Continue the burn while using personal survival tools as needed.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block phase-block-repeat">
+        <div class="phase-bar">Enslaved Souls · AoE Them Down · Recover Resources</div>
+        <div class="col-grid">
+          <div class="col col-tank"><div class="mech"><div class="mech-body"><div class="mech-name">Gather the Souls</div><div class="mech-desc">Control the Enslaved Souls so the raid can kill them efficiently.</div></div></div></div>
+          <div class="col col-healer"><div class="mech critical"><div class="mech-body"><div class="mech-name">RECOVER</div><div class="mech-desc">Healing is available again. Stabilize the raid and use the intermission to prepare for Essence of Desire.</div></div></div></div>
+          <div class="col col-dps"><div class="mech critical"><div class="mech-body"><div class="mech-name">KILL THE SOULS</div><div class="mech-desc">AoE the Enslaved Souls quickly. Their deaths help restore raid resources before the next Essence.</div></div></div></div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Essence of Desire · REFLECTED DAMAGE · Interrupt Everything</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech"><div class="mech-body"><div class="mech-name">Hold Desire Stable</div><div class="mech-desc">Keep Essence of Desire facing predictably and maintain control while the raid manages interrupts and reflected damage.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Watch Your Own Damage</div><div class="mech-desc">Tanks are also affected by the phase's unusual damage mechanics. Do not ignore your own health while maintaining threat.</div></div></div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">HEAL REFLECTED DAMAGE</div><div class="mech-desc">Aura of Desire reflects a portion of player damage back to the attacker. Expect constant raid-wide self-inflicted damage as DPS attacks.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">Watch High-Damage Players</div><div class="mech-desc">Players dealing large bursts can take large reflected hits. Keep them healthy enough that their next attack does not kill them.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Mana Behaves Differently</div><div class="mech-desc">Use the phase's unusual mana environment aggressively while maintaining enough control to enter Phase 3 prepared.</div></div></div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">YOUR DAMAGE HURTS YOU</div><div class="mech-desc">Aura of Desire reflects damage back to you. Watch your health and stop attacking briefly if another hit would kill you.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">INTERRUPT SPIRIT SHOCK</div><div class="mech-desc">Assigned kickers must stop Spirit Shock. Keep the interrupt rotation clean and do not overlap every kick.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">INTERRUPT DEADEN</div><div class="mech-desc">Do not allow Deaden to remain uncontrolled. Assigned interrupt players should handle it immediately according to the raid's kick rotation.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">REMOVE RUNE SHIELD</div><div class="mech-desc">Rune Shield protects the Essence. The assigned Magic Dispel player removes the shield quickly so normal damage can resume.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block phase-block-repeat">
+        <div class="phase-bar">Enslaved Souls · Kill Fast · Prepare for Final Burn</div>
+        <div class="col-grid">
+          <div class="col col-tank"><div class="mech"><div class="mech-body"><div class="mech-name">Gather the Souls</div></div></div></div>
+          <div class="col col-healer"><div class="mech"><div class="mech-body"><div class="mech-name">Top the Raid</div><div class="mech-desc">Prepare for escalating Phase 3 damage.</div></div></div></div>
+          <div class="col col-dps"><div class="mech"><div class="mech-body"><div class="mech-name">AoE Souls</div><div class="mech-desc">Kill them quickly and prepare offensive cooldowns.</div></div></div></div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Essence of Anger · BLOODLUST · Kill Before Raid Collapses</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">FACE ANGER AWAY</div><div class="mech-desc">Keep Essence of Anger facing away from the raid. Soul Scream is a dangerous frontal mechanic and should only threaten the tank.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">SURVIVE ESCALATING DAMAGE</div><div class="mech-desc">Aura of Anger continuously makes the phase more dangerous. Use defensive cooldowns as incoming damage ramps.</div></div></div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">DAMAGE ONLY GETS WORSE</div><div class="mech-desc">Aura of Anger continuously increases the encounter's damage pressure. Heal aggressively; this phase is a race, not a conservation phase.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">WATCH SPITE TARGETS</div><div class="mech-desc">Players affected by Spite enter a dangerous delayed-damage window. Keep them healthy and be ready for the effect to resolve.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Use Healing Cooldowns</div><div class="mech-desc">Use major raid and tank healing cooldowns during the final burn rather than saving them.</div></div></div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">BLOODLUST + ALL COOLDOWNS</div><div class="mech-desc">Use Bloodlust/Heroism and offensive cooldowns on Essence of Anger. Kill it before the escalating aura overwhelms the raid.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">STAY OUT OF FRONT</div><div class="mech-desc">Only the tank belongs in front of Essence of Anger. Do not take Soul Scream with the tank.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Burn Through the Ramp</div><div class="mech-desc">Damage pressure continually increases. This is the final phase; maximize damage while handling Spite correctly.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block phase-block-repeat">
+        <div class="phase-bar">Essence of Anger Dies · Encounter Over</div>
+        <div class="col-grid">
+          <div class="col col-tank"><div class="mech"><div class="mech-body"><div class="mech-name">Keep Anger Controlled</div><div class="mech-desc">Maintain control through the final burn.</div></div></div></div>
+          <div class="col col-healer"><div class="mech"><div class="mech-body"><div class="mech-name">Do Not Conserve Cooldowns</div></div></div></div>
+          <div class="col col-dps"><div class="mech"><div class="mech-body"><div class="mech-name">Do Not Stop</div><div class="mech-desc">Keep attacking until the Essence dies.</div></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="image-sidebar">
+      <div class="image-card image-placeholder">
+        <div class="image-card-label">Reliquary of Souls Positioning</div>
+        <div class="image-card-caption">Reliquary of Souls positioning image will be added when the local asset is available.</div>
+      </div>
+      <div class="reminder-card">
+        <div class="reminder-card-label">Three Rules</div>
+        <p><strong>Suffering:</strong> Closest player controls Fixate. No normal healing.</p>
+        <p><strong>Desire:</strong> Interrupt. Watch reflected damage.</p>
+        <p><strong>Anger:</strong> Bloodlust. Burn.</p>
+      </div>
+      <div class="reminder-card">
+        <div class="reminder-card-label">Wipe Causes</div>
+        <ul class="reminder-list">
+          <li>A non-tank stands closest to Essence of Suffering and receives Fixate.</li>
+          <li>Tanks fail to rotate Fixate and the active tank dies during the no-healing phase.</li>
+          <li>Hunter fails to remove Enrage from Essence of Suffering.</li>
+          <li>Players waste Phase 1 trying to use normal healing instead of survival tools.</li>
+          <li>Raid fails to kill Enslaved Souls efficiently and enters the next phase without recovering.</li>
+          <li>Spirit Shock casts go through during Essence of Desire.</li>
+          <li>Interrupt rotation fails on Deaden.</li>
+          <li>Rune Shield remains active too long.</li>
+          <li>DPS kills themselves by attacking through low health during reflected-damage Phase 2.</li>
+          <li>Raid enters Essence of Anger without recovering during the intermission.</li>
+          <li>Essence of Anger faces the raid and Soul Scream hits non-tanks.</li>
+          <li>Spite targets are not prepared for the delayed damage.</li>
+          <li>Raid holds Bloodlust or offensive cooldowns too long in the final phase.</li>
+          <li>Aura of Anger ramps until healers can no longer keep the raid alive.</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
   <div class="sheet-footer">Reliquary of Souls · Black Temple · raid sheet</div>
 </div>
