@@ -1,13 +1,126 @@
 <div class="sheet">
   <div class="boss-header"><div class="boss-zone">Black Temple</div><h1 class="boss-name">Shade of Akama</h1></div>
+
   <div class="setup-block">
     <div class="setup-grid setup-grid-4">
-      <div class="setup-col setup-col-tanks"><div class="setup-col-label">Tanks</div><div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Main tank → <span class="role unassigned" data-bind="bt-core-main-tank" data-default="Main tank">Main tank</span></span></div></div>
-      <div class="setup-col"><div class="setup-col-label">Healers</div><div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-mt-healers" data-default="MT healers">MT healers</span> → <span class="assignment-target" data-target-bind="bt-core-main-tank">Main tank</span> <span class="role-label">(MAIN TANK)</span></span></div><div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-raid-healers" data-default="Raid healers">Raid healers</span> → raid <span class="role-label">(RAID)</span></span></div></div>
-      <div class="setup-col setup-col-misdirect-wide"><div class="setup-col-label">Misdirects</div><div class="setup-line"><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-mt-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Shade of Akama → <span class="assignment-target" data-target-bind="bt-core-main-tank">Main tank</span></span></div></div>
-      <div class="setup-col"><div class="setup-col-label">Utility</div><div class="setup-line"><span class="line-text">Assignments → <span class="role unassigned">Boss-specific assignments will be added only where required.</span></span></div></div>
+      <div class="setup-col setup-col-tanks">
+        <div class="setup-col-label">Tanks</div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span><span class="line-text">Left adds → <span class="role unassigned" data-bind="bt-core-main-tank" data-default="Left adds tank">Left adds tank</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span><span class="line-text">Right adds → <span class="role unassigned" data-bind="bt-core-off-tank" data-default="Right adds tank">Right adds tank</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span><span class="line-text">Defender tank → <span class="role unassigned" data-bind="bt-core-off-tank-2" data-default="Defender tank">Defender tank</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Healers</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Greater Heal"></span><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-mt-healers" data-default="Left tank healers">Left tank healers</span> → <span class="assignment-target" data-target-bind="bt-core-main-tank">Left adds tank</span> <span class="role-label">(LEFT)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Greater Heal"></span><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-ot-healers" data-default="Right tank healers">Right tank healers</span> → <span class="assignment-target" data-target-bind="bt-core-off-tank">Right adds tank</span> <span class="role-label">(RIGHT)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_greaterheal.jpg" alt="Greater Heal"></span><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-ot-2-healers" data-default="Defender tank healers">Defender tank healers</span> → <span class="assignment-target" data-target-bind="bt-core-off-tank-2">Defender tank</span> <span class="role-label">(DEFENDER)</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofhealing.jpg" alt="Prayer of Healing"></span><span class="line-text">Raid healers → <span class="role unassigned" data-bind-group="bt-core-raid-healers" data-default="Raid healers">Raid healers</span></span></div>
+      </div>
+      <div class="setup-col setup-col-misdirect-wide">
+        <div class="setup-col-label">Misdirects</div>
+        <div class="setup-line" data-hide-empty-row="true"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection"></span><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-mt-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/skull.svg" alt="Skull"></span> Left adds → <span class="assignment-target" data-target-bind="bt-core-main-tank">Left adds tank</span></span></div>
+        <div class="setup-line" data-hide-empty-row="true"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection"></span><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-ot-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/cross.svg" alt="Cross"></span> Right adds → <span class="assignment-target" data-target-bind="bt-core-off-tank">Right adds tank</span></span></div>
+        <div class="setup-line" data-hide-empty-row="true"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_misdirection.jpg" alt="Misdirection"></span><span class="line-text"><span class="role unassigned" data-bind-group="bt-core-ot-2-misdirect" data-default="Hunter">Hunter</span> → <span class="role-icon-inline raid-marker-inline"><img src="assets/shared/markers/square.svg" alt="Square"></span> Defender → <span class="assignment-target" data-target-bind="bt-core-off-tank-2">Defender tank</span></span></div>
+      </div>
+      <div class="setup-col">
+        <div class="setup-col-label">Utility</div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/ability_kick.jpg" alt="Kick"></span><span class="line-text">Kicks → <span class="role unassigned" data-bind-group="bt-core-kicks" data-default="Kicks">Kicks</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_chilltouch.jpg" alt="Curse of Elements"></span><span class="line-text">Curse of Elements → <span class="role unassigned" data-bind="bt-core-curse-of-elements" data-default="Warlock">Warlock</span></span></div>
+        <div class="setup-line"><span class="role-icon-inline"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholystrength.jpg" alt="Curse of Recklessness"></span><span class="line-text">Curse of Recklessness → <span class="role unassigned" data-bind="bt-core-curse-of-recklessness" data-default="Warlock">Warlock</span></span></div>
+      </div>
     </div>
   </div>
-  <div class="main-layout"><div class="sheet-content"><div class="header-row"><div class="role-pill role-tank">Tanks</div><div class="role-pill role-healer">Healers</div><div class="role-pill role-dps">DPS</div></div><div class="phase-block"><div class="phase-bar">Encounter foundation</div><div class="col-grid"><div class="col col-tank"><div class="mech"><div class="mech-body"><div class="mech-name">Tanks</div><div class="mech-desc">Encounter strategy will be added in the encounter PR.</div></div></div></div><div class="col col-healer"><div class="mech"><div class="mech-body"><div class="mech-name">Healers</div><div class="mech-desc">Encounter strategy will be added in the encounter PR.</div></div></div></div><div class="col col-dps"><div class="mech"><div class="mech-body"><div class="mech-name">DPS</div><div class="mech-desc">Encounter strategy will be added in the encounter PR.</div></div></div></div></div></div></div><aside class="image-sidebar"><div class="image-card image-placeholder"><div class="image-card-label">Positioning image placeholder</div><div class="image-card-caption">A local encounter image will be added with the strategy.</div></div><div class="reminder-card"><div class="reminder-card-label">Wipe Causes</div><p>Encounter-specific wipe causes will be added in the encounter PR.</p></div></aside></div>
+
+  <div class="main-layout">
+    <div class="sheet-content">
+      <div class="header-row"><div class="role-pill role-tank">Tanks</div><div class="role-pill role-healer">Healers</div><div class="role-pill role-dps">DPS</div></div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Phase 1 · Kill Channelers · Control Both Doorways</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">Lock Down Both Doorways</div><div class="mech-desc">Left and right tanks pick up the add waves spawning from their assigned doorway. Keep adds away from the Channelers and the raid.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">Defender Tank Picks Up Defenders</div><div class="mech-desc">Ashtongue Defenders hit hard and can interrupt casters. The Defender tank grabs them quickly and keeps them away from healers.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Do Not Chase Sorcerers</div><div class="mech-desc">Ashtongue Sorcerers run directly to Shade and cannot be tanked. Hold your add assignment while DPS kills them.</div></div></div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">Stay Away From Add Spawns</div><div class="mech-desc">Position where you can reach assigned tanks without standing in the doorway paths. Do not let fresh adds reach the healer group.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Heal Assigned Add Tanks</div><div class="mech-desc">Damage rises as waves accumulate. Keep left, right, and Defender tanks stable, especially if DPS is slow clearing the encounter.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">MOVE OUT OF RAIN OF FIRE</div><div class="mech-desc">Ashtongue Elementalists cast Rain of Fire on the raid. Move immediately instead of trying to heal through it.</div></div></div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">KILL THE 6 CHANNELERS</div><div class="mech-desc">The six Ashtongue Channelers are the primary Phase 1 objective. They continue binding Shade until killed.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">SORCERER = IMMEDIATE KILL</div><div class="mech-desc">Ashtongue Sorcerers periodically run to Shade and replace dead Channelers. They cannot be tanked. Swap and kill them immediately.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Control Extra Adds</div><div class="mech-desc">If tanks become overloaded, crowd control spare Rogues, Elementalists, or other doorway adds instead of letting the waves overwhelm the raid.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Add Control · Interrupt Heals · Stay Out of Rain of Fire</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech"><div class="mech-body"><div class="mech-name">Keep Adds Away From Channelers</div><div class="mech-desc">Do not allow Spiritbinders or other adds to sit beside the Channelers. Keep your assigned pack controlled at the doorway side of the room.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Use Defensives if Waves Stack</div><div class="mech-desc">If multiple waves accumulate, incoming damage can spike quickly. Use tank cooldowns rather than losing control of your side.</div></div></div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">Interrupt Spiritbinder Heals</div><div class="mech-desc">Ashtongue Spiritbinders can heal nearby enemies. Assigned kickers should stop their healing casts so progress on Channelers is not undone.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Watch Tank Spikes</div><div class="mech-desc">Several adds can land attacks together. Do not assume an add tank is safe just because their health was stable a moment ago.</div></div></div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">Spiritbinder Is the Dangerous Add</div><div class="mech-desc">If the raid must kill a doorway add, prioritize Spiritbinders and stop their healing. Crowd control less urgent adds when possible.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Channelers and Sorcerers Stay Priority</div><div class="mech-desc">Do not turn Phase 1 into a full trash clear. The encounter progresses by removing every active Channeler and replacement Sorcerer.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-bar">Phase 2 · Shade Is Free · EVERY DPS ON SHADE</div>
+        <div class="col-grid">
+          <div class="col col-tank">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">DO NOT TRY TO TANK SHADE</div><div class="mech-desc">Akama tanks his own Shade. Player tanks continue holding any remaining hostile adds and keep them away from the raid.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Survive Until Shade Dies</div><div class="mech-desc">Do not abandon your remaining adds to chase the boss. Use defensive cooldowns if needed; all hostile adds despawn when Shade dies.</div></div></div>
+          </div>
+          <div class="col col-healer">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">Keep Add Tanks Alive</div><div class="mech-desc">Phase 2 is not safe just because Shade is active. Continue healing tanks that still have doorway adds or Defenders on them.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Akama Handles the Boss</div><div class="mech-desc">The raid does not assign a player tank to Shade. Keep players alive while DPS races to finish the encounter.</div></div></div>
+          </div>
+          <div class="col col-dps">
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">EVERY DPS ON SHADE</div><div class="mech-desc">Once Shade reaches Akama, stop killing normal adds and burn Shade of Akama immediately.</div></div></div>
+            <div class="mech critical"><div class="mech-body"><div class="mech-name">Bloodlust + Cooldowns</div><div class="mech-desc">Use offensive cooldowns during the Shade burn. If Shade kills Akama before it dies, the encounter fails.</div></div></div>
+            <div class="mech"><div class="mech-body"><div class="mech-name">Ignore Remaining Adds</div><div class="mech-desc">Tanks hold surviving adds while DPS finishes Shade. They despawn when Shade dies.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block phase-block-repeat">
+        <div class="phase-bar">Shade Dies · Remaining Adds Despawn</div>
+        <div class="col-grid">
+          <div class="col col-tank"><div class="mech"><div class="mech-body"><div class="mech-name">Hold Surviving Adds</div><div class="mech-desc">Hold surviving adds until they disappear.</div></div></div></div>
+          <div class="col col-healer"><div class="mech"><div class="mech-body"><div class="mech-name">Heal Through the Burn</div><div class="mech-desc">Keep tanks alive through the final burn.</div></div></div></div>
+          <div class="col col-dps"><div class="mech"><div class="mech-body"><div class="mech-name">Finish Shade</div><div class="mech-desc">Do not stop attacking Shade until it is dead.</div></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="image-sidebar">
+      <div class="image-card image-placeholder"><div class="image-card-label">Shade of Akama Positioning</div><div class="image-card-caption">Shade of Akama positioning image will be added when the local asset is available.</div></div>
+      <div class="reminder-card">
+        <div class="reminder-card-label">Wipe Causes</div>
+        <ul class="reminder-list">
+          <li>A doorway is left uncovered and fresh adds run into the raid.</li>
+          <li>Ashtongue Defender reaches healers and interrupts or kills them.</li>
+          <li>DPS ignores a replacement Ashtongue Sorcerer and it resumes channeling on Shade.</li>
+          <li>Raid spends too much time killing normal adds instead of Channelers and Sorcerers.</li>
+          <li>Spiritbinder healing is allowed to go off and extends Phase 1.</li>
+          <li>Players stand in Elementalist Rain of Fire.</li>
+          <li>Tanks drag Spiritbinders close enough to heal Channelers or other priority targets.</li>
+          <li>Too many add waves accumulate and an add tank dies.</li>
+          <li>DPS continues killing adds after Shade is released instead of immediately burning the boss.</li>
+          <li>Shade kills Akama before the raid finishes the Phase 2 burn.</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
   <div class="sheet-footer">Shade of Akama · Black Temple · raid sheet</div>
 </div>
