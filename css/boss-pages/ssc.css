@@ -174,6 +174,16 @@ body[data-boss-id="trash"] {
   line-height: 1.45;
 }
 
+.setup-line .role-icon-inline {
+  background: rgba(241, 239, 232, 0.08);
+  border-color: var(--ssc-border-soft);
+}
+
+.setup-line .role-icon-inline.raid-marker-inline {
+  background: transparent;
+  border-color: transparent;
+}
+
 .setup-block .role.unassigned,
 .role.unassigned {
   color: var(--ssc-muted);
@@ -284,21 +294,36 @@ body[data-boss-id="trash"] {
 .trash-camp-guide { width: 100%; }
 .trash-camp-selector { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
 .trash-camp-radio { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-.trash-camp-button { display: inline-flex; align-items: center; padding: 9px 16px; border: 1px solid var(--ssc-border); border-radius: 6px; background: var(--ssc-panel-bg-soft); color: var(--ssc-text-soft); cursor: pointer; font-size: 11px; font-weight: 700; letter-spacing: .35px; }
+.trash-camp-button { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border: 1px solid var(--ssc-border); border-radius: 6px; background: var(--ssc-panel-bg-soft); color: var(--ssc-text-soft); cursor: pointer; font-size: 11px; font-weight: 700; letter-spacing: .35px; }
+.trash-camp-button-icon { display: inline-flex; flex: 0 0 28px; width: 28px; height: 28px; border: 1px solid var(--ssc-border-soft); border-radius: 4px; background-color: var(--ssc-phase-bg); background-position: center; background-repeat: no-repeat; background-size: cover; }
+.trash-section-button-icon-hydross { background-image: url("../../assets/shared/markers/boss-icons/hydross.webp"); }
+.trash-section-button-icon-lurker { background-image: url("../../assets/shared/markers/boss-icons/lurker.webp"); }
+.trash-section-button-icon-leotheras { background-image: url("../../assets/shared/markers/boss-icons/leotheras.webp"); }
+.trash-section-button-icon-karathress { background-image: url("../../assets/shared/markers/boss-icons/karathress.webp"); }
+.trash-section-button-icon-morogrim { background-image: url("../../assets/shared/markers/boss-icons/morrogrim.webp"); }
 .trash-camp-radio:focus-visible + .trash-camp-button { outline: 2px solid var(--ssc-phase-text); outline-offset: 2px; }
 #ssc-trash-hydross:checked + .trash-camp-button,
 #ssc-trash-lurker:checked + .trash-camp-button,
 #ssc-trash-leotheras:checked + .trash-camp-button,
+#ssc-trash-karathress:checked + .trash-camp-button,
 #ssc-trash-morogrim:checked + .trash-camp-button { border-color: #6f9d88; background: var(--ssc-phase-bg); color: var(--ssc-phase-text); }
 .trash-camp-panel { display: none; }
 .trash-camp-guide:has(#ssc-trash-hydross:checked) .trash-camp-panel-hydross,
 .trash-camp-guide:has(#ssc-trash-lurker:checked) .trash-camp-panel-lurker,
 .trash-camp-guide:has(#ssc-trash-leotheras:checked) .trash-camp-panel-leotheras,
+.trash-camp-guide:has(#ssc-trash-karathress:checked) .trash-camp-panel-karathress,
 .trash-camp-guide:has(#ssc-trash-morogrim:checked) .trash-camp-panel-morogrim { display: block; }
 .trash-mob-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .trash-mob-card { display: grid; grid-template-columns: 92px minmax(0, 1fr); overflow: hidden; background: var(--ssc-panel-bg-soft); border: 1px solid var(--ssc-border); border-radius: 7px; break-inside: avoid; }
+.trash-mob-card.trash-priority-1 { border-color: #a94a4a; }
+.trash-mob-card.trash-priority-2 { border-color: #a96146; }
+.trash-mob-card.trash-priority-3 { border-color: #b47b45; }
+.trash-mob-card.trash-priority-4 { border-color: #aa914d; }
+.trash-mob-card.trash-priority-5 { border-color: #84905c; }
 .trash-card-divider { grid-column: 1 / -1; min-height: 10px; border: 1px solid var(--ssc-border-soft); border-radius: 6px; background: var(--ssc-phase-bg); break-inside: avoid; }
 .trash-mob-portrait { display: grid; min-height: 150px; place-items: center; overflow: hidden; padding: 10px; background: radial-gradient(circle at 50% 32%, rgba(42, 139, 145, .3), transparent 34%), linear-gradient(155deg, #203a3c, #121d20); border-right: 1px solid var(--ssc-border-soft); color: var(--ssc-text-soft); font-size: 10px; font-weight: 700; letter-spacing: .7px; line-height: 1.35; text-align: center; text-transform: uppercase; }
+.trash-mob-portrait:has(.trash-mob-img) { padding: 0; }
+.trash-mob-img { display: block; width: 100%; height: 100%; min-height: 150px; object-fit: cover; }
 .trash-mob-body { min-width: 0; padding: 9px 10px; }
 .trash-mob-body header { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--ssc-border-soft); }
 .trash-mob-name { margin: 0; color: var(--ssc-text); font-size: 14px; line-height: 1.2; }
@@ -323,6 +348,7 @@ body[data-boss-id="trash"] {
 @media (max-width: 520px) {
   .trash-mob-card { grid-template-columns: 72px minmax(0, 1fr); }
   .trash-mob-portrait { min-height: 120px; padding: 7px; font-size: 9px; }
+  .trash-mob-img { min-height: 120px; }
   .trash-mob-body header { align-items: flex-start; flex-direction: column; gap: 3px; }
 }
 
