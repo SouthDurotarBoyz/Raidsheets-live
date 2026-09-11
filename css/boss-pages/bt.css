@@ -47,6 +47,10 @@ body {
   padding: 20px;
 }
 
+body[data-boss-id="trash"] {
+  --bt-boss-background-image: url("../../assets/bt/backgrounds/Blacktemple.webp");
+}
+
 body[data-boss-id="najentus"] {
   --bt-boss-background-image: url("../../assets/bt/backgrounds/najentus.webp");
 }
@@ -529,4 +533,57 @@ body[data-boss-id="najentus"] .phase-block-repeat .col {
   text-align: center;
   background: linear-gradient(145deg, rgba(76, 104, 83, 0.16), rgba(91, 55, 105, 0.14));
   border: 1px dashed var(--bt-border);
+}
+
+
+/* Black Temple trash section selector. */
+.trash-camp-guide { width: 100%; }
+.trash-camp-selector { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.trash-camp-radio { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.trash-camp-button { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border: 1px solid var(--bt-border); border-radius: 6px; background: var(--bt-panel-bg-soft); color: var(--bt-text-soft); cursor: pointer; font-size: 11px; font-weight: 700; letter-spacing: .35px; }
+.trash-camp-button-icon { display: inline-flex; flex: 0 0 28px; width: 28px; height: 28px; border: 1px solid var(--bt-border-soft); border-radius: 4px; background-color: var(--bt-phase-bg); background-position: center; background-repeat: no-repeat; background-size: cover; }
+.trash-section-button-icon-najentus { background-image: url("../../assets/bt/icons/najentus.jpg"); }
+.trash-section-button-icon-supremus { background-image: url("../../assets/bt/icons/supremus.jpg"); }
+.trash-section-button-icon-akama { background-image: url("../../assets/bt/icons/akama.jpg"); }
+.trash-section-button-icon-gorefiend { background-image: url("../../assets/bt/icons/gorefiend.jpg"); }
+.trash-section-button-icon-bloodboil { background-image: url("../../assets/bt/icons/bloodboil.jpg"); }
+.trash-section-button-icon-reliquary { background-image: url("../../assets/bt/icons/reliquary.jpg"); }
+.trash-section-button-icon-shahraz { background-image: url("../../assets/bt/icons/shahraz.jpg"); }
+.trash-section-button-icon-council { background-image: url("../../assets/bt/icons/council.jpg"); }
+.trash-camp-radio:focus-visible + .trash-camp-button { outline: 2px solid var(--bt-phase-text); outline-offset: 2px; }
+#bt-trash-najentus:checked + .trash-camp-button,
+#bt-trash-supremus:checked + .trash-camp-button,
+#bt-trash-akama:checked + .trash-camp-button,
+#bt-trash-gorefiend:checked + .trash-camp-button,
+#bt-trash-bloodboil:checked + .trash-camp-button,
+#bt-trash-reliquary:checked + .trash-camp-button,
+#bt-trash-shahraz:checked + .trash-camp-button,
+#bt-trash-council:checked + .trash-camp-button { border-color: #70a879; background: var(--bt-phase-bg); color: var(--bt-phase-text); }
+.trash-camp-panel { display: none; }
+.trash-camp-guide:has(#bt-trash-najentus:checked) .trash-camp-panel-najentus,
+.trash-camp-guide:has(#bt-trash-supremus:checked) .trash-camp-panel-supremus,
+.trash-camp-guide:has(#bt-trash-akama:checked) .trash-camp-panel-akama,
+.trash-camp-guide:has(#bt-trash-gorefiend:checked) .trash-camp-panel-gorefiend,
+.trash-camp-guide:has(#bt-trash-bloodboil:checked) .trash-camp-panel-bloodboil,
+.trash-camp-guide:has(#bt-trash-reliquary:checked) .trash-camp-panel-reliquary,
+.trash-camp-guide:has(#bt-trash-shahraz:checked) .trash-camp-panel-shahraz,
+.trash-camp-guide:has(#bt-trash-council:checked) .trash-camp-panel-council { display: block; }
+.trash-section-note { margin: 0 0 10px; padding: 8px 10px; border: 1px solid var(--bt-border-soft); border-radius: 6px; background: var(--bt-phase-bg); color: var(--bt-phase-text); font-size: 11px; }
+.trash-subgroup-title { margin: 12px 0 8px; padding: 6px 10px; border: 1px solid var(--bt-border-soft); border-radius: 6px; background: var(--bt-phase-bg); color: var(--bt-phase-text); font-size: 11px; letter-spacing: .5px; text-transform: uppercase; }
+
+@media (max-width: 800px) {
+  .trash-mob-grid { grid-template-columns: 1fr; }
+  .trash-camp-button { flex: 1 1 calc(50% - 8px); justify-content: center; }
+}
+
+@media (max-width: 520px) {
+  .trash-mob-card { grid-template-columns: 72px minmax(0, 1fr); }
+  .trash-mob-portrait { min-height: 120px; padding: 7px; font-size: 9px; }
+  .trash-mob-body header { align-items: flex-start; flex-direction: column; gap: 3px; }
+}
+
+@media print {
+  .trash-camp-selector { display: none; }
+  .trash-camp-panel { display: block !important; }
+  .trash-mob-card { break-inside: avoid; page-break-inside: avoid; }
 }
