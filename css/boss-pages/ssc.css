@@ -67,6 +67,10 @@ body[data-boss-id="vashj"] {
   background-image: url('../../assets/ssc/backgrounds/vashj.webp');
 }
 
+body[data-boss-id="trash"] {
+  background-image: url('../../assets/ssc/backgrounds/ssc.webp');
+}
+
 .page-nav,
 .screen-only {
   max-width: 1280px;
@@ -272,4 +276,61 @@ body[data-boss-id="vashj"] {
   .screen-only { display: none !important; }
   .sheet { box-shadow: none; border: none; padding: 0; max-width: none; }
   .phase-block, .setup-block, .header-row, .image-card, .reminder-card { page-break-inside: avoid; }
+}
+
+/* SSC trash guide: assignment-first, no-JavaScript field guide. */
+.trash-guide,
+.trash-guide .sheet-content { display: block; width: 100%; }
+.trash-camp-guide { width: 100%; }
+.trash-camp-selector { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.trash-camp-radio { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.trash-camp-button { display: inline-flex; align-items: center; padding: 9px 16px; border: 1px solid var(--ssc-border); border-radius: 6px; background: var(--ssc-panel-bg-soft); color: var(--ssc-text-soft); cursor: pointer; font-size: 11px; font-weight: 700; letter-spacing: .35px; }
+.trash-camp-radio:focus-visible + .trash-camp-button { outline: 2px solid var(--ssc-phase-text); outline-offset: 2px; }
+#ssc-trash-hydross:checked + .trash-camp-button,
+#ssc-trash-lurker:checked + .trash-camp-button,
+#ssc-trash-leotheras:checked + .trash-camp-button,
+#ssc-trash-morogrim:checked + .trash-camp-button { border-color: #6f9d88; background: var(--ssc-phase-bg); color: var(--ssc-phase-text); }
+.trash-camp-panel { display: none; }
+.trash-camp-guide:has(#ssc-trash-hydross:checked) .trash-camp-panel-hydross,
+.trash-camp-guide:has(#ssc-trash-lurker:checked) .trash-camp-panel-lurker,
+.trash-camp-guide:has(#ssc-trash-leotheras:checked) .trash-camp-panel-leotheras,
+.trash-camp-guide:has(#ssc-trash-morogrim:checked) .trash-camp-panel-morogrim { display: block; }
+.trash-mob-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.trash-mob-card { display: grid; grid-template-columns: 92px minmax(0, 1fr); overflow: hidden; background: var(--ssc-panel-bg-soft); border: 1px solid var(--ssc-border); border-radius: 7px; break-inside: avoid; }
+.trash-card-divider { grid-column: 1 / -1; min-height: 10px; border: 1px solid var(--ssc-border-soft); border-radius: 6px; background: var(--ssc-phase-bg); break-inside: avoid; }
+.trash-mob-portrait { display: grid; min-height: 150px; place-items: center; overflow: hidden; padding: 10px; background: radial-gradient(circle at 50% 32%, rgba(42, 139, 145, .3), transparent 34%), linear-gradient(155deg, #203a3c, #121d20); border-right: 1px solid var(--ssc-border-soft); color: var(--ssc-text-soft); font-size: 10px; font-weight: 700; letter-spacing: .7px; line-height: 1.35; text-align: center; text-transform: uppercase; }
+.trash-mob-body { min-width: 0; padding: 9px 10px; }
+.trash-mob-body header { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--ssc-border-soft); }
+.trash-mob-name { margin: 0; color: var(--ssc-text); font-size: 14px; line-height: 1.2; }
+.trash-kill-priority { flex: 0 0 auto; color: var(--ssc-assigned); font-size: 10px; font-weight: 700; letter-spacing: .35px; text-transform: uppercase; }
+.trash-ability-list { margin: 7px 0; padding: 0; list-style: none; }
+.trash-ability-list .mech { margin: 0 0 5px; padding: 0; }
+.trash-ability-list .mech-name { display: inline; margin-right: 4px; }
+.trash-ability-list .mech-name::after { content: " —"; color: var(--ssc-muted); }
+.trash-ability-list .mech-desc { display: inline; }
+.trash-tag { display: inline-block; margin: 0 3px 2px 0; padding: 1px 5px; border: 1px solid rgba(185, 218, 245, .34); border-radius: 999px; background: rgba(32, 57, 78, .72); color: var(--ssc-phase-text); font-size: 9px; font-weight: 700; line-height: 1.45; white-space: nowrap; }
+.trash-handling { margin: 7px 0 0; padding: 6px 8px; background: rgba(77, 91, 67, .22); border-left: 2px solid #6f925f; color: var(--ssc-text-soft); font-size: 11px; line-height: 1.4; }
+.trash-handling .role-label { display: block; margin-bottom: 1px; color: var(--ssc-healer-text); font-size: 9px; font-weight: 700; letter-spacing: .5px; opacity: 1; text-transform: uppercase; }
+.trash-handling-critical { border-left-color: var(--ssc-assigned); background: rgba(109, 77, 37, .25); }
+.trash-section-note { margin: 0 0 10px; padding: 8px 10px; border: 1px solid var(--ssc-border-soft); border-radius: 6px; background: var(--ssc-phase-bg); color: var(--ssc-phase-text); font-size: 11px; }
+.trash-subgroup-title { margin: 12px 0 8px; padding: 6px 10px; border: 1px solid var(--ssc-border-soft); border-radius: 6px; background: var(--ssc-phase-bg); color: var(--ssc-phase-text); font-size: 11px; letter-spacing: .5px; text-transform: uppercase; }
+
+@media (max-width: 800px) {
+  .trash-mob-grid { grid-template-columns: 1fr; }
+  .trash-camp-button { flex: 1 1 calc(50% - 8px); justify-content: center; }
+}
+
+@media (max-width: 520px) {
+  .trash-mob-card { grid-template-columns: 72px minmax(0, 1fr); }
+  .trash-mob-portrait { min-height: 120px; padding: 7px; font-size: 9px; }
+  .trash-mob-body header { align-items: flex-start; flex-direction: column; gap: 3px; }
+}
+
+@media print {
+  .trash-camp-selector { display: none; }
+  .trash-camp-panel { display: block !important; }
+  .trash-mob-card { background: white; color: #222; break-inside: avoid; page-break-inside: avoid; }
+  .trash-mob-name, .trash-ability-list .mech-name { color: #111; }
+  .trash-ability-list .mech-desc, .trash-handling { color: #333; }
+  .trash-mob-portrait { background: #e8f0f0; color: #263a3b; }
 }
