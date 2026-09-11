@@ -462,6 +462,9 @@
     document.querySelectorAll('[data-target-bind]').forEach(function(el) {
       const key = el.dataset.targetBind;
       const value = getSingleValue(key);
+      const hideEmptyRow = el.dataset.hideEmptyRow === 'true';
+      const setupLine = hideEmptyRow && el.closest ? el.closest('.setup-line') : null;
+      if (setupLine) setupLine.style.display = value ? '' : 'none';
       if (!value) { el.textContent = ''; return; }
       if (el.classList.contains('assignment-target')) { el.textContent = value; return; }
       const prev = el.previousElementSibling;
