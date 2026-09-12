@@ -364,6 +364,14 @@ body[data-boss-id="najentus"] .phase-block-repeat .col {
   gap: 10px;
 }
 
+body[data-boss-id="trash"] .trash-pull-divider {
+  grid-column: 1 / -1;
+  height: 8px;
+  background: var(--bt-phase-bg);
+  border: 1px solid var(--bt-border-soft);
+  border-radius: 5px;
+}
+
 .trash-mob-card {
   display: grid;
   grid-template-columns: 92px minmax(0, 1fr);
