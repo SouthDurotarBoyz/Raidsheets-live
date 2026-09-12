@@ -87,5 +87,24 @@
     "bt-core-decurse": "Decurse",
     "bt-core-magic-dispel": "Magic dispel"
   },
-  "derivedBindings": {}
+  "derivedBindings": {
+    "bt-trash-triangle-banish": {
+      "type": "group-slot",
+      "group": "bt-core-banish",
+      "index": 0,
+      "fallback": "Warlock"
+    },
+    "bt-trash-diamond-banish": {
+      "type": "group-slot",
+      "group": "bt-core-banish",
+      "index": 1,
+      "fallback": "Warlock"
+    },
+    "bt-trash-circle-banish": {
+      "type": "group-slot",
+      "group": "bt-core-banish",
+      "index": 2,
+      "fallback": "Warlock"
+    }
+  }
 }
